@@ -1,0 +1,24 @@
+[project]
+name = "suraksha"
+version = "0.1.0"
+description = "Voice-first desktop guide for Indian government forms (hackathon MVP)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic>=2",
+    "python-dotenv",
+    "google-genai",
+    "sarvamai",
+    "firecrawl-py",
+    "httpx",
+    "numpy",
+    "silero-vad",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["shared/schemas/tests"]
+pythonpath = ["."]

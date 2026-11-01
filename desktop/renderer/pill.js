@@ -29,6 +29,7 @@ $("lang").onclick = () => {
 $("start").onclick = () => { stopAudio(); S.send("start", { lang }); };
 $("next").onclick = () => { stopAudio(); S.send("next"); };
 $("stop").onclick = () => { stopAudio(); S.send("stop"); $("caption").textContent = "Ruk gaya. Phir se shuru karne ke liye Start guiding dabaiye."; };
+$("rec").onchange = (e) => S.send("recordable", { on: e.target.checked });
 $("calib").onclick = () => S.send("calibrate");
 $("x").onclick = () => S.send("quit");
 $("link").onclick = () => { if (linkUrl) S.send("open-link", { url: linkUrl }); };
@@ -103,3 +104,4 @@ S.on("capture", ({ mode }) => {
   $("watching").textContent = mode === "on" ? "is watching" : mode === "paused" ? "paused (privacy)" : "";
 });
 S.on("status", ({ text }) => status(text));
+S.on("recordable", ({ on }) => { $("rec").checked = !!on; });

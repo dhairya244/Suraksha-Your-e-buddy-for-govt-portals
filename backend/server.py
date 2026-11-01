@@ -97,6 +97,7 @@ class Session:
         self.active = False
         self.frame: bytes | None = None
         self.frame_seq = 0
+        self.own_ui_visible = False
         self.frame_id: int | None = None  # client's id for the newest frame (echoed in highlights)
         self.analyzed_seq = 0
         self.timer: asyncio.TimerHandle | None = None
@@ -152,6 +153,7 @@ class Session:
                 return
             self.frame_seq += 1
             self.frame_id = msg.get("frame_id")
+            self.own_ui_visible = bool(msg.get("own_ui_visible"))
             if msg.get("big_change"):
                 self.last_big_change_seq = self.frame_seq
                 self.target = None  # page moved: re-highlight (overlay already cleared itself)
@@ -204,7 +206,7 @@ class Session:
                 self.maybe_run_vision()
 
     async def _run_vision(self, jpeg: bytes, seq: int, frame_id: int | None) -> None:
-        result = await detect(jpeg)
+        result = await detect(jpeg, own_ui_visible=self.own_ui_visible)
         if not self.active:
             return
         if result is None:

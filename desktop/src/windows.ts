@@ -14,18 +14,23 @@ async function lib(): Promise<any | null> {
   return gw;
 }
 
-const opts = { accessibilityPermission: false, screenRecordingPermission: true };
+// No titles/URLs needed — only bounds + owner. Skipping both permission checks keeps each call ~20 ms;
+// with the screen-recording check the helper binary can stall ~30 s.
+const opts = { accessibilityPermission: false, screenRecordingPermission: false };
+const TIMEOUT_MS = 2000;
+const withTimeout = <T>(p: Promise<T>, fallback: T): Promise<T> =>
+  Promise.race([p.catch(() => fallback), new Promise<T>((r) => setTimeout(() => r(fallback), TIMEOUT_MS))]);
 
 export async function openWindows(): Promise<Win[]> {
   const g = await lib();
   if (!g) return [];
-  try { return (await g.openWindows(opts)) ?? []; } catch { return []; }
+  return (await withTimeout(g.openWindows(opts) as Promise<Win[]>, [])) ?? [];
 }
 
 export async function activeWindow(): Promise<Win | undefined> {
   const g = await lib();
   if (!g) return undefined;
-  try { return await g.activeWindow(opts); } catch { return undefined; }
+  return withTimeout(g.activeWindow(opts) as Promise<Win | undefined>, undefined);
 }
 
 const BROWSER_RE = /chrome|chromium|edge|brave|firefox|safari|arc|opera|vivaldi/i;

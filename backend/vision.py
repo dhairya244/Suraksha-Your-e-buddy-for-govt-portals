@@ -63,7 +63,9 @@ in reading order: top to bottom, and left to right within a row.
 - filled: true only if a real value is typed or selected. Placeholders like 'Select', '--Select--', 'DD/MM/YYYY' mean NOT filled.
 - Ignore browser chrome (address bar, tabs, bookmarks), site navigation menus, search boxes, and login widgets unless the page is a login form.
 - Ignore any floating assistant window.
-{hint}"""
+{own_ui}{hint}"""
+
+OWN_UI = "- Ignore any orange highlight outline, its dark caption label, and the dark 'Suraksha' pill window — they are our own UI, not part of the page.\n"
 
 
 def _hint(label_hints: list[str] | None) -> str:
@@ -72,9 +74,9 @@ def _hint(label_hints: list[str] | None) -> str:
     return "Labels expected on this form (may be partial): " + "; ".join(label_hints[:60])
 
 
-def detect_sync(jpeg: bytes, label_hints: list[str] | None = None) -> VisionResult:
+def detect_sync(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visible: bool = False) -> VisionResult:
     res = call_gemini(
-        [types.Part.from_bytes(data=jpeg, mime_type="image/jpeg"), PROMPT.format(hint=_hint(label_hints))],
+        [types.Part.from_bytes(data=jpeg, mime_type="image/jpeg"), PROMPT.format(hint=_hint(label_hints), own_ui=OWN_UI if own_ui_visible else "")],
         model=env("GEMINI_VISION_MODEL"),
         key=VISION_KEY,
         schema=VisionResult,
@@ -89,9 +91,9 @@ def detect_sync(jpeg: bytes, label_hints: list[str] | None = None) -> VisionResu
     return out
 
 
-async def detect(jpeg: bytes, label_hints: list[str] | None = None) -> VisionResult | None:
+async def detect(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visible: bool = False) -> VisionResult | None:
     try:
-        return await asyncio.to_thread(detect_sync, jpeg, label_hints)
+        return await asyncio.to_thread(detect_sync, jpeg, label_hints, own_ui_visible)
     except (LLMError, ValueError) as e:
         log.warning("vision failed: %s", e)
         return None

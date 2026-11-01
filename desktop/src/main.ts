@@ -22,6 +22,9 @@ let captureTimer: NodeJS.Timeout | null = null;
 let lastGray: Uint8Array | null = null;
 let forceFrame = false;
 let capturing = false;
+let recordable = false; // "Show in recordings": overlay + pill visible to screenshots/recording/screen share
+let highlightRect: Rect | null = null; // display-relative DIP rect currently drawn
+let lastMask: Uint8Array | null = null;
 
 const renderer = (f: string) => path.join(__dirname, "..", "renderer", f);
 const preload = path.join(__dirname, "preload.js");
@@ -81,7 +84,12 @@ function createPill() {
   pill.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
   pill.setContentProtection(true); // keep the pill out of screenshots sent to vision
   pill.loadFile(renderer("pill.html"));
-  pill.once("ready-to-show", () => checkPermissions());
+  pill.once("ready-to-show", () => {
+    checkPermissions();
+    // debug flags: start visible to recordings / show calibration boxes
+    if (process.argv.includes("--recordable")) setRecordable(true);
+    if (process.argv.includes("--calibrate")) setTimeout(calibrate, 800);
+  });
 }
 
 const toOverlay = (ch: string, data: unknown = {}) => overlay?.webContents.send(ch, data);
@@ -111,7 +119,7 @@ function connect() {
     try { msg = JSON.parse(raw.toString()); } catch { return; }
     switch (msg.type) {
       case "highlight": showHighlight(msg); break;
-      case "clear": toOverlay("clear"); break;
+      case "clear": clearOverlay(); break;
       case "capture": setCapture(msg.mode); break;
       case "say": case "state": case "link": case "transcript": toPill(msg.type, msg); break;
     }
@@ -120,6 +128,11 @@ function connect() {
 
 function wsSend(obj: unknown) {
   if (ws && ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(obj));
+}
+
+function clearOverlay() {
+  highlightRect = null;
+  toOverlay("clear");
 }
 
 // ---------- coordinates ----------
@@ -142,14 +155,18 @@ let frameSeq = 0;
 function showHighlight(msg: any) {
   const fr = frameRects.get(msg.frame_id) ?? lastCrop;
   if (!fr) return;
-  toOverlay("highlight", { rect: bboxToRect(msg.bbox, fr), label: msg.label });
+  highlightRect = bboxToRect(msg.bbox, fr);
+  toOverlay("highlight", { rect: highlightRect, label: msg.label });
 }
 
 // ---------- browser window tracking ----------
 // Last active window owned by a browser (ignores our own pill/overlay so clicking them keeps the target).
 let browser: { name: string; bounds: Rect } | null = null;
+let tracking = false;
 async function trackBrowser() {
-  const w = await activeWindow();
+  if (tracking) return;
+  tracking = true;
+  const w = await activeWindow().finally(() => { tracking = false; });
   if (!w || w.owner.processId === process.pid) return;
   if (isBrowser(w)) browser = { name: w.owner.name, bounds: w.bounds };
 }
@@ -183,7 +200,7 @@ function setCapture(mode: "on" | "off" | "paused") {
     lastGray = null;
     lastCrop = null;
     frameRects.clear();
-    toOverlay("clear");
+    clearOverlay();
   }
 }
 
@@ -205,6 +222,24 @@ async function grabScreen(): Promise<Electron.NativeImage | null> {
   return src.thumbnail;
 }
 
+// 64×64 grid cells (over `crop`) covered by our own UI when it is visible to capture:
+// the highlight (+10 px, plus room for its caption above/below) and the pill.
+function ownUiMask(crop: Rect): Uint8Array {
+  const m = new Uint8Array(64 * 64);
+  if (!recordable) return m;
+  const d = screen.getPrimaryDisplay().bounds;
+  const rs: Rect[] = [];
+  if (highlightRect) { const h = highlightRect; rs.push({ x: h.x - 10, y: h.y - 10 - 48, width: h.width + 20, height: h.height + 20 + 96 }); }
+  if (pill) { const p = pill.getBounds(); rs.push({ x: p.x - d.x - 10, y: p.y - d.y - 10, width: p.width + 20, height: p.height + 20 }); }
+  const cw = crop.width / 64, ch = crop.height / 64;
+  for (const r of rs) {
+    const c0 = Math.max(0, Math.floor((r.x - crop.x) / cw)), c1 = Math.min(63, Math.floor((r.x + r.width - crop.x) / cw));
+    const r0 = Math.max(0, Math.floor((r.y - crop.y) / ch)), r1 = Math.min(63, Math.floor((r.y + r.height - crop.y) / ch));
+    for (let y = r0; y <= r1; y++) for (let x = c0; x <= c1; x++) m[y * 64 + x] = 1;
+  }
+  return m;
+}
+
 async function tick() {
   if (captureMode !== "on" || capturing) return;
   capturing = true;
@@ -213,17 +248,23 @@ async function tick() {
     if (!shot) return;
     const crop = captureRect();
     if (!sameRect(crop, lastCrop)) { // browser moved/resized/switched: old boxes and diff baseline are stale
-      if (lastCrop) toOverlay("clear");
+      if (lastCrop) clearOverlay();
       lastGray = null;
       forceFrame = true;
     }
     const k = shot.getSize().width / screen.getPrimaryDisplay().bounds.width; // physical px per DIP
     const img = shot.crop({ x: Math.round(crop.x * k), y: Math.round(crop.y * k), width: Math.round(crop.width * k), height: Math.round(crop.height * k) });
     const g = gray64(img);
-    let changedCells = 0;
-    if (lastGray) for (let i = 0; i < g.length; i++) if (Math.abs(g[i] - lastGray[i]) > CELL_DIFF) changedCells++;
-    const big = !!lastGray && changedCells / g.length > BIG_DIFF_FRAC;
-    if (big) toOverlay("clear"); // scroll / new page
+    const mask = ownUiMask(crop);
+    let changedCells = 0, counted = 0;
+    if (lastGray) for (let i = 0; i < g.length; i++) {
+      if (mask[i] || lastMask?.[i]) continue; // our own pixels (only visible when recordable) aren't page changes
+      counted++;
+      if (Math.abs(g[i] - lastGray[i]) > CELL_DIFF) changedCells++;
+    }
+    lastMask = mask;
+    const big = !!lastGray && counted > 0 && changedCells / counted > BIG_DIFF_FRAC;
+    if (big) clearOverlay(); // scroll / new page
     if (lastGray && changedCells === 0 && !forceFrame) return;
     forceFrame = false;
     lastGray = g;
@@ -233,7 +274,7 @@ async function tick() {
     const frame_id = ++frameSeq;
     frameRects.set(frame_id, crop);
     if (frameRects.size > 20) frameRects.delete(frameRects.keys().next().value!);
-    wsSend({ type: "frame", frame_id, jpeg_b64: out.toJPEG(JPEG_Q).toString("base64"), w: s.width, h: s.height, big_change: big, browser: browser?.name ?? null });
+    wsSend({ type: "frame", frame_id, jpeg_b64: out.toJPEG(JPEG_Q).toString("base64"), w: s.width, h: s.height, big_change: big, browser: browser?.name ?? null, own_ui_visible: recordable });
   } catch {
     // capture failures are expected before screen permission is granted
   } finally {
@@ -250,10 +291,22 @@ ipcMain.on("lang", (_e, { lang }) => wsSend({ type: "lang", lang }));
 ipcMain.on("open-link", (_e, { url }) => { if (/^https:\/\//.test(url)) shell.openExternal(url); });
 ipcMain.on("quit", () => app.quit());
 
+ipcMain.on("recordable", (_e, { on }) => setRecordable(!!on));
+function setRecordable(on: boolean) {
+  recordable = on;
+  overlay?.setContentProtection(!recordable);
+  pill?.setContentProtection(!recordable);
+  toOverlay("recordable", { on: recordable });
+  lastGray = null; // baseline changes once our UI becomes visible in captures
+  forceFrame = true;
+  toPill("recordable", { on: recordable });
+}
+
 // Debug: magenta boxes at the 4 display corners + centre (+ the browser capture rect) for 10 s.
 // If the drawn boxes don't sit exactly in the screen corners, the overlay origin is off.
 let calibTimer: NodeJS.Timeout | null = null;
-ipcMain.on("calibrate", async () => {
+ipcMain.on("calibrate", () => calibrate());
+async function calibrate() {
   await measureOverlay();
   await trackBrowser();
   const { width: W, height: H } = screen.getPrimaryDisplay().bounds;
@@ -268,7 +321,7 @@ ipcMain.on("calibrate", async () => {
   toPill("status", { text: `overlay origin ${overlayOrigin.x},${overlayOrigin.y} · browser ${browser ? browser.name : "none"}` });
   if (calibTimer) clearTimeout(calibTimer);
   calibTimer = setTimeout(() => toOverlay("calib", { rects: [] }), 10000);
-});
+}
 
 app.whenReady().then(() => {
   session.defaultSession.setPermissionRequestHandler((_wc, perm, cb) => cb(perm === "media"));

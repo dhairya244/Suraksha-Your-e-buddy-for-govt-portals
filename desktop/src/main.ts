@@ -1,4 +1,4 @@
-// Suraksha desktop main process: overlay + pill windows, screen capture, WebSocket to backend.
+// e-Sahayak (team Suraksha) desktop main process: overlay + pill windows, screen capture, WebSocket to backend.
 // Never logs screenshots, transcripts or audio.
 import { app, BrowserWindow, desktopCapturer, ipcMain, nativeImage, screen, session, shell, systemPreferences } from "electron";
 import path from "path";
@@ -30,6 +30,7 @@ let lastMask: Uint8Array | null = null;
 // it leaves the laptop. Display-relative DIP. Dropped on scroll/page change (the field moved).
 let redactRects: Rect[] = [];
 
+app.setName("e-Sahayak"); // user-facing product name (team: Suraksha)
 let quitting = false;
 app.on("before-quit", () => { quitting = true; });
 
@@ -58,7 +59,7 @@ function createOverlay() {
   const d = screen.getPrimaryDisplay();
   overlay = new BrowserWindow({
     x: d.bounds.x, y: d.bounds.y, width: d.bounds.width, height: d.bounds.height,
-    transparent: true, frame: false, resizable: false, movable: false,
+    title: "e-Sahayak", transparent: true, frame: false, resizable: false, movable: false,
     alwaysOnTop: true, skipTaskbar: true, focusable: false, hasShadow: false,
     enableLargerThanScreen: true, show: false,
     webPreferences: { preload },
@@ -114,7 +115,7 @@ function createPill() {
   const w = 380, h = 276;
   pill = new BrowserWindow({
     x: d.workArea.x + d.workArea.width - w - 24, y: d.workArea.y + 24, width: w, height: h,
-    frame: false, resizable: false, alwaysOnTop: true, skipTaskbar: false, transparent: true, hasShadow: true,
+    title: "e-Sahayak", frame: false, resizable: false, alwaysOnTop: true, skipTaskbar: false, transparent: true, hasShadow: true,
     fullscreenable: false,
     webPreferences: { preload },
   });

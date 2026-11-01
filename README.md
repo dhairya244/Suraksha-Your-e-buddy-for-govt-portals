@@ -1,6 +1,8 @@
-# Suraksha
+# e-Sahayak
 
-Suraksha is a floating desktop assistant (Windows + macOS) that, with the user's permission, watches their browser, highlights the next field on a government form, explains it out loud in Hindi or English (Gujarati best-effort), answers questions from official sources, and suggests relevant schemes. It never types, clicks, or submits for the user. Demo form: **Gujarat Income Certificate (Sugam)** on [Digital Gujarat](https://www.digitalgujarat.gov.in/).
+*by team Suraksha*
+
+e-Sahayak is a floating desktop assistant (Windows + macOS) that, with the user's permission, watches their browser, highlights the next field on a government form, explains it out loud in Hindi or English (Gujarati best-effort), answers questions from official sources, and suggests relevant schemes. It never types, clicks, or submits for the user. Demo form: **Gujarat Income Certificate (Sugam)** on [Digital Gujarat](https://www.digitalgujarat.gov.in/).
 
 Read first: [FINAL-PLAN.md](FINAL-PLAN.md) (scope + timeline) · [PLAYBOOK.md](PLAYBOOK.md) (technical details) · [QUICKSTART.md](QUICKSTART.md) · [DECISIONS.md](DECISIONS.md)
 

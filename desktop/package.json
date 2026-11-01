@@ -1,5 +1,6 @@
 {
   "name": "suraksha-desktop",
+  "productName": "e-Sahayak",
   "version": "0.1.0",
   "private": true,
   "main": "dist/main.js",

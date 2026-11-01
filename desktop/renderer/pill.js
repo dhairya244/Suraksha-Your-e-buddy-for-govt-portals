@@ -4,7 +4,7 @@ const $ = (id) => document.getElementById(id);
 const MODES = ["auto", "hi", "en", "gu"];
 const NAMES = { hi: "हिंदी", en: "EN", gu: "ગુજરાતી", mr: "मराठी", bn: "বাংলা", ta: "தமிழ்", te: "తెలుగు", kn: "ಕನ್ನಡ", ml: "മലയാളം", pa: "ਪੰਜਾਬੀ", od: "ଓଡ଼ିଆ" };
 let lang = "auto"; // the mode we send
-let spoken = "hi"; // language Suraksha is currently speaking (shown next to Auto)
+let spoken = "hi"; // language e-Sahayak is currently speaking (shown next to Auto)
 function langLabel() { $("lang").textContent = lang === "auto" ? `Auto · ${NAMES[spoken] || spoken}` : NAMES[lang]; }
 let linkUrl = null;
 let audio = null;

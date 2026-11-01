@@ -104,7 +104,7 @@ PROMPT = """You are looking at a screenshot of a browser showing a government we
    services list, the service cards/rows/links — text exactly as shown, box tightly around the clickable element.
 {own_ui}{goal}{hint}"""
 
-OWN_UI = "- Ignore any orange highlight outline, its dark caption label, and the dark 'Suraksha' pill window — they are our own UI, not part of the page.\n"
+OWN_UI = "- Ignore any orange highlight outline, its dark caption label, and the dark 'e-Sahayak' pill window — they are our own UI, not part of the page.\n"
 
 
 def _hint(label_hints: list[str] | None) -> str:

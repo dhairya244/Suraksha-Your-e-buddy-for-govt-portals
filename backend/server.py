@@ -1,4 +1,4 @@
-"""Suraksha backend: WebSocket session that turns screen frames into field highlights (M2).
+"""e-Sahayak backend (team Suraksha): WebSocket session that turns screen frames into field highlights (M2).
 
   .venv/bin/uvicorn backend.server:app --port 8765
   (or) .venv/bin/python -m backend.server
@@ -43,7 +43,7 @@ log = logging.getLogger("suraksha.server")
 VISION_MIN_INTERVAL_S = 4.0  # free-tier budget: ≤1 vision call per 4 s (PLAYBOOK §8.3)
 NO_FORM_REPEAT_S = 20.0
 
-app = FastAPI(title="Suraksha")
+app = FastAPI(title="e-Sahayak")
 
 
 @app.get("/health")
@@ -86,7 +86,7 @@ T = {
         "link_only": "{name} के लिए मेरे पास अभी जाँची हुई जानकारी नहीं है। इसकी आधिकारिक वेबसाइट का लिंक पिल में दे दिया है।",
         "nav": "कृपया {step}।",
         "goto_list": "इसके लिए कृपया Sugam सेवाओं की सूची खोलिए और \"{name}\" चुनिए।",
-        "greeting": "नमस्ते! मैं सुरक्षा हूँ, सरकारी फ़ॉर्म भरने में आपकी मदद करती हूँ। आज मैं आपकी क्या मदद कर सकती हूँ?",
+        "greeting": "नमस्ते! मैं ई-सहायक हूँ। सरकारी फ़ॉर्म भरने में मैं आपकी मदद करती हूँ। आज मैं आपकी क्या मदद कर सकती हूँ?",
         "great": "बहुत बढ़िया!",
         "ask_goal": "आपको कौन सी सेवा चाहिए? कृपया माइक बटन दबाकर बताइए, जैसे \"आय प्रमाण पत्र बनाना है\"।",
         "submit": "बहुत बढ़िया, सारे खाने भर गए। कृपया एक बार सब जाँच लीजिए, फिर \"{label}\" आप खुद दबाइए।",
@@ -124,7 +124,7 @@ T = {
         "link_only": "I don't have verified details for {name} yet. I've put its official website link in the pill.",
         "nav": "Please {step}.",
         "goto_list": "For this, open the Sugam services list and choose \"{name}\".",
-        "greeting": "Hello! I'm Suraksha. I help you fill government forms step by step. How may I help you today?",
+        "greeting": "Hello! I'm e-Sahayak. I help you fill government forms, step by step. How may I help you today?",
         "great": "Great!",
         "ask_goal": "Which service do you need? Hold the mic button and tell me, e.g. \"I want an income certificate\".",
         "submit": "Great, all fields are filled. Please check everything once, then press \"{label}\" yourself.",
@@ -165,7 +165,7 @@ T["gu"] = {
     "link_only": "{name} માટે મારી પાસે હજી ચકાસેલી માહિતી નથી. તેની સત્તાવાર વેબસાઇટની લિંક પિલમાં આપી છે.",
     "nav": "કૃપા કરીને {step}.",
     "goto_list": "આ માટે કૃપા કરીને Sugam સેવાઓની યાદી ખોલો અને \"{name}\" પસંદ કરો.",
-    "greeting": "નમસ્તે! હું સુરક્ષા છું, સરકારી ફોર્મ ભરવામાં તમારી મદદ કરું છું. આજે હું તમારી શું મદદ કરી શકું?",
+    "greeting": "નમસ્તે! હું ઈ-સહાયક છું. સરકારી ફોર્મ ભરવામાં હું તમારી મદદ કરું છું. આજે હું તમારી શું મદદ કરી શકું?",
     "great": "ખૂબ સરસ!",
     "ask_goal": "તમારે કઈ સેવા જોઈએ છે? કૃપા કરીને માઇક બટન દબાવીને કહો, જેમ કે \"આવકનો દાખલો કઢાવવો છે\".",
     "submit": "ખૂબ સરસ, બધા ખાના ભરાઈ ગયા. કૃપા કરીને એક વાર બધું તપાસી લો, પછી \"{label}\" તમે જાતે દબાવો.",

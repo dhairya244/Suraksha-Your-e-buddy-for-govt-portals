@@ -4,11 +4,11 @@
   (or) .venv/bin/python -m backend.server
 
 Protocol (matches desktop/src/main.ts):
-  client → {type:"start", lang} | {type:"frame", jpeg_b64, w, h, big_change} | {type:"next"}
+  client → {type:"start", lang} | {type:"frame", frame_id, jpeg_b64, w, h, big_change, browser} | {type:"next"}
            | {type:"stop"} | {type:"lang", lang} | {type:"ask", audio_b64, lang}
-  server → {type:"capture", mode} | {type:"highlight", bbox, label} | {type:"clear"}
+  server → {type:"capture", mode} | {type:"highlight", frame_id, bbox, label} | {type:"clear"}
            | {type:"say", text, audio_b64?} | {type:"state", value}
-bbox = [ymin, xmin, ymax, xmax] 0–1000 relative to the frame (= full primary display).
+bbox = [ymin, xmin, ymax, xmax] 0–1000 relative to the frame (the client maps it via that frame's crop).
 Frames and audio are processed in memory only; nothing is written to disk or logged.
 """
 from __future__ import annotations
@@ -97,6 +97,7 @@ class Session:
         self.active = False
         self.frame: bytes | None = None
         self.frame_seq = 0
+        self.frame_id: int | None = None  # client's id for the newest frame (echoed in highlights)
         self.analyzed_seq = 0
         self.timer: asyncio.TimerHandle | None = None
         self.last_big_change_seq = 0
@@ -150,6 +151,7 @@ class Session:
             except (KeyError, ValueError):
                 return
             self.frame_seq += 1
+            self.frame_id = msg.get("frame_id")
             if msg.get("big_change"):
                 self.last_big_change_seq = self.frame_seq
                 self.target = None  # page moved: re-highlight (overlay already cleared itself)
@@ -190,18 +192,18 @@ class Session:
         self.force = False
         self.last_vision_t = time.monotonic()
         self.analyzed_seq = self.frame_seq
-        self.vision_task = asyncio.create_task(self.run_vision(self.frame, self.frame_seq))
+        self.vision_task = asyncio.create_task(self.run_vision(self.frame, self.frame_seq, self.frame_id))
 
-    async def run_vision(self, jpeg: bytes, seq: int) -> None:
+    async def run_vision(self, jpeg: bytes, seq: int, frame_id: int | None) -> None:
         try:
-            await self._run_vision(jpeg, seq)
+            await self._run_vision(jpeg, seq, frame_id)
         finally:
             if self.vision_task is asyncio.current_task():
                 self.vision_task = None  # else maybe_run_vision sees this task as still running
             if self.active:
                 self.maybe_run_vision()
 
-    async def _run_vision(self, jpeg: bytes, seq: int) -> None:
+    async def _run_vision(self, jpeg: bytes, seq: int, frame_id: int | None) -> None:
         result = await detect(jpeg)
         if not self.active:
             return
@@ -212,9 +214,9 @@ class Session:
             log.info("vision result stale (scrolled), dropping")
             self.force = True
             return
-        await self.apply(result)
+        await self.apply(result, frame_id)
 
-    async def apply(self, r: VisionResult) -> None:
+    async def apply(self, r: VisionResult, frame_id: int | None = None) -> None:
         if not r.is_form or not r.fields:
             self.target = None
             await self.send("clear")
@@ -227,7 +229,7 @@ class Session:
             k = e.text.strip().lower()
             if k and k not in self.said_errors:
                 self.said_errors.add(k)
-                await self.send("highlight", bbox=e.box_2d, label="⚠ " + e.text[:80])
+                await self.send("highlight", frame_id=frame_id, bbox=e.box_2d, label="⚠ " + e.text[:80])
                 await self.say(phrase(self.lang, "error", text=e.text))
                 self.target = None
                 return
@@ -244,7 +246,7 @@ class Session:
         self.done_said = False
         f = todo[0]
         k = field_key(f)
-        await self.send("highlight", bbox=f.box_2d, label=f.label)  # re-send: position may shift
+        await self.send("highlight", frame_id=frame_id, bbox=f.box_2d, label=f.label)  # re-send: position may shift
         if k != self.target:
             self.target = k
             await self.send("state", value="guiding_field")

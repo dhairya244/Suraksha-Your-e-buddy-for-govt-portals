@@ -3,13 +3,15 @@
 import { app, BrowserWindow, desktopCapturer, ipcMain, nativeImage, screen, session, shell, systemPreferences } from "electron";
 import path from "path";
 import WebSocket from "ws";
-import { openWindows, Rect } from "./windows";
+import { activeWindow, isBrowser, openWindows, Rect } from "./windows";
 
 const PORT = process.env.BACKEND_PORT || "8765";
 const WS_URL = `ws://127.0.0.1:${PORT}/ws/session`;
 const CAPTURE_MS = 1500;
 const CELL_DIFF = 10; // grayscale delta (0-255) for a 64x64 cell to count as changed
 const BIG_DIFF_FRAC = 0.2; // fraction of changed cells → scroll/page change → clear highlight
+const MAX_FRAME_W = 1600; // physical px sent to vision (native resolution up to this)
+const JPEG_Q = 80;
 const TEST_BOX = process.argv.includes("--test-box") || process.env.SURAKSHA_TEST_BOX === "1";
 
 let overlay: BrowserWindow | null = null;
@@ -133,11 +135,39 @@ function bboxToRect(bbox: number[], frameRect: Rect): Rect {
   };
 }
 
+// frame_id → the display-relative DIP rect that frame covered (bbox is relative to it)
+const frameRects = new Map<number, Rect>();
+let frameSeq = 0;
+
 function showHighlight(msg: any) {
-  const d = screen.getPrimaryDisplay();
-  const frameRect = { x: 0, y: 0, width: d.bounds.width, height: d.bounds.height };
-  toOverlay("highlight", { rect: bboxToRect(msg.bbox, frameRect), label: msg.label });
+  const fr = frameRects.get(msg.frame_id) ?? lastCrop;
+  if (!fr) return;
+  toOverlay("highlight", { rect: bboxToRect(msg.bbox, fr), label: msg.label });
 }
+
+// ---------- browser window tracking ----------
+// Last active window owned by a browser (ignores our own pill/overlay so clicking them keeps the target).
+let browser: { name: string; bounds: Rect } | null = null;
+async function trackBrowser() {
+  const w = await activeWindow();
+  if (!w || w.owner.processId === process.pid) return;
+  if (isBrowser(w)) browser = { name: w.owner.name, bounds: w.bounds };
+}
+
+// Browser window bounds clipped to the primary display, display-relative DIP. Full display if unknown.
+function captureRect(): Rect {
+  const d = screen.getPrimaryDisplay().bounds;
+  if (!browser) return { x: 0, y: 0, width: d.width, height: d.height };
+  const b = browser.bounds;
+  const x0 = Math.max(b.x - d.x, 0), y0 = Math.max(b.y - d.y, 0);
+  const x1 = Math.min(b.x - d.x + b.width, d.width), y1 = Math.min(b.y - d.y + b.height, d.height);
+  if (x1 - x0 < 100 || y1 - y0 < 100) return { x: 0, y: 0, width: d.width, height: d.height };
+  return { x: x0, y: y0, width: x1 - x0, height: y1 - y0 };
+}
+
+const sameRect = (a: Rect | null, b: Rect | null) =>
+  !!a && !!b && Math.abs(a.x - b.x) < 1 && Math.abs(a.y - b.y) < 1 && Math.abs(a.width - b.width) < 1 && Math.abs(a.height - b.height) < 1;
+let lastCrop: Rect | null = null;
 
 // ---------- capture ----------
 function setCapture(mode: "on" | "off" | "paused") {
@@ -151,6 +181,8 @@ function setCapture(mode: "on" | "off" | "paused") {
     if (captureTimer) clearInterval(captureTimer);
     captureTimer = null;
     lastGray = null;
+    lastCrop = null;
+    frameRects.clear();
     toOverlay("clear");
   }
 }
@@ -177,20 +209,31 @@ async function tick() {
   if (captureMode !== "on" || capturing) return;
   capturing = true;
   try {
-    const img = await grabScreen();
-    if (!img) return;
+    const shot = await grabScreen();
+    if (!shot) return;
+    const crop = captureRect();
+    if (!sameRect(crop, lastCrop)) { // browser moved/resized/switched: old boxes and diff baseline are stale
+      if (lastCrop) toOverlay("clear");
+      lastGray = null;
+      forceFrame = true;
+    }
+    const k = shot.getSize().width / screen.getPrimaryDisplay().bounds.width; // physical px per DIP
+    const img = shot.crop({ x: Math.round(crop.x * k), y: Math.round(crop.y * k), width: Math.round(crop.width * k), height: Math.round(crop.height * k) });
     const g = gray64(img);
     let changedCells = 0;
     if (lastGray) for (let i = 0; i < g.length; i++) if (Math.abs(g[i] - lastGray[i]) > CELL_DIFF) changedCells++;
-    const changed = !lastGray || changedCells > 0;
-    if (lastGray && changedCells / g.length > BIG_DIFF_FRAC) toOverlay("clear"); // scroll / new page
-    if (!changed && !forceFrame) return;
+    const big = !!lastGray && changedCells / g.length > BIG_DIFF_FRAC;
+    if (big) toOverlay("clear"); // scroll / new page
+    if (lastGray && changedCells === 0 && !forceFrame) return;
     forceFrame = false;
     lastGray = g;
-    const size = img.getSize();
-    const small = size.width > 1280 ? img.resize({ width: 1280, quality: "good" }) : img;
-    const s = small.getSize();
-    wsSend({ type: "frame", jpeg_b64: small.toJPEG(70).toString("base64"), w: s.width, h: s.height, big_change: changedCells / g.length > BIG_DIFF_FRAC });
+    lastCrop = crop;
+    const out = img.getSize().width > MAX_FRAME_W ? img.resize({ width: MAX_FRAME_W, quality: "best" }) : img;
+    const s = out.getSize();
+    const frame_id = ++frameSeq;
+    frameRects.set(frame_id, crop);
+    if (frameRects.size > 20) frameRects.delete(frameRects.keys().next().value!);
+    wsSend({ type: "frame", frame_id, jpeg_b64: out.toJPEG(JPEG_Q).toString("base64"), w: s.width, h: s.height, big_change: big, browser: browser?.name ?? null });
   } catch {
     // capture failures are expected before screen permission is granted
   } finally {
@@ -212,6 +255,7 @@ app.whenReady().then(() => {
   createOverlay();
   createPill();
   connect();
+  setInterval(trackBrowser, 500);
   screen.on("display-metrics-changed", () => { overlay?.setBounds(screen.getPrimaryDisplay().bounds); measureOverlay(); });
 });
 

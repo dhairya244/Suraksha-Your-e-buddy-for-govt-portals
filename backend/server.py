@@ -5,7 +5,7 @@
 
 Protocol (matches desktop/src/main.ts):
   client → {type:"start", lang} | {type:"frame", frame_id, jpeg_b64, w, h, big_change, browser} | {type:"next"}
-           | {type:"stop"} | {type:"lang", lang} | {type:"ask", audio_b64, lang} | {type:"choice", id, value}
+           | {type:"stop"} | {type:"reset", lang?} | {type:"lang", lang} | {type:"ask", audio_b64, lang} | {type:"choice", id, value}
   server → {type:"capture", mode} | {type:"highlight", frame_id, bbox, label} | {type:"clear"}
            | {type:"redact", frame_id, bbox} | {type:"transcript", text, lang, final}
            | {type:"lang", value} | {type:"sources", urls}
@@ -105,6 +105,15 @@ T = {
 }
 
 
+_INDIC = "\u0900-\u097F\u0A80-\u0AFF"  # Devanagari + Gujarati
+_JOIN_RE = re.compile(rf"(?<=[{_INDIC}])(?=[A-Za-z])|(?<=[A-Za-z])(?=[{_INDIC}])")  # letters only: keep "10वीं"
+
+
+def space_scripts(text: str) -> str:
+    """'केApplicant' → 'के Applicant': a space wherever an Indic run touches a Latin/digit run."""
+    return _JOIN_RE.sub(" ", text)
+
+
 def wav_seconds(wav: bytes) -> float:
     """Duration of a PCM WAV (header: byte rate at offset 28)."""
     if len(wav) < 44 or wav[:4] != b"RIFF":
@@ -179,6 +188,7 @@ class Session:
         self.scheme = SchemeDialog()
         self.answering = False
         self.quiet_until = 0.0
+        self.quiet_seq = -1
         self.quiet_timer: asyncio.TimerHandle | None = None
         self.last_user_t = 0.0
         self.pending_checkin: str | None = None  # field key awaiting a fresh-frame confirmation
@@ -209,9 +219,11 @@ class Session:
     async def say(self, text: str, lang: str | None = None, answer: bool = False) -> None:
         """Caption now, audio when TTS returns — unless something newer was said meanwhile.
         answer=True: keep guidance quiet until QUIET_AFTER_ANSWER_S after this audio finishes."""
+        text = space_scripts(text)
         self.say_seq += 1
         if answer:
             self.quiet_until = time.monotonic() + 30  # provisional until we know the audio length
+            self.quiet_seq = self.say_seq  # this answer owns the quiet window
         await self.send("say", text=text, audio_b64=None)
         task = asyncio.create_task(self._speak(text, lang or self.lang, self.say_seq, answer))
         self.bg.add(task)
@@ -220,8 +232,9 @@ class Session:
     async def _speak(self, text: str, lang: str, seq: int, answer: bool = False) -> None:
         wav = await tts(text, lang)
         dur = wav_seconds(wav) if wav else 0.0
-        if answer and seq == self.say_seq:
-            self.end_quiet_at(time.monotonic() + dur + QUIET_AFTER_ANSWER_S)
+        if answer and seq == self.quiet_seq:  # always close the window this answer opened
+            played = seq == self.say_seq and not self.closed
+            self.end_quiet_at(time.monotonic() + (dur + QUIET_AFTER_ANSWER_S if played else 0.0))
         if wav and seq == self.say_seq and not self.closed:
             await self.send("say", text=text, audio_b64=base64.b64encode(wav).decode())
 
@@ -266,6 +279,19 @@ class Session:
             await self.send("capture", mode="off")
             await self.send("clear")
             await self.send("state", value="idle")
+        elif t == "reset":  # demo reset: forget everything this session learned (memory, schemes, tracker, ask-backs)
+            self.say_seq += 1
+            self.active = False
+            self.reset()
+            self.turns.clear()
+            self.scheme = SchemeDialog()
+            self.has_account = None
+            self.lang = msg.get("lang") or "hi"
+            await self.send("capture", mode="off")
+            await self.send("clear")
+            await self.send("choice.clear")
+            await self.send("state", value="idle")
+            log.info("session reset")
         elif t == "lang":
             self.lang = msg.get("lang") or self.lang
             await self.explain_current()  # user asked for the other language → say it again in that one
@@ -370,6 +396,7 @@ class Session:
             st = await scheme_step(self.scheme, text, lang, list(self.turns)[:-1], "gj_income_certificate" if on_form else None)
             if st is None:
                 await self.say(phrase(self.lang, "answer_fail"))
+                await self.send("state", value="guiding_field" if self.tracker.current() else ("watching" if self.active else "idle"))
                 return
             if not st.exit:
                 await self.say(st.say, answer=True)
@@ -384,6 +411,7 @@ class Session:
         a = await answer(heard_text, lang, self.screen_context(), self.last_jpeg, list(self.turns)[:-1])
         if not a:
             await self.say(phrase(self.lang, "answer_fail"))
+            await self.send("state", value="guiding_field" if self.tracker.current() else ("watching" if self.active else "idle"))
             return
         await self.say(a.say, answer=True)
         self.remember("assistant", a.say)
@@ -469,6 +497,9 @@ class Session:
     def reset(self) -> None:
         self.paused = False
         self.pending_checkin = None
+        self.quiet_until = 0.0
+        self.quiet_seq = -1
+        self.answering = False
         if self.quiet_timer:
             self.quiet_timer.cancel()
             self.quiet_timer = None

@@ -32,6 +32,12 @@ $("start").onclick = () => { stopAudio(); S.send("start", { lang }); };
 $("next").onclick = () => { stopAudio(); S.send("next"); };
 $("stop").onclick = () => { stopAudio(); S.send("stop"); $("caption").textContent = "Ruk gaya. Phir se shuru karne ke liye Start guiding dabaiye."; };
 $("rec").onchange = (e) => S.send("recordable", { on: e.target.checked });
+$("reset").onclick = () => {
+  stopAudio();
+  S.send("reset", { lang });
+  linkUrl = null; $("link").style.display = "none"; $("choice").style.display = "none";
+  $("caption").textContent = 'Namaste! "Start guiding" dabaiye.';
+};
 $("calib").onclick = () => S.send("calibrate");
 $("x").onclick = () => S.send("quit");
 $("link").onclick = () => { if (linkUrl) S.send("open-link", { url: linkUrl }); };

@@ -98,7 +98,7 @@ def answer_sync(question: str, lang: str, screen: ScreenContext, jpeg: bytes | N
     parts.append(text)
     res = call_gemini(
         parts, model=env("GEMINI_TEXT_MODEL"), key=KEY, schema=Answer, temperature=0.2,
-        timeout_s=TIMEOUT_S, thinking_level="low",
+        timeout_s=TIMEOUT_S, thinking_level="low", backup_key="GEMINI_API_KEY_BACKUP",
         system_instruction=SYSTEM.format(lang_name=LANG_NAME.get(lang, LANG_NAME["hi"])),
     )
     a: Answer = res.parsed

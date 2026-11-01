@@ -80,9 +80,11 @@ def call_gemini(
     max_tries: int | None = None,
     system_instruction: str | None = None,
     thinking_level: str | None = None,
+    backup_key: str | None = None,
 ) -> LLMResult:
     """Call `model` (up to `max_tries`, default GEMINI_MAX_TRIES, on 429/5xx/timeout), then each GEMINI_FALLBACK_MODELS entry.
 
+    `backup_key`: env var name of a second key, tried once (same models) if every model failed on `key`.
     `thinking_level` ("minimal" | "low" | ...) caps Gemini 3 thinking; vision uses "low" (~7 s → ~2.5 s).
     `schema` may be a pydantic model class (parsed into `.parsed`) or any type the SDK accepts
     as response_schema (e.g. list[Model]).
@@ -140,4 +142,9 @@ def call_gemini(
                 delay = (2 ** (attempt - 1)) + random.random()
             if attempt < tries:
                 time.sleep(min(delay, max_backoff_s))
+    if backup_key and backup_key != key and env_required(backup_key):
+        log.warning("gemini all models failed on key=%s, retrying on key=%s", key, backup_key)
+        return call_gemini(parts, model, backup_key, schema, fallback=fallback, temperature=temperature, timeout_s=timeout_s,
+                           max_backoff_s=max_backoff_s, max_tries=max_tries, system_instruction=system_instruction,
+                           thinking_level=thinking_level)
     raise LLMError(redact(f"all models failed ({', '.join(models)}); last: {last_err}"))

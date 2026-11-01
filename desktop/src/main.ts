@@ -308,6 +308,7 @@ async function tick() {
 // ---------- IPC from pill ----------
 ipcMain.on("start", (_e, { lang }) => { wsSend({ type: "start", lang }); });
 ipcMain.on("stop", () => { wsSend({ type: "stop" }); setCapture("off"); });
+ipcMain.on("reset", (_e, { lang }) => { wsSend({ type: "reset", lang }); setCapture("off"); }); // demo reset
 ipcMain.on("next", () => { wsSend({ type: "next" }); forceFrame = true; if (captureMode === "on") tick(); });
 ipcMain.on("ask", (_e, { audio_b64, lang }) => wsSend({ type: "ask", audio_b64, lang }));
 ipcMain.on("lang", (_e, { lang }) => wsSend({ type: "lang", lang }));

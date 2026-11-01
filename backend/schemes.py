@@ -230,7 +230,8 @@ LANG_NAME = {"hi": "Hindi", "en": "simple Indian English", "gu": "Gujarati"}
 
 def _call(parts: list, schema, system: str):
     return call_gemini(parts, model=env("GEMINI_TEXT_MODEL"), key=KEY, schema=schema, temperature=0.1,
-                       timeout_s=TIMEOUT_S, thinking_level="low", system_instruction=system).parsed
+                       timeout_s=TIMEOUT_S, thinking_level="low", system_instruction=system,
+                       backup_key="GEMINI_API_KEY_BACKUP").parsed
 
 
 def _brief(s: dict, *fields_: str) -> dict:

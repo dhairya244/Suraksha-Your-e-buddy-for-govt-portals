@@ -7,7 +7,8 @@ Protocol (matches desktop/src/main.ts):
   client → {type:"start", lang} | {type:"frame", frame_id, jpeg_b64, w, h, big_change, browser} | {type:"next"}
            | {type:"stop"} | {type:"lang", lang} | {type:"ask", audio_b64, lang}
   server → {type:"capture", mode} | {type:"highlight", frame_id, bbox, label} | {type:"clear"}
-           | {type:"redact", frame_id, bbox}
+           | {type:"redact", frame_id, bbox} | {type:"transcript", text, lang, final}
+           | {type:"lang", value} | {type:"sources", urls}
            | {type:"say", text, audio_b64?} | {type:"state", value}
 bbox = [ymin, xmin, ymax, xmax] 0–1000 relative to the frame (the client maps it via that frame's crop).
 Frames and audio are processed in memory only; nothing is written to disk or logged.
@@ -24,7 +25,8 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 
 from backend.config import env_int
 from backend.vision import SeenField, VisionResult, detect
-from backend.voice import tts
+from backend.answer import answer
+from backend.voice import stt, tts
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
 log = logging.getLogger("suraksha.server")
@@ -54,7 +56,8 @@ T = {
         "done_visible": "इस हिस्से के सारे खाने भर गए। नीचे स्क्रॉल कीजिए या पेज पर अगला बटन दबाइए।",
         "error": "ध्यान दीजिए, फ़ॉर्म पर गलती दिख रही है: \"{text}\"",
         "stopped": "रुक गई।",
-        "ask_todo": "सवाल-जवाब जल्द आ रहा है। अभी Next दबाकर आगे बढ़िए।",
+        "not_heard": "माफ़ कीजिए, मैं सुन नहीं पाई। बटन दबाकर रखिए और फिर से बोलिए।",
+        "answer_fail": "माफ़ कीजिए, अभी जवाब नहीं मिल पाया। थोड़ी देर में फिर पूछिए।",
         "vision_fail": "स्क्रीन पढ़ने में दिक्कत हुई, फिर से कोशिश कर रही हूँ…",
     },
     "en": {
@@ -69,7 +72,8 @@ T = {
         "done_visible": "Everything visible here is filled. Scroll down or press the next button on the page.",
         "error": "Heads up, the form shows an error: \"{text}\"",
         "stopped": "Stopped.",
-        "ask_todo": "Questions are coming soon. For now, press Next to continue.",
+        "not_heard": "Sorry, I didn't catch that. Hold the button and ask again.",
+        "answer_fail": "Sorry, I couldn't get an answer right now. Please ask again in a moment.",
         "vision_fail": "Had trouble reading the screen, retrying…",
     },
 }
@@ -116,6 +120,8 @@ class Session:
         self.say_seq = 0
         self.closed = False
         self.bg: set[asyncio.Task] = set()  # keep refs to fire-and-forget tasks
+        self.page_title: str | None = None
+        self.target_label: str | None = None
 
     async def send(self, type_: str, **data) -> None:
         if self.closed:
@@ -171,7 +177,9 @@ class Session:
                 await self.send("capture", mode="on")
                 await self.send("state", value="watching")
         elif t == "ask":
-            await self.say(phrase(msg.get("lang") or self.lang, "ask_todo"))
+            task = asyncio.create_task(self.handle_ask(msg))  # don't block frames while answering
+            self.bg.add(task)
+            task.add_done_callback(self.bg.discard)
         elif t == "frame" and self.active and not self.paused:
             try:
                 self.frame = base64.b64decode(msg["jpeg_b64"])
@@ -185,6 +193,30 @@ class Session:
                 self.target = None  # page moved: re-highlight (overlay already cleared itself)
                 self.force = True
         self.maybe_run_vision()
+
+    async def handle_ask(self, msg: dict) -> None:
+        try:
+            wav = base64.b64decode(msg.get("audio_b64") or "")
+        except ValueError:
+            return
+        self.say_seq += 1  # barge-in: drop any guidance audio still being synthesised
+        await self.send("state", value="answering")
+        heard = await stt(wav, msg.get("lang") or self.lang)
+        if not heard:
+            await self.say(phrase(self.lang, "not_heard"))
+            return
+        if heard.lang in T and heard.lang != self.lang:  # user switched language by speaking
+            self.lang = heard.lang
+            await self.send("lang", value=self.lang)
+        await self.send("transcript", text=heard.text, lang=heard.lang, final=True)
+        a = await answer(heard.text, self.lang, self.page_title, self.target_label)
+        if not a:
+            await self.say(phrase(self.lang, "answer_fail"))
+            return
+        await self.say(a.say)
+        if a.sources:
+            await self.send("sources", urls=a.sources[:3])
+        await self.send("state", value="guiding_field" if self.target else ("watching" if self.active else "idle"))
 
     def reset(self) -> None:
         self.paused = False
@@ -246,6 +278,7 @@ class Session:
         await self.apply(result, frame_id)
 
     async def apply(self, r: VisionResult, frame_id: int | None = None) -> None:
+        self.page_title = r.page_title or None
         if not r.is_form or not r.fields:
             self.target = None
             await self.send("clear")
@@ -275,6 +308,7 @@ class Session:
         self.done_said = False
         f = todo[0]
         k = field_key(f)
+        self.target_label = f.label
         await self.send("highlight", frame_id=frame_id, bbox=f.box_2d, label=f.label)  # re-send: position may shift
         if f.sensitive:
             # Privacy pause (PLAYBOOK §16): stop capture before the user types Aadhaar/OTP/password/bank data.

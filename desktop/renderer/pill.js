@@ -105,3 +105,5 @@ S.on("capture", ({ mode }) => {
 });
 S.on("status", ({ text }) => status(text));
 S.on("recordable", ({ on }) => { $("rec").checked = !!on; });
+S.on("transcript", ({ text }) => { $("caption").textContent = "🗣 " + text; status("Soch rahi hoon…"); });
+S.on("lang", ({ value }) => { lang = value; $("lang").textContent = lang === "hi" ? "हिंदी" : lang === "gu" ? "ગુજરાતી" : "EN"; });

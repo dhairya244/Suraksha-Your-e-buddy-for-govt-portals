@@ -125,7 +125,7 @@ function connect() {
       case "clear": clearOverlay(); break;
       case "redact": { const fr = frameRects.get(msg.frame_id) ?? lastCrop; if (fr) redactRects.push(bboxToRect(msg.bbox, fr)); break; }
       case "capture": setCapture(msg.mode); break;
-      case "say": case "state": case "link": case "transcript": toPill(msg.type, msg); break;
+      case "say": case "state": case "link": case "transcript": case "lang": case "sources": toPill(msg.type, msg); break;
     }
   });
 }

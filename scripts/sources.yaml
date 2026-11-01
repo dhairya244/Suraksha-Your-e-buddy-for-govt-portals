@@ -157,6 +157,8 @@ sources:
 
 # ---------------------------------------------------------------- extract / merge settings
 extract:
+  # pages extract.py never sends to Gemini (handled by extract_catalog.py instead)
+  skip_urls: ['SugamDGAbhiyanServices\.aspx#lang_gu$']
   # record kinds extract.py asks Gemini for, per source
   kinds:
     digital_gujarat: [service, portal]
@@ -203,3 +205,23 @@ portal_ids:
 # merge.py: services never written to data/services.json (off-topic for the demo)
 merge:
   exclude_service_ids: [central_challan_correction_request, central_procedure_to_request_fvu]
+
+# merge.py: common Hindi / English / romanised names users say. Search aliases only, never facts.
+aliases:
+  gj_income_certificate: [income certificate, aay praman patra, aay praman, आय प्रमाण पत्र, आय प्रमाणपत्र, aavak no dakhlo, aavak praman patra, આવકનો દાખલો]
+  gj_income_certificate_panchayat: [panchayat income certificate, gram panchayat income certificate, ग्राम पंचायत आय प्रमाण पत्र]
+  gj_application_for_new_ration_card: [new ration card, ration card, राशन कार्ड, नया राशन कार्ड]
+  gj_addition_of_name_in_ration_card: [add name in ration card, राशन कार्ड में नाम जोड़ना]
+  gj_removal_of_name_from_ration_card: [remove name from ration card, राशन कार्ड से नाम हटाना]
+  gj_application_for_duplicate_ration_card: [duplicate ration card, डुप्लीकेट राशन कार्ड]
+  gj_application_for_separate_ration_card: [separate ration card, अलग राशन कार्ड]
+  gj_change_in_ration_card: [ration card correction, राशन कार्ड में बदलाव]
+  gj_non_creamy_layer_certificate_for_gujarat_government: [non creamy layer certificate, NCL certificate, नॉन क्रीमी लेयर प्रमाण पत्र]
+  gj_non_creamy_layer_certificate_for_central_government: [central NCL certificate, केंद्र सरकार नॉन क्रीमी लेयर प्रमाण पत्र]
+  gj_eligibility_certificate_for_economically_weaker_sections_with_income: [EWS certificate, ईडब्ल्यूएस प्रमाण पत्र]
+  gj_sc_caste_certificate: [SC certificate, SC caste certificate, अनुसूचित जाति प्रमाण पत्र]
+  gj_st_scheduled_tribe_caste_certificate: [ST certificate, अनुसूचित जनजाति प्रमाण पत्र]
+  gj_sebc_certificate: [SEBC certificate]
+  central_pan_new: [PAN card, new PAN card, pan card banwana, पैन कार्ड, नया पैन कार्ड]
+  central_epan_instant: [e-PAN, instant PAN, ई-पैन, तुरंत पैन]
+  central_pan_correction: [PAN correction, PAN card correction, पैन कार्ड सुधार]

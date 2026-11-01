@@ -18,6 +18,7 @@ from shared.schemas import UNKNOWN, Fact, Service, ServiceDetails
 
 LISTING_URL = "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx"
 OUT_NAME = "zz_catalog.json"  # merge.py reads it first: official names win, page details fill in
+POSTBACK_RE = re.compile(r"(?m)^#####\s+(.+)\n\n\[Read More\]\(javascript:__doPostBack\('([^']+)'")
 DEPT_RE = re.compile(r"(Directorate,?\s+(?:Scheduled|Developing) Caste Welfare|District Social Welfare Officer)")
 
 
@@ -40,6 +41,13 @@ def main() -> None:
     meta = next(m for m in reversed(read_jsonl(src.meta_path)) if m["url"] == LISTING_URL and m.get("status") == "ok")
     md = (src.dir / meta["file"]).read_text(encoding="utf-8")
     names = [n.strip() for n in re.findall(r"(?m)^#####\s+(.+)$", md) if n.strip() != "(Online)"]
+    # Gujarati UI of the same page: pair names through the shared Read More postback target (ctlNN)
+    gu_names = {}
+    gu = next((m for m in reversed(read_jsonl(src.meta_path)) if m["url"] == LISTING_URL + "#lang_gu" and m.get("status") == "ok"), None)
+    if gu:
+        en_ctl = dict(POSTBACK_RE.findall(md))
+        gu_ctl = {t: n.strip() for n, t in POSTBACK_RE.findall((src.dir / gu["file"]).read_text(encoding="utf-8"))}
+        gu_names = {n.strip(): gu_ctl.get(t) for n, t in en_ctl.items()}
     page_source_id = f"{src.id}_{meta['file'][:10]}"
 
     services, seen = [], set()
@@ -49,7 +57,7 @@ def main() -> None:
             raise SystemExit(f"duplicate id {sid} for {name!r}")
         seen.add(sid)
         dept = DEPT_RE.search(name)
-        s = Service(service_id=sid, name=name, alternate_names=[], department=dept.group(1) if dept else UNKNOWN,
+        s = Service(service_id=sid, name=name, alternate_names=[gu_names[name]] if gu_names.get(name) else [], department=dept.group(1) if dept else UNKNOWN,
                     government_level="state", state="Gujarat", category=category(name), application_mode="online",
                     official_url=LISTING_URL, portal_id="digital_gujarat", source_ids=[page_source_id])
         d = ServiceDetails(service_id=sid, eligibility=[], documents=[], fees=[], timeline=Fact.unknown(),
@@ -61,9 +69,9 @@ def main() -> None:
         "content_hash": meta["content_hash"], "title": "Sugam Digital Gujarat", "fetched_at": meta["fetched_at"],
         "model": None, "extracted_at": now_iso(), "relevant": True, "services": services, "portals": [], "schemes": [],
     })
-    print(f"== catalog: {len(services)} Sugam services → data/extracted/{src.id}/{OUT_NAME}")
+    print(f"== catalog: {len(services)} Sugam services · {sum(bool(v) for v in gu_names.values())} Gujarati names → data/extracted/{src.id}/{OUT_NAME}")
     for x in services:
-        print(f"   {x['service']['service_id']:<70} {x['service']['department'][:40]}")
+        print(f"   {x['service']['service_id'][:60]:<60} {(x['service']['alternate_names'] or ['-'])[0]}")
 
 
 if __name__ == "__main__":

@@ -238,9 +238,12 @@ def main() -> None:
     done = n = 0
     counts = {"services": 0, "portals": 0, "schemes": 0, "irrelevant": 0, "failed": 0, "skipped": 0, "low_quality": 0}
     last_call = 0.0
+    skip_rx = [re.compile(p) for p in load_config()["extract"].get("skip_urls", [])]
     for url, m in pages.items():
         if args.limit is not None and n >= args.limit:
             break
+        if any(r.search(url) for r in skip_rx):
+            continue
         out_path = out_dir / f"{m['file'][:-3]}.json"
         if out_path.exists() and not args.force:
             import json

@@ -7,14 +7,16 @@
   "title": "Sugam Digital Gujarat",
   "fetched_at": "2026-11-01T10:24:23+00:00",
   "model": null,
-  "extracted_at": "2026-11-01T10:52:37+00:00",
+  "extracted_at": "2026-11-01T11:14:39+00:00",
   "relevant": true,
   "services": [
     {
       "service": {
         "service_id": "gj_caste_certificate_sc_directorate_scheduled_caste_welfare",
         "name": "Caste Certificate (SC) Directorate, Scheduled Caste Welfare (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "જાતિ પ્રમાણપત્ર (SC) નિયામક, અનુસૂચિત જાતિ કલ્યાણ (સુગમ)"
+        ],
         "department": "Directorate, Scheduled Caste Welfare",
         "government_level": "state",
         "state": "Gujarat",
@@ -57,7 +59,9 @@
       "service": {
         "service_id": "gj_caste_certificate_sc_directorate_scheduled_caste_welfare_alternate_authority",
         "name": "Caste Certificate (SC) Directorate, Scheduled Caste Welfare (Alternate Authority) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "જાતિ પ્રમાણપત્ર (SC) નિયામક, અનુસૂચિત જાતિ કલ્યાણ (વૈકલ્પિક સત્તાધિકારી) (સુગમ)"
+        ],
         "department": "Directorate, Scheduled Caste Welfare",
         "government_level": "state",
         "state": "Gujarat",
@@ -100,7 +104,9 @@
       "service": {
         "service_id": "gj_caste_certificate_sc_directorate_scheduled_caste_welfare_hostel",
         "name": "Caste Certificate (SC) Directorate, Scheduled Caste Welfare (Hostel) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "જાતિ પ્રમાણપત્ર (SC) નિયામક, અનુસૂચિત જાતિ કલ્યાણ (હોસ્ટેલ) (સુગમ)"
+        ],
         "department": "Directorate, Scheduled Caste Welfare",
         "government_level": "state",
         "state": "Gujarat",
@@ -143,7 +149,9 @@
       "service": {
         "service_id": "gj_caste_certificate_sc_district_social_welfare_officer_panchyat_rural",
         "name": "Caste Certificate (SC), District Social Welfare Officer (Panchyat) (Rural) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "જાતિ પ્રમાણપત્ર (SC), જિલ્લા સમાજ કલ્યાણ અધિકારી (પંચાયત) (ગ્રામીણ) (સુગમ)"
+        ],
         "department": "District Social Welfare Officer",
         "government_level": "state",
         "state": "Gujarat",
@@ -186,7 +194,9 @@
       "service": {
         "service_id": "gj_caste_certificate_sc_directorate_scheduled_caste_welfare_municipal_corporation",
         "name": "Caste Certificate (SC) Directorate, Scheduled Caste Welfare (Municipal Corporation) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "જાતિ પ્રમાણપત્ર (SC) નિયામક, અનુસૂચિત જાતિ કલ્યાણ (મહાનગરપાલિકા) (સુગમ)"
+        ],
         "department": "Directorate, Scheduled Caste Welfare",
         "government_level": "state",
         "state": "Gujarat",
@@ -229,7 +239,9 @@
       "service": {
         "service_id": "gj_caste_certificate_sebc_directorate_developing_caste_welfare",
         "name": "Caste Certificate (SEBC) Directorate, Developing Caste Welfare (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "જાતિ પ્રમાણપત્ર (SEBC) નિયામક, વિકસતી જાતિ કલ્યાણ (સુગમ)"
+        ],
         "department": "Directorate, Developing Caste Welfare",
         "government_level": "state",
         "state": "Gujarat",
@@ -272,7 +284,9 @@
       "service": {
         "service_id": "gj_nomadic_tribes_and_denotified_tribes_caste_certificate_rural",
         "name": "Nomadic Tribes and Denotified Tribes Caste Certificate (Rural) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "વિચરતી અને વિમુક્ત જાતિ માટેનું પ્રમાણપત્ર (ગ્રામ્ય) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -315,7 +329,9 @@
       "service": {
         "service_id": "gj_unreserved_caste_certificate_rural",
         "name": "Unreserved Caste Certificate (Rural) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "બિન અનામત વર્ગો માટે જ્ઞાતિનું પ્રમાણપત્ર (ગ્રામ્ય) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -358,7 +374,9 @@
       "service": {
         "service_id": "gj_unreserved_caste_certificate_urban",
         "name": "Unreserved Caste Certificate (Urban) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "બિન અનામત વર્ગો માટે જ્ઞાતિનું પ્રમાણપત્ર (શહેરી) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -401,7 +419,9 @@
       "service": {
         "service_id": "gj_nomadic_tribes_and_denotified_tribes_caste_certificate_urban",
         "name": "Nomadic Tribes and Denotified Tribes Caste Certificate (Urban) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "વિચરતી અને વિમુક્ત જાતિ માટેનું પ્રમાણપત્ર (શહેરી) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -444,7 +464,9 @@
       "service": {
         "service_id": "gj_unreserved_caste_certificate_directorate_developing_caste_welfare",
         "name": "Unreserved Caste Certificate Directorate, Developing Caste Welfare (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "બિન અનામત વર્ગો માટે જ્ઞાતિનું પ્રમાણપત્ર નિયામક, વિકસતી જાતિ કલ્યાણ (સુગમ)"
+        ],
         "department": "Directorate, Developing Caste Welfare",
         "government_level": "state",
         "state": "Gujarat",
@@ -487,7 +509,9 @@
       "service": {
         "service_id": "gj_eligibility_certificate_for_economically_weaker_sections_with_income_directorate",
         "name": "Eligibility Certificate for Economically Weaker Sections (With Income) Directorate, Developing Caste Welfare (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "આર્થિક રીતે નબળા વર્ગો માટે પાત્રતા પ્રમાણપત્ર (આવક સાથે) નિયામક, વિકસતી જાતિ કલ્યાણ (સુગમ)"
+        ],
         "department": "Directorate, Developing Caste Welfare",
         "government_level": "state",
         "state": "Gujarat",
@@ -530,7 +554,9 @@
       "service": {
         "service_id": "gj_nomadic_tribes_and_denotified_tribes_caste_certificate_directorate_developing_ca",
         "name": "Nomadic Tribes and Denotified Tribes Caste Certificate Directorate, Developing Caste Welfare (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "વિચરતી અને વિમુક્ત જાતિ માટેનું પ્રમાણપત્ર નિયામક, વિકસતી જાતિ કલ્યાણ (સુગમ)"
+        ],
         "department": "Directorate, Developing Caste Welfare",
         "government_level": "state",
         "state": "Gujarat",
@@ -573,7 +599,9 @@
       "service": {
         "service_id": "gj_sebc_certificate",
         "name": "SEBC Certificate (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "સામાજિક અને શૈક્ષણિક રીતે પછાતવર્ગ નું પ્રમાણપત્ર (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -616,7 +644,9 @@
       "service": {
         "service_id": "gj_sc_caste_certificate",
         "name": "SC Caste Certificate (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "જ્ઞાતી (SC) નો દાખલો આપવા બાબત (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -659,7 +689,9 @@
       "service": {
         "service_id": "gj_eligibility_certificate_for_economically_weaker_sections_with_income",
         "name": "Eligibility Certificate for Economically Weaker Sections (With Income) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "આર્થિક રીતે નબળા વર્ગો માટે પાત્રતા પ્રમાણપત્ર (આવક સાથે) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -702,7 +734,9 @@
       "service": {
         "service_id": "gj_income_certificate_panchayat",
         "name": "Income Certificate (Panchayat) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "આવકનો દાખલો આપવા બાબત (ગ્રામીણ) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -745,7 +779,9 @@
       "service": {
         "service_id": "gj_sebc_certificate_panchayat",
         "name": "SEBC Certificate (Panchayat) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "સામાજિક અને શૈક્ષણિક રીતે પછાતવર્ગ નું પ્રમાણપત્ર આપવા બાબત (ગ્રામીણ) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -788,7 +824,9 @@
       "service": {
         "service_id": "gj_eligibility_certificate_for_economically_weaker_sections_with_income_panchayat",
         "name": "Eligibility Certificate for Economically Weaker Sections (With Income) - (Panchayat) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "આર્થિક રીતે નબળા વર્ગો માટે પાત્રતા પ્રમાણપત્ર આપવા બાબત (આવક સાથે) - (ગ્રામીણ) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -831,7 +869,9 @@
       "service": {
         "service_id": "gj_non_creamy_layer_certificate_for_gujarat_government_panchayat",
         "name": "Non-Creamy Layer Certificate For Gujarat Government (Panchayat) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "નોન-ક્રિમી-લેયર અંગેનું પ્રમાણપત્ર આપવા બાબત (ગુજરાત સરકાર માટે) - (ગ્રામીણ) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -874,7 +914,9 @@
       "service": {
         "service_id": "gj_st_scheduled_tribe_caste_certificate",
         "name": "ST (Scheduled Tribe) Caste Certificate (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "જ્ઞાતી (ST) (અનુસૂચિત જનજાતિ) નો દાખલો આપવા બાબત (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -917,7 +959,9 @@
       "service": {
         "service_id": "gj_sc_scheduled_caste_caste_certificate_panchayat",
         "name": "SC (Scheduled Caste) Caste Certificate (Panchayat) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "જ્ઞાતી (SC) (અનુસૂચિત જાતિ) નો દાખલો આપવા બાબત (ગ્રામીણ) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -960,7 +1004,9 @@
       "service": {
         "service_id": "gj_application_for_new_ration_card",
         "name": "Application for New Ration Card (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "નવીન રેશનકાર્ડ મેળવવા અંગે (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1003,7 +1049,9 @@
       "service": {
         "service_id": "gj_non_creamy_layer_certificate_for_gujarat_government",
         "name": "Non-Creamy Layer Certificate For Gujarat Government (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "નોન-ક્રિમી-લેયર અંગેનું પ્રમાણપત્ર આપવા બાબત (ગુજરાત સરકાર માટે) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1046,7 +1094,9 @@
       "service": {
         "service_id": "gj_addition_of_name_in_ration_card",
         "name": "Addition of Name in Ration Card (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "રેશનકાર્ડમાં નામ ઉમેરવુ (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1089,7 +1139,9 @@
       "service": {
         "service_id": "gj_income_certificate",
         "name": "Income Certificate (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "આવકનો દાખલો આપવા બાબત (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1132,7 +1184,9 @@
       "service": {
         "service_id": "gj_removal_of_name_from_ration_card",
         "name": "Removal of Name from Ration Card (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "રેશન કાર્ડમાંથી નામ રદ કર​વુ (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1175,7 +1229,9 @@
       "service": {
         "service_id": "gj_application_for_separate_ration_card",
         "name": "Application for Separate Ration Card (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "અલગ રેશનકાર્ડ મેળવવા અંગે (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1218,7 +1274,9 @@
       "service": {
         "service_id": "gj_change_in_ration_card",
         "name": "Change in Ration Card (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "રેશનકાર્ડમાં સુધારો કર​વો (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1261,7 +1319,9 @@
       "service": {
         "service_id": "gj_application_for_duplicate_ration_card",
         "name": "Application for Duplicate Ration Card (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "ડુપ્લીકૅટ રેશનકાર્ડ મેળવવા માટે (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1304,7 +1364,9 @@
       "service": {
         "service_id": "gj_religious_minority_certificate_directorate_developing_caste_welfare",
         "name": "Religious Minority Certificate Directorate Developing Caste Welfare (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "ઘાર્મિક લઘુમતી નું પ્રમાણપત્ર નિયામક, વિકસતી જાતિ કલ્યાણ (સુગમ)"
+        ],
         "department": "Directorate Developing Caste Welfare",
         "government_level": "state",
         "state": "Gujarat",
@@ -1347,7 +1409,9 @@
       "service": {
         "service_id": "gj_religious_minority_certificate_urban",
         "name": "Religious Minority Certificate (Urban) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "ઘાર્મિક લઘુમતી નું પ્રમાણપત્ર (શહેરી) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1390,7 +1454,9 @@
       "service": {
         "service_id": "gj_religious_minority_certificate_rural",
         "name": "Religious Minority Certificate (Rural) (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "ઘાર્મિક લઘુમતી નું પ્રમાણપત્ર (ગ્રામીણ) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1433,7 +1499,9 @@
       "service": {
         "service_id": "gj_application_for_getting_copy",
         "name": "Application For Getting Copy (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "નકલ (Copy) મેળવવા માટેની વિનંતી (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1476,7 +1544,9 @@
       "service": {
         "service_id": "gj_other_ready_affidavit",
         "name": "Other Ready Affidavit (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "અન્ય તૈયાર સોગંધનામું આપવા બાબત (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",
@@ -1519,7 +1589,9 @@
       "service": {
         "service_id": "gj_non_creamy_layer_certificate_for_central_government",
         "name": "Non-Creamy layer Certificate For Central Government (Sugam)",
-        "alternate_names": [],
+        "alternate_names": [
+          "નોન-ક્રિમી-લેયર અંગેનું પ્રમાણપત્ર (ભારત સરકાર માટે) (સુગમ)"
+        ],
         "department": "unknown",
         "government_level": "state",
         "state": "Gujarat",

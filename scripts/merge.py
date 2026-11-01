@@ -160,6 +160,13 @@ def main() -> None:
                 schemes[scheme_id] = s
                 used_pages[psid] = (sid, doc)
 
+    # search aliases from sources.yaml (names only, no facts)
+    for sid_, names in (cfg.get("aliases") or {}).items():
+        if sid_ in services:
+            cur = services[sid_]
+            have = {norm(n) for n in [cur["name"], *cur["alternate_names"]]}
+            cur["alternate_names"] += [n for n in names if norm(n) not in have and not have.add(norm(n))]
+
     # services → source ids are page ids; build Source records for every page we used
     src_records = {}
     for psid, (sid, doc) in used_pages.items():

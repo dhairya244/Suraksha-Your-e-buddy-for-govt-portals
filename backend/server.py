@@ -29,7 +29,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from backend.config import env_int
 from backend.vision import PageType, SeenField, VisionResult, detect
 from backend.answer import ScreenContext, answer
-from backend.knowledge import form_field
+from backend.knowledge import form_field, link_only_service
 from backend.router import Route, route
 from backend.schemes import SchemeDialog
 from backend.schemes import step as scheme_step
@@ -83,6 +83,7 @@ T = {
         "switch_yes": "ठीक है, अब {name}।",
         "switch_no": "ठीक है, {name} जारी रखते हैं।",
         "back": "चलिए, वापस {name} पर — {step}।",
+        "link_only": "{name} के लिए मेरे पास अभी जाँची हुई जानकारी नहीं है। इसकी आधिकारिक वेबसाइट का लिंक पिल में दे दिया है।",
         "nav": "{step}।",
         "goto_list": "इसके लिए Sugam सेवाओं की सूची खोलिए और \"{name}\" चुनिए।",
         "ask_goal": "आपको कौन सी सेवा चाहिए? माइक बटन दबाकर बताइए, जैसे \"आय प्रमाण पत्र बनाना है\"।",
@@ -118,6 +119,7 @@ T = {
         "switch_yes": "Okay, now the {name}.",
         "switch_no": "Okay, continuing with the {name}.",
         "back": "Back to the {name} — {step}.",
+        "link_only": "I don't have verified details for {name} yet. I've put its official website link in the pill.",
         "nav": "Please {step}.",
         "goto_list": "For this, open the Sugam services list and choose \"{name}\".",
         "ask_goal": "Which service do you need? Hold the mic button and tell me, e.g. \"I want an income certificate\".",
@@ -135,6 +137,7 @@ def space_scripts(text: str) -> str:
     return _JOIN_RE.sub(" ", text)
 
 
+HOWTO_RE = re.compile(r"\b(kaise|kese|how|apply|kahan|kahaan|where|register|banwa\w*|bana\w*|bhar\w*|file)\b|कैसे|कहाँ|कहां|बनवा|बना|भर", re.I)
 _BACK_RE = re.compile(r"[^।.!?]*(चलिए,? वापस|back to the)[^।.!?]*[।.!?]?\s*", re.I)
 
 
@@ -416,6 +419,17 @@ class Session:
         if r == Route.need:
             await self.on_need(*svc)
             return
+        lo = link_only_service(text) if r == Route.answer else None
+        if lo and (is_need(text) or HOWTO_RE.search(text)):  # named service with only an official link: say so, give the link
+            said = phrase(lang, "link_only", name=lo["name"])
+            text_out = f"{said} {back}" if self.task.goal and (back := self.back_line()) else said
+            self.task.last_topic = f"{lo['name']} (official link only)"
+            await self.send("link", url=lo["official_url"], title=lo["name"])
+            await self.send("sources", urls=[lo["official_url"]])
+            await self.say(text_out, answer=True)
+            self.remember("assistant", said)
+            await self.send("state", value="guiding_field" if self.tracker.current() else ("watching" if self.active else "idle"))
+            return
         if r == Route.next:
             await self.handle({"type": "next"})
             return
@@ -459,6 +473,8 @@ class Session:
         self.remember("assistant", said)  # without the back line, so the model never learns to copy it
         if a.sources:
             await self.send("sources", urls=a.sources[:3])
+        if lo and not a.about_goal:  # a side question about a link-only service (not "ITR copy for this form?")
+            await self.send("link", url=lo["official_url"], title=lo["name"])
         await self.send("state", value="guiding_field" if self.tracker.current() else ("watching" if self.active else "idle"))
 
     def back_line(self) -> str:

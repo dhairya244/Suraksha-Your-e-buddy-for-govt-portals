@@ -78,11 +78,32 @@ def form_field(label: str, process_id: str = DEFAULT_SERVICE) -> dict | None:
     return None
 
 
+FACT_KEYS = ("documents", "steps", "eligibility", "fees", "timeline")
+
+
+def has_facts(service_id: str) -> bool:
+    det = service_details(service_id)
+    return bool(det) and any(det.get(k) for k in FACT_KEYS)
+
+
+def link_only_service(text: str) -> dict | None:
+    """A service in services.json the user names that has an official_url but no facts yet (driving licence, ITR, …)."""
+    t = text.lower()
+    for sid, svc in services().items():
+        if not svc.get("official_url") or has_facts(sid):
+            continue
+        for n in [svc.get("name", ""), *svc.get("alternate_names", [])]:
+            n = n.strip().lower()
+            if n and re.search(rf"(?<![\w]){re.escape(n)}(?![\w])", t):
+                return svc
+    return None
+
+
 def _service_matches(topic: str, sid: str, svc: dict) -> bool:
     hay = f"{sid} {svc.get('name', '')} {' '.join(svc.get('alternate_names', []))}".lower()
     return {
         "pan": "pan" in sid,
-        "itr": svc.get("category") == "tax_return" and "pan" not in sid,
+        "itr": (svc.get("category") == "tax_return" or sid == "central_itr_filing") and "pan" not in sid,
         "driving_licence": "licen" in hay or "driving" in hay,
         "ration_card": "ration" in hay,
         "caste": "caste" in hay and "eligibility" not in hay,

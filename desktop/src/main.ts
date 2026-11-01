@@ -25,6 +25,9 @@ let capturing = false;
 let recordable = false; // "Show in recordings": overlay + pill visible to screenshots/recording/screen share
 let highlightRect: Rect | null = null; // display-relative DIP rect currently drawn
 let lastMask: Uint8Array | null = null;
+// Sensitive fields (Aadhaar/OTP/password/bank) the user has filled: painted over in every frame before
+// it leaves the laptop. Display-relative DIP. Dropped on scroll/page change (the field moved).
+let redactRects: Rect[] = [];
 
 const renderer = (f: string) => path.join(__dirname, "..", "renderer", f);
 const preload = path.join(__dirname, "preload.js");
@@ -120,6 +123,7 @@ function connect() {
     switch (msg.type) {
       case "highlight": showHighlight(msg); break;
       case "clear": clearOverlay(); break;
+      case "redact": { const fr = frameRects.get(msg.frame_id) ?? lastCrop; if (fr) redactRects.push(bboxToRect(msg.bbox, fr)); break; }
       case "capture": setCapture(msg.mode); break;
       case "say": case "state": case "link": case "transcript": toPill(msg.type, msg); break;
     }
@@ -200,6 +204,7 @@ function setCapture(mode: "on" | "off" | "paused") {
     lastGray = null;
     lastCrop = null;
     frameRects.clear();
+    redactRects = [];
     clearOverlay();
   }
 }
@@ -240,6 +245,19 @@ function ownUiMask(crop: Rect): Uint8Array {
   return m;
 }
 
+// Paint rects (display DIP, +8 px) solid grey on an image that covers `crop`.
+function redact(img: Electron.NativeImage, crop: Rect, rects: Rect[]): Electron.NativeImage {
+  const { width: W, height: H } = img.getSize();
+  const bmp = Buffer.from(img.toBitmap()); // BGRA
+  const kx = W / crop.width, ky = H / crop.height;
+  for (const r of rects) {
+    const x0 = Math.max(0, Math.floor((r.x - 8 - crop.x) * kx)), x1 = Math.min(W, Math.ceil((r.x + r.width + 8 - crop.x) * kx));
+    const y0 = Math.max(0, Math.floor((r.y - 8 - crop.y) * ky)), y1 = Math.min(H, Math.ceil((r.y + r.height + 8 - crop.y) * ky));
+    for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) { const i = (y * W + x) * 4; bmp[i] = bmp[i + 1] = bmp[i + 2] = 0x80; bmp[i + 3] = 0xff; }
+  }
+  return nativeImage.createFromBitmap(bmp, { width: W, height: H });
+}
+
 async function tick() {
   if (captureMode !== "on" || capturing) return;
   capturing = true;
@@ -249,6 +267,7 @@ async function tick() {
     const crop = captureRect();
     if (!sameRect(crop, lastCrop)) { // browser moved/resized/switched: old boxes and diff baseline are stale
       if (lastCrop) clearOverlay();
+      redactRects = [];
       lastGray = null;
       forceFrame = true;
     }
@@ -264,12 +283,13 @@ async function tick() {
     }
     lastMask = mask;
     const big = !!lastGray && counted > 0 && changedCells / counted > BIG_DIFF_FRAC;
-    if (big) clearOverlay(); // scroll / new page
+    if (big) { clearOverlay(); redactRects = []; } // scroll / new page
     if (lastGray && changedCells === 0 && !forceFrame) return;
     forceFrame = false;
     lastGray = g;
     lastCrop = crop;
-    const out = img.getSize().width > MAX_FRAME_W ? img.resize({ width: MAX_FRAME_W, quality: "best" }) : img;
+    let out = img.getSize().width > MAX_FRAME_W ? img.resize({ width: MAX_FRAME_W, quality: "best" }) : img;
+    if (redactRects.length) out = redact(out, crop, redactRects);
     const s = out.getSize();
     const frame_id = ++frameSeq;
     frameRects.set(frame_id, crop);
@@ -333,5 +353,3 @@ app.whenReady().then(() => {
 });
 
 app.on("window-all-closed", () => app.quit());
-// silence unused import warning in strict builds
-void nativeImage;

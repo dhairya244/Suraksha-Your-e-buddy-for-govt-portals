@@ -7,6 +7,7 @@ Protocol (matches desktop/src/main.ts):
   client → {type:"start", lang} | {type:"frame", frame_id, jpeg_b64, w, h, big_change, browser} | {type:"next"}
            | {type:"stop"} | {type:"lang", lang} | {type:"ask", audio_b64, lang}
   server → {type:"capture", mode} | {type:"highlight", frame_id, bbox, label} | {type:"clear"}
+           | {type:"redact", frame_id, bbox}
            | {type:"say", text, audio_b64?} | {type:"state", value}
 bbox = [ymin, xmin, ymax, xmax] 0–1000 relative to the frame (the client maps it via that frame's crop).
 Frames and audio are processed in memory only; nothing is written to disk or logged.
@@ -110,6 +111,7 @@ class Session:
         self.said_errors: set[str] = set()
         self.last_no_form_t = 0.0
         self.done_said = False
+        self.paused = False  # privacy pause: no frames while the user fills a sensitive field
 
     async def send(self, type_: str, **data) -> None:
         await self.ws.send_text(json.dumps({"type": type_, **data}, ensure_ascii=False))
@@ -144,9 +146,13 @@ class Session:
             self.target = None
             self.force = True
             await self.send("clear")
+            if self.paused:  # user finished the private field → resume watching
+                self.paused = False
+                await self.send("capture", mode="on")
+                await self.send("state", value="watching")
         elif t == "ask":
             await self.say(phrase(msg.get("lang") or self.lang, "ask_todo"))
-        elif t == "frame" and self.active:
+        elif t == "frame" and self.active and not self.paused:
             try:
                 self.frame = base64.b64decode(msg["jpeg_b64"])
             except (KeyError, ValueError):
@@ -161,6 +167,7 @@ class Session:
         self.maybe_run_vision()
 
     def reset(self) -> None:
+        self.paused = False
         if self.vision_task and not self.vision_task.done():
             self.vision_task.cancel()
         self.vision_task = None
@@ -249,6 +256,17 @@ class Session:
         f = todo[0]
         k = field_key(f)
         await self.send("highlight", frame_id=frame_id, bbox=f.box_2d, label=f.label)  # re-send: position may shift
+        if f.sensitive:
+            # Privacy pause (PLAYBOOK §16): stop capture before the user types Aadhaar/OTP/password/bank data.
+            # The box stays; Next resumes capture and moves on.
+            self.target = k
+            self.paused = True
+            await self.send("redact", frame_id=frame_id, bbox=f.box_2d)  # client blanks it in later frames
+            self.frame = None
+            await self.send("capture", mode="paused")
+            await self.send("state", value="paused_secure")
+            await self.say(field_text(self.lang, f))
+            return
         if k != self.target:
             self.target = k
             await self.send("state", value="guiding_field")

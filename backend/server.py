@@ -29,6 +29,7 @@ from backend.config import env_int
 from backend.vision import PageType, SeenField, VisionResult, detect
 from backend.answer import ScreenContext, answer
 from backend.knowledge import form_field
+from backend.router import Route, route
 from backend.tracker import Tracker
 from backend.voice import stt, tts
 
@@ -139,13 +140,9 @@ def field_text(lang: str, f: SeenField) -> str:
 
 REGISTER_RE = re.compile(r"new registration|register|sign ?up|નોંધણી|पंजीकरण|रजिस्टर", re.I)
 LOGIN_BTN_RE = re.compile(r"^\s*(citizen )?log ?in|sign ?in|login ?/ ?register|લૉગિન|લોગિન|लॉगिन", re.I)
-YES_RE = re.compile(r"\b(haan|han|haa|ha|yes|ji|jee)\b|हाँ|हां|जी|હા", re.I)
-HAVE_RE = re.compile(r"\bhai\b|है|છે|\bhave\b", re.I)  # "account hai" = yes, unless a "no" word is present
-NO_RE = re.compile(r"\b(nahi|nahin|nai|no|nope|na)\b|नहीं|नही|(?<!\S)ना(?!\S)|ના|નથી", re.I)
 REGISTRATION_QUESTION = "How do I register a new citizen account on Digital Gujarat? Give the first 2-3 steps."
 
 
-REPEAT_RE = re.compile(r"repeat|again|dobara|phir se|fir se|फिर से|दोबारा|दुबारा|ફરી", re.I)
 CHECK_IN_POLL_S = 5.0
 
 
@@ -283,17 +280,22 @@ class Session:
     async def handle_question(self, text: str, lang: str) -> None:
         if not text.strip():
             return
-        heard_text = text
-        if self.pending_choice == "has_account":  # spoken Haan / Nahi
-            no = bool(NO_RE.search(heard_text))
-            yes = bool(YES_RE.search(heard_text)) or (not no and bool(HAVE_RE.search(heard_text)))
-            if yes != no:
-                await self.on_choice("has_account", "yes" if yes else "no")
-                return
-        cur = self.tracker.current()
-        if cur and REPEAT_RE.search(heard_text) and len(heard_text) < 40:  # "phir se batao"
+        r = route(text, pending_yes_no=self.pending_choice == "has_account", scheme_active=False)
+        log.info("route=%s", r.value)
+        if r in (Route.yes, Route.no):
+            await self.on_choice("has_account", r.value)
+            return
+        if r == Route.next:
+            await self.handle({"type": "next"})
+            return
+        if r == Route.repeat:
             await self.explain_current()
             return
+        if r == Route.stop:
+            await self.handle({"type": "stop"})
+            await self.say(phrase(lang, "stopped"))
+            return
+        heard_text = text
         await self.send("state", value="answering")
         a = await answer(heard_text, lang, self.screen_context(), self.last_jpeg)
         if not a:

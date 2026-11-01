@@ -8,6 +8,7 @@ import asyncio
 import json
 import logging
 from dataclasses import dataclass, field
+from typing import Literal
 
 from google.genai import types
 from pydantic import BaseModel, Field
@@ -41,12 +42,21 @@ FACTS:
 - Never ask for or repeat Aadhaar numbers, OTPs, passwords or bank details. Never offer to fill or submit for them.
 - ITR/tax: process guidance only, never tax advice.
 
+QUESTION KINDS (set `kind`):
+- page_question → answer from the screenshot + session state (what to fill/click here, in order).
+- service_question → answer from the context JSON with sources.
+- general / off-topic (weather, jokes, other topics) → one short polite sentence that you can only help with this
+  form and government services, then offer to continue with the current field. No facts, empty sources.
+
 STYLE: spoken aloud — plain everyday words, at most 3 short sentences (a list of up to 6 documents is fine),
 no markdown, no URLs in `say`. Reply in {lang_name}; English names of portal buttons/labels are fine.
-Hindi must be written in Devanagari script only (never romanized Hindi)."""
+Hindi must be written in Devanagari script only (never romanized Hindi). You speak with a female voice:
+use feminine first-person forms (मैं मदद कर सकती हूँ, देख रही हूँ)."""
 
 
 class Answer(BaseModel):
+    kind: Literal["page_question", "service_question", "general"] = Field(
+        description="page_question: about what is on screen; service_question: documents/fees/steps/eligibility/timeline; general: anything else")
     say: str = Field(description="What to speak to the user")
     sources: list[str] = Field(description="source_url values from the context that support the facts in `say`")
     confident: bool

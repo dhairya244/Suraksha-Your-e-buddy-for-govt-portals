@@ -95,11 +95,13 @@ class Task:
     pending_switch: tuple[str, str] | None = None
     step: Step = field(default_factory=lambda: Step("none"))
     last_topic: str | None = None
+    left_form: str | None = None  # title of the form abandoned by a goal switch (not guided any more)
 
     # ------------------------------------------------------------- goal
     def set_goal(self, sid: str, name: str) -> None:
         self.goal, self.goal_name = sid, name
         self.pending_switch = None
+        self.left_form = None
         self.step = Step("none")
 
     def same_family(self, sid: str) -> bool:
@@ -133,10 +135,15 @@ class Task:
         return None
 
     def _goal_card(self, actions: list[Action]) -> Action | None:
+        if self.generic():
+            return None  # several variants (SC / SEBC / Unreserved …): the user picks theirs
         words = CARD_WORDS.get(self.goal or "", [self.goal_name.lower()])
         hits = [a for a in actions if any(w in a.text.lower() for w in words) and not APPLY_RE.search(a.text)]
         exact = [a for a in hits if not any(v in a.text.lower() for v in VARIANT_WORDS)]
         return (exact or hits or [None])[0]
+
+    def generic(self) -> bool:
+        return self.goal_name == "Caste Certificate"
 
     @staticmethod
     def _find(actions: list[Action], rx: re.Pattern) -> Action | None:
@@ -148,6 +155,9 @@ class Task:
         hi = lang != "en"
         if s.kind == "card":
             return f"\"{s.label}\" पर क्लिक कीजिए" if hi else f"click \"{s.label}\""
+        if s.kind == "find_card" and self.generic():
+            return ("सूची में अपनी जाति वाला Caste Certificate चुनिए — जैसे SC, SEBC या Unreserved" if hi
+                    else "choose the Caste Certificate for your category in the list — e.g. SC, SEBC or Unreserved")
         if s.kind == "find_card":
             return (f"सूची में \"{s.label}\" ढूँढिए — दिखे नहीं तो नीचे स्क्रॉल कीजिए" if hi
                     else f"find \"{s.label}\" in the list — scroll down if you can't see it")

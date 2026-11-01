@@ -126,7 +126,7 @@ T = {
 }
 
 
-_INDIC = "\u0900-\u097F\u0A80-\u0AFF"  # Devanagari + Gujarati
+_INDIC = "\u0900-\u0963\u0966-\u097F\u0A80-\u0AFF"  # Devanagari (minus । ॥) + Gujarati
 _JOIN_RE = re.compile(rf"(?<=[{_INDIC}])(?=[A-Za-z])|(?<=[A-Za-z])(?=[{_INDIC}])")  # letters only: keep "10वीं"
 
 
@@ -405,8 +405,9 @@ class Session:
 
     async def _handle_question(self, text: str, lang: str) -> None:
         r = route(text, pending_yes_no=self.pending_choice is not None, scheme_active=self.scheme.active)
-        if r == Route.answer and is_need(text):
-            r = Route.need if (svc := find_service(text)) else Route.answer
+        svc = find_service(text) if r == Route.answer else None
+        if svc and (is_need(text) or (self.task.generic() and "caste" in svc[0] and svc[1] != self.task.goal_name)):
+            r = Route.need  # stated need — or "unreserved wala" narrowing a generic caste goal
         log.info("route=%s", r.value)
         self.remember("user", text)
         if r in (Route.yes, Route.no):
@@ -473,6 +474,15 @@ class Session:
             self.once = {k for k in self.once if not k.startswith("nav:")}  # speak the first step on this screen
             self.force = True
             return
+        if self.task.generic() and "caste" in sid and name != self.task.goal_name:  # "caste" → "unreserved caste": refine, no question
+            left = self.task.left_form
+            self.task.set_goal(sid, name)
+            self.task.left_form = left
+            await self.say(phrase(self.lang, "switch_yes", name=name))
+            self.remember("assistant", phrase(self.lang, "switch_yes", name=name))
+            self.once = {k for k in self.once if not k.startswith("nav:")}
+            self.force = True
+            return
         if sid == self.task.goal or (self.task.same_family(sid) and "caste" not in sid):
             line = phrase(self.lang, "goal_same", name=self.task.goal_name)
             if (step := self.task.step_text(self.lang)):
@@ -501,6 +511,7 @@ class Session:
                 on_form = self.last_vision is not None and self.last_vision.page_type == PageType.application_form
                 line = phrase(self.lang, "switch_yes", name=name)
                 if on_form:  # this is the old service's form: the new one starts from the services list
+                    self.task.left_form = (self.last_vision.page_title or "").strip().lower()
                     line = f"{line} {phrase(self.lang, 'goto_list', name=name)}"
                     await self.send("clear")
                 await self.say(line)
@@ -558,6 +569,10 @@ class Session:
             await self.send("state", value="guiding_step")
             await self.say_once(f"nav:{page}:{nav.kind}:{nav.label.strip().lower()}",
                                 phrase(self.lang, "nav", step=self.task.step_text(self.lang)))
+            return True
+        if pt == PageType.application_form and self.task.left_form is not None \
+                and (r.page_title or "").strip().lower() == self.task.left_form:
+            await self.send("clear")  # the form of the goal the user just left: don't guide it
             return True
         if pt == PageType.login:
             self.task.step = Step("login")

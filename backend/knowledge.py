@@ -55,6 +55,29 @@ def schemes() -> list[dict]:
     return _load(DATA / "schemes.json") or []
 
 
+@lru_cache(maxsize=4)
+def form_map(process_id: str = DEFAULT_SERVICE) -> dict | None:
+    """data/forms/<process_id>.json (FormMap) once the hand-walk is done; None until then."""
+    return _load(DATA / "forms" / f"{process_id}.json")
+
+
+def _norm(label: str) -> str:
+    return " ".join(re.sub(r"[*:]", " ", label).lower().split())
+
+
+def form_field(label: str, process_id: str = DEFAULT_SERVICE) -> dict | None:
+    """Form-map field whose label or alias matches an on-screen label."""
+    fm = form_map(process_id)
+    if not fm:
+        return None
+    want = _norm(label)
+    for page in fm.get("pages", []):
+        for f in page.get("fields", []):
+            if want in {_norm(x) for x in [f.get("label", ""), *f.get("label_aliases", [])]}:
+                return f
+    return None
+
+
 def _service_matches(topic: str, sid: str, svc: dict) -> bool:
     hay = f"{sid} {svc.get('name', '')} {' '.join(svc.get('alternate_names', []))}".lower()
     return {

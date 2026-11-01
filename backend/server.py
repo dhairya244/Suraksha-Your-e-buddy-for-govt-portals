@@ -28,6 +28,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from backend.config import env_int
 from backend.vision import PageType, SeenField, VisionResult, detect
 from backend.answer import answer
+from backend.knowledge import form_field
 from backend.voice import stt, tts
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
@@ -54,7 +55,7 @@ T = {
         "upload": "यहाँ \"{label}\" के लिए दस्तावेज़ अपलोड कीजिए।",
         "tick": "\"{label}\" — अगर लागू हो तो टिक कीजिए।",
         "sensitive": "\"{label}\" निजी जानकारी है — इसे खुद भरिए, मैं स्क्रीन नहीं देखूँगी। हो जाए तो Next दबाइए।",
-        "optional": " यह ज़रूरी नहीं है — छोड़ना हो तो Next दबाइए।",
+        "optional": " पेज पर इसे वैकल्पिक लिखा है।",
         "done_visible": "इस हिस्से के सारे खाने भर गए। नीचे स्क्रॉल कीजिए या पेज पर अगला बटन दबाइए।",
         "error": "ध्यान दीजिए, फ़ॉर्म पर गलती दिख रही है: \"{text}\"",
         "stopped": "रुक गई।",
@@ -78,7 +79,7 @@ T = {
         "upload": "Upload the document for \"{label}\" here.",
         "tick": "\"{label}\" — tick this if it applies.",
         "sensitive": "\"{label}\" is private — please fill it yourself. Press Next when done.",
-        "optional": " (Optional — press Next to skip.)",
+        "optional": " The page marks this as optional.",
         "done_visible": "Everything visible here is filled. Scroll down or press the next button on the page.",
         "error": "Heads up, the form shows an error: \"{text}\"",
         "stopped": "Stopped.",
@@ -126,7 +127,11 @@ def field_text(lang: str, f: SeenField) -> str:
         return phrase(lang, "sensitive", label=f.label)
     key = {"dropdown": "choose", "radio": "choose", "file": "upload", "checkbox": "tick"}.get(f.kind.value, "fill")
     text = phrase(lang, key, label=f.label)
-    return text + (phrase(lang, "optional") if not f.required else "")
+    # Required/optional: say nothing unless the form map or an explicit on-page "(optional)" says so.
+    # Never suggest skipping a field.
+    mapped = form_field(f.label)
+    optional = (mapped is not None and mapped.get("required") is False) or (mapped is None and f.marker.value == "optional")
+    return text + (phrase(lang, "optional") if optional else "")
 
 
 REGISTER_RE = re.compile(r"new registration|register|sign ?up|નોંધણી|पंजीकरण|रजिस्टर", re.I)

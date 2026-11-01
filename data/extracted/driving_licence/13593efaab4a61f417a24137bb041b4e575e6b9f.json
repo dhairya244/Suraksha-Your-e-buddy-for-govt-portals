@@ -1,0 +1,15 @@
+{
+  "url": "https://sarathi.parivahan.gov.in/sarathiservice/faquest.do?helpType=AR",
+  "source_id": "driving_licence",
+  "page_source_id": "driving_licence_13593efaab",
+  "file": "13593efaab4a61f417a24137bb041b4e575e6b9f.md",
+  "content_hash": "a67479717376410ab9c0e2a9de408b4627a748ae",
+  "title": "Sarathi",
+  "fetched_at": "2026-11-01T10:59:25+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:00:06+00:00",
+  "relevant": false,
+  "services": [],
+  "portals": [],
+  "schemes": []
+}

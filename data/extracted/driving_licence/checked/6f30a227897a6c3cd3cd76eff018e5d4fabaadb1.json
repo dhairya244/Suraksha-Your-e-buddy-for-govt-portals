@@ -1,0 +1,16 @@
+{
+  "url": "https://sarathi.parivahan.gov.in/sarathiservice/newLL_displayExpiredNewLL.do",
+  "source_id": "driving_licence",
+  "page_source_id": "driving_licence_6f30a22789",
+  "file": "6f30a227897a6c3cd3cd76eff018e5d4fabaadb1.md",
+  "content_hash": "a67479717376410ab9c0e2a9de408b4627a748ae",
+  "title": "Sarathi",
+  "fetched_at": "2026-11-01T10:59:20+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:59:54+00:00",
+  "relevant": false,
+  "services": [],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:00:36+00:00"
+}

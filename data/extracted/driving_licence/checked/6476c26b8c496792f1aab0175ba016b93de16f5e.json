@@ -1,0 +1,16 @@
+{
+  "url": "https://sarathi.parivahan.gov.in/sarathiservice/newDLDet.do",
+  "source_id": "driving_licence",
+  "page_source_id": "driving_licence_6476c26b8c",
+  "file": "6476c26b8c496792f1aab0175ba016b93de16f5e.md",
+  "content_hash": "a67479717376410ab9c0e2a9de408b4627a748ae",
+  "title": "Sarathi",
+  "fetched_at": "2026-11-01T10:58:33+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:59:42+00:00",
+  "relevant": false,
+  "services": [],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:00:36+00:00"
+}

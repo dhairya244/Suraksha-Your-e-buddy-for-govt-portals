@@ -1,0 +1,15 @@
+{
+  "url": "https://sarathi.parivahan.gov.in/sarathiservice/sarathiTutorials.do",
+  "source_id": "driving_licence",
+  "page_source_id": "driving_licence_b36a4fb0b5",
+  "file": "b36a4fb0b555de6f6fc1525b62097d1104c8dc20.md",
+  "content_hash": "a67479717376410ab9c0e2a9de408b4627a748ae",
+  "title": "Sarathi",
+  "fetched_at": "2026-11-01T10:59:37+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:00:36+00:00",
+  "relevant": false,
+  "services": [],
+  "portals": [],
+  "schemes": []
+}

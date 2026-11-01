@@ -1,0 +1,16 @@
+{
+  "url": "https://sarathi.parivahan.gov.in/sarathiservice/ContactDet.do",
+  "source_id": "driving_licence",
+  "page_source_id": "driving_licence_214f7cb512",
+  "file": "214f7cb5123e52957e7a846ede8d212c4b9bb7a2.md",
+  "content_hash": "a67479717376410ab9c0e2a9de408b4627a748ae",
+  "title": "Sarathi",
+  "fetched_at": "2026-11-01T10:59:30+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:00:18+00:00",
+  "relevant": false,
+  "services": [],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:00:36+00:00"
+}

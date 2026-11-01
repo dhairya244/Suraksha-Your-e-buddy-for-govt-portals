@@ -3,6 +3,7 @@
 import { app, BrowserWindow, desktopCapturer, ipcMain, nativeImage, screen, session, shell, systemPreferences } from "electron";
 import path from "path";
 import WebSocket from "ws";
+import { openWindows, Rect } from "./windows";
 
 const PORT = process.env.BACKEND_PORT || "8765";
 const WS_URL = `ws://127.0.0.1:${PORT}/ws/session`;
@@ -40,17 +41,29 @@ function createOverlay() {
   overlay.loadFile(renderer("overlay.html"));
   overlay.once("ready-to-show", () => {
     overlay?.showInactive();
-    sendOverlayGeometry();
-    if (TEST_BOX) toOverlay("highlight", { bbox: [300, 300, 360, 700], label: "Test box (M1)" });
+    overlay?.setBounds(screen.getPrimaryDisplay().bounds);
+    measureOverlay();
+    setTimeout(measureOverlay, 400); // macOS may move the window after show
+    if (TEST_BOX) toOverlay("highlight", { rect: { x: 0.3 * d.bounds.width, y: 0.3 * d.bounds.height, width: 0.4 * d.bounds.width, height: 0.06 * d.bounds.height }, label: "Test box" });
   });
+  overlay.on("move", measureOverlay);
+  overlay.on("resize", measureOverlay);
 }
 
-function sendOverlayGeometry() {
+// Where the overlay window REALLY is, relative to the primary display (DIP).
+// macOS can place it below the menu bar or at y<0 while getBounds() still reports the requested
+// bounds, so prefer the window server's answer (get-windows) and fall back to getBounds().
+let overlayOrigin = { x: 0, y: 0 };
+async function measureOverlay() {
   if (!overlay) return;
   const d = screen.getPrimaryDisplay();
-  const b = overlay.getBounds();
-  // Renderer draws in window coords; bbox is relative to the full display.
-  toOverlay("geometry", { offsetX: b.x - d.bounds.x, offsetY: b.y - d.bounds.y, width: d.bounds.width, height: d.bounds.height });
+  const eb = overlay.getBounds();
+  let x = eb.x, y = eb.y, src = "getBounds";
+  const mine = (await openWindows()).filter((w) => w.owner.processId === process.pid && w.bounds.width >= d.bounds.width - 2);
+  if (mine.length) { x = mine[0].bounds.x; y = mine[0].bounds.y; src = "window-server"; }
+  overlayOrigin = { x: x - d.bounds.x, y: y - d.bounds.y };
+  console.log(`[overlay] origin ${src}=(${x},${y}) getBounds=(${eb.x},${eb.y},${eb.width}x${eb.height}) display=(${d.bounds.x},${d.bounds.y},${d.bounds.width}x${d.bounds.height}) scale=${d.scaleFactor}`);
+  toOverlay("geometry", { offsetX: overlayOrigin.x, offsetY: overlayOrigin.y });
 }
 
 function createPill() {
@@ -95,7 +108,7 @@ function connect() {
     let msg: any;
     try { msg = JSON.parse(raw.toString()); } catch { return; }
     switch (msg.type) {
-      case "highlight": toOverlay("highlight", msg); break;
+      case "highlight": showHighlight(msg); break;
       case "clear": toOverlay("clear"); break;
       case "capture": setCapture(msg.mode); break;
       case "say": case "state": case "link": case "transcript": toPill(msg.type, msg); break;
@@ -105,6 +118,25 @@ function connect() {
 
 function wsSend(obj: unknown) {
   if (ws && ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(obj));
+}
+
+// ---------- coordinates ----------
+// bbox = [ymin, xmin, ymax, xmax] 0–1000 relative to the frame; frameRect = what the frame covered,
+// in display-relative DIP. Result: display-relative DIP rect (overlay subtracts its own origin).
+function bboxToRect(bbox: number[], frameRect: Rect): Rect {
+  const [ymin, xmin, ymax, xmax] = bbox;
+  return {
+    x: frameRect.x + (xmin / 1000) * frameRect.width,
+    y: frameRect.y + (ymin / 1000) * frameRect.height,
+    width: ((xmax - xmin) / 1000) * frameRect.width,
+    height: ((ymax - ymin) / 1000) * frameRect.height,
+  };
+}
+
+function showHighlight(msg: any) {
+  const d = screen.getPrimaryDisplay();
+  const frameRect = { x: 0, y: 0, width: d.bounds.width, height: d.bounds.height };
+  toOverlay("highlight", { rect: bboxToRect(msg.bbox, frameRect), label: msg.label });
 }
 
 // ---------- capture ----------
@@ -180,7 +212,7 @@ app.whenReady().then(() => {
   createOverlay();
   createPill();
   connect();
-  screen.on("display-metrics-changed", () => { overlay?.setBounds(screen.getPrimaryDisplay().bounds); sendOverlayGeometry(); });
+  screen.on("display-metrics-changed", () => { overlay?.setBounds(screen.getPrimaryDisplay().bounds); measureOverlay(); });
 });
 
 app.on("window-all-closed", () => app.quit());

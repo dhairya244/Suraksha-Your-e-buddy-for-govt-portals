@@ -10,12 +10,17 @@
   #cap { position: absolute; display: none; max-width: 420px; padding: 6px 12px; border-radius: 8px;
          background: #1f2937; color: #fff; font: 600 15px -apple-system, "Noto Sans Devanagari", sans-serif;
          box-shadow: 0 4px 14px rgba(0,0,0,.3); }
+  .cal { position: absolute; box-sizing: border-box; border: 2px solid #ff00d4; background: rgba(255,0,212,.12);
+         color: #ff00d4; font: 700 11px Menlo, monospace; padding: 2px; }
+  /* visible in recordings: plain outline, no glow/pulse, so our own pixels stay stable */
+  body.recordable #box { animation: none; box-shadow: none; }
   @keyframes pulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.03); opacity: .75; } }
 </style>
 </head>
 <body>
 <div id="box"></div>
 <div id="cap"></div>
+<div id="calib"></div>
 <script src="overlay.js"></script>
 </body>
 </html>

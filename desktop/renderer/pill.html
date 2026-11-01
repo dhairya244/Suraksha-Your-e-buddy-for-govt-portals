@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; media-src 'self' data: blob:">
+<style>
+  html, body { margin: 0; background: transparent; font: 13px -apple-system, "Noto Sans Devanagari", sans-serif; user-select: none; }
+  .pill { margin: 8px; padding: 10px 12px; border-radius: 18px; background: rgba(17,24,39,.94); color: #f9fafb;
+          box-shadow: 0 6px 24px rgba(0,0,0,.35); -webkit-app-region: drag; }
+  .row { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .title { font-weight: 700; font-size: 14px; margin-right: auto; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #6b7280; display: inline-block; }
+  .dot.on { background: #22c55e; animation: blink 1.2s infinite; } .dot.paused { background: #f59e0b; }
+  @keyframes blink { 50% { opacity: .35; } }
+  button { -webkit-app-region: no-drag; border: 0; border-radius: 12px; padding: 6px 10px; font: inherit; font-weight: 600;
+           background: #374151; color: #f9fafb; cursor: pointer; }
+  button:hover { background: #4b5563; }
+  button.primary { background: #ea580c; } button.primary:hover { background: #f97316; }
+  button.mic { background: #2563eb; } button.mic.rec { background: #dc2626; }
+  button.link { background: #059669; display: none; }
+  #status { font-size: 11px; color: #9ca3af; margin: 4px 0; }
+  #caption { min-height: 36px; max-height: 54px; overflow: hidden; font-size: 13px; line-height: 1.35; margin: 6px 0; }
+  #x { background: transparent; color: #9ca3af; padding: 2px 6px; }
+</style>
+</head>
+<body>
+<div class="pill">
+  <div class="row">
+    <span class="dot" id="dot"></span>
+    <span class="title">Suraksha <span id="watching" style="font-weight:400;font-size:11px;color:#9ca3af"></span></span>
+    <button id="lang">हिंदी</button>
+    <button id="x" title="Quit">✕</button>
+  </div>
+  <div id="caption">Namaste! "Start guiding" dabaiye.</div>
+  <div class="row">
+    <button id="start" class="primary">Start guiding</button>
+    <button id="next">Next</button>
+    <button id="mic" class="mic">🎤 Hold to ask</button>
+    <button id="stop">Stop</button>
+    <button id="link" class="link">Open official link</button>
+  </div>
+  <div id="status">connecting…</div>
+</div>
+<script src="pill.js"></script>
+</body>
+</html>

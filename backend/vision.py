@@ -13,11 +13,14 @@ from google.genai import types
 from pydantic import BaseModel, Field
 
 from backend.config import env
-from backend.core.llm import REQUEST_TIMEOUT_S, LLMError, call_gemini
+from backend.core.llm import REQUEST_TIMEOUT_S, LLMError, call_gemini, cooling
 
 log = logging.getLogger("suraksha.vision")
 
 VISION_KEY = "GEMINI_API_KEY_BACKUP"  # vision; answers use GEMINI_API_KEY_DEMO (separate quotas)
+# rotation: the primary (flash) model on each key in turn, then the fallback (flash-lite) — a 429 on one key
+# doesn't drop vision to flash-lite while another key still has flash quota
+VISION_KEYS = ["GEMINI_API_KEY_BACKUP", "GEMINI_API_KEY_DATA"]
 VISION_TIMEOUT_S = REQUEST_TIMEOUT_S  # GEMINI_TIMEOUT_SECONDS (API minimum is 10 s)
 
 
@@ -113,16 +116,9 @@ def _hint(label_hints: list[str] | None) -> str:
 def detect_sync(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visible: bool = False, goal: str | None = None) -> VisionResult:
     goal_line = (f"- The user wants the service \"{goal}\": if its card/row/link or an 'Apply Online' button is visible, it MUST be in actions.\n"
                  if goal else "")
-    res = call_gemini(
-        [types.Part.from_bytes(data=jpeg, mime_type="image/jpeg"),
-         PROMPT.format(hint=_hint(label_hints), own_ui=OWN_UI if own_ui_visible else "", goal=goal_line)],
-        model=env("GEMINI_VISION_MODEL"),
-        key=VISION_KEY,
-        schema=VisionResult,
-        temperature=0.0,
-        timeout_s=VISION_TIMEOUT_S,
-        thinking_level="low",
-    )
+    parts = [types.Part.from_bytes(data=jpeg, mime_type="image/jpeg"),
+             PROMPT.format(hint=_hint(label_hints), own_ui=OWN_UI if own_ui_visible else "", goal=goal_line)]
+    res = _rotate(parts)
     out: VisionResult = res.parsed
     out.fields = [f for f in out.fields if _valid_box(f.box_2d)]
     out.errors = [e for e in out.errors if _valid_box(e.box_2d)]
@@ -130,6 +126,22 @@ def detect_sync(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visibl
     log.info("vision model=%s page=%s logged_in=%s fields=%d actions=%d errors=%d",
              res.model, out.page_type.value, out.logged_in, len(out.fields), len(out.actions), len(out.errors))
     return out
+
+
+def _rotate(parts: list):
+    primary = env("GEMINI_VISION_MODEL")
+    keys = [k for k in VISION_KEYS if env(k)]
+    common = dict(schema=VisionResult, temperature=0.0, timeout_s=VISION_TIMEOUT_S, thinking_level="low")
+    for key in keys:  # flash on backup → flash on data
+        if not primary or cooling(primary, key):
+            continue
+        try:
+            return call_gemini(parts, model=primary, key=key, fallback=False, max_tries=1, **common)
+        except LLMError as e:
+            log.info("vision %s on %s failed (%s), rotating", primary, key, e)
+    # every key's flash is rate-limited / failing → flash-lite (cooling flash entries are skipped)
+    return call_gemini(parts, model=primary, key=keys[0], fallback=True,
+                       backup_key=keys[1] if len(keys) > 1 else None, **common)
 
 
 async def detect(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visible: bool = False, goal: str | None = None) -> VisionResult | None:

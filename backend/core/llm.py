@@ -67,6 +67,11 @@ def _retry_delay_s(err: errors.APIError) -> float | None:
     return float(m.group(1)) if m else None
 
 
+def cooling(model: str, key: str) -> bool:
+    """True while (model, key) is in a 429 cooldown."""
+    return _cooldown_until.get((model, key), 0) > time.monotonic()
+
+
 def call_gemini(
     parts: list[Any] | str,
     model: str | None,
@@ -132,9 +137,10 @@ def call_gemini(
                     raise LLMError(redact(f"{m}: HTTP {e.code} {e.message}")) from e
                 if e.code == 404:
                     break  # model unavailable → next model, no point retrying
-                if e.code == 429 and m != models[-1]:
+                if e.code == 429:
                     _cooldown_until[(m, key)] = time.monotonic() + (_retry_delay_s(e) or DEFAULT_429_COOLDOWN_S)
-                    break  # rate-limited → go straight to the next model
+                    if m != models[-1] or tries == 1:
+                        break  # rate-limited → go straight to the next model (or the caller's next key)
                 delay = _retry_delay_s(e) or (2 ** (attempt - 1)) + random.random()
             except (httpx.TimeoutException, httpx.TransportError) as e:
                 last_err = f"{m}: {type(e).__name__}"

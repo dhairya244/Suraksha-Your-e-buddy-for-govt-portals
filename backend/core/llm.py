@@ -33,6 +33,9 @@ MAX_TRIES = env_int("GEMINI_MAX_TRIES", 1)
 REQUEST_TIMEOUT_S = env_float("GEMINI_TIMEOUT_SECONDS", 8.0)
 
 _clients: dict[tuple[str, float], genai.Client] = {}
+# (model, key) → monotonic time until which a 429'd model is skipped (if another model is left to try)
+_cooldown_until: dict[tuple[str, str], float] = {}
+DEFAULT_429_COOLDOWN_S = 60.0
 
 
 @dataclass
@@ -98,6 +101,10 @@ def call_gemini(
         config.response_mime_type = "application/json"
         config.response_schema = schema
 
+    now = time.monotonic()
+    ready = [m for m in models if _cooldown_until.get((m, key), 0) <= now]
+    models = ready or models  # never skip everything
+
     tries = max_tries or MAX_TRIES
     last_err: str = ""
     total_attempts = 0
@@ -123,6 +130,9 @@ def call_gemini(
                     raise LLMError(redact(f"{m}: HTTP {e.code} {e.message}")) from e
                 if e.code == 404:
                     break  # model unavailable → next model, no point retrying
+                if e.code == 429 and m != models[-1]:
+                    _cooldown_until[(m, key)] = time.monotonic() + (_retry_delay_s(e) or DEFAULT_429_COOLDOWN_S)
+                    break  # rate-limited → go straight to the next model
                 delay = _retry_delay_s(e) or (2 ** (attempt - 1)) + random.random()
             except (httpx.TimeoutException, httpx.TransportError) as e:
                 last_err = f"{m}: {type(e).__name__}"

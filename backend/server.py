@@ -5,10 +5,11 @@
 
 Protocol (matches desktop/src/main.ts):
   client → {type:"start", lang} | {type:"frame", frame_id, jpeg_b64, w, h, big_change, browser} | {type:"next"}
-           | {type:"stop"} | {type:"lang", lang} | {type:"ask", audio_b64, lang}
+           | {type:"stop"} | {type:"lang", lang} | {type:"ask", audio_b64, lang} | {type:"choice", id, value}
   server → {type:"capture", mode} | {type:"highlight", frame_id, bbox, label} | {type:"clear"}
            | {type:"redact", frame_id, bbox} | {type:"transcript", text, lang, final}
            | {type:"lang", value} | {type:"sources", urls}
+           | {type:"choice", id, question, options:[{id,label}]} | {type:"choice.clear"}
            | {type:"say", text, audio_b64?} | {type:"state", value}
 bbox = [ymin, xmin, ymax, xmax] 0–1000 relative to the frame (the client maps it via that frame's crop).
 Frames and audio are processed in memory only; nothing is written to disk or logged.
@@ -19,12 +20,13 @@ import asyncio
 import base64
 import json
 import logging
+import re
 import time
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 
 from backend.config import env_int
-from backend.vision import SeenField, VisionResult, detect
+from backend.vision import PageType, SeenField, VisionResult, detect
 from backend.answer import answer
 from backend.voice import stt, tts
 
@@ -59,6 +61,14 @@ T = {
         "not_heard": "माफ़ कीजिए, मैं सुन नहीं पाई। बटन दबाकर रखिए और फिर से बोलिए।",
         "answer_fail": "माफ़ कीजिए, अभी जवाब नहीं मिल पाया। थोड़ी देर में फिर पूछिए।",
         "vision_fail": "स्क्रीन पढ़ने में दिक्कत हुई, फिर से कोशिश कर रही हूँ…",
+        "has_account": "क्या आपका Digital Gujarat अकाउंट है?",
+        "yes": "हाँ", "no": "नहीं",
+        "login_fields": "ठीक है, लॉगिन करते हैं।",
+        "register_btn": "आपका अकाउंट नहीं है तो पहले रजिस्टर करना होगा। \"{label}\" बटन दबाइए।",
+        "register_find": "आपका अकाउंट नहीं है तो पहले रजिस्टर करना होगा। पेज पर \"New Registration (Citizen)\" ढूँढिए।",
+        "login_first": "यह सेवा इस्तेमाल करने के लिए पहले Digital Gujarat पर लॉगिन कीजिए।",
+        "payment": "यह पेमेंट पेज है। भुगतान का तरीका चुनिए — Pay बटन आप खुद दबाइए।",
+        "ack": "आवेदन जमा हो गया लगता है। आवेदन नंबर लिख लीजिए या रसीद डाउनलोड कर लीजिए।",
     },
     "en": {
         "watching": "Okay, I'm watching the screen. Please open the form page.",
@@ -75,6 +85,14 @@ T = {
         "not_heard": "Sorry, I didn't catch that. Hold the button and ask again.",
         "answer_fail": "Sorry, I couldn't get an answer right now. Please ask again in a moment.",
         "vision_fail": "Had trouble reading the screen, retrying…",
+        "has_account": "Do you have a Digital Gujarat account?",
+        "yes": "Yes", "no": "No",
+        "login_fields": "Okay, let's log in.",
+        "register_btn": "Without an account you need to register first. Press the \"{label}\" button.",
+        "register_find": "Without an account you need to register first. Look for \"New Registration (Citizen)\" on the page.",
+        "login_first": "Please log in to Digital Gujarat first to use this service.",
+        "payment": "This is the payment page. Choose a payment method — you press Pay yourself.",
+        "ack": "Your application looks submitted. Note down the application number or download the receipt.",
     },
 }
 
@@ -89,6 +107,14 @@ def field_text(lang: str, f: SeenField) -> str:
     key = {"dropdown": "choose", "radio": "choose", "file": "upload", "checkbox": "tick"}.get(f.kind.value, "fill")
     text = phrase(lang, key, label=f.label)
     return text + (phrase(lang, "optional") if not f.required else "")
+
+
+REGISTER_RE = re.compile(r"new registration|register|sign ?up|નોંધણી|पंजीकरण|रजिस्टर", re.I)
+LOGIN_BTN_RE = re.compile(r"^\s*(citizen )?log ?in|sign ?in|login ?/ ?register|લૉગિન|લોગિન|लॉगिन", re.I)
+YES_RE = re.compile(r"\b(haan|han|haa|ha|yes|ji|jee)\b|हाँ|हां|जी|હા", re.I)
+HAVE_RE = re.compile(r"\bhai\b|है|છે|\bhave\b", re.I)  # "account hai" = yes, unless a "no" word is present
+NO_RE = re.compile(r"\b(nahi|nahin|nai|no|nope|na)\b|नहीं|नही|(?<!\S)ना(?!\S)|ના|નથી", re.I)
+REGISTRATION_QUESTION = "How do I register a new citizen account on Digital Gujarat? Give the first 2-3 steps."
 
 
 def field_key(f: SeenField) -> str:
@@ -122,6 +148,9 @@ class Session:
         self.bg: set[asyncio.Task] = set()  # keep refs to fire-and-forget tasks
         self.page_title: str | None = None
         self.target_label: str | None = None
+        self.has_account: bool | None = None  # answer to "Do you have a Digital Gujarat account?"
+        self.pending_choice: str | None = None
+        self.once: set[str] = set()  # one-time announcements already made (keyed by page)
 
     async def send(self, type_: str, **data) -> None:
         if self.closed:
@@ -176,6 +205,8 @@ class Session:
                 self.paused = False
                 await self.send("capture", mode="on")
                 await self.send("state", value="watching")
+        elif t == "choice":
+            await self.on_choice(msg.get("id"), msg.get("value"))
         elif t == "ask":
             task = asyncio.create_task(self.handle_ask(msg))  # don't block frames while answering
             self.bg.add(task)
@@ -209,6 +240,12 @@ class Session:
             self.lang = heard.lang
             await self.send("lang", value=self.lang)
         await self.send("transcript", text=heard.text, lang=heard.lang, final=True)
+        if self.pending_choice == "has_account":  # spoken Haan / Nahi
+            no = bool(NO_RE.search(heard.text))
+            yes = bool(YES_RE.search(heard.text)) or (not no and bool(HAVE_RE.search(heard.text)))
+            if yes != no:
+                await self.on_choice("has_account", "yes" if yes else "no")
+                return
         a = await answer(heard.text, self.lang, self.page_title, self.target_label)
         if not a:
             await self.say(phrase(self.lang, "answer_fail"))
@@ -217,6 +254,80 @@ class Session:
         if a.sources:
             await self.send("sources", urls=a.sources[:3])
         await self.send("state", value="guiding_field" if self.target else ("watching" if self.active else "idle"))
+
+    async def on_choice(self, cid: str | None, value: str | None) -> None:
+        if cid != "has_account" or value not in ("yes", "no"):
+            return
+        self.pending_choice = None
+        self.has_account = value == "yes"
+        await self.send("choice.clear")
+        if self.has_account:
+            await self.say(phrase(self.lang, "login_fields"))
+        self.target = None
+        self.force = True
+        self.maybe_run_vision()
+
+    async def say_once(self, key: str, text: str) -> bool:
+        if key in self.once:
+            return False
+        self.once.add(key)
+        await self.say(text)
+        return True
+
+    def find_action(self, r: VisionResult, rx: re.Pattern):
+        return next((a for a in r.actions if rx.search(a.text)), None)
+
+    async def explain_registration(self) -> None:
+        a = await answer(REGISTRATION_QUESTION, self.lang, self.page_title, None)
+        if a and a.say:
+            await self.say(a.say)
+            if a.sources:
+                await self.send("sources", urls=a.sources[:3])
+
+    async def page_gate(self, r: VisionResult, frame_id: int | None) -> bool:
+        """Page-type behaviour before the field loop. Returns True if it handled this frame."""
+        pt = r.page_type
+        page = f"{pt.value}|{(r.page_title or '').strip().lower()}"
+        if pt == PageType.login:
+            if self.has_account is None:
+                await self.send("clear")
+                if self.pending_choice != "has_account":
+                    self.pending_choice = "has_account"
+                    await self.send("choice", id="has_account", question=phrase(self.lang, "has_account"),
+                                    options=[{"id": "yes", "label": phrase(self.lang, "yes")},
+                                             {"id": "no", "label": phrase(self.lang, "no")}])
+                    await self.say(phrase(self.lang, "has_account"))
+                return True
+            if self.has_account is False:
+                btn = self.find_action(r, REGISTER_RE)
+                if btn:
+                    await self.send("highlight", frame_id=frame_id, bbox=btn.box_2d, label=btn.text)
+                    if await self.say_once("register:" + page, phrase(self.lang, "register_btn", label=btn.text)):
+                        self.spawn(self.explain_registration())
+                else:
+                    await self.send("clear")
+                    await self.say_once("register_find:" + page, phrase(self.lang, "register_find"))
+                return True
+            return False  # has account → guide the login fields
+        if not r.logged_in and (pt == PageType.service_list or (pt == PageType.application_form and self.find_action(r, LOGIN_BTN_RE))):
+            btn = self.find_action(r, LOGIN_BTN_RE)
+            if btn:
+                await self.send("highlight", frame_id=frame_id, bbox=btn.box_2d, label=btn.text)
+            await self.say_once("login_first:" + page, phrase(self.lang, "login_first"))
+            return True
+        if pt == PageType.acknowledgement:
+            await self.send("clear")
+            await self.say_once("ack:" + page, phrase(self.lang, "ack"))
+            return True
+        if pt == PageType.payment:
+            await self.say_once("payment:" + page, phrase(self.lang, "payment"))
+            return False  # still guide any payment-method choices
+        return False
+
+    def spawn(self, coro) -> None:
+        task = asyncio.create_task(coro)
+        self.bg.add(task)
+        task.add_done_callback(self.bg.discard)
 
     def reset(self) -> None:
         self.paused = False
@@ -232,6 +343,8 @@ class Session:
         self.said_errors.clear()
         self.done_said = False
         self.last_no_form_t = 0.0
+        self.pending_choice = None
+        self.once.clear()
 
     # ---- vision loop
     def maybe_run_vision(self) -> None:
@@ -270,6 +383,8 @@ class Session:
             return
         if result is None:
             await self.send("state", value="vision_retry")
+            self.force = True  # retry the same frame (after the 1 s force cooldown)
+            self.analyzed_seq = min(self.analyzed_seq, seq - 1)
             return
         if self.last_big_change_seq > seq:
             log.info("vision result stale (scrolled), dropping")
@@ -279,6 +394,8 @@ class Session:
 
     async def apply(self, r: VisionResult, frame_id: int | None = None) -> None:
         self.page_title = r.page_title or None
+        if await self.page_gate(r, frame_id):
+            return
         if not r.is_form or not r.fields:
             self.target = None
             await self.send("clear")

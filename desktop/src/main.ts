@@ -76,7 +76,7 @@ async function measureOverlay() {
 
 function createPill() {
   const d = screen.getPrimaryDisplay();
-  const w = 380, h = 236;
+  const w = 380, h = 276;
   pill = new BrowserWindow({
     x: d.workArea.x + d.workArea.width - w - 24, y: d.workArea.y + 24, width: w, height: h,
     frame: false, resizable: false, alwaysOnTop: true, skipTaskbar: false, transparent: true, hasShadow: true,
@@ -125,7 +125,7 @@ function connect() {
       case "clear": clearOverlay(); break;
       case "redact": { const fr = frameRects.get(msg.frame_id) ?? lastCrop; if (fr) redactRects.push(bboxToRect(msg.bbox, fr)); break; }
       case "capture": setCapture(msg.mode); break;
-      case "say": case "state": case "link": case "transcript": case "lang": case "sources": toPill(msg.type, msg); break;
+      case "say": case "state": case "link": case "transcript": case "lang": case "sources": case "choice": case "choice.clear": toPill(msg.type, msg); break;
     }
   });
 }
@@ -308,6 +308,7 @@ ipcMain.on("stop", () => { wsSend({ type: "stop" }); setCapture("off"); });
 ipcMain.on("next", () => { wsSend({ type: "next" }); forceFrame = true; if (captureMode === "on") tick(); });
 ipcMain.on("ask", (_e, { audio_b64, lang }) => wsSend({ type: "ask", audio_b64, lang }));
 ipcMain.on("lang", (_e, { lang }) => wsSend({ type: "lang", lang }));
+ipcMain.on("choice", (_e, { id, value }) => wsSend({ type: "choice", id, value }));
 ipcMain.on("open-link", (_e, { url }) => { if (/^https:\/\//.test(url)) shell.openExternal(url); });
 ipcMain.on("quit", () => app.quit());
 

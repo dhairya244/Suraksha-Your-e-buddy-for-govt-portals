@@ -107,3 +107,16 @@ S.on("status", ({ text }) => status(text));
 S.on("recordable", ({ on }) => { $("rec").checked = !!on; });
 S.on("transcript", ({ text }) => { $("caption").textContent = "🗣 " + text; status("Soch rahi hoon…"); });
 S.on("lang", ({ value }) => { lang = value; $("lang").textContent = lang === "hi" ? "हिंदी" : lang === "gu" ? "ગુજરાતી" : "EN"; });
+S.on("choice", ({ id, question, options }) => {
+  const box = $("choice");
+  box.innerHTML = "";
+  const q = document.createElement("span"); q.textContent = question; q.style.marginRight = "6px"; q.style.fontWeight = "600";
+  box.appendChild(q);
+  for (const o of options) {
+    const b = document.createElement("button"); b.className = "opt"; b.textContent = o.label;
+    b.onclick = () => { stopAudio(); S.send("choice", { id, value: o.id }); box.style.display = "none"; };
+    box.appendChild(b);
+  }
+  box.style.display = "flex";
+});
+S.on("choice.clear", () => { $("choice").style.display = "none"; });

@@ -94,3 +94,7 @@
 {"ts": "2026-11-01T11:07:11+00:00", "action": "merge", "kind": "service", "id": "gj_non_creamy_layer_certificate_for_central_government", "status": "pending"}
 {"ts": "2026-11-01T11:07:11+00:00", "action": "merge", "kind": "service", "id": "gj_certificate_for_unemployed_unemployed_non_employme", "status": "pending"}
 {"ts": "2026-11-01T11:07:11+00:00", "action": "merge", "kind": "service", "id": "gj_application_to_get_certificate_for_death_unnatural", "status": "pending"}
+{"ts": "2026-11-01T11:30:41+00:00", "action": "merge", "kind": "service", "id": "gj_income_certificate", "status": "pending"}
+{"ts": "2026-11-01T11:30:41+00:00", "action": "manual_overlay", "kind": "service", "id": "gj_income_certificate", "status": "partially_verified", "by": "import_facts.py", "source": "demo/facts_income_certificate.md", "note": "visual transcription of s804.pdf p.6 — a Gujarati reader should confirm the exact wording"}
+{"ts": "2026-11-01T11:30:41+00:00", "action": "merge", "kind": "service", "id": "central_epan_instant", "status": "pending"}
+{"ts": "2026-11-01T11:30:41+00:00", "action": "merge", "kind": "service", "id": "central_pan_new", "status": "pending"}

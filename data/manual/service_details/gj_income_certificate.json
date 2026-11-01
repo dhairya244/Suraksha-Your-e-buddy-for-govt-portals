@@ -1,0 +1,137 @@
+{
+  "service_id": "gj_income_certificate",
+  "imported_from": "demo/facts_income_certificate.md",
+  "imported_at": "2026-11-01T11:30:10+00:00",
+  "verification_status": "partially_verified",
+  "note": "visual transcription of s804.pdf p.6 — a Gujarati reader should confirm the exact wording",
+  "facts": [
+    {
+      "section": "documents",
+      "target": "documents",
+      "fact": {
+        "value": "Copy of proof of current address",
+        "quote": "હાલના સરનામાં અંગેના પુરાવાની નકલ.",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6"
+      },
+      "check": "visual_transcription",
+      "note": "visual transcription of s804.pdf p.6"
+    },
+    {
+      "section": "documents",
+      "target": "documents",
+      "fact": {
+        "value": "Copy of proof of the stated total annual income of each earning family member",
+        "quote": "કુટુંબના કમાનાર દરેક સભ્યની દર્શાવેલ કુલ વાર્ષિક આવક અંગેના પુરાવાની નકલ.",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6"
+      },
+      "check": "visual_transcription",
+      "note": "visual transcription of s804.pdf p.6"
+    },
+    {
+      "section": "documents",
+      "target": "documents",
+      "fact": {
+        "value": "If employed: income proof such as salary slip, Form 16 or copy of income tax return filed",
+        "quote": "નોકરી કરતા હોય તો આવકનો પુરાવો (દા.ત. પગાર સ્લીપ/ફોર્મ નં. ૧૬/ઇન્કમટેક્ષ ભર્યાની નકલ વિગેરે).",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6"
+      },
+      "check": "visual_transcription",
+      "note": "visual transcription of s804.pdf p.6"
+    },
+    {
+      "section": "documents",
+      "target": "documents",
+      "fact": {
+        "value": "If in business: proof such as Gumasta (shops & establishment) certificate, MSME certificate or GST number",
+        "quote": "ધંધો/ વ્યવસાયના પુરાવા (દા.ત. ગુમાસ્તાધારાનું સર્ટીફીકેટ/ MSME સર્ટીફીકેટ/ GST નંબર વિગેરે).",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6"
+      },
+      "check": "visual_transcription",
+      "note": "visual transcription of s804.pdf p.6"
+    },
+    {
+      "section": "documents",
+      "target": "documents",
+      "fact": {
+        "value": "Copy of last financial year's balance sheet and copy of income tax return filed",
+        "quote": "ગત નાણાકીય વર્ષના સરવૈયાની નકલ તથા ઇન્કમટેક્ષ ભર્યાની નકલ.",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6"
+      },
+      "check": "visual_transcription",
+      "note": "visual transcription of s804.pdf p.6"
+    },
+    {
+      "section": "information the form asks for (prepare before applying)",
+      "target": "steps",
+      "fact": {
+        "value": "Annual income details of the applicant and all family members (name, relation, age, income source, last financial year's income)",
+        "quote": "અરજદારની તથા તેના કુટુંબના તમામ સભ્યોની વાર્ષિક આવકની વિગત,",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6"
+      },
+      "check": "visual_transcription",
+      "note": "visual transcription of s804.pdf p.6"
+    },
+    {
+      "section": "information the form asks for (prepare before applying)",
+      "target": "steps",
+      "fact": {
+        "value": "Total number of family members and number of earning members",
+        "quote": "કુટુંબના કુલ સભ્યોની સંખ્યા:",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6"
+      },
+      "check": "visual_transcription",
+      "note": "visual transcription of s804.pdf p.6"
+    },
+    {
+      "section": "information the form asks for (prepare before applying)",
+      "target": "steps",
+      "fact": {
+        "value": "Electricity bill consumer number, consumer name and address, and last bill amount (as per electricity company records)",
+        "quote": "વીજળી બિલનો ગ્રાહક નંબર:",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6"
+      },
+      "check": "visual_transcription",
+      "note": "visual transcription of s804.pdf p.6"
+    },
+    {
+      "section": "instructions (from the Instructions page)",
+      "target": "steps",
+      "fact": {
+        "value": "Fields marked with a star are mandatory",
+        "quote": "All fields marked with *(star) are mandatory fields in Online Application.",
+        "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      },
+      "check": "verbatim_ok"
+    },
+    {
+      "section": "instructions (from the Instructions page)",
+      "target": "steps",
+      "fact": {
+        "value": "Keep occupational and family details ready",
+        "quote": "Applicant should ready with service specific information like: Occupational Details, Family details, other than basic applicant details before moving with submitting application online.",
+        "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      },
+      "check": "verbatim_ok"
+    },
+    {
+      "section": "instructions (from the Instructions page)",
+      "target": "steps",
+      "fact": {
+        "value": "Returned applications must be resubmitted within 14 days or they are rejected and the fee is not refunded",
+        "quote": "If your application is returned for change or to fill incomplete details, kindly submit it within 14 days of return. If fail to submit within 14 days application will be disposed with rejection. Application fee will not be refunded.",
+        "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      },
+      "check": "verbatim_ok"
+    },
+    {
+      "section": "instructions (from the Instructions page)",
+      "target": "steps",
+      "fact": {
+        "value": "Wrong or misleading information leads to rejection",
+        "quote": "In case of any wrong/misleading information provided in application shall lead to rejection of the application by Department Authorities.",
+        "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      },
+      "check": "verbatim_ok"
+    }
+  ]
+}

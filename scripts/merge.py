@@ -15,6 +15,7 @@ import hashlib
 import json
 import re
 from datetime import datetime
+from urllib.parse import urldefrag
 
 from pipeline import (
     DATA, EXTRACTED, append_jsonl, host, is_pdf, load_config, load_sources, now_iso, read_jsonl,
@@ -55,8 +56,25 @@ def portal_id_for(url: str, fallback: str, mapping: dict[str, str]) -> str:
 
 
 def union_facts(a: list[dict], b: list[dict]) -> list[dict]:
-    seen = {norm(f["value"]) for f in a}
-    return a + [f for f in b if norm(f["value"]) not in seen and not seen.add(norm(f["value"]))]
+    """a + facts of b not already in a (same value or same quote)."""
+    seen = {norm(f["value"]) for f in a} | {norm(f["quote"]) for f in a}
+    out = list(a)
+    for f in b:
+        if norm(f["value"]) not in seen and norm(f["quote"]) not in seen:
+            out.append(f)
+            seen |= {norm(f["value"]), norm(f["quote"])}
+    return out
+
+
+def overlay_details(o: dict) -> dict:
+    """data/manual/service_details/<id>.json (import_facts.py) → ServiceDetails-shaped dict."""
+    d = ServiceDetails(service_id=o["service_id"]).model_dump(mode="json")
+    for f in o["facts"]:
+        if f["target"] == "documents":
+            d["documents"].append({"name": f["fact"]["value"], "formats": [], "max_size_kb": None, "fact": f["fact"]})
+        else:
+            d[f["target"]].append(f["fact"])
+    return d
 
 
 def first_known(a: dict, b: dict) -> dict:
@@ -94,6 +112,7 @@ def main() -> None:
     details: dict[str, dict] = {}
     portals: dict[str, dict] = {}
     schemes: dict[str, dict] = {}
+    manual_sources: dict[str, dict] = {}
     used_pages: dict[str, tuple[str, dict]] = {}  # page_source_id → (source id, checked doc)
     order = list(sources)  # sources.yaml order = trust/priority order
 
@@ -160,6 +179,30 @@ def main() -> None:
                 schemes[scheme_id] = s
                 used_pages[psid] = (sid, doc)
 
+    # hand-collected facts (import_facts.py) go first: human-checked beats scraped
+    overlays: dict[str, dict] = {}
+    for path in sorted((DATA / "manual" / "service_details").glob("*.json")):
+        o = json.loads(path.read_text())
+        if o["service_id"] not in services:
+            print(f"  ! overlay {path.name}: service {o['service_id']} not in merged services — skipped")
+            continue
+        overlays[o["service_id"]] = o
+        details[o["service_id"]] = merge_details(overlay_details(o), details[o["service_id"]])
+        cur = services[o["service_id"]]
+        # verbatim-checked facts point at pages already in sources.json; visual transcriptions get a manual Source
+        for url in dict.fromkeys(urldefrag(f["fact"]["source_url"])[0] for f in o["facts"] if f.get("check") == "visual_transcription"):
+            psid = f"manual_{sha1(url)[:10]}"
+            visual = True
+            manual_sources[psid] = Source(
+                source_id=psid, name=url.rsplit("/", 1)[-1] + (" (visual transcription)" if visual else ""),
+                official_url=url, government_level=cur["government_level"], state=cur.get("state"),
+                department=None if cur["department"] == UNKNOWN else cur["department"],
+                source_type="pdf" if is_pdf(url) else "portal", collection_method="manual",
+                last_checked_at=datetime.fromisoformat(o["imported_at"]),
+            ).model_dump(mode="json")
+            if psid not in cur["source_ids"]:
+                cur["source_ids"].append(psid)
+
     # search aliases from sources.yaml (names only, no facts)
     for sid_, names in (cfg.get("aliases") or {}).items():
         if sid_ in services:
@@ -168,7 +211,7 @@ def main() -> None:
             cur["alternate_names"] += [n for n in names if norm(n) not in have and not have.add(norm(n))]
 
     # services → source ids are page ids; build Source records for every page we used
-    src_records = {}
+    src_records = dict(manual_sources)
     for psid, (sid, doc) in used_pages.items():
         cfg_s = sources[sid]
         m = meta_by_url.get(doc["url"], {})
@@ -199,6 +242,13 @@ def main() -> None:
             s["verification_status"], s["last_verified_at"] = VerificationStatus.pending.value, None
             if not unchanged:
                 log.append({"ts": now_iso(), "action": "merge", "kind": "service", "id": sid_, "status": "pending"})
+        o = overlays.get(sid_)
+        if o and o.get("verification_status") and s["verification_status"] == VerificationStatus.pending.value:
+            s["verification_status"], s["last_verified_at"] = o["verification_status"], o["imported_at"]
+            if not prev or prev["verification_status"] != o["verification_status"]:
+                log.append({"ts": now_iso(), "action": "manual_overlay", "kind": "service", "id": sid_,
+                            "status": o["verification_status"], "by": "import_facts.py",
+                            "source": o["imported_from"], "note": o.get("note")})
         new_state["services"][sid_] = fp
     for k, s in schemes.items():
         fp = fingerprint({x: s[x] for x in ("eligibility", "exclusions", "documents", "benefits", "summary")})

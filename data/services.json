@@ -457,13 +457,14 @@
     "application_mode": "online",
     "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx",
     "portal_id": "digital_gujarat",
-    "verification_status": "pending",
+    "verification_status": "partially_verified",
     "source_ids": [
       "digital_gujarat_acf330fbe1",
       "digital_gujarat_1f923992e1",
-      "digital_gujarat_b2a3e32d0d"
+      "digital_gujarat_b2a3e32d0d",
+      "manual_7508ab463e"
     ],
-    "last_verified_at": null
+    "last_verified_at": "2026-11-01T11:30:10+00:00"
   },
   {
     "service_id": "gj_income_certificate_panchayat",

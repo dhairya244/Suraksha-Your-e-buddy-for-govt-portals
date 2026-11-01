@@ -3,127 +3,312 @@
   "notes": "Eval set for scripts/eval_answers.py (PLAYBOOK §15). expected_points come only from data/ (service_details, schemes.json); expected_source = the source_url(s) of those facts. answerable=false → the answer must say it is not sure (confident=false) and give the official link in expected_source, with no invented fee/document/deadline. Re-check ic_* after the hand-walk facts are merged into gj_income_certificate.",
   "questions": [
     {
-      "id": "ic_01", "lang": "hi", "topic": "gj_income_certificate", "answerable": true,
+      "id": "ic_01",
+      "lang": "hi",
+      "topic": "gj_income_certificate",
+      "answerable": true,
       "question": "आय प्रमाण पत्र के लिए कौन से दस्तावेज़ चाहिए?",
-      "expected_points": ["Proof of income, e.g. salary slips or bank statements, uploaded with the application"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx"],
-      "must_not": ["a fixed fee amount", "documents not in the data presented as required"]
+      "expected_points": [
+        "Proof of income of each earning family member, e.g. salary slip / Form 16 / ITR copy if employed",
+        "If in business: Gumasta certificate, MSME certificate or GST number",
+        "Copy of proof of current address",
+        "Last financial year's balance sheet and ITR copy (where applicable)"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6",
+        "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx"
+      ],
+      "must_not": [
+        "a fixed fee amount",
+        "documents not in the data presented as required"
+      ],
+      "note": "s804 facts are visual transcriptions (partially_verified)"
     },
     {
-      "id": "ic_02", "lang": "en", "topic": "gj_income_certificate", "answerable": true,
+      "id": "ic_02",
+      "lang": "en",
+      "topic": "gj_income_certificate",
+      "answerable": true,
       "question": "How do I apply for an income certificate on Digital Gujarat?",
-      "expected_points": ["Log in to Digital Gujarat and select Income Certificate", "Click 'Apply Online' to file online, or 'Download Form' to fill it offline"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx", "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"]
+      "expected_points": [
+        "Log in to Digital Gujarat and select Income Certificate",
+        "Click 'Apply Online' to file online, or 'Download Form' to fill it offline"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx",
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      ]
     },
     {
-      "id": "ic_03", "lang": "hi", "topic": "gj_income_certificate", "answerable": true,
+      "id": "ic_03",
+      "lang": "hi",
+      "topic": "gj_income_certificate",
+      "answerable": true,
       "question": "मेरी application वापस आ गई है बदलाव के लिए, अब क्या करूँ?",
-      "expected_points": ["Resubmit the returned application within 14 days", "If not resubmitted within 14 days it is disposed with rejection and the fee is not refunded"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"]
+      "expected_points": [
+        "Resubmit the returned application within 14 days",
+        "If not resubmitted within 14 days it is disposed with rejection and the fee is not refunded"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      ]
     },
     {
-      "id": "ic_04", "lang": "en", "topic": "gj_income_certificate", "answerable": true,
+      "id": "ic_04",
+      "lang": "en",
+      "topic": "gj_income_certificate",
+      "answerable": true,
       "question": "If my income certificate application is rejected, do I get the fee back?",
-      "expected_points": ["No — the application fee is not refunded if the application is disposed with rejection"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"],
-      "must_not": ["a fee amount"]
+      "expected_points": [
+        "No — the application fee is not refunded if the application is disposed with rejection"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      ],
+      "must_not": [
+        "a fee amount"
+      ]
     },
     {
-      "id": "ic_05", "lang": "hi", "topic": "gj_income_certificate", "answerable": true,
+      "id": "ic_05",
+      "lang": "hi",
+      "topic": "gj_income_certificate",
+      "answerable": true,
       "question": "फॉर्म भरने से पहले मुझे कौन सी जानकारी तैयार रखनी चाहिए?",
-      "expected_points": ["Service-specific details such as Occupational Details and Family details, besides basic applicant details"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"]
+      "expected_points": [
+        "Service-specific details such as Occupational Details and Family details, besides basic applicant details",
+        "Family members' annual income details, number of earning members, electricity bill consumer number"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam",
+        "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s804.pdf#page=6"
+      ]
     },
     {
-      "id": "ic_06", "lang": "en", "topic": "gj_income_certificate", "answerable": true,
+      "id": "ic_06",
+      "lang": "en",
+      "topic": "gj_income_certificate",
+      "answerable": true,
       "question": "Which fields in the online form are mandatory?",
-      "expected_points": ["All fields marked with * (star) are mandatory"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"]
+      "expected_points": [
+        "All fields marked with * (star) are mandatory"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      ]
     },
     {
-      "id": "ic_07", "lang": "hi", "topic": "gj_income_certificate", "answerable": true,
+      "id": "ic_07",
+      "lang": "hi",
+      "topic": "gj_income_certificate",
+      "answerable": true,
       "question": "क्या मैं फॉर्म गुजराती में भर सकता हूँ?",
-      "expected_points": ["The service is available in English and Gujarati", "Use the keyboard of the selected language (Gujarati keyboard for Gujarati)"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"]
+      "expected_points": [
+        "The service is available in English and Gujarati",
+        "Use the keyboard of the selected language (Gujarati keyboard for Gujarati)"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      ]
     },
     {
-      "id": "ic_08", "lang": "en", "topic": "gj_income_certificate", "answerable": true,
+      "id": "ic_08",
+      "lang": "en",
+      "topic": "gj_income_certificate",
+      "answerable": true,
       "question": "Can I fill the income certificate form offline instead of online?",
-      "expected_points": ["Yes — use the 'Download Form' button to fill the form offline"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"]
+      "expected_points": [
+        "Yes — use the 'Download Form' button to fill the form offline"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      ]
     },
     {
-      "id": "ic_09", "lang": "hi", "topic": "gj_income_certificate_panchayat", "answerable": true,
+      "id": "ic_09",
+      "lang": "hi",
+      "topic": "gj_income_certificate_panchayat",
+      "answerable": true,
       "question": "मैं गाँव में रहता हूँ, आय का दाखला कहाँ से apply करूँ?",
-      "expected_points": ["There is a separate rural service: Income Certificate (Panchayat) (Sugam) / આવકનો દાખલો આપવા બાબત (ગ્રામીણ) (સુગમ)", "Apply Online or Download Form on that service page"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_panchayat_sugam"]
+      "expected_points": [
+        "There is a separate rural service: Income Certificate (Panchayat) (Sugam) / આવકનો દાખલો આપવા બાબત (ગ્રામીણ) (સુગમ)",
+        "Apply Online or Download Form on that service page"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_panchayat_sugam"
+      ]
     },
     {
-      "id": "ic_10", "lang": "en", "topic": "gj_income_certificate", "answerable": true,
+      "id": "ic_10",
+      "lang": "en",
+      "topic": "gj_income_certificate",
+      "answerable": true,
       "question": "What happens if I enter wrong information in the application?",
-      "expected_points": ["Wrong or misleading information leads to rejection of the application by the Department Authorities"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"]
+      "expected_points": [
+        "Wrong or misleading information leads to rejection of the application by the Department Authorities"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+      ]
     },
     {
-      "id": "sc_01", "lang": "hi", "topic": "gspsg", "answerable": true,
+      "id": "sc_01",
+      "lang": "hi",
+      "topic": "gspsg",
+      "answerable": true,
       "question": "विधवा महिलाओं के लिए गुजरात में कोई पेंशन योजना है? कितना मिलता है?",
-      "expected_points": ["Ganga Swarupa Pension Scheme", "Monthly pension of ₹1,250 into a Post Office account", "Resident of Gujarat, widowed, aged 18+", "Annual income not above ₹1,20,000 (rural) / ₹1,50,000 (urban)"],
-      "expected_source": ["https://www.myscheme.gov.in/schemes/gspsg"]
+      "expected_points": [
+        "Ganga Swarupa Pension Scheme",
+        "Monthly pension of ₹1,250 into a Post Office account",
+        "Resident of Gujarat, widowed, aged 18+",
+        "Annual income not above ₹1,20,000 (rural) / ₹1,50,000 (urban)"
+      ],
+      "expected_source": [
+        "https://www.myscheme.gov.in/schemes/gspsg"
+      ]
     },
     {
-      "id": "sc_02", "lang": "en", "topic": "pmsscs_g", "answerable": true,
+      "id": "sc_02",
+      "lang": "en",
+      "topic": "pmsscs_g",
+      "answerable": true,
       "question": "I am an SC student in Gujarat. Is there a scholarship, and do I need an income certificate?",
-      "expected_points": ["Post-Matric Scholarships for Scheduled Castes Students – Gujarat", "Parents'/guardians' income from all sources must not exceed ₹2,50,000", "Yes — Income Certificate from the competent authority is a listed document (plus caste certificate)"],
-      "expected_source": ["https://www.myscheme.gov.in/schemes/pmsscs-g"]
+      "expected_points": [
+        "Post-Matric Scholarships for Scheduled Castes Students – Gujarat",
+        "Parents'/guardians' income from all sources must not exceed ₹2,50,000",
+        "Yes — Income Certificate from the competent authority is a listed document (plus caste certificate)"
+      ],
+      "expected_source": [
+        "https://www.myscheme.gov.in/schemes/pmsscs-g"
+      ]
     },
     {
-      "id": "sc_03", "lang": "hi", "topic": "mksy", "answerable": true,
+      "id": "sc_03",
+      "lang": "hi",
+      "topic": "mksy",
+      "answerable": true,
       "question": "बाढ़ से फसल खराब हो गई, किसान के लिए कौन सी योजना है?",
-      "expected_points": ["Mukhyamantri Kisan Sahay Yojana", "Farmer residing in Gujarat with crop loss from natural calamity (drought, flood, earthquake)", "Crop loss must be certified by the Revenue Department"],
-      "expected_source": ["https://www.myscheme.gov.in/schemes/mksy"],
-      "must_not": ["a benefit amount (not in our data)"]
+      "expected_points": [
+        "Mukhyamantri Kisan Sahay Yojana",
+        "Farmer residing in Gujarat with crop loss from natural calamity (drought, flood, earthquake)",
+        "Crop loss must be certified by the Revenue Department"
+      ],
+      "expected_source": [
+        "https://www.myscheme.gov.in/schemes/mksy"
+      ],
+      "must_not": [
+        "a benefit amount (not in our data)"
+      ]
     },
     {
-      "id": "sc_04", "lang": "en", "topic": "eas_glwb", "answerable": true,
+      "id": "sc_04",
+      "lang": "en",
+      "topic": "eas_glwb",
+      "answerable": true,
       "question": "My father works in a factory. Is there any award if I scored 75% in 12th?",
-      "expected_points": ["Educational Award Scheme – Gujarat Labour Welfare Board", "Parent works in a factory/institute in Gujarat and pays the Labour Welfare Fund", "₹5,000 for 70%+ in 12th (₹2,500 for 10th)"],
-      "expected_source": ["https://www.myscheme.gov.in/schemes/eas-glwb"]
+      "expected_points": [
+        "Educational Award Scheme – Gujarat Labour Welfare Board",
+        "Parent works in a factory/institute in Gujarat and pays the Labour Welfare Fund",
+        "₹5,000 for 70%+ in 12th (₹2,500 for 10th)"
+      ],
+      "expected_source": [
+        "https://www.myscheme.gov.in/schemes/eas-glwb"
+      ]
     },
     {
-      "id": "pan_01", "lang": "hi", "topic": "central_epan_instant", "answerable": true,
+      "id": "pan_01",
+      "lang": "hi",
+      "topic": "central_epan_instant",
+      "answerable": true,
       "question": "आधार से तुरंत पैन कार्ड कैसे बनता है? पैसे लगते हैं?",
-      "expected_points": ["Instant e-PAN on the Income Tax e-Filing portal using Aadhaar", "Free of cost", "Needs Aadhaar linked to a mobile number (OTP)"],
-      "expected_source": ["https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"]
+      "expected_points": [
+        "Instant e-PAN on the Income Tax e-Filing portal using Aadhaar",
+        "Free of cost",
+        "Needs Aadhaar linked to a mobile number (OTP)"
+      ],
+      "expected_source": [
+        "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+      ]
     },
     {
-      "id": "pan_02", "lang": "en", "topic": "central_epan_instant", "answerable": true,
+      "id": "pan_02",
+      "lang": "en",
+      "topic": "central_epan_instant",
+      "answerable": true,
       "question": "Who can get an instant e-PAN?",
-      "expected_points": ["Individual not already allotted a PAN", "Valid Aadhaar with a linked mobile number", "Not a minor on the date of request", "Not a Representative Assessee under section 160 of the Income Tax Act"],
-      "expected_source": ["https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"]
+      "expected_points": [
+        "Individual not already allotted a PAN",
+        "Valid Aadhaar with a linked mobile number",
+        "Not a minor on the date of request",
+        "Not a Representative Assessee under section 160 of the Income Tax Act"
+      ],
+      "expected_source": [
+        "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+      ]
     },
     {
-      "id": "pan_03", "lang": "hi", "topic": "central_epan_instant", "answerable": true,
+      "id": "pan_03",
+      "lang": "hi",
+      "topic": "central_epan_instant",
+      "answerable": true,
       "question": "e-PAN बनाने के steps बताओ",
-      "expected_points": ["e-Filing portal home → Instant e-PAN → Get New e-PAN", "Enter 12-digit Aadhaar, tick 'I confirm', Continue", "Enter the 6-digit OTP sent to the Aadhaar-linked mobile", "Validate Aadhaar details, tick 'I Accept', Continue"],
-      "expected_source": ["https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"]
+      "expected_points": [
+        "e-Filing portal home → Instant e-PAN → Get New e-PAN",
+        "Enter 12-digit Aadhaar, tick 'I confirm', Continue",
+        "Enter the 6-digit OTP sent to the Aadhaar-linked mobile",
+        "Validate Aadhaar details, tick 'I Accept', Continue"
+      ],
+      "expected_source": [
+        "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+      ]
     },
     {
-      "id": "na_01", "lang": "en", "topic": "central_itr_filing", "answerable": false, "expected_confident": false,
+      "id": "na_01",
+      "lang": "en",
+      "topic": "central_itr_filing",
+      "answerable": false,
+      "expected_confident": false,
       "question": "What is the last date to file my income tax return this year?",
-      "expected_points": ["Says it is not sure / does not have this information", "Points to the official Income Tax e-Filing portal", "Gives no date"],
-      "expected_source": ["https://www.incometax.gov.in/iec/foportal/"]
+      "expected_points": [
+        "Says it is not sure / does not have this information",
+        "Points to the official Income Tax e-Filing portal",
+        "Gives no date"
+      ],
+      "expected_source": [
+        "https://www.incometax.gov.in/iec/foportal/"
+      ]
     },
     {
-      "id": "na_02", "lang": "hi", "topic": "driving_licence", "answerable": false, "expected_confident": false,
+      "id": "na_02",
+      "lang": "hi",
+      "topic": "driving_licence",
+      "answerable": false,
+      "expected_confident": false,
       "question": "लर्निंग लाइसेंस के टेस्ट की फीस कितनी है?",
-      "expected_points": ["Says it is not sure / driving licence is not covered", "Points to the official Sarathi portal", "Gives no fee amount"],
-      "expected_source": ["https://sarathi.parivahan.gov.in/"]
+      "expected_points": [
+        "Says it is not sure / driving licence is not covered",
+        "Points to the official Sarathi portal",
+        "Gives no fee amount"
+      ],
+      "expected_source": [
+        "https://sarathi.parivahan.gov.in/"
+      ]
     },
     {
-      "id": "na_03", "lang": "hi", "topic": "gj_income_certificate", "answerable": false, "expected_confident": false,
+      "id": "na_03",
+      "lang": "hi",
+      "topic": "gj_income_certificate",
+      "answerable": false,
+      "expected_confident": false,
       "question": "आय प्रमाण पत्र कितने साल तक valid रहता है?",
-      "expected_points": ["Says it is not sure — validity is not stated in our sources", "Points to the official Digital Gujarat page", "Gives no validity period"],
-      "expected_source": ["https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx"]
+      "expected_points": [
+        "Says it is not sure — validity is not stated in our sources",
+        "Points to the official Digital Gujarat page",
+        "Gives no validity period"
+      ],
+      "expected_source": [
+        "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx"
+      ]
     }
   ]
 }

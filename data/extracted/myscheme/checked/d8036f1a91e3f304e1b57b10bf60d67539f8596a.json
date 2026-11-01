@@ -1,0 +1,223 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/pmsscs-g",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_d8036f1a91",
+  "file": "d8036f1a91e3f304e1b57b10bf60d67539f8596a.md",
+  "content_hash": "af2ab6ae58b71114f48d92bff29eb53ed837a733",
+  "title": "Post-Matric Scholarships for Scheduled Castes Students- Gujarat",
+  "fetched_at": "2026-11-01T10:33:52+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:38:39+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_d8036f1a91_0",
+        "name": "Post-Matric Scholarships for Scheduled Castes Students- Gujarat",
+        "level": "central",
+        "state": "Gujarat",
+        "summary": "The objective of the scheme is to appreciably increase the Gross Enrolment Ratio of SC students in higher education with a focus on those from the poorest households, by providing financial assistance at post-matriculation or postsecondary stage to enable them to complete their education.",
+        "eligibility": [
+          "The student should belong to the Scheduled Caste Category of Gujarat.",
+          "The students who have passed the Matriculation or Higher Secondary or any higher examination of a recognized University or Board of Secondary Education will be eligible.",
+          "Scholarships will be paid to the students whose parents/guardians' income from all sources does not exceed ₹2,50,000/- during the last Financial Year."
+        ],
+        "exclusions": [
+          "Candidates who, after passing one stage of education are studying in the same stage of education in a different subject will not be eligible.",
+          "A scholarship holder under this scheme will not hold any other scholarship/stipend.",
+          "All seats filled through arbitrary and non-transparent processes without following the merit criteria as decided by the State Government are not eligible for these scholarships."
+        ],
+        "benefits": "Academic allowances ranging from ₹2500/- to ₹13500/- per annum depending on course category and residential status, plus 10% extra allowance for Divyang students.",
+        "documents": [
+          "Passport size photo",
+          "Identity proof i.e. Aadhaar Card",
+          "Income Certificate (Competent Authority) (Form No. 16 required for Govt. Employee)",
+          "10th Standard Marksheet",
+          "Caste Certificate from the Competent Authorities",
+          "First Page of Bank Passbook/Cancelled Cheque",
+          "Disability Certificate (Required only for Disable Person)",
+          "Fee Receipt of Current Course Year",
+          "Break Affidavit (If Break Gap is More than One Year)",
+          "Leave Without Pay (LWP) Certificate (For Employed Student Only)",
+          "Hostel Certificate (Only For Hosteller Student)",
+          "Marriage Certificate (If Any)",
+          "School Leaving Certificate (If Any)",
+          "Death Certificate of Father (If Father not Alive)",
+          "12th Standard Marksheet (If Any)",
+          "Graduate Marksheet (If Any)",
+          "Other Marksheets/Last Year Marksheet (If Any)",
+          "Identity Card (College/School)",
+          "Any other documents as required"
+        ],
+        "how_to_apply": "Applicants can apply online through the Digital Gujarat Portal by registering, updating their profile, selecting scholarship services under SC Scheme, filling out the application form, uploading documents, and submitting.",
+        "official_url": "https://www.digitalgujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g",
+        "verified_on": null,
+        "tags": [
+          "student",
+          "sc_st"
+        ],
+        "required_service_ids": [
+          "gj_income_certificate"
+        ],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The objective of the scheme is to appreciably increase the Gross Enrolment Ratio of SC students in higher education with a focus on those from the poorest households, by providing financial assistance at post-matriculation or postsecondary stage to enable them to complete their education.",
+          "quote": "The objective of the scheme is to appreciably increase the Gross Enrolment Ratio of SC students in higher education with a focus on those from the poorest households, by providing financial assistance at post-matriculation or postsecondary stage to enable them to complete their education.",
+          "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+        },
+        "eligibility": [
+          {
+            "value": "The student should belong to the Scheduled Caste Category of Gujarat.",
+            "quote": "1. The student should belong to the Scheduled Caste Category of Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "The students who have passed the Matriculation or Higher Secondary or any higher examination of a recognized University or Board of Secondary Education will be eligible.",
+            "quote": "2. The students who have passed the Matriculation or Higher Secondary or any higher examination of a recognized University or Board of Secondary Education will be eligible.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Scholarships will be paid to the students whose parents/guardians' income from all sources does not exceed ₹2,50,000/- during the last Financial Year.",
+            "quote": "3. Scholarships will be paid to the students whose parents/guardians' income from all sources does not exceed ₹2,50,000/- during the last Financial Year.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "Candidates who, after passing one stage of education are studying in the same stage of education in a different subject will not be eligible.",
+            "quote": "4. Candidates who, after passing one stage of education are studying in the same stage of education in a different subject e.g. Intermediate Science after Intermediate Arts or B.Com after B.A. or M.A in one subject after M.A in other subjects will not be eligible.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "A scholarship holder under this scheme will not hold any other scholarship/stipend.",
+            "quote": "7. A scholarship holder under this scheme will not hold any other scholarship/stipend.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "All seats filled through arbitrary and non-transparent processes without following the merit criteria as decided by the State Government are not eligible for these scholarships.",
+            "quote": "9. All seats filled through arbitrary and non-transparent processes (including management quota, NRI quota, spot admissions, etc.) without following the merit criteria as decided by the State Government are not eligible for these scholarships.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          }
+        ],
+        "benefits": {
+          "value": "Academic allowances ranging from ₹2500/- to ₹13500/- per annum depending on course category and residential status, plus 10% extra allowance for Divyang students.",
+          "quote": "Benefits include academic allowances ranging from ₹2500/- to ₹13500/- per annum, depending on the level of education and residential status.",
+          "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+        },
+        "documents": [
+          {
+            "value": "Passport size photo",
+            "quote": "1. Passport size photo",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Identity proof i.e. Aadhaar Card",
+            "quote": "2. Identity proof i.e. Aadhaar Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Income Certificate (Competent Authority) (Form No. 16 required for Govt. Employee)",
+            "quote": "3. Income Certificate (Competent Authority) (Form No. 16 required for Govt. Employee)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "10th Standard Marksheet",
+            "quote": "4. 10th Standard Marksheet",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Caste Certificate from the Competent Authorities",
+            "quote": "5. Caste Certificate from the Competent Authorities",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "First Page of Bank Passbook/Cancelled Cheque",
+            "quote": "6. First Page of Bank Passbook/Cancelled Cheque",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Disability Certificate (Required only for Disable Person)",
+            "quote": "7. Disability Certificate (Required only for Disable Person)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Fee Receipt of Current Course Year",
+            "quote": "8. Fee Receipt of Current Course Year",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Break Affidavit (If Break Gap is More than One Year)",
+            "quote": "9. Break Affidavit (If Break Gap is More than One Year)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Leave Without Pay (LWP) Certificate (For Employed Student Only)",
+            "quote": "10. Leave Without Pay (LWP) Certificate (For Employed Student Only)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Hostel Certificate (Only For Hosteller Student)",
+            "quote": "11. Hostel Certificate (Only For Hosteller Student)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Marriage Certificate (If Any)",
+            "quote": "12. Marriage Certificate (If Any)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "School Leaving Certificate (If Any)",
+            "quote": "13. School Leaving Certificate (If Any)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Death Certificate of Father (If Father not Alive)",
+            "quote": "14. Death Certificate of Father (If Father not Alive)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "12th Standard Marksheet (If Any)",
+            "quote": "15. 12th Standard Marksheet (If Any)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Graduate Marksheet (If Any)",
+            "quote": "16. Graduate Marksheet (If Any)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Other Marksheets/Last Year Marksheet (If Any)",
+            "quote": "17. Other Marksheets/Last Year Marksheet (If Any)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Identity Card (College/School)",
+            "quote": "18. Identity Card (College/School)",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          },
+          {
+            "value": "Any other documents as required",
+            "quote": "19. Any other documents as required",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Applicants can apply online through the Digital Gujarat Portal by registering, updating their profile, selecting scholarship services under SC Scheme, filling out the application form, uploading documents, and submitting.",
+          "quote": "Step 01: The applicant may visit the Digital Gujarat Portal: https://www.digitalgujarat.gov.in/ ﻿",
+          "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+        },
+        "needs_income_certificate": {
+          "value": "Yes, an Income Certificate from the Competent Authority (Form No. 16 for Govt. Employees) is required.",
+          "quote": "3. Income Certificate (Competent Authority) (Form No. 16 required for Govt. Employee)",
+          "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g"
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:55:34+00:00"
+}

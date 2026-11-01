@@ -1,0 +1,95 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_1b01c152d0",
+  "file": "1b01c152d0d955e561830f96f39f7b0103249e19.md",
+  "content_hash": "926680a379fc1c5659905e529c7182ee80e91343",
+  "title": "Shramik Parivahan Yojana (GBOCWWB)",
+  "fetched_at": "2026-10-31T18:33:49+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:36:16+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_1b01c152d0_0",
+        "name": "Shramik Parivahan Yojana (GBOCWWB)",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Registered construction workers are provided a bus pass through the Municipal Corporation at a concessional rate for commuting from Kadianaka to their workplace.",
+        "eligibility": [
+          "The applicant must be engaged in building or other construction work.",
+          "The construction worker must be registered with the Gujarat Building and Other Construction Worker’s Welfare Board."
+        ],
+        "exclusions": [],
+        "benefits": "Beneficiaries contribute 20% of the bus pass cost, while the board covers the remaining 80%.",
+        "documents": [
+          "Aadhaar Card",
+          "E-Nirman Card",
+          "2 Passport size photographs"
+        ],
+        "how_to_apply": "Visit the nearest municipal corporation office, collect and fill out the application form, attach required documents, and submit to the concerned official.",
+        "official_url": "https://bocwwb.gujarat.gov.in/schemes.htm",
+        "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb",
+        "verified_on": null,
+        "tags": [],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Registered construction workers are provided a bus pass through the Municipal Corporation at a concessional rate for commuting from Kadianaka to their workplace.",
+          "quote": "Under the scheme, the registered construction workers will be provided a bus pass through the Municipal Corporation at a concessional rate for commuting from Kadianaka to the workplace.",
+          "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant must be engaged in building or other construction work.",
+            "quote": "1. The applicant should be engaged in any Building or Other Construction Work.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb"
+          },
+          {
+            "value": "The construction worker must be registered with the Gujarat Building and Other Construction Worker’s Welfare Board.",
+            "quote": "2. The construction workers who are registered with the Gujarat Building and Other Construction Worker’s Welfare Board will be eligible to get the benefit of this scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Beneficiaries contribute 20% of the bus pass cost, while the board covers the remaining 80%.",
+          "quote": "Under the scheme, the beneficiary is required to contribute 20% of the pass amount, while the board covers the remaining 80%.",
+          "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb"
+        },
+        "documents": [
+          {
+            "value": "Aadhaar Card",
+            "quote": "1. Aadhaar Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb"
+          },
+          {
+            "value": "E-Nirman Card",
+            "quote": "2. E-Nirman Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb"
+          },
+          {
+            "value": "2 Passport size photographs",
+            "quote": "3. 2 Passport size photographs",
+            "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Visit the nearest municipal corporation office, collect and fill out the application form, attach required documents, and submit to the concerned official.",
+          "quote": "Step 01: The applicant needs to visit the nearest municipal corporation office.",
+          "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

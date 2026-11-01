@@ -1,0 +1,166 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/adas-glwb",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_a37e222df4",
+  "file": "a37e222df4e0e7f49acdfdc2e512b79077a95b6b.md",
+  "content_hash": "3e298cff372e103b2e5f84d3bfc397cf530cf4ba",
+  "title": "Accidental Death Assistance Scheme- Gujarat Labour Welfare Board",
+  "fetched_at": "2026-11-01T10:31:37+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:37:44+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_a37e222df4_0",
+        "name": "Accidental Death Assistance Scheme- Gujarat Labour Welfare Board",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Financial assistance is provided to the family members of workers in the event of their death due to an accident during their course of employment.",
+        "eligibility": [
+          "In case of the death of a worker due to an accident, the family of the worker will be eligible for assistance under the scheme.",
+          "Only those workers whose factory, company, or organization has regularly paid their Labour Welfare Fund will be eligible for the benefit.",
+          "The benefit of the scheme will be given from the day after the worker joins the job.",
+          "Application should be made within 2 years from the date of death of the worker."
+        ],
+        "exclusions": [
+          "Post-sickness and natural death of worker will not be admissible."
+        ],
+        "benefits": "Families of workers will receive financial assistance of ₹2,00,000/- in the event of the worker's death due to an accident during their course of employment.",
+        "documents": [
+          "Passport-size Photograph",
+          "A copy of the identity card issued by the contractor to the worker/labour",
+          "Aadhaar Card of Labour",
+          "Labour Welfare Fund Account Number",
+          "Identity proof of family member/applicant",
+          "Death certificate of worker",
+          "Accident report",
+          "Bonafide certificate",
+          "Affidavit",
+          "Bank account details/Bank Passbook of family member/applicant",
+          "Any other documents as required"
+        ],
+        "how_to_apply": "Applicants may visit the Sanman Portal, register or log in, select the scheme, fill out the application form, upload relevant documents, and submit.",
+        "official_url": "https://sanman.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb",
+        "verified_on": null,
+        "tags": [
+          "rural",
+          "urban"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Financial assistance is provided to the family members of workers in the event of their death due to an accident during their course of employment.",
+          "quote": "Under the scheme, financial assistance is provided to the family members of workers (Shramyogis) in the event of their death due to an accident during their course of employment.",
+          "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+        },
+        "eligibility": [
+          {
+            "value": "In case of the death of a worker due to an accident, the family of the worker will be eligible for assistance under the scheme.",
+            "quote": "1. In case of the death of a worker due to an accident, the family of the worker will be eligible for assistance under the scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Only those workers whose factory, company, or organization has regularly paid their Labour Welfare Fund will be eligible for the benefit.",
+            "quote": "2. Only those workers (Shramyogis) whose factory/company/organization has regularly paid their Labour Welfare Fund will be eligible for the benefit of this scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "The benefit of the scheme will be given from the day after the worker joins the job.",
+            "quote": "The benefit of the scheme will be given from the day after the worker joins the job.",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Application should be made within 2 years from the date of death of the worker.",
+            "quote": "Application should be made within 2 years from the date of death of the worker (Shramyogi).",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "Post-sickness and natural death of worker will not be admissible.",
+            "quote": "Post-sickness and natural death of worker will not be admissible.",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          }
+        ],
+        "benefits": {
+          "value": "Families of workers will receive financial assistance of ₹2,00,000/- in the event of the worker's death due to an accident during their course of employment.",
+          "quote": "Under the scheme, families of workers (Shramyogis) will receive financial assistance of ₹2,00,000/- in the event of the worker's death due to an accident during their course of employment.",
+          "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+        },
+        "documents": [
+          {
+            "value": "Passport-size Photograph",
+            "quote": "Passport-size Photograph",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "A copy of the identity card issued by the contractor to the worker/labour",
+            "quote": "A copy of the identity card issued by the contractor to the worker/labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Aadhaar Card of Labour",
+            "quote": "Aadhaar Card of Labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Labour Welfare Fund Account Number",
+            "quote": "Labour Welfare Fund Account Number",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Identity proof of family member/applicant",
+            "quote": "Identity proof of family member/applicant",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Death certificate of worker",
+            "quote": "Death certificate of worker",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Accident report",
+            "quote": "Accident report",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Bonafide certificate",
+            "quote": "Bonafide certificate",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Affidavit",
+            "quote": "Affidavit",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Bank account details/Bank Passbook of family member/applicant",
+            "quote": "Bank account details/Bank Passbook of family member/applicant",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          },
+          {
+            "value": "Any other documents as required",
+            "quote": "Any other documents as required",
+            "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Applicants may visit the Sanman Portal, register or log in, select the scheme, fill out the application form, upload relevant documents, and submit.",
+          "quote": "The applicant may visit the Sanman Portal: https://sanman.gujarat.gov.in/ On the home page, under the tab ‘Citizen Login’, click on ‘ Please Register Here’. Enter your Aadhaar Card Number, select user type and then enter your Labour Welfare Fund Account Number. Now, click on ‘Fetch’ & verify the details. Enter user details and Password. After successful registration, the applicants can login through their User ID and Password. Now, select the scheme and read the instructions carefully for the selected scheme. Fill out the application form and upload all the relevant documents. Agree with the Rules & Regulations and submit the application form.",
+          "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

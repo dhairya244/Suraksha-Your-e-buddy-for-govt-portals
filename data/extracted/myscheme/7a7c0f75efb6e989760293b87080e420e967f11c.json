@@ -1,0 +1,109 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/spfasae",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_7a7c0f75ef",
+  "file": "7a7c0f75efb6e989760293b87080e420e967f11c.md",
+  "content_hash": "6e9fa1acfed42d80f2faf271a40c7263d3b85404",
+  "title": "Scheme to Provide Financial Assistance to Farmers for Purchasing Sanedo Agricultural Equipment",
+  "fetched_at": "2026-11-01T10:34:42+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:39:01+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_7a7c0f75ef_0",
+        "name": "Scheme to Provide Financial Assistance to Farmers for Purchasing Sanedo Agricultural Equipment",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme aims to support farmers by providing financial assistance for purchasing Sanedo agricultural equipment to reduce labor shortage and farming efforts.",
+        "eligibility": [
+          "The applicant must be a landholding farmer.",
+          "The applicant must belong to the Gujarat state."
+        ],
+        "exclusions": [],
+        "benefits": "Assistance of 25% or 25,000/- of total cost whichever is less, once in 10 years.",
+        "documents": [
+          "Aadhaar card",
+          "Land ownership documents",
+          "Bank passbook copy",
+          "Recent passport-size photograph",
+          "Any other document if required"
+        ],
+        "how_to_apply": "Apply online through the I-Khedut Portal.",
+        "official_url": "https://ikhedut.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/spfasae",
+        "verified_on": null,
+        "tags": [
+          "farmer"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme aims to support farmers by providing financial assistance for purchasing Sanedo agricultural equipment to reduce labor shortage and farming efforts.",
+          "quote": "The \"Scheme to Provide Financial Assistance to Farmers for Purchasing Sanedo Agricultural Equipment\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to support farmers by providing financial assistance to farmers for purchasing Sanedo (Mini Tractor) equipment.",
+          "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant must be a landholding farmer.",
+            "quote": "The applicant must be a landholding farmer.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+          },
+          {
+            "value": "The applicant must belong to the Gujarat state.",
+            "quote": "The applicant must belong to the Gujarat state.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Assistance of 25% or 25,000/- of total cost whichever is less, once in 10 years.",
+          "quote": "Assistance of 25 % or ₹25,000/- of total cost whichever is less; (Ride on Type Self Propelled Tool Bar) (Sanedo) or (Ride on Type Self Propelled Multipurpose Tool Bar)(Sanedo) tested by the Government of India approved testing centre and which has valid test report. once in 10 (ten) years",
+          "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+        },
+        "documents": [
+          {
+            "value": "Aadhaar card",
+            "quote": "Aadhaar card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+          },
+          {
+            "value": "Land ownership documents",
+            "quote": "Land ownership documents.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+          },
+          {
+            "value": "Bank passbook copy",
+            "quote": "Bank passbook copy.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+          },
+          {
+            "value": "Recent passport-size photograph",
+            "quote": "Recent passport-size photograph.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+          },
+          {
+            "value": "Any other document if required",
+            "quote": "Any other document if required.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Apply online through the I-Khedut Portal.",
+          "quote": "The applicant may visit and apply online at I-Khedut Portal: https://ikhedut.gujarat.gov.in/ ﻿",
+          "source_url": "https://www.myscheme.gov.in/schemes/spfasae"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

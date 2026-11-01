@@ -1,0 +1,91 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/sbygbocwwb",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_9c223603ef",
+  "file": "9c223603efa2de895f3a10451cb7c0b0e0394d81.md",
+  "content_hash": "808924a8acf90b5c5fd61a487060d61c548543d3",
+  "title": "Shramik Basera Yojana (GBOCWWB)",
+  "fetched_at": "2026-10-31T18:33:38+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:36:05+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_9c223603ef_0",
+        "name": "Shramik Basera Yojana (GBOCWWB)",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Provides accommodation facilities to registered construction workers in temporary prefabricated housing with basic amenities.",
+        "eligibility": [
+          "Construction workers registered with the Gujarat Building and Other Construction Worker’s Welfare Board and their families.",
+          "The registered worker must present their identity card/smart card (e-Nirman card) renewed on time."
+        ],
+        "exclusions": [],
+        "benefits": "Accommodation facilities provided to laborers/workers at ₹5 per day.",
+        "documents": [
+          "Aadhaar card",
+          "e-Nirman Card"
+        ],
+        "how_to_apply": "Registered construction workers can avail benefits by visiting the prefabricated temporary accommodation constructed near their workplace or Kadianaka.",
+        "official_url": "https://bocwwb.gujarat.gov.in/schemes.htm",
+        "source_url": "https://www.myscheme.gov.in/schemes/sbygbocwwb",
+        "verified_on": null,
+        "tags": [
+          "housing"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Provides accommodation facilities to registered construction workers in temporary prefabricated housing with basic amenities.",
+          "quote": "Under the scheme, accommodation facilities will be provided to registered construction workers in temporary prefabricated housing with basic amenities that can be dismantled.",
+          "source_url": "https://www.myscheme.gov.in/schemes/sbygbocwwb"
+        },
+        "eligibility": [
+          {
+            "value": "Construction workers registered with the Gujarat Building and Other Construction Worker’s Welfare Board and their families.",
+            "quote": "The construction workers registered with the Gujarat Building and Other Construction Worker’s Welfare Board and their families will be eligible to get the benefit of this scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/sbygbocwwb"
+          },
+          {
+            "value": "The registered worker must present their identity card/smart card (e-Nirman card) renewed on time.",
+            "quote": "The registered worker has to present the identity card/smart card (e-Nirman card) as a construction worker to get assistance and the identity card/smart card should be renewed on time.",
+            "source_url": "https://www.myscheme.gov.in/schemes/sbygbocwwb"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Accommodation facilities provided to laborers/workers at ₹5 per day.",
+          "quote": "Under this scheme, accommodation facilities will be provided to the laborers/workers at the rate of ₹5/- per day.",
+          "source_url": "https://www.myscheme.gov.in/schemes/sbygbocwwb"
+        },
+        "documents": [
+          {
+            "value": "Aadhaar card",
+            "quote": "1. Aadhaar card",
+            "source_url": "https://www.myscheme.gov.in/schemes/sbygbocwwb"
+          },
+          {
+            "value": "e-Nirman Card",
+            "quote": "2. e-Nirman Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/sbygbocwwb"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Registered construction workers can avail benefits by visiting the prefabricated temporary accommodation constructed near their workplace or Kadianaka.",
+          "quote": "The registered construction workers can avail the benefits by visiting there.",
+          "source_url": "https://www.myscheme.gov.in/schemes/sbygbocwwb"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

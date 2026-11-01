@@ -1,0 +1,91 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/cdsg",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_3f7321b97a",
+  "file": "3f7321b97a513c19d0019396741a5b54dac4a1b6.md",
+  "content_hash": "1bed70bec93578de1ff73ec3949955ce248e70c2",
+  "title": "Coconut Development Scheme",
+  "fetched_at": "2026-11-01T10:31:53+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:37:48+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_3f7321b97a_0",
+        "name": "Coconut Development Scheme",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The \"Coconut Development Scheme\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to encourage farmers by providing quality coconut saplings at reasonable prices and financial assistance for coconut cultivation.",
+        "eligibility": [
+          "All farmers are eligible to apply for the scheme."
+        ],
+        "exclusions": [],
+        "benefits": "Financial support of ₹37,500/- per hectare for coconut cultivation and financial support of ₹5,000/- per hectare for IPM and INM.",
+        "documents": [
+          "7/12 Certificate",
+          "Aadhaar Card",
+          "Bank Pass Book/Cancelled Cheque"
+        ],
+        "how_to_apply": "Apply online through the I-Khedut Portal by visiting the schemes section, selecting the scheme, and submitting the application.",
+        "official_url": "https://ikhedut.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/cdsg",
+        "verified_on": null,
+        "tags": [
+          "farmer"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The \"Coconut Development Scheme\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to encourage farmers by providing quality coconut saplings at reasonable prices and financial assistance for coconut cultivation.",
+          "quote": "The \"Coconut Development Scheme\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to encourage farmers by providing quality coconut saplings at reasonable prices and financial assistance for coconut cultivation. It also promotes sustainable agricultural practices through Integrated Pest Management (IPM) and Integrated Nutrient Management (INM).",
+          "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+        },
+        "eligibility": [
+          {
+            "value": "All farmers are eligible to apply for the scheme.",
+            "quote": "All farmers are eligible to apply for the scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Financial support of ₹37,500/- per hectare for coconut cultivation and financial support of ₹5,000/- per hectare for IPM and INM.",
+          "quote": "Assistance for Coconut Cultivation: Financial support of ₹37,500/- per hectare, covering 75% of the total cost (₹50,000/- per hectare). Promotion of Integrated Pest Management (IPM) and Integrated Nutrient Management (INM): Financial support of ₹5,000/- per hectare, covering 50% of the total cost (₹10,000/- per hectare).",
+          "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+        },
+        "documents": [
+          {
+            "value": "7/12 Certificate",
+            "quote": "7/12 Certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+          },
+          {
+            "value": "Aadhaar Card",
+            "quote": "Aadhaar Card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+          },
+          {
+            "value": "Bank Pass Book/Cancelled Cheque",
+            "quote": "Bank Pass Book/Cancelled Cheque.",
+            "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Apply online through the I-Khedut Portal by visiting the schemes section, selecting the scheme, and submitting the application.",
+          "quote": "The applicant may visit and apply online at I-Khedut Portal: https://ikhedut.gujarat.gov.in/ On the home page, click on ‘Schemes’ and then click on ‘Agricultural Schemes’. Now select the scheme, click on the ‘Apply’ button and an application page will open. Click on \"Apply New\" button and submit a new application. Click on the \"Update Application\" button to add corrections to the application. Once the application is done, confirm it. Take a print out of the confirmed application.",
+          "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

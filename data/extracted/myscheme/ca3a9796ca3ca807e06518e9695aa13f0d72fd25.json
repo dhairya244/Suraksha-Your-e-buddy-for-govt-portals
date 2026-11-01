@@ -1,0 +1,197 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/msgbcdc",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_ca3a9796ca",
+  "file": "ca3a9796ca3ca807e06518e9695aa13f0d72fd25.md",
+  "content_hash": "0617cfffb0707f397f9c35260977f0277ccb835e",
+  "title": "Mahila Samruddhi (Gujarat Backward Caste Development Corporation)",
+  "fetched_at": "2026-11-01T10:30:41+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:37:21+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_ca3a9796ca_0",
+        "name": "Mahila Samruddhi (Gujarat Backward Caste Development Corporation)",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Provides low-interest microfinance loan up to ₹1,25,000 to empower women from backward classes in Gujarat by creating self-employment opportunities.",
+        "eligibility": [
+          "Applicant must be female.",
+          "Applicant must be a resident of Gujarat.",
+          "Applicant must belong to socially and educationally backward class (OBC).",
+          "Total family annual income must not exceed ₹3,00,000.",
+          "Applicant age must be between 21 and 45 years at the date of application.",
+          "Applicant must have experience in a business requiring technical and other skills."
+        ],
+        "exclusions": [],
+        "benefits": "Loan up to ₹1,25,000 at 4% annual interest rate covering 95% of unit cost, repayable in 48 equal monthly installments.",
+        "documents": [
+          "7/12 Certificate",
+          "Aadhaar Card",
+          "Affidavit",
+          "Age Proof",
+          "Attested copy of PAN Card",
+          "Bank Passbook First Page",
+          "Birth Certificate",
+          "Caste Certificate",
+          "Identity Card",
+          "Income Certificate",
+          "Passport Size Photos",
+          "Quotations",
+          "Ration Card",
+          "Residence Proof",
+          "School Leaving Certificate"
+        ],
+        "how_to_apply": "Apply online on the official website of Gujarat Backward Caste Development Corporation by registering, filling the application form for Mahila Samruddhi scheme, uploading required documents, and submitting.",
+        "official_url": "https://gbcdconline.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc",
+        "verified_on": null,
+        "tags": [
+          "women",
+          "obc",
+          "business"
+        ],
+        "required_service_ids": [
+          "gj_income_certificate"
+        ],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Provides low-interest microfinance loan up to ₹1,25,000 to empower women from backward classes in Gujarat by creating self-employment opportunities.",
+          "quote": "The scheme \"Mahila Samruddhi\" by the Social Justice and Empowerment Department, Government of Gujarat, aims to provide a small-scale credit scheme for creating self-employment for women from backward classes.",
+          "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+        },
+        "eligibility": [
+          {
+            "value": "Applicant must be female.",
+            "quote": "1. The applicant must be female.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Applicant must be a resident of Gujarat.",
+            "quote": "2. The applicant must be a resident of Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Applicant must belong to socially and educationally backward class (OBC).",
+            "quote": "3. The applicant should belong to a socially and educationally backward class, specifically Other Backward Classes (OBC).",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Total family annual income must not exceed ₹3,00,000.",
+            "quote": "4. The total annual income of the applicant's family should not exceed ₹3,00,000/-.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Applicant age must be between 21 and 45 years at the date of application.",
+            "quote": "5. The applicant's age should be between 21 and 45 years on the date of application.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Applicant must have experience in a business requiring technical and other skills.",
+            "quote": "6. The applicant must have experience in a business requiring technical and other skills.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Loan up to ₹1,25,000 at 4% annual interest rate covering 95% of unit cost, repayable in 48 equal monthly installments.",
+          "quote": "1. The maximum loan limit under this scheme is up to ₹1,25,000/-.",
+          "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+        },
+        "documents": [
+          {
+            "value": "7/12 Certificate",
+            "quote": "01. 7/12 Certificate",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Aadhaar Card",
+            "quote": "02. Aadhar Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Affidavit",
+            "quote": "03. Affidavit",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Age Proof",
+            "quote": "04. Age Proof (cross-referencing eligibility criteria for age between 21 and 45 years)",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Attested copy of PAN Card",
+            "quote": "05. Attested Copy of Permanent Account Number (PAN) Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Bank Passbook First Page",
+            "quote": "06. Bank Passbook (First Page)",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Birth Certificate",
+            "quote": "07. Birth Certificate",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Caste Certificate",
+            "quote": "08. Caste Certificate (cross-referencing eligibility for socially and educationally backward class)",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Identity Card",
+            "quote": "09. Identity Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Income Certificate",
+            "quote": "10. Income Certificate (cross-referencing eligibility for family income limit of ₹3,00,000)",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Passport Size Photos",
+            "quote": "11. Passport Size Photos",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Quotations",
+            "quote": "12. Quotations",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Ration Card",
+            "quote": "13. Ration Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "Residence Proof",
+            "quote": "14. Residence Proof",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          },
+          {
+            "value": "School Leaving Certificate",
+            "quote": "15. School Leaving Certificate",
+            "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Apply online on the official website of Gujarat Backward Caste Development Corporation by registering, filling the application form for Mahila Samruddhi scheme, uploading required documents, and submitting.",
+          "quote": "**Step 1:**Visit the [official website](https://gbcdconline.gujarat.gov.in/) of the Gujarat Backwards Caste Development Corporation.",
+          "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+        },
+        "needs_income_certificate": {
+          "value": "Yes, an income certificate is required to verify the annual family income limit of ₹3,00,000.",
+          "quote": "10. Income Certificate (cross-referencing eligibility for family income limit of ₹3,00,000)",
+          "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc"
+        }
+      }
+    }
+  ]
+}

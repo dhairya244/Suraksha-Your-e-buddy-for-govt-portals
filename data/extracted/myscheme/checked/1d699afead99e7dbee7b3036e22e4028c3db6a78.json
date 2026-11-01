@@ -1,0 +1,137 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/wfafcp",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_1d699afead",
+  "file": "1d699afead99e7dbee7b3036e22e4028c3db6a78.md",
+  "content_hash": "523d7c7395efa01c62b45fd791632142a20e6e8e",
+  "title": "Wire Fencing Around the Farm for Crop Protection",
+  "fetched_at": "2026-11-01T10:35:08+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:39:13+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_1d699afead_0",
+        "name": "Wire Fencing Around the Farm for Crop Protection",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme aims to provide financial aid to farmers to install wire fencing, helping prevent damage to crops from wild and stray animals.",
+        "eligibility": [
+          "The applicant must be a landholding farmer or a farmer group",
+          "The applicant must have a minimum of 2 hectares (ha) of land in a cluster.",
+          "Only one of the holders mentioned in 8-A land records per account is eligible for benefits with the consent of other holders.",
+          "A farmer is eligible for assistance for a maximum of one account."
+        ],
+        "exclusions": [
+          "Farmers who have already availed benefits under the Solar Fencing Scheme are not eligible for this scheme."
+        ],
+        "benefits": "Per Running Meter ₹200/- or 50% of the actual expenditure incurred, whichever is less. Available once in a lifetime.",
+        "documents": [
+          "Land Ownership Proof (8-A land record).",
+          "Aadhaar Card.",
+          "Bank Account Details.",
+          "Consent Letter from other land account holders (if applicable).",
+          "Van Adhikar Patra or Sanad (for farmers in forest areas).",
+          "Any other document if required."
+        ],
+        "how_to_apply": "Apply online via I-Khedut Portal by visiting https://ikhedut.gujarat.gov.in/",
+        "official_url": "https://ikhedut.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/wfafcp",
+        "verified_on": null,
+        "tags": [
+          "farmer",
+          "rural"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme aims to provide financial aid to farmers to install wire fencing, helping prevent damage to crops from wild and stray animals.",
+          "quote": "The scheme \"Wire Fencing Around the Farm for Crop Protection\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to provide financial aid to farmers to install wire fencing, helping prevent damage to crops from wild and stray animals.",
+          "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant must be a landholding farmer or a farmer group",
+            "quote": "The applicant must be a landholding farmer or a farmer group",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          },
+          {
+            "value": "The applicant must have a minimum of 2 hectares (ha) of land in a cluster.",
+            "quote": "The applicant must have a minimum of 2 hectares (ha) of land in a cluster.",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          },
+          {
+            "value": "Only one of the holders mentioned in 8-A land records per account is eligible for benefits with the consent of other holders.",
+            "quote": "Only one of the holders mentioned in 8-A land records per account is eligible for benefits with the consent of other holders.",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          },
+          {
+            "value": "A farmer is eligible for assistance for a maximum of one account.",
+            "quote": "A farmer is eligible for assistance for a maximum of one account.",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "Farmers who have already availed benefits under the Solar Fencing Scheme are not eligible for this scheme.",
+            "quote": "Farmers who have already availed benefits under the Solar Fencing Scheme are not eligible for this scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          }
+        ],
+        "benefits": {
+          "value": "Per Running Meter ₹200/- or 50% of the actual expenditure incurred, whichever is less. Available once in a lifetime.",
+          "quote": "Wire Fencing | Per Running Meter ₹200/- or 50% of the actual expenditure incurred, whichever is less | Once in lifetime",
+          "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+        },
+        "documents": [
+          {
+            "value": "Land Ownership Proof (8-A land record).",
+            "quote": "1. Land Ownership Proof (8-A land record).",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          },
+          {
+            "value": "Aadhaar Card.",
+            "quote": "2. Aadhaar Card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          },
+          {
+            "value": "Bank Account Details.",
+            "quote": "3. Bank Account Details.",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          },
+          {
+            "value": "Consent Letter from other land account holders (if applicable).",
+            "quote": "4. Consent Letter from other land account holders (if applicable).",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          },
+          {
+            "value": "Van Adhikar Patra or Sanad (for farmers in forest areas).",
+            "quote": "5. Van Adhikar Patra or Sanad (for farmers in forest areas).",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          },
+          {
+            "value": "Any other document if required.",
+            "quote": "6. Any other document if required.",
+            "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Apply online via I-Khedut Portal by visiting https://ikhedut.gujarat.gov.in/",
+          "quote": "Step 1: The applicant may visit and apply online at I-Khedut Portal: https://ikhedut.gujarat.gov.in/",
+          "source_url": "https://www.myscheme.gov.in/schemes/wfafcp"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:52:09+00:00"
+}

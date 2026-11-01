@@ -1,0 +1,107 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/psg",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_79d43ef6e8",
+  "file": "79d43ef6e812e0cada9bb7f1e80d9203c21cbede.md",
+  "content_hash": "3cfd5ca73f2fa9801708c01b5a722b8723da549d",
+  "title": "PURNA Scheme",
+  "fetched_at": "2026-11-01T10:31:25+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:37:37+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_79d43ef6e8_0",
+        "name": "PURNA Scheme",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The \"PURNA Scheme\" launched by the Women and Child Development Department, Gujarat, is a comprehensive initiative designed for adolescent girls aged 15-18 in Gujarat. It focuses on improving their nutritional status, health, and life skills while empowering them through education, vocational training, and exposure to public services.",
+        "eligibility": [
+          "The applicant must be a girl.",
+          "The applicant must be aged between 15-18 years.",
+          "Applicant must be enrolled at an Anganwadi center in Gujarat."
+        ],
+        "exclusions": [],
+        "benefits": "Nutritional support with PURNA Shakti packets, health enhancement with IFA tablets and health check-ups, educational encouragement, life skill development, public exposure visits, awareness programs like PURNA divas, and empowerment kits.",
+        "documents": [
+          "Age proof document (15-18 years).",
+          "Address proof.",
+          "Any other documents (if required)."
+        ],
+        "how_to_apply": "Visit the nearest Anganwadi centres, submit age proof and enrollment details, and register for the scheme with the assistance of the Anganwadi worker.",
+        "official_url": "https://www.myscheme.gov.in/schemes/psg",
+        "source_url": "https://www.myscheme.gov.in/schemes/psg",
+        "verified_on": null,
+        "tags": [
+          "women",
+          "education",
+          "health"
+        ],
+        "required_service_ids": [
+          "gj_income_certificate"
+        ],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The \"PURNA Scheme\" launched by the Women and Child Development Department, Gujarat, is a comprehensive initiative designed for adolescent girls aged 15-18 in Gujarat. It focuses on improving their nutritional status, health, and life skills while empowering them through education, vocational training, and exposure to public services.",
+          "quote": "The \"PURNA Scheme\" launched by the Women and Child Development Department, Gujarat, is a comprehensive initiative designed for adolescent girls aged 15-18 in Gujarat. It focuses on improving their nutritional status, health, and life skills while empowering them through education, vocational training, and exposure to public services.",
+          "source_url": "https://www.myscheme.gov.in/schemes/psg"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant must be a girl.",
+            "quote": "The applicant must be a girl.",
+            "source_url": "https://www.myscheme.gov.in/schemes/psg"
+          },
+          {
+            "value": "The applicant must be aged between 15-18 years.",
+            "quote": "The applicant must be aged between 15-18 years.",
+            "source_url": "https://www.myscheme.gov.in/schemes/psg"
+          },
+          {
+            "value": "Applicant must be enrolled at an Anganwadi center in Gujarat.",
+            "quote": "Applicant must be enrolled at an Anganwadi center in Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/psg"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Nutritional support with PURNA Shakti packets, health enhancement with IFA tablets and health check-ups, educational encouragement, life skill development, public exposure visits, awareness programs like PURNA divas, and empowerment kits.",
+          "quote": "Nutritional Support: Supplementary nutrition (PURNA Shakti) 4 packets (1kg/packet) on 4th Tuesday of every month which contains 9 micronutrients.",
+          "source_url": "https://www.myscheme.gov.in/schemes/psg"
+        },
+        "documents": [
+          {
+            "value": "Age proof document (15-18 years).",
+            "quote": "Age proof document (15-18 years).",
+            "source_url": "https://www.myscheme.gov.in/schemes/psg"
+          },
+          {
+            "value": "Address proof.",
+            "quote": "Address proof.",
+            "source_url": "https://www.myscheme.gov.in/schemes/psg"
+          },
+          {
+            "value": "Any other documents (if required).",
+            "quote": "Any other documents (if required).",
+            "source_url": "https://www.myscheme.gov.in/schemes/psg"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Visit the nearest Anganwadi centres, submit age proof and enrollment details, and register for the scheme with the assistance of the Anganwadi worker.",
+          "quote": "Step 1: Visit the nearest Anganwadi centres. Step 2: Submit age proof and enrollment details. Step 3: Register for the scheme with the assistance of the Anganwadi worker.",
+          "source_url": "https://www.myscheme.gov.in/schemes/psg"
+        },
+        "needs_income_certificate": {
+          "value": "No income limitations exist for the scheme.",
+          "quote": "With no income limitations, the scheme ensures inclusivity by offering nutritional supplements, health check-ups, and life-skill training to all adolescent girls registered at Anganwadi centres.",
+          "source_url": "https://www.myscheme.gov.in/schemes/psg"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/ssieemaf",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_c6b4dd3f21",
+  "file": "c6b4dd3f216d96a92c6e1c5b1baaefed03f85cbf.md",
+  "content_hash": "c51da8e8fec01617433836edbb67b00c910e348f",
+  "title": "Scheme For Subsidy On Interest For Establishment Of 1 To 20 Milch Animal Farm",
+  "fetched_at": "2026-11-01T10:34:55+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:39:08+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_c6b4dd3f21_0",
+        "name": "Scheme For Subsidy On Interest For Establishment Of 1 To 20 Milch Animal Farm",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme provides an interest subsidy of up to 12% on a bank loan for establishing a 1 to 20 milch animal farm for cattle breeders and farmers in Gujarat.",
+        "eligibility": [
+          "The applicant should be a permanent resident of Gujarat State.",
+          "Only one member of the family should be the beneficiary of the scheme.",
+          "The benefit of this scheme will be available to all the farmers of Gujarat State.",
+          "The applicant will be eligible for assistance only if he has obtained a loan for setting up the unit in the current financial year 2023-24 through a nationalized bank or a financial institution approved by the Reserve Bank of India."
+        ],
+        "exclusions": [],
+        "benefits": "The beneficiary can purchase 1 to 20 milch animals at a subsidized rate and receive an interest subsidy up to a maximum of 12% on the unit cost of the animal or the unit loan advanced by the bank for a period of five years via DBT.",
+        "documents": [
+          "Government-approved photo ID i.e. Aadhaar Card, Voter ID Card",
+          "Basis (evidence) for land (if applicable)",
+          "Disability Certificate from Competent Authority (only for disabled) (if applicable)",
+          "Ration Card (if applicable)",
+          "Bank account details",
+          "Beneficiary's Undertaking/Consent Form",
+          "Loan account passbook or bank disbursement certificate"
+        ],
+        "how_to_apply": null,
+        "official_url": "https://ikhedut.gujarat.gov.in/iKhedutPublicScheme/Public/frm_Public_ANH2_SchemeApplicaiton.aspx",
+        "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf",
+        "verified_on": null,
+        "tags": [
+          "farmer",
+          "rural",
+          "business",
+          "income_support"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme provides an interest subsidy of up to 12% on a bank loan for establishing a 1 to 20 milch animal farm for cattle breeders and farmers in Gujarat.",
+          "quote": "The scheme “Scheme for Subsidy on Interest for Establishment of 1 to 20 Milch Animal Farm for the State Cattle Breeders” was started by the Dept. of Agriculture, Farmers Welfare & Co-operation, Government of Gujarat. Under the scheme, all the eligible farmers/cattle breeders of Gujarat State can purchase 1 to 20 animals as per their need and capacity to maintain. The eligible beneficiary can get an interest subsidy @ 12 % interest on a bank loan amount for 5 years if he/she has obtained a loan for setting up the unit in the current financial year 2023-24 through a nationalized bank or a financial institution approved by the Reserve Bank of India.",
+          "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant should be a permanent resident of Gujarat State.",
+            "quote": "1. The applicant should be a permanent resident of Gujarat State.",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          },
+          {
+            "value": "Only one member of the family should be the beneficiary of the scheme.",
+            "quote": "2. Only one member of the family should be the beneficiary of the scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          },
+          {
+            "value": "The benefit of this scheme will be available to all the farmers of Gujarat State.",
+            "quote": "3. The benefit of this scheme will be available to all the farmers of Gujarat State.",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          },
+          {
+            "value": "The applicant will be eligible for assistance only if he has obtained a loan for setting up the unit in the current financial year 2023-24 through a nationalized bank or a financial institution approved by the Reserve Bank of India.",
+            "quote": "4. The applicant will be eligible for assistance only if he has obtained a loan for setting up the unit in the current financial year 2023-24 through a nationalized bank or a financial institution approved by the Reserve Bank of India.",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "The beneficiary can purchase 1 to 20 milch animals at a subsidized rate and receive an interest subsidy up to a maximum of 12% on the unit cost of the animal or the unit loan advanced by the bank for a period of five years via DBT.",
+          "quote": "1. The beneficiary can purchase 1 to 20 Milch animals (Any dairy animal cow & buffalo) at a subsidized rate as per their need and capacity to maintain. 2. The beneficiary can get an interest subsidy up to a maximum of 12% on the unit cost of the animal or the unit loan advanced by the bank for the purchase of the animal, whichever is lower, will be available for a period of five years.",
+          "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+        },
+        "documents": [
+          {
+            "value": "Government-approved photo ID i.e. Aadhaar Card, Voter ID Card",
+            "quote": "1. Government-approved photo ID i.e. Aadhaar Card, Voter ID Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          },
+          {
+            "value": "Basis (evidence) for land (if applicable)",
+            "quote": "2. Basis (evidence) for land (if applicable)",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          },
+          {
+            "value": "Disability Certificate from Competent Authority (only for disabled) (if applicable)",
+            "quote": "3. Disability Certificate from Competent Authority (only for disabled) (if applicable)",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          },
+          {
+            "value": "Ration Card (if applicable)",
+            "quote": "4. Ration Card (if applicable)",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          },
+          {
+            "value": "Bank account details",
+            "quote": "5. Bank account details",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          },
+          {
+            "value": "Beneficiary's Undertaking/Consent Form",
+            "quote": "6. Beneficiary's Undertaking/Consent Form",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          },
+          {
+            "value": "Loan account passbook or bank disbursement certificate",
+            "quote": "7. Loan account passbook or bank disbursement certificate",
+            "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf"
+          }
+        ],
+        "how_to_apply": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:54:53+00:00"
+}

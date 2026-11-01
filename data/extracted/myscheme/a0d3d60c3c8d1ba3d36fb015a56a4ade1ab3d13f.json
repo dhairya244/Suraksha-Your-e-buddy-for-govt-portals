@@ -1,0 +1,148 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/gspsg",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_a0d3d60c3c",
+  "file": "a0d3d60c3c8d1ba3d36fb015a56a4ade1ab3d13f.md",
+  "content_hash": "47eac1f146e18d947c24f0c8f575bae138c370ac",
+  "title": "Ganga Swarupa Pension Scheme",
+  "fetched_at": "2026-10-31T18:34:20+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:36:36+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_a0d3d60c3c_0",
+        "name": "Ganga Swarupa Pension Scheme",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme provides monthly financial assistance to widowed women in Gujarat to help them achieve self-reliance and dignity.",
+        "eligibility": [
+          "Applicant must be a resident of Gujarat.",
+          "Applicant must be a widowed woman.",
+          "Applicant must be aged 18 years or above.",
+          "Annual income must not exceed ₹1,20,000 in rural areas and ₹1,50,000 in urban areas."
+        ],
+        "exclusions": [],
+        "benefits": "Monthly pension of ₹1,250/- deposited directly into Post Office accounts.",
+        "documents": [
+          "Photo of the applicant (widowed woman)",
+          "Copy of ration card",
+          "School leaving certificate",
+          "Income proof",
+          "Husband’s death certificate",
+          "Election card or Aadhaar card",
+          "Electricity bill",
+          "Birth certificate",
+          "Proof of being a widow"
+        ],
+        "how_to_apply": "Obtain the application form from Taluka Mamlatdar’s office, fill it out, attach required documents, and submit it back to the Taluka Mamlatdar for verification and approval.",
+        "official_url": "https://wcd.gujarat.gov.in/initiativedetails?id=231",
+        "source_url": "https://www.myscheme.gov.in/schemes/gspsg",
+        "verified_on": null,
+        "tags": [
+          "women",
+          "income_support"
+        ],
+        "required_service_ids": [
+          "gj_income_certificate"
+        ],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme provides monthly financial assistance to widowed women in Gujarat to help them achieve self-reliance and dignity.",
+          "quote": "The \"Ganga Swarupa Pension Scheme\" launched by the Women and Child Development Department, Gujarat, aims to empower widowed women by offering financial support, ensuring they achieve self-reliance and dignity.",
+          "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+        },
+        "eligibility": [
+          {
+            "value": "Applicant must be a resident of Gujarat.",
+            "quote": "The applicant must be a resident of Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Applicant must be a widowed woman.",
+            "quote": "The applicant must be a widowed woman.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Applicant must be aged 18 years or above.",
+            "quote": "The applicant must be aged 18 years or above.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Annual income must not exceed ₹1,20,000 in rural areas and ₹1,50,000 in urban areas.",
+            "quote": "The applicant’s annual income must not exceed ₹1,20,000/- in rural areas and ₹1,50,000/- in urban areas.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Monthly pension of ₹1,250/- deposited directly into Post Office accounts.",
+          "quote": "Monthly financial assistance of ₹1,250/-.",
+          "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+        },
+        "documents": [
+          {
+            "value": "Photo of the applicant (widowed woman)",
+            "quote": "Photo of the applicant (widowed woman).",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Copy of ration card",
+            "quote": "Copy of ration card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "School leaving certificate",
+            "quote": "School leaving certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Income proof",
+            "quote": "Income proof.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Husband’s death certificate",
+            "quote": "Husband’s death certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Election card or Aadhaar card",
+            "quote": "Election card or Aadhaar card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Electricity bill",
+            "quote": "Electricity bill.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Birth certificate",
+            "quote": "Birth certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          },
+          {
+            "value": "Proof of being a widow",
+            "quote": "Proof of being a widow.",
+            "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Obtain the application form from Taluka Mamlatdar’s office, fill it out, attach required documents, and submit it back to the Taluka Mamlatdar for verification and approval.",
+          "quote": "Obtain the application form from Taluka Mamlatdar’s office.",
+          "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+        },
+        "needs_income_certificate": {
+          "value": "Yes, income proof is required to verify that annual income limits are met.",
+          "quote": "Income proof.",
+          "source_url": "https://www.myscheme.gov.in/schemes/gspsg"
+        }
+      }
+    }
+  ]
+}

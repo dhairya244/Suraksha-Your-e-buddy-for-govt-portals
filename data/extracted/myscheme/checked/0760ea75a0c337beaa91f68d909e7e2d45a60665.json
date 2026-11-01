@@ -1,0 +1,88 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/darygbocwwb",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_0760ea75a0",
+  "file": "0760ea75a0c337beaa91f68d909e7e2d45a60665.md",
+  "content_hash": "2f58761065c1e5c41e0f9f548063783afb0e3040",
+  "title": "Dhanvantari Arogya Rath Yojana (GBOCWWB)",
+  "fetched_at": "2026-10-31T18:34:05+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:36:27+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_0760ea75a0_0",
+        "name": "Dhanvantari Arogya Rath Yojana (GBOCWWB)",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme provides primary medical treatment at doorsteps and construction sites to construction workers and their families to prevent serious diseases and maintain health.",
+        "eligibility": [
+          "Construction workers registered with the Gujarat Building and Other Construction Worker's Welfare Board and their family members."
+        ],
+        "exclusions": [
+          "Non-registered construction workers are not eligible for the benefits."
+        ],
+        "benefits": "On-the-spot treatment for primary injuries, common diseases, laboratory tests, primary care for women, children, and pregnant women, along with free medicines.",
+        "documents": [
+          "e-Nirman Card"
+        ],
+        "how_to_apply": "Registered construction workers and family members can visit the Dhanvantari Arogya Rath at Kadianaka and construction sites to receive benefits.",
+        "official_url": "https://bocwwb.gujarat.gov.in/schemes.htm",
+        "source_url": "https://www.myscheme.gov.in/schemes/darygbocwwb",
+        "verified_on": null,
+        "tags": [
+          "health"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme provides primary medical treatment at doorsteps and construction sites to construction workers and their families to prevent serious diseases and maintain health.",
+          "quote": "The “Dhanvantari Arogya Rath Yojana” was launched by the Gujarat Building and Other Construction Worker’s Welfare Board (GBOCWWB), Labour, Skill Development & Employment Department, Government of Gujarat.",
+          "source_url": "https://www.myscheme.gov.in/schemes/darygbocwwb"
+        },
+        "eligibility": [
+          {
+            "value": "Construction workers registered with the Gujarat Building and Other Construction Worker's Welfare Board and their family members.",
+            "quote": "The benefits of this scheme can be availed by construction workers registered with the Gujarat Building and Other Construction Worker’s Welfare Board and their family members.",
+            "source_url": "https://www.myscheme.gov.in/schemes/darygbocwwb"
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "Non-registered construction workers are not eligible for the benefits.",
+            "quote": "No, only construction workers registered with the welfare board are eligible for the benefits of the Dhanvantari Arogya Rath Yojana.",
+            "source_url": "https://www.myscheme.gov.in/schemes/darygbocwwb"
+          }
+        ],
+        "benefits": {
+          "value": "On-the-spot treatment for primary injuries, common diseases, laboratory tests, primary care for women, children, and pregnant women, along with free medicines.",
+          "quote": "Treatment for primary injuries, common diseases like fever, diarrheas, vomiting, skin diseases, laboratory tests such as urine, blood, blood sugar, malaria, primary care for women and children, and primary care for pregnant women during pregnancy are provided on the spot.",
+          "source_url": "https://www.myscheme.gov.in/schemes/darygbocwwb"
+        },
+        "documents": [
+          {
+            "value": "e-Nirman Card",
+            "quote": "e-Nirman Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/darygbocwwb"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Registered construction workers and family members can visit the Dhanvantari Arogya Rath at Kadianaka and construction sites to receive benefits.",
+          "quote": "They can avail of the benefits by visiting the Dhanvantari Arogya Rath stationed at Kadianaka and construction sites.",
+          "source_url": "https://www.myscheme.gov.in/schemes/darygbocwwb"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:51:49+00:00"
+}

@@ -1,0 +1,134 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/mssg",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_9d1cc56b65",
+  "file": "9d1cc56b6573d0322ae3cb0ddd5268f252eafddd.md",
+  "content_hash": "69ee82e8ed93f8c392b13a668ed10ab4be92e931",
+  "title": "Mahila Swavlamban Scheme",
+  "fetched_at": "2026-11-01T10:30:54+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:37:25+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_9d1cc56b65_0",
+        "name": "Mahila Swavlamban Scheme",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme aims to empower women by providing financial assistance for starting or expanding economic activities, offering a subsidy and a loan to help them become self-reliant.",
+        "eligibility": [
+          "The applicant must be a woman.",
+          "The applicant must be a resident of Gujarat.",
+          "The applicant must belong to the BPL (Below Poverty Line) category.",
+          "The applicant's annual income must be ₹1,20,000/- in rural areas and ₹1,50,000/- in urban areas."
+        ],
+        "exclusions": [],
+        "benefits": null,
+        "documents": [
+          "Age proof.",
+          "Aadhaar card.",
+          "Quotation for business activities.",
+          "Experience certificate.",
+          "Income proof.",
+          "Copy of Ration card."
+        ],
+        "how_to_apply": "Fill out the prescribed form with complete details and submit it along with necessary documents to the Women's Economic Development Corporation.",
+        "official_url": "https://www.myscheme.gov.in/schemes/mssg",
+        "source_url": "https://www.myscheme.gov.in/schemes/mssg",
+        "verified_on": null,
+        "tags": [
+          "women",
+          "rural",
+          "urban",
+          "bpl",
+          "business"
+        ],
+        "required_service_ids": [
+          "gj_income_certificate"
+        ],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme aims to empower women by providing financial assistance for starting or expanding economic activities, offering a subsidy and a loan to help them become self-reliant.",
+          "quote": "The \"Mahila Swavlamban Scheme\" launched by the Women and Child Development Department, Gujarat, aims to empower women by providing financial assistance for starting or expanding economic activities. This initiative targets women from rural and urban areas, especially those from families living below the poverty line. The scheme offers a subsidy and a loan to support the economic development of women, helping them become self-reliant.",
+          "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant must be a woman.",
+            "quote": "1. The applicant must be a woman.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          },
+          {
+            "value": "The applicant must be a resident of Gujarat.",
+            "quote": "2. The applicant must be a resident of Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          },
+          {
+            "value": "The applicant must belong to the BPL (Below Poverty Line) category.",
+            "quote": "3. The applicant must belong to the BPL (Below Poverty Line) category",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          },
+          {
+            "value": "The applicant's annual income must be ₹1,20,000/- in rural areas and ₹1,50,000/- in urban areas.",
+            "quote": "4. The applicant's annual income must be ₹1,20,000/- in rural areas and ₹1,50,000/-in urban areas.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "documents": [
+          {
+            "value": "Age proof.",
+            "quote": "1. Age proof.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          },
+          {
+            "value": "Aadhaar card.",
+            "quote": "2. Aadhaar card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          },
+          {
+            "value": "Quotation for business activities.",
+            "quote": "3. Quotation for business activities.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          },
+          {
+            "value": "Experience certificate.",
+            "quote": "4. Experience certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          },
+          {
+            "value": "Income proof.",
+            "quote": "5. Income proof.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          },
+          {
+            "value": "Copy of Ration card.",
+            "quote": "6. Copy of Ration card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Fill out the prescribed form with complete details and submit it along with necessary documents to the Women's Economic Development Corporation.",
+          "quote": "Step-1: The applicant must fill out the prescribed form with complete details. Step-2: Submit the form along with the necessary documents to the Women's Economic Development Corporation.",
+          "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+        },
+        "needs_income_certificate": {
+          "value": "Yes, income proof is required.",
+          "quote": "5. Income proof.",
+          "source_url": "https://www.myscheme.gov.in/schemes/mssg"
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:53:52+00:00"
+}

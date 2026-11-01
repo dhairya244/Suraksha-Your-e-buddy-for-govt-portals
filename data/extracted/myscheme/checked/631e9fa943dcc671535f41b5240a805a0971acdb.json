@@ -1,0 +1,144 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_631e9fa943",
+  "file": "631e9fa943dcc671535f41b5240a805a0971acdb.md",
+  "content_hash": "c8fc380c0ef6dd037d03ed0ce7d399256d03fa58",
+  "title": "PMMSY: Motorcycle with Ice Box - Gujarat",
+  "fetched_at": "2026-11-01T10:33:41+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:38:33+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_631e9fa943_0",
+        "name": "PMMSY: Motorcycle with Ice Box - Gujarat",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme provides financial support to fishermen and related beneficiaries for a motorcycle with an ice box to modernize cold chain infrastructure and ensure hygienic fish storage.",
+        "eligibility": [
+          "The applicant should be a native of Gujarat state.",
+          "The applicant should have a fishing boat registered under Real Craft software.",
+          "The applicant should hold a fishing license.",
+          "The applicant should complete the online registration on the iKhedut Portal.",
+          "The applicant should obtain in-principle approval before purchase of the floor plan.",
+          "The applicant should have his/her own bank account."
+        ],
+        "exclusions": [],
+        "benefits": "General category beneficiaries receive 40% assistance up to ₹30,000/- while women and ST/SC beneficiaries receive 60% assistance up to ₹45,000/- out of the total unit cost of ₹75,000/-.",
+        "documents": [
+          "Aadhar card.",
+          "Quotation.",
+          "Caste certificate (if applicable).",
+          "Fishing License.",
+          "Passport-size photo.",
+          "Bank passbook / cancelled cheque.",
+          "Ration card."
+        ],
+        "how_to_apply": "Applicants can apply online through the I-Khedut Portal by registering, selecting the agricultural scheme, applying, and submitting the form.",
+        "official_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj",
+        "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj",
+        "verified_on": null,
+        "tags": [],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme provides financial support to fishermen and related beneficiaries for a motorcycle with an ice box to modernize cold chain infrastructure and ensure hygienic fish storage.",
+          "quote": "The scheme “Pradhan Mantri Matsya Sampada Yojana (PMMSY)” with the component of \"Motorcycle with Ice Box\", introduced by the Agriculture, Farmers Welfare and Co-operation Department, Government of Gujarat, aims to modernise cold chain infrastructure to preserve fish health, uplift fishermen, and enhance value chain efficiency.",
+          "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant should be a native of Gujarat state.",
+            "quote": "1. The applicant should be a native of Gujarat state.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "The applicant should have a fishing boat registered under Real Craft software.",
+            "quote": "2. The applicant should have a fishing boat registered under Real Craft software.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "The applicant should hold a fishing license.",
+            "quote": "3. The applicant should hold a fishing license.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "The applicant should complete the online registration on the iKhedut Portal.",
+            "quote": "4. The applicant should complete the online registration on the iKhedut Portal.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "The applicant should obtain in-principle approval before purchase of the floor plan.",
+            "quote": "5. The applicant should obtain in-principle approval before purchase of the floor plan.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "The applicant should have his/her own bank account.",
+            "quote": "6. The applicant should have his/her own bank account.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "General category beneficiaries receive 40% assistance up to ₹30,000/- while women and ST/SC beneficiaries receive 60% assistance up to ₹45,000/- out of the total unit cost of ₹75,000/-.",
+          "quote": "1. The unit cost of a motorcycle with an ice box is ₹75,000/-. 2. General category beneficiaries receive 40% assistance, i.e., up to ₹30,000/-. 3. Women and Scheduled Tribe (ST)/Scheduled Caste (SC) beneficiaries receive 60% assistance, i.e., up to ₹45,000/-.",
+          "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+        },
+        "documents": [
+          {
+            "value": "Aadhar card.",
+            "quote": "1. Aadhar card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "Quotation.",
+            "quote": "2. Quotation.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "Caste certificate (if applicable).",
+            "quote": "3. Caste certificate (if applicable).",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "Fishing License.",
+            "quote": "4. Fishing License.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "Passport-size photo.",
+            "quote": "5. Passport-size photo.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "Bank passbook / cancelled cheque.",
+            "quote": "6. Bank passbook / cancelled cheque.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          },
+          {
+            "value": "Ration card.",
+            "quote": "7. Ration card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Applicants can apply online through the I-Khedut Portal by registering, selecting the agricultural scheme, applying, and submitting the form.",
+          "quote": "The applicant may visit and apply online at the I-Khedut Portal.",
+          "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:53:31+00:00"
+}

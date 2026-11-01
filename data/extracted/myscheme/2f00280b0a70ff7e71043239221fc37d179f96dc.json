@@ -1,0 +1,110 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/afmtptfm",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_2f00280b0a",
+  "file": "2f00280b0a70ff7e71043239221fc37d179f96dc.md",
+  "content_hash": "576ab9c758417d7dc43e89eec4666cc6e61aac79",
+  "title": "Assistance to Farmers for Mini Tractor and Power Tiller in Farm Mechanization Program",
+  "fetched_at": "2026-11-01T10:35:31+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:39:24+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_2f00280b0a_0",
+        "name": "Assistance to Farmers for Mini Tractor and Power Tiller in Farm Mechanization Program",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme aims to improve agricultural productivity and reduce manual labor burden by providing financial assistance for the purchase of mini tractors and power tillers to farmers.",
+        "eligibility": [
+          "The applicant should be a farmer.",
+          "The applicant should be a resident of Gujarat.",
+          "The applicant should be engaged in agricultural practices and require mechanization support.",
+          "The applicant should intend to purchase either a mini tractor up to 20 HP, or a power tiller (either above or below 8 BHP)."
+        ],
+        "exclusions": [],
+        "benefits": "Financial assistance/subsidy for mini tractors and power tillers based on equipment horsepower and category of the farmer.",
+        "documents": [
+          "7/12 Certificate",
+          "Aadhaar Card",
+          "Bank Pass Book/Cancelled Cheque"
+        ],
+        "how_to_apply": "Apply online at the I-Khedut Portal by registering/logging in, selecting the scheme, applying, and confirming the application.",
+        "official_url": "https://www.myscheme.gov.in/schemes/afmtptfm",
+        "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm",
+        "verified_on": null,
+        "tags": [
+          "farmer",
+          "rural"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme aims to improve agricultural productivity and reduce manual labor burden by providing financial assistance for the purchase of mini tractors and power tillers to farmers.",
+          "quote": "The scheme “Assistance to Farmers for Mini Tractor and Power Tiller in Farm Mechanization Program” by the Agriculture and Co-operation Department, Government of Gujarat, aims to improve agricultural productivity and reduce manual labor burden by providing financial assistance for the purchase of mini tractors and power tillers to farmers.",
+          "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant should be a farmer.",
+            "quote": "The applicant should be a farmer.",
+            "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+          },
+          {
+            "value": "The applicant should be a resident of Gujarat.",
+            "quote": "The applicant should be a resident of Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+          },
+          {
+            "value": "The applicant should be engaged in agricultural practices and require mechanization support.",
+            "quote": "The applicant should be engaged in agricultural practices and require mechanization support.",
+            "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+          },
+          {
+            "value": "The applicant should intend to purchase either a mini tractor up to 20 HP, or a power tiller (either above or below 8 BHP).",
+            "quote": "The applicant should intend to purchase either a mini tractor up to 20 HP, or a power tiller (either above or below 8 BHP).",
+            "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Financial assistance/subsidy for mini tractors and power tillers based on equipment horsepower and category of the farmer.",
+          "quote": "The scheme offers a subsidy based on the horsepower of the machinery and the applicant's category to promote inclusive agricultural mechanization and improve efficiency in farming operations.",
+          "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+        },
+        "documents": [
+          {
+            "value": "7/12 Certificate",
+            "quote": "1. 7/12 Certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+          },
+          {
+            "value": "Aadhaar Card",
+            "quote": "2. Aadhaar Card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+          },
+          {
+            "value": "Bank Pass Book/Cancelled Cheque",
+            "quote": "3. Bank Pass Book/Cancelled Cheque.",
+            "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Apply online at the I-Khedut Portal by registering/logging in, selecting the scheme, applying, and confirming the application.",
+          "quote": "The applicant may visit and apply online at the I-Khedut Portal.",
+          "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

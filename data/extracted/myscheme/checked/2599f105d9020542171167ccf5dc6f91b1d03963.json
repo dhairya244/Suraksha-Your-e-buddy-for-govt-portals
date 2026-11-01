@@ -1,0 +1,141 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/smts-glwb",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_2599f105d9",
+  "file": "2599f105d9020542171167ccf5dc6f91b1d03963.md",
+  "content_hash": "21ccd9a8ed7245551fcf879119b531e6fc850ec7",
+  "title": "Shramyogi Home Town Scheme- Gujarat Labour Welfare Board",
+  "fetched_at": "2026-11-01T10:34:19+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:38:49+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_2599f105d9_0",
+        "name": "Shramyogi Home Town Scheme- Gujarat Labour Welfare Board",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme facilitates the payment of railway fares for migrant labourers employed in the organized sector in Gujarat to travel to or from their home country to the nearest railway station.",
+        "eligibility": [
+          "The worker/labour should have been working continuously with the company in Gujarat for one year and his/her labour welfare fund should have been deposited in the board.",
+          "The benefit is provided once within a block of two years (2022-23 and 2023-24).",
+          "If both husband and wife are employed, only one beneficiary will get the benefit.",
+          "A Shram Yogi shall travel only after obtaining prior approval by applying prior to travel."
+        ],
+        "exclusions": [],
+        "benefits": "Migrant laborers employed in the organized sector can avail payment for railway fare to travel to or from their home country to the nearest railway station, credited via DBT.",
+        "documents": [
+          "Passport-size Photograph",
+          "A copy of the identity card issued by the contractor to the worker/labour",
+          "Aadhaar Card of Labour",
+          "Labour Welfare Fund Account Number",
+          "Valid proof of travel to hometown",
+          "Bank account details/Bank Passbook",
+          "Bonafide certificate",
+          "Any other documents as required"
+        ],
+        "how_to_apply": null,
+        "official_url": "https://sanman.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb",
+        "verified_on": null,
+        "tags": [
+          "rural",
+          "urban"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme facilitates the payment of railway fares for migrant labourers employed in the organized sector in Gujarat to travel to or from their home country to the nearest railway station.",
+          "quote": "The objective of the scheme is to facilitate the payment of railway fares for migrant labourers employed in the organized sector in Gujarat, enabling them to travel to or from their home country to the nearest railway station.",
+          "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+        },
+        "eligibility": [
+          {
+            "value": "The worker/labour should have been working continuously with the company in Gujarat for one year and his/her labour welfare fund should have been deposited in the board.",
+            "quote": "The worker/labour should have been working continuously with the company in Gujarat for one year and his/her labour welfare fund should have been deposited in the board to avail the benefits under the scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "The benefit is provided once within a block of two years (2022-23 and 2023-24).",
+            "quote": "The benefit of this scheme will be provided once within a block of two years. Currently, the block years are set as 2022-23 and 2023-24.",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "If both husband and wife are employed, only one beneficiary will get the benefit.",
+            "quote": "If both the husband/wife are employed, only one of the beneficiaries will get the benefit of this scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "A Shram Yogi shall travel only after obtaining prior approval by applying prior to travel.",
+            "quote": "A Shram Yogi shall travel only after obtaining prior approval by applying prior to travel.",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Migrant laborers employed in the organized sector can avail payment for railway fare to travel to or from their home country to the nearest railway station, credited via DBT.",
+          "quote": "Under the scheme, migrant laborers employed in the organized sector can avail of payment for railway fare to travel to or from their home country, to the nearest railway station.",
+          "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+        },
+        "documents": [
+          {
+            "value": "Passport-size Photograph",
+            "quote": "Passport-size Photograph",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "A copy of the identity card issued by the contractor to the worker/labour",
+            "quote": "A copy of the identity card issued by the contractor to the worker/labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "Aadhaar Card of Labour",
+            "quote": "Aadhaar Card of Labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "Labour Welfare Fund Account Number",
+            "quote": "Labour Welfare Fund Account Number",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "Valid proof of travel to hometown",
+            "quote": "Valid proof of travel to hometown",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "Bank account details/Bank Passbook",
+            "quote": "Bank account details/Bank Passbook",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "Bonafide certificate",
+            "quote": "﻿ Bonafide certificate ﻿",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          },
+          {
+            "value": "Any other documents as required",
+            "quote": "Any other documents as required",
+            "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb"
+          }
+        ],
+        "how_to_apply": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:52:29+00:00"
+}

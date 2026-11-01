@@ -1,0 +1,148 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/msyggvn",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_590128004a",
+  "file": "590128004a0b7c463e5e0e122ae07deb22e2e84a.md",
+  "content_hash": "ce9db25ba5e8cccb7a53dab4762dfe726ff792c6",
+  "title": "Mahila Samrudhhi Yojana (Gujarat Gopalak Vikas Nigam)",
+  "fetched_at": "2026-11-01T10:31:09+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:37:32+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_590128004a_0",
+        "name": "Mahila Samrudhhi Yojana (Gujarat Gopalak Vikas Nigam)",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Microfinance initiative for individual women entrepreneurs to create self-employment and make women self-reliant by providing loans to start a business of their choice.",
+        "eligibility": [
+          "The applicant should belong to the Rabari and Bharwad castes from the socially and educationally backwards classes.",
+          "The applicant should be a woman.",
+          "The applicant's age should be between 21 and 45 years.",
+          "The applicant's annual income should not exceed ₹3,00,000/-."
+        ],
+        "exclusions": [],
+        "benefits": "Provides 100% of the loan amount up to ₹1,25,000/- with an interest rate of 4% per annum.",
+        "documents": [
+          "Aadhaar Card",
+          "Ration Card",
+          "Voter ID",
+          "Income Certificate",
+          "Caste Certificate",
+          "Disability Certificate",
+          "Educational Qualification Documents",
+          "Bank Account Details",
+          "Past Loan Details"
+        ],
+        "how_to_apply": "Apply online through the Gujarat Gopalak Vikas Nigam official website by registering, filling out the application form with required details, and submitting it.",
+        "official_url": "https://ggdconline.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/msyggvn",
+        "verified_on": null,
+        "tags": [
+          "women"
+        ],
+        "required_service_ids": [
+          "gj_income_certificate"
+        ],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Microfinance initiative for individual women entrepreneurs to create self-employment and make women self-reliant by providing loans to start a business of their choice.",
+          "quote": "The scheme \"Mahila Samrudhhi Yojana (Gujarat Gopalak Vikas Nigam)\" by the Social Justice and Empowerment Department, Government of Gujarat, aims to provide Microfinance for individual women entrepreneurs to create self-employment for women and make them self-reliant. Under this scheme, loans are provided on an individual basis to women beneficiaries to start a business of their choice. The scheme is implemented by the Gujarat Gopalak Vikas Nigam.",
+          "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant should belong to the Rabari and Bharwad castes from the socially and educationally backwards classes.",
+            "quote": "The applicant should belong to the Rabari and Bharwad castes from the socially and educationally backwards classes.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "The applicant should be a woman.",
+            "quote": "The applicant should be a woman.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "The applicant's age should be between 21 and 45 years.",
+            "quote": "The applicant's age should be between 21 and 45 years.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "The applicant's annual income should not exceed ₹3,00,000/-.",
+            "quote": "The applicant's annual income should not exceed ₹3,00,000/-.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Provides 100% of the loan amount up to ₹1,25,000/- with an interest rate of 4% per annum.",
+          "quote": "1. The scheme provides 100% of the loan amount to eligible women beneficiaries, up to a maximum limit of ₹1,25,000/-.\n2. The loan carries an interest rate of 4% per annum.",
+          "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+        },
+        "documents": [
+          {
+            "value": "Aadhaar Card",
+            "quote": "01. Aadhaar Card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "Ration Card",
+            "quote": "02. Ration Card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "Voter ID",
+            "quote": "03. Voter ID.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "Income Certificate",
+            "quote": "04. Income Certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "Caste Certificate",
+            "quote": "05. Caste Certificate (to confirm belonging to the Rabari and Bharwad communities from SEBC).",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "Disability Certificate",
+            "quote": "06. Disability Certificate (if applicable).",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "Educational Qualification Documents",
+            "quote": "07. Educational Qualification Documents.",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "Bank Account Details",
+            "quote": "08. Bank Account Details (Bank Passbook/Statement).",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          },
+          {
+            "value": "Past Loan Details",
+            "quote": "09. Past Loan Details (if applicable).",
+            "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Apply online through the Gujarat Gopalak Vikas Nigam official website by registering, filling out the application form with required details, and submitting it.",
+          "quote": "Step 1: Register on the Official Portal - Go to the Official Website Gujarat Gopalak Vikas Nigam. - Scroll down on the homepage, find the \"Mahila Samrudhhi Yojana\" and click on \"Apply Now\". - You will be directed to the application form. Step 2: Access and Fill Out the Application Form - Select \"Mahila Samrudhhi Yojana\". - Provide Aadhaar, Ration, Voter ID, full name (Last, First, Father/Husband), address, district, taluka, village, PIN, date of birth, age, caste, subcaste, phone, mobile, email, gender, and marital status. - Enter income certificate number, issue date, issuing officer's name, total annual family income (up to ₹ 3,00,000/-), and parent/guardian's occupation. - If \"Physically Handicapped,\" select \"Yes\" or \"No\". If you selected \"Yes\", provide the percentage (in %). - Indicate if any family member works in a government or private job. If \"Yes,\" provide their Name, Designation, Place, and Salary details. - Select your Education Qualification: Uneducated, Educated, Graduation, Post Graduation, or Other Degree. - If you have taken a past loan, select \"Yes\" or \"No\". If you selected \"Yes\", provide loan details (date, amount, paid, remaining) and your account number. - Provide bank account number, bank name, branch name, name as per account, account type (Saving/Current), MICR code, and IFSC code. Step 3: Review and Final Submission - Carefully review each module. Use the preview option to examine the application before final submission. Fill out the provided \"CAPTCHA\" and Click on “Submit”.",
+          "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+        },
+        "needs_income_certificate": {
+          "value": "Yes, an income certificate is required and the annual family income must not exceed ₹3,00,000/-.",
+          "quote": "Enter income certificate number, issue date, issuing officer's name, total annual family income (up to ₹ 3,00,000/-), and parent/guardian's occupation.",
+          "source_url": "https://www.myscheme.gov.in/schemes/msyggvn"
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:53:31+00:00"
+}

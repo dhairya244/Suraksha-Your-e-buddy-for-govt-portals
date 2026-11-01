@@ -1,0 +1,134 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/labs-glwb",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_88f10155d2",
+  "file": "88f10155d2a9167915c2b234611684ba456b64ac.md",
+  "content_hash": "798d09b0748deeab943ed70a185fd77b4b906492",
+  "title": "Labour Accident benefit Scheme- Gujarat Labour Welfare Board",
+  "fetched_at": "2026-11-01T10:30:06+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:36:58+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_88f10155d2_0",
+        "name": "Labour Accident benefit Scheme- Gujarat Labour Welfare Board",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Financial assistance is provided to workers who become disabled during their duty period due to an accident or other reason at the working premises of the establishment.",
+        "eligibility": [
+          "Workers disabled during their duty period due to an accident or any other reason at the working premises.",
+          "Workers whose organization or unit has regularly paid their Labour Welfare Fund for the last one year."
+        ],
+        "exclusions": [],
+        "benefits": "Financial assistance of Rs. 25,000 for disability between 40% and 70%, and Rs. 50,000 for disability exceeding 70%.",
+        "documents": [
+          "Passport-size Photograph",
+          "Copy of identity card issued by the contractor to the worker",
+          "Aadhaar Card of Labour",
+          "Labour Welfare Fund Account Number",
+          "Proof of payment of said amount by the organization",
+          "Disability certificate",
+          "Bonafide certificate",
+          "Bank account details or Bank Passbook",
+          "Any other documents as required"
+        ],
+        "how_to_apply": "Apply online by visiting the Sanman Portal, registering under Citizen Login using Aadhaar and Labour Welfare Fund Account details, logging in, selecting the scheme, and submitting the application form.",
+        "official_url": "https://glwb.gujarat.gov.in/labour-acc-benifite-scheme.htm",
+        "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb",
+        "verified_on": null,
+        "tags": [
+          "disability",
+          "income_support"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Financial assistance is provided to workers who become disabled during their duty period due to an accident or other reason at the working premises of the establishment.",
+          "quote": "Under the scheme, financial assistance is provided to workers (Shramyogis) who become disabled during their duty period due to an accident or any other reason at the working premises of the establishment.",
+          "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+        },
+        "eligibility": [
+          {
+            "value": "Workers disabled during their duty period due to an accident or any other reason at the working premises.",
+            "quote": "Workers who have become disabled during their duty period due to an accident or any other reason at the working premises of the establishment can avail of the benefits under the scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          },
+          {
+            "value": "Workers whose organization or unit has regularly paid their Labour Welfare Fund for the last one year.",
+            "quote": "Only those workers (Shramyogis) whose organization/unit has regularly paid their Labour Welfare Fund for the last one year will be eligible.",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Financial assistance of Rs. 25,000 for disability between 40% and 70%, and Rs. 50,000 for disability exceeding 70%.",
+          "quote": "Under the scheme, workers with disabilities ranging from 40% to 70% will receive financial assistance of ₹25,000/-.",
+          "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+        },
+        "documents": [
+          {
+            "value": "Passport-size Photograph",
+            "quote": "1. Passport-size Photograph",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          },
+          {
+            "value": "Copy of identity card issued by the contractor to the worker",
+            "quote": "2. A copy of the identity card issued by the contractor to the worker/labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          },
+          {
+            "value": "Aadhaar Card of Labour",
+            "quote": "3. Aadhaar Card of Labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          },
+          {
+            "value": "Labour Welfare Fund Account Number",
+            "quote": "4. Labour Welfare Fund Account Number",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          },
+          {
+            "value": "Proof of payment of said amount by the organization",
+            "quote": "5. Proof of payment of said amount by the organization",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          },
+          {
+            "value": "Disability certificate",
+            "quote": "6. Disability certificate",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          },
+          {
+            "value": "Bonafide certificate",
+            "quote": "7. Bonafide certificate",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          },
+          {
+            "value": "Bank account details or Bank Passbook",
+            "quote": "8. Bank account details/Bank Passbook",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          },
+          {
+            "value": "Any other documents as required",
+            "quote": "9. Any other documents as required",
+            "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Apply online by visiting the Sanman Portal, registering under Citizen Login using Aadhaar and Labour Welfare Fund Account details, logging in, selecting the scheme, and submitting the application form.",
+          "quote": "The applicant may visit the Sanman Portal: https://sanman.gujarat.gov.in/",
+          "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

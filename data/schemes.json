@@ -1,1 +1,1045 @@
-[]
+[
+  {
+    "scheme_id": "aaevcths",
+    "name": "Assistance for Area Expansion of Vegetable Crops through Hybrid Seed",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme aims to support vegetable farmers in enhancing their cultivation areas using hybrid seeds and to promote natural farming practices, helping reduce input costs and encouraging sustainable agricultural methods.",
+    "eligibility": [
+      "The applicant should be a resident of Gujarat.",
+      "The applicant should be a farmer.",
+      "The applicant should be engaged in vegetable crop cultivation."
+    ],
+    "exclusions": [],
+    "benefits": null,
+    "documents": [
+      "7/12 Certificate",
+      "Aadhaar Card",
+      "Bank Pass Book/Cancelled Cheque"
+    ],
+    "how_to_apply": null,
+    "official_url": "https://ikhedut.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/aaevcths",
+    "verified_on": null,
+    "tags": [
+      "farmer",
+      "rural"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "adas_glwb",
+    "name": "Accidental Death Assistance Scheme- Gujarat Labour Welfare Board",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Financial assistance is provided to the family members of workers in the event of their death due to an accident during their course of employment.",
+    "eligibility": [
+      "In case of the death of a worker due to an accident, the family of the worker will be eligible for assistance under the scheme.",
+      "Only those workers whose factory, company, or organization has regularly paid their Labour Welfare Fund will be eligible for the benefit.",
+      "The benefit of the scheme will be given from the day after the worker joins the job.",
+      "Application should be made within 2 years from the date of death of the worker."
+    ],
+    "exclusions": [
+      "Post-sickness and natural death of worker will not be admissible."
+    ],
+    "benefits": "Families of workers will receive financial assistance of ₹2,00,000/- in the event of the worker's death due to an accident during their course of employment.",
+    "documents": [
+      "Passport-size Photograph",
+      "A copy of the identity card issued by the contractor to the worker/labour",
+      "Aadhaar Card of Labour",
+      "Labour Welfare Fund Account Number",
+      "Identity proof of family member/applicant",
+      "Death certificate of worker",
+      "Accident report",
+      "Bonafide certificate",
+      "Affidavit",
+      "Bank account details/Bank Passbook of family member/applicant",
+      "Any other documents as required"
+    ],
+    "how_to_apply": null,
+    "official_url": "https://sanman.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/adas-glwb",
+    "verified_on": null,
+    "tags": [
+      "rural",
+      "urban"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "afmtptfm",
+    "name": "Assistance to Farmers for Mini Tractor and Power Tiller in Farm Mechanization Program",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme aims to improve agricultural productivity and reduce manual labor burden by providing financial assistance for the purchase of mini tractors and power tillers to farmers.",
+    "eligibility": [
+      "The applicant should be a farmer.",
+      "The applicant should be a resident of Gujarat.",
+      "The applicant should be engaged in agricultural practices and require mechanization support.",
+      "The applicant should intend to purchase either a mini tractor up to 20 HP, or a power tiller (either above or below 8 BHP)."
+    ],
+    "exclusions": [],
+    "benefits": "Financial assistance/subsidy for mini tractors and power tillers based on equipment horsepower and category of the farmer.",
+    "documents": [
+      "7/12 Certificate",
+      "Aadhaar Card",
+      "Bank Pass Book/Cancelled Cheque"
+    ],
+    "how_to_apply": "Apply online at the I-Khedut Portal by registering/logging in, selecting the scheme, applying, and confirming the application.",
+    "official_url": "https://www.myscheme.gov.in/schemes/afmtptfm",
+    "source_url": "https://www.myscheme.gov.in/schemes/afmtptfm",
+    "verified_on": null,
+    "tags": [
+      "farmer",
+      "rural"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "cdsg",
+    "name": "Coconut Development Scheme",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The \"Coconut Development Scheme\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to encourage farmers by providing quality coconut saplings at reasonable prices and financial assistance for coconut cultivation.",
+    "eligibility": [
+      "All farmers are eligible to apply for the scheme."
+    ],
+    "exclusions": [],
+    "benefits": null,
+    "documents": [
+      "7/12 Certificate",
+      "Aadhaar Card",
+      "Bank Pass Book/Cancelled Cheque"
+    ],
+    "how_to_apply": null,
+    "official_url": "https://ikhedut.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/cdsg",
+    "verified_on": null,
+    "tags": [
+      "farmer"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "darygbocwwb",
+    "name": "Dhanvantari Arogya Rath Yojana (GBOCWWB)",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme provides primary medical treatment at doorsteps and construction sites to construction workers and their families to prevent serious diseases and maintain health.",
+    "eligibility": [
+      "Construction workers registered with the Gujarat Building and Other Construction Worker's Welfare Board and their family members."
+    ],
+    "exclusions": [
+      "Non-registered construction workers are not eligible for the benefits."
+    ],
+    "benefits": "On-the-spot treatment for primary injuries, common diseases, laboratory tests, primary care for women, children, and pregnant women, along with free medicines.",
+    "documents": [
+      "e-Nirman Card"
+    ],
+    "how_to_apply": "Registered construction workers and family members can visit the Dhanvantari Arogya Rath at Kadianaka and construction sites to receive benefits.",
+    "official_url": "https://bocwwb.gujarat.gov.in/schemes.htm",
+    "source_url": "https://www.myscheme.gov.in/schemes/darygbocwwb",
+    "verified_on": null,
+    "tags": [
+      "health"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "eas_glwb",
+    "name": "Educational Award Scheme - Gujarat Labour Welfare Board",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The Educational Award Scheme encourages the children of laborers to increase their enthusiasm and pursue higher education.",
+    "eligibility": [
+      "Parents must be working in a factory/institute in Gujarat and paying the Labour Welfare Fund.",
+      "Children must have passed 70% and above marks in the 10th or 12th Standard."
+    ],
+    "exclusions": [],
+    "benefits": "Children who scored 70% or above in 10th Standard receive ₹2,500/-, and in 12th Standard receive ₹5,000/- as an award.",
+    "documents": [
+      "Passport-size Photograph",
+      "ID Card of Labour",
+      "Aadhaar Card of Labour",
+      "Labour Welfare Fund Account Number",
+      "Ration Card",
+      "Caste Category certificate, if applicable",
+      "Residence proof",
+      "Bank account details/Bank Passbook",
+      "Marksheet of Child/Passing Certificate",
+      "Identity proof of Child i.e. Aadhaar Card",
+      "Any other documents as required"
+    ],
+    "how_to_apply": null,
+    "official_url": "https://sanman.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb",
+    "verified_on": null,
+    "tags": [
+      "student",
+      "education"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "fais",
+    "name": "Farmers Accidental Insurance Scheme",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The Farmers Accidental Insurance Scheme provides financial aid to the successors of registered farmers in case of accidental death or disability.",
+    "eligibility": [
+      "The applicant or their parent must have a registered land record before the date of the accident.",
+      "The death or disability must be caused by an accident.",
+      "The deceased/disabled person must be the registered farmer, their spouse, or any legal heir (son/daughter).",
+      "The applicant must possess a valid driving license in case of death/injury (For vehicular accident).",
+      "The beneficiary must be between 5 to 70 years of age (For accidental death or permanent disability).",
+      "Application should be made in the office of the concerned District Agriculture Officer within 150 days."
+    ],
+    "exclusions": [
+      "Incidence of Natural & suicidal death are excluded."
+    ],
+    "benefits": null,
+    "documents": [
+      "Application in prescribed form Annexure -1, 2,3, 3(A),4,5",
+      "Copy of 7/12, 8-A & hack Patrak (Form no: 6).",
+      "Copy of Post Mortem report",
+      "I.R & spot Panchami Police Inquest Report or Court Order",
+      "Proof of death (Death Certificate) & age from competent authority as the case may be.",
+      "Disability certificate form competent authority, in the case of disablement.",
+      "Sub Divisional Magistrate report and Police tapas report",
+      "Baydhari patrak in prescribe Performa.",
+      "Valid driving licence (in case deceaseddrive the vehicle)",
+      "In case of first legal heir (son/daughter) Death or disability produce Registered farmer’s (his father or mother) Pedhinamu or successive generations proof."
+    ],
+    "how_to_apply": null,
+    "official_url": "https://dag.gujarat.gov.in/Home/SchemesDetailsPage/Bu2wc90IXRdJKrcfHJ%E2%9C%A49ew%E2%99%AC%E2%99%AC",
+    "source_url": "https://www.myscheme.gov.in/schemes/fais",
+    "verified_on": null,
+    "tags": [
+      "farmer"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "gspsg",
+    "name": "Ganga Swarupa Pension Scheme",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme provides monthly financial assistance to widowed women in Gujarat to help them achieve self-reliance and dignity.",
+    "eligibility": [
+      "Applicant must be a resident of Gujarat.",
+      "Applicant must be a widowed woman.",
+      "Applicant must be aged 18 years or above.",
+      "Annual income must not exceed ₹1,20,000 in rural areas and ₹1,50,000 in urban areas."
+    ],
+    "exclusions": [],
+    "benefits": "Monthly pension of ₹1,250/- deposited directly into Post Office accounts.",
+    "documents": [
+      "Photo of the applicant (widowed woman)",
+      "Copy of ration card",
+      "School leaving certificate",
+      "Income proof",
+      "Husband’s death certificate",
+      "Election card or Aadhaar card",
+      "Electricity bill",
+      "Birth certificate",
+      "Proof of being a widow"
+    ],
+    "how_to_apply": "Obtain the application form from Taluka Mamlatdar’s office, fill it out, attach required documents, and submit it back to the Taluka Mamlatdar for verification and approval.",
+    "official_url": "https://wcd.gujarat.gov.in/initiativedetails?id=231",
+    "source_url": "https://www.myscheme.gov.in/schemes/gspsg",
+    "verified_on": null,
+    "tags": [
+      "women",
+      "income_support"
+    ],
+    "required_service_ids": [
+      "gj_income_certificate"
+    ],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "htagchrt_2",
+    "name": "Harvesting Tools Assistance for General Category (HRT-2)",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Under the scheme, financial assistance is provided to farmers belonging to the General Category as well as to FPOs, FPCs, FIGs, SHGs, and Cooperative Societies for purchasing of different harvesting and processing equipment.",
+    "eligibility": [
+      "The beneficiary should be a permanent resident of Gujarat.",
+      "The beneficiary should belong to the General Category.",
+      "The individual farmer or FPO/FPC/FIG/SHG/Co-operative society is eligible to avail benefits under the scheme.",
+      "The assistance will be available once in five years.",
+      "Equipment certified by ISO/BIS/ISI/Government recognized organizations should be purchased through an authorized dealer of that company or imported equipment."
+    ],
+    "exclusions": [],
+    "benefits": "General Category farmers are eligible for assistance up to 50% of the cost of the harvesting tool or ₹1,00,000/-, whichever is less. FPO/FPC/FIG/SHG/ Cooperative Society are eligible for assistance of 75% of the cost of the harvesting tool or ₹1,50,000/-, whichever is less. Unit Cost of harvesting tool should be up to ₹2,00,000/-.",
+    "documents": [
+      "Copy of Aadhaar Card",
+      "Disability Certificate from Competent Authority (only for PWDs) (if applicable)",
+      "Copy of land details 7/12 and 8-A",
+      "Copy of bank passbook or cancelled cheque",
+      "Copy of Forest Rights letter (if applicable)",
+      "Samanti Form (for partners holding land in joint name) (if applicable)",
+      "In case of FPO/FPC, Co-operative Society, documents relating to registration purpose, activities, constitution, members, etc., and audit report of the last one year of the auditable entity (if applicable)"
+    ],
+    "how_to_apply": null,
+    "official_url": "https://ikhedut.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2",
+    "verified_on": null,
+    "tags": [
+      "farmer",
+      "business",
+      "rural"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "iascasf",
+    "name": "Incentive Assistance to Scheduled Caste Farmers to Increase the Area, Production and Productivity of Sugarcane Farming",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme aims to support Scheduled Caste farmers by providing cash incentives for high-quality seeds, modern farming techniques, and agricultural mechanization to enhance productivity and profitability.",
+    "eligibility": [
+      "The applicant must be a farmer.",
+      "The applicant must be from Gujarat state.",
+      "The applicant must belong to the Scheduled Tribe category.",
+      "The applicant must be a householder.",
+      "The farmer must be engaged in sugarcane cultivation.",
+      "Farmers applying for the 10% incentive must demonstrate excellent production using high-quality seeds, agricultural inputs, and modern farming practices."
+    ],
+    "exclusions": [],
+    "benefits": "Assistance for sugarcane sowing is ₹10,000/- per Hectare and 10% extra benefit per metric ton for production exceeding 70 metric Tons/Hectares.",
+    "documents": [
+      "Caste Certificate",
+      "8-A Copy (Land ownership document)",
+      "Bank Passbook and Cancelled Cheque",
+      "Aadhaar Card Copy",
+      "Undertaking Form (in case of joint ownership)",
+      "Physical Disability Certificate (if applicable)"
+    ],
+    "how_to_apply": null,
+    "official_url": "https://ikhedut.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/iascasf",
+    "verified_on": null,
+    "tags": [
+      "farmer",
+      "sc_st"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "kpyg",
+    "name": "Kisan Parivahan Yojana",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Provides financial assistance to farmers in Gujarat for purchasing medium-sized goods vehicles (600kg to 1500kg capacity) to help transport harvested crops.",
+    "eligibility": [
+      "The applicant must be a farmer.",
+      "The applicant must belong to Gujarat state.",
+      "The applicant must purchase a medium-sized goods vehicle (600kg to 1500kg capacity) from an authorized dealer."
+    ],
+    "exclusions": [
+      "Farmers who have already received benefits under the scheme must wait 5 years before reapplying."
+    ],
+    "benefits": "Small, Marginal, Women, and SC/ST Farmers receive 35% of total vehicle cost or ₹75,000, whichever is lower. General and Other Farmers receive 25% of total vehicle cost or ₹50,000, whichever is lower.",
+    "documents": [
+      "Aadhaar Card",
+      "Land ownership documents",
+      "Caste certificate (if applicable)",
+      "Bank passbook",
+      "Quotation/proforma invoice from an authorized dealer",
+      "Domicile certificate",
+      "Recent passport-size photograph",
+      "Any other document if required"
+    ],
+    "how_to_apply": "Applicants can apply online on the I-Khedut Portal by visiting the site, navigating to Agricultural Schemes under Schemes, selecting Kisan Parivahan Yojana, and submitting a new application.",
+    "official_url": "https://ikhedut.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/kpyg",
+    "verified_on": null,
+    "tags": [
+      "farmer"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "labs_glwb",
+    "name": "Labour Accident benefit Scheme- Gujarat Labour Welfare Board",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Financial assistance is provided to workers who become disabled during their duty period due to an accident or other reason at the working premises of the establishment.",
+    "eligibility": [
+      "Workers disabled during their duty period due to an accident or any other reason at the working premises.",
+      "Workers whose organization or unit has regularly paid their Labour Welfare Fund for the last one year."
+    ],
+    "exclusions": [],
+    "benefits": "Financial assistance of Rs. 25,000 for disability between 40% and 70%, and Rs. 50,000 for disability exceeding 70%.",
+    "documents": [
+      "Passport-size Photograph",
+      "Copy of identity card issued by the contractor to the worker",
+      "Aadhaar Card of Labour",
+      "Labour Welfare Fund Account Number",
+      "Proof of payment of said amount by the organization",
+      "Disability certificate",
+      "Bonafide certificate",
+      "Bank account details or Bank Passbook",
+      "Any other documents as required"
+    ],
+    "how_to_apply": "Apply online by visiting the Sanman Portal, registering under Citizen Login using Aadhaar and Labour Welfare Fund Account details, logging in, selecting the scheme, and submitting the application form.",
+    "official_url": "https://glwb.gujarat.gov.in/labour-acc-benifite-scheme.htm",
+    "source_url": "https://www.myscheme.gov.in/schemes/labs-glwb",
+    "verified_on": null,
+    "tags": [
+      "disability",
+      "income_support"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "mas_glwb",
+    "name": "Marriage Assistance Scheme- Gujarat Labour Welfare Board",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Financial assistance is provided to female workers in Gujarat after their marriage.",
+    "eligibility": [
+      "Only female workers working in a factory/organization in the state of Gujarat whose Labour Welfare Fund is paid by the organization at the office are eligible.",
+      "The Labour Welfare Fund for the last one year of the woman worker must be mandatorily filled by the Factory/Company/Organization.",
+      "Application should be made within one year from the date of marriage.",
+      "There must be a gap of one year between the date of employment and the date of marriage of the woman worker."
+    ],
+    "exclusions": [],
+    "benefits": "Female workers are entitled to receive ₹11,000/- after their marriage.",
+    "documents": [
+      "Passport-size Photograph",
+      "A copy of the identity card issued by the contractor to the worker/labour",
+      "Aadhaar Card of Labour",
+      "Labour Welfare Fund Account Number",
+      "Proof of marriage",
+      "Bonafide certificate",
+      "Bank account details/Bank Passbook",
+      "Any other documents as required"
+    ],
+    "how_to_apply": "Applicants can apply online by visiting the Sanman Portal, registering under Citizen Login using Aadhaar Card and Labour Welfare Fund Account details, selecting the scheme, filling out the application form, uploading documents, and submitting.",
+    "official_url": "https://glwb.gujarat.gov.in/fsmb-scheme-guj.htm",
+    "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb",
+    "verified_on": null,
+    "tags": [
+      "women"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "mksy",
+    "name": "Mukhyamantri Kisan Sahay Yojana",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Mukhya Mantri Kisan Sahay Yojana is implemented by the Revenue Department of the Government of Gujarat in collaboration with the Agriculture and Co-operation Department to provide financial assistance to farmers in case of crop loss due to natural calamities.",
+    "eligibility": [
+      "The applicant must be a farmer residing in Gujarat state.",
+      "The applicant must have availed of a loan for agricultural purposes from a cooperative institution or a bank.",
+      "The applicant must have suffered crop loss due to natural calamities such as drought, flood, or earthquake.",
+      "The applicant must possess the land for agricultural purposes in his/her name or have the right to cultivate such land.",
+      "The land should be surveyed by the Revenue Department of Gujarat and should have a record of rights.",
+      "The crop loss should be certified by the Revenue Department of Gujarat.",
+      "The applicant should have insured the crop under the Pradhan Mantri Fasal Bima Yojana or any other crop insurance scheme recognized by the Government of Gujarat."
+    ],
+    "exclusions": [
+      "A farmer who has already received compensation or financial assistance from any other government scheme or insurance policy for the same crop loss is not eligible to apply for this scheme."
+    ],
+    "benefits": null,
+    "documents": [
+      "Proof of land ownership.",
+      "Crop loss certificate issued by a government authority.",
+      "Bank loan documents related to farming activities.",
+      "Aadhaar card or other government-issued identification.",
+      "Passbook of the bank account where the financial assistance will be disbursed.",
+      "Any other documents as specified in the application form."
+    ],
+    "how_to_apply": "Visit the official website of the Gujarat government's agriculture department, download the application form, fill it with accurate details, attach required documents, and submit to the nearest agricultural office, bank branch, E Gram Centre, Taluka Mamlatdar's office, or District Collector's office.",
+    "official_url": "https://agri.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/mksy",
+    "verified_on": null,
+    "tags": [
+      "farmer"
+    ],
+    "required_service_ids": [
+      "gj_income_certificate"
+    ],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "mmgmy",
+    "name": "Mukhyamantri Gyansetu Merit Scholarship Yojana",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme aims to select 30,000 brilliant students who have completed their Class 5 education in government, aided, or RTE-approved schools and provide them with scholarships to study in selected schools from Class 6th to Class 12th.",
+    "eligibility": [
+      "The applicant must be a resident of Gujarat.",
+      "The applicant must be a student.",
+      "The applicant must have studied Classes 1st to 5th in a Government/ Government-aided/ RTE-approved self-financed primary school in Gujarat.",
+      "The applicant must have passed the Common Entrance Test (CET) conducted by the State Examination Board and be listed in the merit list.",
+      "The applicant must have taken admission in Class 6th in a Government/ Government-aided/ RTE-approved self-financed primary school in Gujarat."
+    ],
+    "exclusions": [],
+    "benefits": null,
+    "documents": [
+      "Income Certificate"
+    ],
+    "how_to_apply": null,
+    "official_url": "https://www.myscheme.gov.in/schemes/mmgmy",
+    "source_url": "https://www.myscheme.gov.in/schemes/mmgmy",
+    "verified_on": null,
+    "tags": [
+      "student",
+      "education",
+      "income_support"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "mmksy",
+    "name": "Mukhya Mantri Mahila Kisan Sashaktikaran Yojana",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Women farmers in Gujarat are provided with financial assistance and training to help enhance their agricultural productivity and income.",
+    "eligibility": [
+      "Only women farmers who own or operate agricultural land are eligible to apply.",
+      "Only women farmers who are residents of Gujarat are eligible.",
+      "Women farmers of all age groups can apply as there is no specific age limit.",
+      "There is no specific income criteria, but preference is given to women farmers from economically weaker sections.",
+      "Size of landholding is not a criterion for eligibility.",
+      "Must be registered with the Department of Agriculture and Co-operation."
+    ],
+    "exclusions": [
+      "Government employees are not allowed to apply.",
+      "Students obtaining benefits under this scheme cannot avail of benefits under any other scheme for this purpose."
+    ],
+    "benefits": "Provides financial assistance for farm activities such as purchasing inputs, seeds, and equipment, along with training, capacity building, and access to credit.",
+    "documents": [
+      "Aadhaar Card as proof of identity and residency",
+      "Land documents as proof of ownership or lease",
+      "Bank account details to receive financial assistance",
+      "Caste certificate (if applicable)",
+      "Income certificate (if applicable)",
+      "Passport size photograph",
+      "Registration Certificate from the Department of Agriculture and Co-operation"
+    ],
+    "how_to_apply": "Obtain and submit the application form along with required documents at the nearest government agriculture office or village panchayat office.",
+    "official_url": "https://www.myscheme.gov.in/schemes/mmksy",
+    "source_url": "https://www.myscheme.gov.in/schemes/mmksy",
+    "verified_on": null,
+    "tags": [
+      "farmer",
+      "women"
+    ],
+    "required_service_ids": [
+      "gj_income_certificate"
+    ],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "msgbcdc",
+    "name": "Mahila Samruddhi (Gujarat Backward Caste Development Corporation)",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Provides low-interest microfinance loan up to ₹1,25,000 to empower women from backward classes in Gujarat by creating self-employment opportunities.",
+    "eligibility": [
+      "Applicant must be female.",
+      "Applicant must be a resident of Gujarat.",
+      "Applicant must belong to socially and educationally backward class (OBC).",
+      "Total family annual income must not exceed ₹3,00,000.",
+      "Applicant age must be between 21 and 45 years at the date of application.",
+      "Applicant must have experience in a business requiring technical and other skills."
+    ],
+    "exclusions": [],
+    "benefits": "Loan up to ₹1,25,000 at 4% annual interest rate covering 95% of unit cost, repayable in 48 equal monthly installments.",
+    "documents": [
+      "7/12 Certificate",
+      "Aadhaar Card",
+      "Affidavit",
+      "Age Proof",
+      "Attested copy of PAN Card",
+      "Bank Passbook First Page",
+      "Birth Certificate",
+      "Caste Certificate",
+      "Identity Card",
+      "Income Certificate",
+      "Passport Size Photos",
+      "Quotations",
+      "Ration Card",
+      "Residence Proof",
+      "School Leaving Certificate"
+    ],
+    "how_to_apply": "Apply online on the official website of Gujarat Backward Caste Development Corporation by registering, filling the application form for Mahila Samruddhi scheme, uploading required documents, and submitting.",
+    "official_url": "https://gbcdconline.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/msgbcdc",
+    "verified_on": null,
+    "tags": [
+      "women",
+      "obc",
+      "business"
+    ],
+    "required_service_ids": [
+      "gj_income_certificate"
+    ],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "mssg",
+    "name": "Mahila Swavlamban Scheme",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme aims to empower women by providing financial assistance for starting or expanding economic activities, offering a subsidy and a loan to help them become self-reliant.",
+    "eligibility": [
+      "The applicant must be a woman.",
+      "The applicant must be a resident of Gujarat.",
+      "The applicant must belong to the BPL (Below Poverty Line) category.",
+      "The applicant's annual income must be ₹1,20,000/- in rural areas and ₹1,50,000/- in urban areas."
+    ],
+    "exclusions": [],
+    "benefits": null,
+    "documents": [
+      "Age proof.",
+      "Aadhaar card.",
+      "Quotation for business activities.",
+      "Experience certificate.",
+      "Income proof.",
+      "Copy of Ration card."
+    ],
+    "how_to_apply": "Fill out the prescribed form with complete details and submit it along with necessary documents to the Women's Economic Development Corporation.",
+    "official_url": "https://www.myscheme.gov.in/schemes/mssg",
+    "source_url": "https://www.myscheme.gov.in/schemes/mssg",
+    "verified_on": null,
+    "tags": [
+      "women",
+      "rural",
+      "urban",
+      "bpl",
+      "business"
+    ],
+    "required_service_ids": [
+      "gj_income_certificate"
+    ],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "msyggvn",
+    "name": "Mahila Samrudhhi Yojana (Gujarat Gopalak Vikas Nigam)",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Microfinance initiative for individual women entrepreneurs to create self-employment and make women self-reliant by providing loans to start a business of their choice.",
+    "eligibility": [
+      "The applicant should belong to the Rabari and Bharwad castes from the socially and educationally backwards classes.",
+      "The applicant should be a woman.",
+      "The applicant's age should be between 21 and 45 years.",
+      "The applicant's annual income should not exceed ₹3,00,000/-."
+    ],
+    "exclusions": [],
+    "benefits": "Provides 100% of the loan amount up to ₹1,25,000/- with an interest rate of 4% per annum.",
+    "documents": [
+      "Aadhaar Card",
+      "Ration Card",
+      "Voter ID",
+      "Income Certificate",
+      "Caste Certificate",
+      "Disability Certificate",
+      "Educational Qualification Documents",
+      "Bank Account Details",
+      "Past Loan Details"
+    ],
+    "how_to_apply": "Apply online through the Gujarat Gopalak Vikas Nigam official website by registering, filling out the application form with required details, and submitting it.",
+    "official_url": "https://ggdconline.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/msyggvn",
+    "verified_on": null,
+    "tags": [
+      "women"
+    ],
+    "required_service_ids": [
+      "gj_income_certificate"
+    ],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "pmmsyiceboxguj",
+    "name": "PMMSY: Motorcycle with Ice Box - Gujarat",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme provides financial support to fishermen and related beneficiaries for a motorcycle with an ice box to modernize cold chain infrastructure and ensure hygienic fish storage.",
+    "eligibility": [
+      "The applicant should be a native of Gujarat state.",
+      "The applicant should have a fishing boat registered under Real Craft software.",
+      "The applicant should hold a fishing license.",
+      "The applicant should complete the online registration on the iKhedut Portal.",
+      "The applicant should obtain in-principle approval before purchase of the floor plan.",
+      "The applicant should have his/her own bank account."
+    ],
+    "exclusions": [],
+    "benefits": "General category beneficiaries receive 40% assistance up to ₹30,000/- while women and ST/SC beneficiaries receive 60% assistance up to ₹45,000/- out of the total unit cost of ₹75,000/-.",
+    "documents": [
+      "Aadhar card.",
+      "Quotation.",
+      "Caste certificate (if applicable).",
+      "Fishing License.",
+      "Passport-size photo.",
+      "Bank passbook / cancelled cheque.",
+      "Ration card."
+    ],
+    "how_to_apply": "Applicants can apply online through the I-Khedut Portal by registering, selecting the agricultural scheme, applying, and submitting the form.",
+    "official_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj",
+    "source_url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj",
+    "verified_on": null,
+    "tags": [],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "pmsscs_g",
+    "name": "Post-Matric Scholarships for Scheduled Castes Students- Gujarat",
+    "level": "central",
+    "state": "Gujarat",
+    "summary": "The objective of the scheme is to appreciably increase the Gross Enrolment Ratio of SC students in higher education with a focus on those from the poorest households, by providing financial assistance at post-matriculation or postsecondary stage to enable them to complete their education.",
+    "eligibility": [
+      "The student should belong to the Scheduled Caste Category of Gujarat.",
+      "The students who have passed the Matriculation or Higher Secondary or any higher examination of a recognized University or Board of Secondary Education will be eligible.",
+      "Scholarships will be paid to the students whose parents/guardians' income from all sources does not exceed ₹2,50,000/- during the last Financial Year."
+    ],
+    "exclusions": [
+      "Candidates who, after passing one stage of education are studying in the same stage of education in a different subject will not be eligible.",
+      "A scholarship holder under this scheme will not hold any other scholarship/stipend.",
+      "All seats filled through arbitrary and non-transparent processes without following the merit criteria as decided by the State Government are not eligible for these scholarships."
+    ],
+    "benefits": "Academic allowances ranging from ₹2500/- to ₹13500/- per annum depending on course category and residential status, plus 10% extra allowance for Divyang students.",
+    "documents": [
+      "Passport size photo",
+      "Identity proof i.e. Aadhaar Card",
+      "Income Certificate (Competent Authority) (Form No. 16 required for Govt. Employee)",
+      "10th Standard Marksheet",
+      "Caste Certificate from the Competent Authorities",
+      "First Page of Bank Passbook/Cancelled Cheque",
+      "Disability Certificate (Required only for Disable Person)",
+      "Fee Receipt of Current Course Year",
+      "Break Affidavit (If Break Gap is More than One Year)",
+      "Leave Without Pay (LWP) Certificate (For Employed Student Only)",
+      "Hostel Certificate (Only For Hosteller Student)",
+      "Marriage Certificate (If Any)",
+      "School Leaving Certificate (If Any)",
+      "Death Certificate of Father (If Father not Alive)",
+      "12th Standard Marksheet (If Any)",
+      "Graduate Marksheet (If Any)",
+      "Other Marksheets/Last Year Marksheet (If Any)",
+      "Identity Card (College/School)",
+      "Any other documents as required"
+    ],
+    "how_to_apply": "Applicants can apply online through the Digital Gujarat Portal by registering, updating their profile, selecting scholarship services under SC Scheme, filling out the application form, uploading documents, and submitting.",
+    "official_url": "https://www.digitalgujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/pmsscs-g",
+    "verified_on": null,
+    "tags": [
+      "student",
+      "sc_st"
+    ],
+    "required_service_ids": [
+      "gj_income_certificate"
+    ],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "psg",
+    "name": "PURNA Scheme",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The \"PURNA Scheme\" launched by the Women and Child Development Department, Gujarat, is a comprehensive initiative designed for adolescent girls aged 15-18 in Gujarat. It focuses on improving their nutritional status, health, and life skills while empowering them through education, vocational training, and exposure to public services.",
+    "eligibility": [
+      "The applicant must be a girl.",
+      "The applicant must be aged between 15-18 years.",
+      "Applicant must be enrolled at an Anganwadi center in Gujarat."
+    ],
+    "exclusions": [],
+    "benefits": null,
+    "documents": [
+      "Age proof document (15-18 years).",
+      "Address proof.",
+      "Any other documents (if required)."
+    ],
+    "how_to_apply": "Visit the nearest Anganwadi centres, submit age proof and enrollment details, and register for the scheme with the assistance of the Anganwadi worker.",
+    "official_url": "https://www.myscheme.gov.in/schemes/psg",
+    "source_url": "https://www.myscheme.gov.in/schemes/psg",
+    "verified_on": null,
+    "tags": [
+      "women",
+      "education",
+      "health"
+    ],
+    "required_service_ids": [
+      "gj_income_certificate"
+    ],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "sbygbocwwb",
+    "name": "Shramik Basera Yojana (GBOCWWB)",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Provides accommodation facilities to registered construction workers in temporary prefabricated housing with basic amenities.",
+    "eligibility": [
+      "Construction workers registered with the Gujarat Building and Other Construction Worker’s Welfare Board and their families.",
+      "The registered worker must present their identity card/smart card (e-Nirman card) renewed on time."
+    ],
+    "exclusions": [],
+    "benefits": "Accommodation facilities provided to laborers/workers at ₹5 per day.",
+    "documents": [
+      "Aadhaar card",
+      "e-Nirman Card"
+    ],
+    "how_to_apply": "Registered construction workers can avail benefits by visiting the prefabricated temporary accommodation constructed near their workplace or Kadianaka.",
+    "official_url": "https://bocwwb.gujarat.gov.in/schemes.htm",
+    "source_url": "https://www.myscheme.gov.in/schemes/sbygbocwwb",
+    "verified_on": null,
+    "tags": [
+      "housing"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "scss_glwb",
+    "name": "Shramyogi Cycle Subsidy Scheme- Gujarat Labour Welfare Board",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Provide a subsidy for the purchase of a bicycle to laborers working in the organized sector, enabling them to commute between their residence and workplace.",
+    "eligibility": [
+      "Labourers (Shramyogi) should be employed for the last one year in a factory/institute in the state of Gujarat.",
+      "Labourers who have been regularly contributing to the Labour Welfare Fund will be eligible for this scheme.",
+      "Assistance will be given only on the newly purchased cycle.",
+      "Application has to be made within 6 (six) months from the date mentioned in the bicycle purchase bill.",
+      "This scheme can be availed only once during the employment period."
+    ],
+    "exclusions": [],
+    "benefits": "Laborers will receive assistance of ₹1,500/- as a subsidy towards the purchase of a bicycle.",
+    "documents": [
+      "Passport-size Photograph",
+      "ID Card of Labour",
+      "Aadhaar Card of Labour",
+      "Labour Welfare Fund Account Number",
+      "Valid bill of purchase",
+      "Ration Card",
+      "Residence proof",
+      "Bank account details/Bank Passbook",
+      "Bonafide certificate",
+      "Any other documents as required"
+    ],
+    "how_to_apply": "Apply online through the Sanman Portal by registering with your Aadhaar Card Number and Labour Welfare Fund Account Number, filling out the application form, and uploading the required documents.",
+    "official_url": "https://sanman.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb",
+    "verified_on": null,
+    "tags": [
+      "rural",
+      "urban"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "smts_glwb",
+    "name": "Shramyogi Home Town Scheme- Gujarat Labour Welfare Board",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme facilitates the payment of railway fares for migrant labourers employed in the organized sector in Gujarat to travel to or from their home country to the nearest railway station.",
+    "eligibility": [
+      "The worker/labour should have been working continuously with the company in Gujarat for one year and his/her labour welfare fund should have been deposited in the board.",
+      "The benefit is provided once within a block of two years (2022-23 and 2023-24).",
+      "If both husband and wife are employed, only one beneficiary will get the benefit.",
+      "A Shram Yogi shall travel only after obtaining prior approval by applying prior to travel."
+    ],
+    "exclusions": [],
+    "benefits": "Migrant laborers employed in the organized sector can avail payment for railway fare to travel to or from their home country to the nearest railway station, credited via DBT.",
+    "documents": [
+      "Passport-size Photograph",
+      "A copy of the identity card issued by the contractor to the worker/labour",
+      "Aadhaar Card of Labour",
+      "Labour Welfare Fund Account Number",
+      "Valid proof of travel to hometown",
+      "Bank account details/Bank Passbook",
+      "Bonafide certificate",
+      "Any other documents as required"
+    ],
+    "how_to_apply": null,
+    "official_url": "https://sanman.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/smts-glwb",
+    "verified_on": null,
+    "tags": [
+      "rural",
+      "urban"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "spafsg",
+    "name": "Scheme to Provide Assistance for Setting Up Farmer Support Centers in State Market Committees and for Computerization of All Market Committees",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme aims to support farmers by setting up information centers and computerizing market committees for better efficiency and transparency.",
+    "eligibility": [
+      "Market Committees of all areas of Gujarat State shall be eligible for this scheme."
+    ],
+    "exclusions": [
+      "Individual farmers are not eligible. The scheme is specifically designed for market committees."
+    ],
+    "benefits": "To create farmer support center: 50% of the cost incurred including manpower or a maximum of ₹2,00,000/-, whichever is less. For computerization: Assistance of up to 90% or ₹2,00,000/- for 'K' and 'D' categories on purchase of 2 computers, 2 printers, and software.",
+    "documents": [
+      "Proposal document from the Market Committee.",
+      "Budget estimation and cost details.",
+      "Market Committee registration certificate.",
+      "Purchase details (if applying for hardware/software assistance).",
+      "Approval letter from concerned authorities.",
+      "Any other documents required by the authorities."
+    ],
+    "how_to_apply": null,
+    "official_url": "https://agri.gujarat.gov.in/Home/SchemesDetailsPage?Id=cuul3IDjBT04vsTxpbv10A==&domain=Uxijm857oHjeSHuzZgXyAA==",
+    "source_url": "https://www.myscheme.gov.in/schemes/spafsg",
+    "verified_on": null,
+    "tags": [
+      "farmer",
+      "business"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "spfasae",
+    "name": "Scheme to Provide Financial Assistance to Farmers for Purchasing Sanedo Agricultural Equipment",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme aims to support farmers by providing financial assistance for purchasing Sanedo agricultural equipment to reduce labor shortage and farming efforts.",
+    "eligibility": [
+      "The applicant must be a landholding farmer.",
+      "The applicant must belong to the Gujarat state."
+    ],
+    "exclusions": [],
+    "benefits": "Assistance of 25% or 25,000/- of total cost whichever is less, once in 10 years.",
+    "documents": [
+      "Aadhaar card",
+      "Land ownership documents",
+      "Bank passbook copy",
+      "Recent passport-size photograph",
+      "Any other document if required"
+    ],
+    "how_to_apply": "Apply online through the I-Khedut Portal.",
+    "official_url": "https://ikhedut.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/spfasae",
+    "verified_on": null,
+    "tags": [
+      "farmer"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "spy_gbocwwb",
+    "name": "Shramik Parivahan Yojana (GBOCWWB)",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "Registered construction workers are provided a bus pass through the Municipal Corporation at a concessional rate for commuting from Kadianaka to their workplace.",
+    "eligibility": [
+      "The applicant must be engaged in building or other construction work.",
+      "The construction worker must be registered with the Gujarat Building and Other Construction Worker’s Welfare Board."
+    ],
+    "exclusions": [],
+    "benefits": "Beneficiaries contribute 20% of the bus pass cost, while the board covers the remaining 80%.",
+    "documents": [
+      "Aadhaar Card",
+      "E-Nirman Card",
+      "2 Passport size photographs"
+    ],
+    "how_to_apply": "Visit the nearest municipal corporation office, collect and fill out the application form, attach required documents, and submit to the concerned official.",
+    "official_url": "https://bocwwb.gujarat.gov.in/schemes.htm",
+    "source_url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb",
+    "verified_on": null,
+    "tags": [],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "ssieemaf",
+    "name": "Scheme For Subsidy On Interest For Establishment Of 1 To 20 Milch Animal Farm",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme provides an interest subsidy of up to 12% on a bank loan for establishing a 1 to 20 milch animal farm for cattle breeders and farmers in Gujarat.",
+    "eligibility": [
+      "The applicant should be a permanent resident of Gujarat State.",
+      "Only one member of the family should be the beneficiary of the scheme.",
+      "The benefit of this scheme will be available to all the farmers of Gujarat State.",
+      "The applicant will be eligible for assistance only if he has obtained a loan for setting up the unit in the current financial year 2023-24 through a nationalized bank or a financial institution approved by the Reserve Bank of India."
+    ],
+    "exclusions": [],
+    "benefits": "The beneficiary can purchase 1 to 20 milch animals at a subsidized rate and receive an interest subsidy up to a maximum of 12% on the unit cost of the animal or the unit loan advanced by the bank for a period of five years via DBT.",
+    "documents": [
+      "Government-approved photo ID i.e. Aadhaar Card, Voter ID Card",
+      "Basis (evidence) for land (if applicable)",
+      "Disability Certificate from Competent Authority (only for disabled) (if applicable)",
+      "Ration Card (if applicable)",
+      "Bank account details",
+      "Beneficiary's Undertaking/Consent Form",
+      "Loan account passbook or bank disbursement certificate"
+    ],
+    "how_to_apply": null,
+    "official_url": "https://ikhedut.gujarat.gov.in/iKhedutPublicScheme/Public/frm_Public_ANH2_SchemeApplicaiton.aspx",
+    "source_url": "https://www.myscheme.gov.in/schemes/ssieemaf",
+    "verified_on": null,
+    "tags": [
+      "farmer",
+      "rural",
+      "business",
+      "income_support"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  },
+  {
+    "scheme_id": "wfafcp",
+    "name": "Wire Fencing Around the Farm for Crop Protection",
+    "level": "state",
+    "state": "Gujarat",
+    "summary": "The scheme aims to provide financial aid to farmers to install wire fencing, helping prevent damage to crops from wild and stray animals.",
+    "eligibility": [
+      "The applicant must be a landholding farmer or a farmer group",
+      "The applicant must have a minimum of 2 hectares (ha) of land in a cluster.",
+      "Only one of the holders mentioned in 8-A land records per account is eligible for benefits with the consent of other holders.",
+      "A farmer is eligible for assistance for a maximum of one account."
+    ],
+    "exclusions": [
+      "Farmers who have already availed benefits under the Solar Fencing Scheme are not eligible for this scheme."
+    ],
+    "benefits": "Per Running Meter ₹200/- or 50% of the actual expenditure incurred, whichever is less. Available once in a lifetime.",
+    "documents": [
+      "Land Ownership Proof (8-A land record).",
+      "Aadhaar Card.",
+      "Bank Account Details.",
+      "Consent Letter from other land account holders (if applicable).",
+      "Van Adhikar Patra or Sanad (for farmers in forest areas).",
+      "Any other document if required."
+    ],
+    "how_to_apply": "Apply online via I-Khedut Portal by visiting https://ikhedut.gujarat.gov.in/",
+    "official_url": "https://ikhedut.gujarat.gov.in/",
+    "source_url": "https://www.myscheme.gov.in/schemes/wfafcp",
+    "verified_on": null,
+    "tags": [
+      "farmer",
+      "rural"
+    ],
+    "required_service_ids": [],
+    "verification_status": "pending"
+  }
+]

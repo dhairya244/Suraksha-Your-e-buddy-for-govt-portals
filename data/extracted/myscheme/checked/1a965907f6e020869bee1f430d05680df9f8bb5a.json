@@ -1,0 +1,142 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/htagchrt-2",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_1a965907f6",
+  "file": "1a965907f6e020869bee1f430d05680df9f8bb5a.md",
+  "content_hash": "7a8ef76b5cd0eb4be3bb86dd1c9fc1b8a06858ce",
+  "title": "Harvesting Tools Assistance for General Category (HRT-2)",
+  "fetched_at": "2026-11-01T10:32:33+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:38:08+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_1a965907f6_0",
+        "name": "Harvesting Tools Assistance for General Category (HRT-2)",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Under the scheme, financial assistance is provided to farmers belonging to the General Category as well as to FPOs, FPCs, FIGs, SHGs, and Cooperative Societies for purchasing of different harvesting and processing equipment.",
+        "eligibility": [
+          "The beneficiary should be a permanent resident of Gujarat.",
+          "The beneficiary should belong to the General Category.",
+          "The individual farmer or FPO/FPC/FIG/SHG/Co-operative society is eligible to avail benefits under the scheme.",
+          "The assistance will be available once in five years.",
+          "Equipment certified by ISO/BIS/ISI/Government recognized organizations should be purchased through an authorized dealer of that company or imported equipment."
+        ],
+        "exclusions": [],
+        "benefits": "General Category farmers are eligible for assistance up to 50% of the cost of the harvesting tool or ₹1,00,000/-, whichever is less. FPO/FPC/FIG/SHG/ Cooperative Society are eligible for assistance of 75% of the cost of the harvesting tool or ₹1,50,000/-, whichever is less. Unit Cost of harvesting tool should be up to ₹2,00,000/-.",
+        "documents": [
+          "Copy of Aadhaar Card",
+          "Disability Certificate from Competent Authority (only for PWDs) (if applicable)",
+          "Copy of land details 7/12 and 8-A",
+          "Copy of bank passbook or cancelled cheque",
+          "Copy of Forest Rights letter (if applicable)",
+          "Samanti Form (for partners holding land in joint name) (if applicable)",
+          "In case of FPO/FPC, Co-operative Society, documents relating to registration purpose, activities, constitution, members, etc., and audit report of the last one year of the auditable entity (if applicable)"
+        ],
+        "how_to_apply": null,
+        "official_url": "https://ikhedut.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2",
+        "verified_on": null,
+        "tags": [
+          "farmer",
+          "business",
+          "rural"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Under the scheme, financial assistance is provided to farmers belonging to the General Category as well as to FPOs, FPCs, FIGs, SHGs, and Cooperative Societies for purchasing of different harvesting and processing equipment.",
+          "quote": "Under the scheme, financial assistance is provided to farmers belonging to the General Category as well as to FPOs (Farmers Producer Organizations), FPCs (Farmers Producer Companies), FIGs (Farmer Interest Groups), SHGs (Self-Help Groups), and Cooperative Societies for purchasing of different harvesting and processing equipment.",
+          "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+        },
+        "eligibility": [
+          {
+            "value": "The beneficiary should be a permanent resident of Gujarat.",
+            "quote": "The beneficiary should be a permanent resident of Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "The beneficiary should belong to the General Category.",
+            "quote": "The beneficiary should belong to the General Category.",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "The individual farmer or FPO/FPC/FIG/SHG/Co-operative society is eligible to avail benefits under the scheme.",
+            "quote": "The individual farmer or FPO/FPC/FIG/SHG/Co-operative society is eligible to avail benefits under the scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "The assistance will be available once in five years.",
+            "quote": "The assistance will be available once in five years.",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "Equipment certified by ISO/BIS/ISI/Government recognized organizations should be purchased through an authorized dealer of that company or imported equipment.",
+            "quote": "Equipment certified by ISO/BIS/ISI/Government recognized organizations should be purchased through an authorized dealer of that company or imported equipment.",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "General Category farmers are eligible for assistance up to 50% of the cost of the harvesting tool or ₹1,00,000/-, whichever is less. FPO/FPC/FIG/SHG/ Cooperative Society are eligible for assistance of 75% of the cost of the harvesting tool or ₹1,50,000/-, whichever is less. Unit Cost of harvesting tool should be up to ₹2,00,000/-.",
+          "quote": "1. The General Category farmers will be eligible for assistance up to 50% of the cost of the harvesting tool or ₹1,00,000/-, whichever is less. 2. FPO/FPC/FIG/SHG/ Cooperative Society will be eligible for assistance of 75% of the cost of the harvesting tool or ₹1,50,000/-, whichever is less. Note: Unit Cost of harvesting tool should be up to ₹2,00,000/-.",
+          "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+        },
+        "documents": [
+          {
+            "value": "Copy of Aadhaar Card",
+            "quote": "Copy of Aadhaar Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "Disability Certificate from Competent Authority (only for PWDs) (if applicable)",
+            "quote": "Disability Certificate from Competent Authority (only for PWDs) (if applicable)",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "Copy of land details 7/12 and 8-A",
+            "quote": "Copy of land details 7/12 and 8-A",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "Copy of bank passbook or cancelled cheque",
+            "quote": "Copy of bank passbook or cancelled cheque",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "Copy of Forest Rights letter (if applicable)",
+            "quote": "Copy of Forest Rights letter (if applicable)",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "Samanti Form (for partners holding land in joint name) (if applicable)",
+            "quote": "Samanti Form (for partners holding land in joint name) (if applicable)",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          },
+          {
+            "value": "In case of FPO/FPC, Co-operative Society, documents relating to registration purpose, activities, constitution, members, etc., and audit report of the last one year of the auditable entity (if applicable)",
+            "quote": "In case of FPO/FPC, Co-operative Society, documents relating to registration purpose, activities, constitution, members, etc., and audit report of the last one year of the auditable entity (if applicable)",
+            "source_url": "https://www.myscheme.gov.in/schemes/htagchrt-2"
+          }
+        ],
+        "how_to_apply": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:52:09+00:00"
+}

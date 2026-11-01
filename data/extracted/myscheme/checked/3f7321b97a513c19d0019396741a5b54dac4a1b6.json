@@ -1,0 +1,92 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/cdsg",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_3f7321b97a",
+  "file": "3f7321b97a513c19d0019396741a5b54dac4a1b6.md",
+  "content_hash": "1bed70bec93578de1ff73ec3949955ce248e70c2",
+  "title": "Coconut Development Scheme",
+  "fetched_at": "2026-11-01T10:31:53+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:37:48+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_3f7321b97a_0",
+        "name": "Coconut Development Scheme",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The \"Coconut Development Scheme\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to encourage farmers by providing quality coconut saplings at reasonable prices and financial assistance for coconut cultivation.",
+        "eligibility": [
+          "All farmers are eligible to apply for the scheme."
+        ],
+        "exclusions": [],
+        "benefits": null,
+        "documents": [
+          "7/12 Certificate",
+          "Aadhaar Card",
+          "Bank Pass Book/Cancelled Cheque"
+        ],
+        "how_to_apply": null,
+        "official_url": "https://ikhedut.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/cdsg",
+        "verified_on": null,
+        "tags": [
+          "farmer"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The \"Coconut Development Scheme\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to encourage farmers by providing quality coconut saplings at reasonable prices and financial assistance for coconut cultivation.",
+          "quote": "The \"Coconut Development Scheme\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to encourage farmers by providing quality coconut saplings at reasonable prices and financial assistance for coconut cultivation. It also promotes sustainable agricultural practices through Integrated Pest Management (IPM) and Integrated Nutrient Management (INM).",
+          "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+        },
+        "eligibility": [
+          {
+            "value": "All farmers are eligible to apply for the scheme.",
+            "quote": "All farmers are eligible to apply for the scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "documents": [
+          {
+            "value": "7/12 Certificate",
+            "quote": "7/12 Certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+          },
+          {
+            "value": "Aadhaar Card",
+            "quote": "Aadhaar Card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+          },
+          {
+            "value": "Bank Pass Book/Cancelled Cheque",
+            "quote": "Bank Pass Book/Cancelled Cheque.",
+            "source_url": "https://www.myscheme.gov.in/schemes/cdsg"
+          }
+        ],
+        "how_to_apply": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:53:10+00:00"
+}

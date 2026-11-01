@@ -1,0 +1,140 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/mas-glwb",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_3e8b38da82",
+  "file": "3e8b38da82fb2cf20d4728f5b4f03c9504206e74.md",
+  "content_hash": "02a81c4254e137adec466c2f82eec6e96f75121c",
+  "title": "Marriage Assistance Scheme- Gujarat Labour Welfare Board",
+  "fetched_at": "2026-11-01T10:30:23+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:37:06+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_3e8b38da82_0",
+        "name": "Marriage Assistance Scheme- Gujarat Labour Welfare Board",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Financial assistance is provided to female workers in Gujarat after their marriage.",
+        "eligibility": [
+          "Only female workers working in a factory/organization in the state of Gujarat whose Labour Welfare Fund is paid by the organization at the office are eligible.",
+          "The Labour Welfare Fund for the last one year of the woman worker must be mandatorily filled by the Factory/Company/Organization.",
+          "Application should be made within one year from the date of marriage.",
+          "There must be a gap of one year between the date of employment and the date of marriage of the woman worker."
+        ],
+        "exclusions": [],
+        "benefits": "Female workers are entitled to receive ₹11,000/- after their marriage.",
+        "documents": [
+          "Passport-size Photograph",
+          "A copy of the identity card issued by the contractor to the worker/labour",
+          "Aadhaar Card of Labour",
+          "Labour Welfare Fund Account Number",
+          "Proof of marriage",
+          "Bonafide certificate",
+          "Bank account details/Bank Passbook",
+          "Any other documents as required"
+        ],
+        "how_to_apply": "Applicants can apply online by visiting the Sanman Portal, registering under Citizen Login using Aadhaar Card and Labour Welfare Fund Account details, selecting the scheme, filling out the application form, uploading documents, and submitting.",
+        "official_url": "https://glwb.gujarat.gov.in/fsmb-scheme-guj.htm",
+        "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb",
+        "verified_on": null,
+        "tags": [
+          "women"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Financial assistance is provided to female workers in Gujarat after their marriage.",
+          "quote": "Under the scheme, financial assistance is provided to female workers who are working in a factory/organization in the state of Gujarat after their marriage.",
+          "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+        },
+        "eligibility": [
+          {
+            "value": "Only female workers working in a factory/organization in the state of Gujarat whose Labour Welfare Fund is paid by the organization at the office are eligible.",
+            "quote": "Only those women workers who are working in the factory/organization in the state of Gujarat and the Labour Welfare Fund of the concerned woman worker is paid by the organization at the office, will be eligible to get the benefit of this scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "The Labour Welfare Fund for the last one year of the woman worker must be mandatorily filled by the Factory/Company/Organization.",
+            "quote": "The Labour Welfare Fund of the last one year of the concerned woman worker should be mandatorily filled by the Factory/Company/Organization.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "Application should be made within one year from the date of marriage.",
+            "quote": "Application should be made within one year from the date of marriage.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "There must be a gap of one year between the date of employment and the date of marriage of the woman worker.",
+            "quote": "There should be a gap of one year between the date of employment and the date of marriage of the woman worker.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Female workers are entitled to receive ₹11,000/- after their marriage.",
+          "quote": "Under the scheme, female workers will be entitled to receive ₹11,000/- after their marriage.",
+          "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+        },
+        "documents": [
+          {
+            "value": "Passport-size Photograph",
+            "quote": "Passport-size Photograph",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "A copy of the identity card issued by the contractor to the worker/labour",
+            "quote": "A copy of the identity card issued by the contractor to the worker/labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "Aadhaar Card of Labour",
+            "quote": "Aadhaar Card of Labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "Labour Welfare Fund Account Number",
+            "quote": "Labour Welfare Fund Account Number",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "Proof of marriage",
+            "quote": "Proof of marriage",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "Bonafide certificate",
+            "quote": "Bonafide certificate",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "Bank account details/Bank Passbook",
+            "quote": "Bank account details/Bank Passbook",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          },
+          {
+            "value": "Any other documents as required",
+            "quote": "Any other documents as required",
+            "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Applicants can apply online by visiting the Sanman Portal, registering under Citizen Login using Aadhaar Card and Labour Welfare Fund Account details, selecting the scheme, filling out the application form, uploading documents, and submitting.",
+          "quote": "The applicant may visit the Sanman Portal: https://sanman.gujarat.gov.in/",
+          "source_url": "https://www.myscheme.gov.in/schemes/mas-glwb"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:53:10+00:00"
+}

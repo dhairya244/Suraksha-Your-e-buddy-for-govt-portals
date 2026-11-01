@@ -1,0 +1,142 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/kpyg",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_b98c136a9d",
+  "file": "b98c136a9d6e6a00b0550540792ebc565886ab0e.md",
+  "content_hash": "d9672ec44679ac891ec91a33fd3897e5a0bab4b4",
+  "title": "Kisan Parivahan Yojana",
+  "fetched_at": "2026-11-01T10:29:47+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:36:48+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_b98c136a9d_0",
+        "name": "Kisan Parivahan Yojana",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Provides financial assistance to farmers in Gujarat for purchasing medium-sized goods vehicles (600kg to 1500kg capacity) to help transport harvested crops.",
+        "eligibility": [
+          "The applicant must be a farmer.",
+          "The applicant must belong to Gujarat state.",
+          "The applicant must purchase a medium-sized goods vehicle (600kg to 1500kg capacity) from an authorized dealer."
+        ],
+        "exclusions": [
+          "Farmers who have already received benefits under the scheme must wait 5 years before reapplying."
+        ],
+        "benefits": "Small, Marginal, Women, and SC/ST Farmers receive 35% of total vehicle cost or ₹75,000, whichever is lower. General and Other Farmers receive 25% of total vehicle cost or ₹50,000, whichever is lower.",
+        "documents": [
+          "Aadhaar Card",
+          "Land ownership documents",
+          "Caste certificate (if applicable)",
+          "Bank passbook",
+          "Quotation/proforma invoice from an authorized dealer",
+          "Domicile certificate",
+          "Recent passport-size photograph",
+          "Any other document if required"
+        ],
+        "how_to_apply": "Applicants can apply online on the I-Khedut Portal by visiting the site, navigating to Agricultural Schemes under Schemes, selecting Kisan Parivahan Yojana, and submitting a new application.",
+        "official_url": "https://ikhedut.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/kpyg",
+        "verified_on": null,
+        "tags": [
+          "farmer"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Provides financial assistance to farmers in Gujarat for purchasing medium-sized goods vehicles (600kg to 1500kg capacity) to help transport harvested crops.",
+          "quote": "The scheme \"Kisan Parivahan Yojana\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to support farmers by providing financial aid for purchasing goods vehicles with a capacity of 600kg to 1500kg.",
+          "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant must be a farmer.",
+            "quote": "The applicant must be a farmer.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          },
+          {
+            "value": "The applicant must belong to Gujarat state.",
+            "quote": "The applicant must belong to the Gujarat state.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          },
+          {
+            "value": "The applicant must purchase a medium-sized goods vehicle (600kg to 1500kg capacity) from an authorized dealer.",
+            "quote": "The applicant must purchase a medium-sized goods vehicle (600kg to 1500kg capacity) from an authorized dealer.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "Farmers who have already received benefits under the scheme must wait 5 years before reapplying.",
+            "quote": "No, a farmer who has already received benefits under the scheme must wait for 5 years before reapplying.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          }
+        ],
+        "benefits": {
+          "value": "Small, Marginal, Women, and SC/ST Farmers receive 35% of total vehicle cost or ₹75,000, whichever is lower. General and Other Farmers receive 25% of total vehicle cost or ₹50,000, whichever is lower.",
+          "quote": "Small, Marginal, Women, SC/ST Farmers receive 35% of the total vehicle cost or ₹75,000, whichever is lower.",
+          "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+        },
+        "documents": [
+          {
+            "value": "Aadhaar Card",
+            "quote": "1. Aadhaar Card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          },
+          {
+            "value": "Land ownership documents",
+            "quote": "2. Land ownership documents.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          },
+          {
+            "value": "Caste certificate (if applicable)",
+            "quote": "3. Caste certificate (if applicable).",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          },
+          {
+            "value": "Bank passbook",
+            "quote": "4. Bank passbook.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          },
+          {
+            "value": "Quotation/proforma invoice from an authorized dealer",
+            "quote": "5. Quotation/proforma invoice from an authorized dealer.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          },
+          {
+            "value": "Domicile certificate",
+            "quote": "6. Domicile certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          },
+          {
+            "value": "Recent passport-size photograph",
+            "quote": "7. Recent passport-size photograph.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          },
+          {
+            "value": "Any other document if required",
+            "quote": "8. Any other document if required.",
+            "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Applicants can apply online on the I-Khedut Portal by visiting the site, navigating to Agricultural Schemes under Schemes, selecting Kisan Parivahan Yojana, and submitting a new application.",
+          "quote": "Step 1: The applicant may visit and apply online at I-Khedut Portal: https://ikhedut.gujarat.gov.in/",
+          "source_url": "https://www.myscheme.gov.in/schemes/kpyg"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:54:33+00:00"
+}

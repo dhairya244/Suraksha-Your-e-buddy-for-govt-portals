@@ -1,0 +1,105 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/mmgmy",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_215557341d",
+  "file": "215557341d7f4bda91be636335c25e80ce5fab10.md",
+  "content_hash": "0ce240f67018d24c20147063c1c01ea8653f70c7",
+  "title": "Mukhyamantri Gyansetu Merit Scholarship Yojana",
+  "fetched_at": "2026-11-01T10:33:24+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:38:25+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_215557341d_0",
+        "name": "Mukhyamantri Gyansetu Merit Scholarship Yojana",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme aims to select 30,000 brilliant students who have completed their Class 5 education in government, aided, or RTE-approved schools and provide them with scholarships to study in selected schools from Class 6th to Class 12th.",
+        "eligibility": [
+          "The applicant must be a resident of Gujarat.",
+          "The applicant must be a student.",
+          "The applicant must have studied Classes 1st to 5th in a Government/ Government-aided/ RTE-approved self-financed primary school in Gujarat.",
+          "The applicant must have passed the Common Entrance Test (CET) conducted by the State Examination Board and be listed in the merit list.",
+          "The applicant must have taken admission in Class 6th in a Government/ Government-aided/ RTE-approved self-financed primary school in Gujarat."
+        ],
+        "exclusions": [],
+        "benefits": "Provides annual scholarships ranging from ₹5,000 to ₹25,000 based on the school type and class level.",
+        "documents": [
+          "Income Certificate"
+        ],
+        "how_to_apply": "Apply online at http://gssyguj.in/ by registering with the CTS Aadhaar UDI number, filling in the details, uploading documents, and submitting the form.",
+        "official_url": "https://gssyguj.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/mmgmy",
+        "verified_on": null,
+        "tags": [
+          "student",
+          "education",
+          "income_support"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme aims to select 30,000 brilliant students who have completed their Class 5 education in government, aided, or RTE-approved schools and provide them with scholarships to study in selected schools from Class 6th to Class 12th.",
+          "quote": "The scheme \"Mukhyamantri Gyansetu Merit Scholarship Yojana\" by the Education Department, Government of Gujarat aims to select 30,000 brilliant students who have completed their Class 5 education consecutively in government, aided, or RTE-approved schools and provide them with scholarships to study in selected government, aided, or private schools from Class 6th to Class 12th. The selection is done through a Common Entrance Test conducted by the State Examination Board, Gandhinagar.",
+          "source_url": "https://www.myscheme.gov.in/schemes/mmgmy"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant must be a resident of Gujarat.",
+            "quote": "The applicant must be a resident of Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mmgmy"
+          },
+          {
+            "value": "The applicant must be a student.",
+            "quote": "The applicant must be a student.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mmgmy"
+          },
+          {
+            "value": "The applicant must have studied Classes 1st to 5th in a Government/ Government-aided/ RTE-approved self-financed primary school in Gujarat.",
+            "quote": "The applicant must have studied Classes 1st to 5th in a Government/ Government-aided/ RTE-approved self-financed primary school in Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mmgmy"
+          },
+          {
+            "value": "The applicant must have passed the Common Entrance Test (CET) conducted by the State Examination Board and be listed in the merit list.",
+            "quote": "The applicant must have passed the Common Entrance Test (CET) conducted by the State Examination Board and be listed in the merit list.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mmgmy"
+          },
+          {
+            "value": "The applicant must have taken admission in Class 6th in a Government/ Government-aided/ RTE-approved self-financed primary school in Gujarat.",
+            "quote": "The applicant must have taken admission in Class 6th in a Government/ Government-aided/ RTE-approved self-financed primary school in Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mmgmy"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Provides annual scholarships ranging from ₹5,000 to ₹25,000 based on the school type and class level.",
+          "quote": "Government Schools and Government -aided Schools (Approved by Education Department): For Class 6th to 8th: ₹5,000/- per year. For Class 9th to 10th: ₹6,000/- per year. For Class 11th to 12th: ₹7,000/- per year. Private (Selected) Schools: For Class 6th to 8th: ₹20,000/- per year. For Class 9th to 10th: ₹22,000/- per year. For Class 11th to 12th: ₹25,000/- per year.",
+          "source_url": "https://www.myscheme.gov.in/schemes/mmgmy"
+        },
+        "documents": [
+          {
+            "value": "Income Certificate",
+            "quote": "1. Income Certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/mmgmy"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Apply online at http://gssyguj.in/ by registering with the CTS Aadhaar UDI number, filling in the details, uploading documents, and submitting the form.",
+          "quote": "Step 1:Visit the official website: http://gssyguj.in/. Step 2:Register online using the 18-digit CTS Aadhaar UDI number. Step 3:Provide mobile number, verify using OTP, and set a password to complete registration.",
+          "source_url": "https://www.myscheme.gov.in/schemes/mmgmy"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/eas-glwb",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_cb14ba21db",
+  "file": "cb14ba21dbccf67463b3249f29fe95c2ce230848.md",
+  "content_hash": "a313ca96dc4678134b31b979889128cda90a5f21",
+  "title": "Educational Award Scheme - Gujarat Labour Welfare Board",
+  "fetched_at": "2026-11-01T10:32:09+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:37:56+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_cb14ba21db_0",
+        "name": "Educational Award Scheme - Gujarat Labour Welfare Board",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The Educational Award Scheme encourages the children of laborers to increase their enthusiasm and pursue higher education.",
+        "eligibility": [
+          "Parents must be working in a factory/institute in Gujarat and paying the Labour Welfare Fund.",
+          "Children must have passed 70% and above marks in the 10th or 12th Standard."
+        ],
+        "exclusions": [],
+        "benefits": "Children who scored 70% or above in 10th Standard receive ₹2,500/-, and in 12th Standard receive ₹5,000/- as an award.",
+        "documents": [
+          "Passport-size Photograph",
+          "ID Card of Labour",
+          "Aadhaar Card of Labour",
+          "Labour Welfare Fund Account Number",
+          "Ration Card",
+          "Caste Category certificate, if applicable",
+          "Residence proof",
+          "Bank account details/Bank Passbook",
+          "Marksheet of Child/Passing Certificate",
+          "Identity proof of Child i.e. Aadhaar Card",
+          "Any other documents as required"
+        ],
+        "how_to_apply": null,
+        "official_url": "https://sanman.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb",
+        "verified_on": null,
+        "tags": [
+          "student",
+          "education"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The Educational Award Scheme encourages the children of laborers to increase their enthusiasm and pursue higher education.",
+          "quote": "The “Educational Award Scheme” is implemented by the Gujarat Labour Welfare Board, Labour, Skill Development & Employment Department, Government of Gujarat. The scheme has been implemented to encourage the students of the Labours to increase their enthusiasm and to get higher education through it.",
+          "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+        },
+        "eligibility": [
+          {
+            "value": "Parents must be working in a factory/institute in Gujarat and paying the Labour Welfare Fund.",
+            "quote": "Only the children (students) whose parents are working in a factory/institute in the state of Gujarat and whose parents have been paying the Labour Welfare Fund will be eligible for this scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Children must have passed 70% and above marks in the 10th or 12th Standard.",
+            "quote": "The children of labourers who have passed 70% and above marks in the 10th or 12th Standard can avail the benefits under the scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Children who scored 70% or above in 10th Standard receive ₹2,500/-, and in 12th Standard receive ₹5,000/- as an award.",
+          "quote": "1. Under the scheme, children of laborers who have passed 70% or above marks in the 10th Standard will receive ₹2,500/- as an award. 2. The children of laborers who have passed 70% or above marks in the 12th Standard will receive ₹5,000/- as an award.",
+          "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+        },
+        "documents": [
+          {
+            "value": "Passport-size Photograph",
+            "quote": "01. Passport-size Photograph",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "ID Card of Labour",
+            "quote": "02. ID Card of Labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Aadhaar Card of Labour",
+            "quote": "03. Aadhaar Card of Labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Labour Welfare Fund Account Number",
+            "quote": "04. Labour Welfare Fund Account Number",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Ration Card",
+            "quote": "05. Ration Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Caste Category certificate, if applicable",
+            "quote": "06. Caste Category certificate, if applicable",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Residence proof",
+            "quote": "07. Residence proof",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Bank account details/Bank Passbook",
+            "quote": "08. Bank account details/Bank Passbook",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Marksheet of Child/Passing Certificate",
+            "quote": "09. Marksheet of Child/Passing Certificate",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Identity proof of Child i.e. Aadhaar Card",
+            "quote": "10. Identity proof of Child i.e. Aadhaar Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          },
+          {
+            "value": "Any other documents as required",
+            "quote": "11. Any other documents as required",
+            "source_url": "https://www.myscheme.gov.in/schemes/eas-glwb"
+          }
+        ],
+        "how_to_apply": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:55:13+00:00"
+}

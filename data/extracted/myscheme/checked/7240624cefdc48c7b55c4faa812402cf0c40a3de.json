@@ -1,0 +1,159 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/scss-glwb",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_7240624cef",
+  "file": "7240624cefdc48c7b55c4faa812402cf0c40a3de.md",
+  "content_hash": "7c1ca1a6d3c2c54e59c6edce6d0e6f4047e0c408",
+  "title": "Shramyogi Cycle Subsidy Scheme- Gujarat Labour Welfare Board",
+  "fetched_at": "2026-11-01T10:34:05+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:38:43+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_7240624cef_0",
+        "name": "Shramyogi Cycle Subsidy Scheme- Gujarat Labour Welfare Board",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "Provide a subsidy for the purchase of a bicycle to laborers working in the organized sector, enabling them to commute between their residence and workplace.",
+        "eligibility": [
+          "Labourers (Shramyogi) should be employed for the last one year in a factory/institute in the state of Gujarat.",
+          "Labourers who have been regularly contributing to the Labour Welfare Fund will be eligible for this scheme.",
+          "Assistance will be given only on the newly purchased cycle.",
+          "Application has to be made within 6 (six) months from the date mentioned in the bicycle purchase bill.",
+          "This scheme can be availed only once during the employment period."
+        ],
+        "exclusions": [],
+        "benefits": "Laborers will receive assistance of ₹1,500/- as a subsidy towards the purchase of a bicycle.",
+        "documents": [
+          "Passport-size Photograph",
+          "ID Card of Labour",
+          "Aadhaar Card of Labour",
+          "Labour Welfare Fund Account Number",
+          "Valid bill of purchase",
+          "Ration Card",
+          "Residence proof",
+          "Bank account details/Bank Passbook",
+          "Bonafide certificate",
+          "Any other documents as required"
+        ],
+        "how_to_apply": "Apply online through the Sanman Portal by registering with your Aadhaar Card Number and Labour Welfare Fund Account Number, filling out the application form, and uploading the required documents.",
+        "official_url": "https://sanman.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb",
+        "verified_on": null,
+        "tags": [
+          "rural",
+          "urban"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "Provide a subsidy for the purchase of a bicycle to laborers working in the organized sector, enabling them to commute between their residence and workplace.",
+          "quote": "The objective of the scheme is to provide a subsidy for the purchase of a bicycle to laborers working in the organized sector, enabling them to commute between their residence and workplace.",
+          "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+        },
+        "eligibility": [
+          {
+            "value": "Labourers (Shramyogi) should be employed for the last one year in a factory/institute in the state of Gujarat.",
+            "quote": "1. Labourers (Shramyogi) should be employed for the last one year in a factory/institute in the state of Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Labourers who have been regularly contributing to the Labour Welfare Fund will be eligible for this scheme.",
+            "quote": "2. Labourers who have been regularly contributing to the Labour Welfare Fund will be eligible for this scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Assistance will be given only on the newly purchased cycle.",
+            "quote": "3. Assistance will be given only on the newly purchased cycle.",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Application has to be made within 6 (six) months from the date mentioned in the bicycle purchase bill.",
+            "quote": "4. Application has to be made within 6 (six) months from the date mentioned in the bicycle purchase bill.",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "This scheme can be availed only once during the employment period.",
+            "quote": "5. This scheme can be availed only once during the employment period.",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "Laborers will receive assistance of ₹1,500/- as a subsidy towards the purchase of a bicycle.",
+          "quote": "1. Under the scheme, laborers will receive assistance of ₹1,500/- as a subsidy towards the purchase of a bicycle.",
+          "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+        },
+        "documents": [
+          {
+            "value": "Passport-size Photograph",
+            "quote": "01. Passport-size Photograph",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "ID Card of Labour",
+            "quote": "02. ID Card of Labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Aadhaar Card of Labour",
+            "quote": "03. Aadhaar Card of Labour",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Labour Welfare Fund Account Number",
+            "quote": "04. Labour Welfare Fund Account Number",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Valid bill of purchase",
+            "quote": "05. Valid bill of purchase",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Ration Card",
+            "quote": "06. Ration Card",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Residence proof",
+            "quote": "07. Residence proof",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Bank account details/Bank Passbook",
+            "quote": "08. Bank account details/Bank Passbook",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Bonafide certificate",
+            "quote": "09. ﻿ Bonafide certificate ﻿",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          },
+          {
+            "value": "Any other documents as required",
+            "quote": "10. Any other documents as required",
+            "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+          }
+        ],
+        "how_to_apply": {
+          "value": "Apply online through the Sanman Portal by registering with your Aadhaar Card Number and Labour Welfare Fund Account Number, filling out the application form, and uploading the required documents.",
+          "quote": "Step 01: The applicant may visit the Sanman Portal: https://sanman.gujarat.gov.in/",
+          "source_url": "https://www.myscheme.gov.in/schemes/scss-glwb"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:53:31+00:00"
+}

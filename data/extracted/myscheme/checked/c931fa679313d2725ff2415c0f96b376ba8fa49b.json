@@ -1,0 +1,105 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/aaevcths",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_c931fa6793",
+  "file": "c931fa679313d2725ff2415c0f96b376ba8fa49b.md",
+  "content_hash": "f54ee25af884f05508e080dc0bb2a6aeb42756a5",
+  "title": "Assistance for Area Expansion of Vegetable Crops through Hybrid Seed",
+  "fetched_at": "2026-11-01T10:35:21+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:39:19+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_c931fa6793_0",
+        "name": "Assistance for Area Expansion of Vegetable Crops through Hybrid Seed",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme aims to support vegetable farmers in enhancing their cultivation areas using hybrid seeds and to promote natural farming practices, helping reduce input costs and encouraging sustainable agricultural methods.",
+        "eligibility": [
+          "The applicant should be a resident of Gujarat.",
+          "The applicant should be a farmer.",
+          "The applicant should be engaged in vegetable crop cultivation."
+        ],
+        "exclusions": [],
+        "benefits": null,
+        "documents": [
+          "7/12 Certificate",
+          "Aadhaar Card",
+          "Bank Pass Book/Cancelled Cheque"
+        ],
+        "how_to_apply": null,
+        "official_url": "https://ikhedut.gujarat.gov.in/",
+        "source_url": "https://www.myscheme.gov.in/schemes/aaevcths",
+        "verified_on": null,
+        "tags": [
+          "farmer",
+          "rural"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme aims to support vegetable farmers in enhancing their cultivation areas using hybrid seeds and to promote natural farming practices, helping reduce input costs and encouraging sustainable agricultural methods.",
+          "quote": "The scheme \"Assistance for Area Expansion of Vegetable Crops through Hybrid Seed\" by the Agriculture and Co-operation Department, Government of Gujarat, aims to support vegetable farmers in enhancing their cultivation areas using hybrid seeds and to promote natural farming practices. The financial assistance provided under the scheme helps reduce input costs and encourages environmentally sustainable agricultural methods among the farming community.",
+          "source_url": "https://www.myscheme.gov.in/schemes/aaevcths"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant should be a resident of Gujarat.",
+            "quote": "The applicant should be a resident of Gujarat.",
+            "source_url": "https://www.myscheme.gov.in/schemes/aaevcths"
+          },
+          {
+            "value": "The applicant should be a farmer.",
+            "quote": "The applicant should be a farmer.",
+            "source_url": "https://www.myscheme.gov.in/schemes/aaevcths"
+          },
+          {
+            "value": "The applicant should be engaged in vegetable crop cultivation.",
+            "quote": "The applicant should be engaged in vegetable crop cultivation.",
+            "source_url": "https://www.myscheme.gov.in/schemes/aaevcths"
+          }
+        ],
+        "exclusions": [],
+        "benefits": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "documents": [
+          {
+            "value": "7/12 Certificate",
+            "quote": "1. 7/12 Certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/aaevcths"
+          },
+          {
+            "value": "Aadhaar Card",
+            "quote": "2. Aadhaar Card.",
+            "source_url": "https://www.myscheme.gov.in/schemes/aaevcths"
+          },
+          {
+            "value": "Bank Pass Book/Cancelled Cheque",
+            "quote": "3. Bank Pass Book/Cancelled Cheque.",
+            "source_url": "https://www.myscheme.gov.in/schemes/aaevcths"
+          }
+        ],
+        "how_to_apply": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ],
+  "checked_at": "2026-11-01T10:54:53+00:00"
+}

@@ -1,0 +1,118 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/spafsg",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_cf06d14c14",
+  "file": "cf06d14c143c9d35160f7f047b44bdaa5038ec86.md",
+  "content_hash": "a6c2f2044438b5f3bb06bd716406dca9fb0c2ed9",
+  "title": "Scheme to Provide Assistance for Setting Up Farmer Support Centers in State Market Committees and for Computerization of All Market Committees",
+  "fetched_at": "2026-11-01T10:34:31+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:38:55+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_cf06d14c14_0",
+        "name": "Scheme to Provide Assistance for Setting Up Farmer Support Centers in State Market Committees and for Computerization of All Market Committees",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The scheme aims to support farmers by setting up information centers and computerizing market committees for better efficiency and transparency.",
+        "eligibility": [
+          "Market Committees of all areas of Gujarat State shall be eligible for this scheme."
+        ],
+        "exclusions": [
+          "Individual farmers are not eligible. The scheme is specifically designed for market committees."
+        ],
+        "benefits": "To create farmer support center: 50% of the cost incurred including manpower or a maximum of ₹2,00,000/-, whichever is less. For computerization: Assistance of up to 90% or ₹2,00,000/- for 'K' and 'D' categories on purchase of 2 computers, 2 printers, and software.",
+        "documents": [
+          "Proposal document from the Market Committee.",
+          "Budget estimation and cost details.",
+          "Market Committee registration certificate.",
+          "Purchase details (if applying for hardware/software assistance).",
+          "Approval letter from concerned authorities.",
+          "Any other documents required by the authorities."
+        ],
+        "how_to_apply": "The Market Committee should submit a proposal to the Deputy Director and District Registrar, Cooperative Societies through the Director, Agricultural Market and Rural Economy, Gandhinagar.",
+        "official_url": "https://agri.gujarat.gov.in/Home/SchemesDetailsPage?Id=cuul3IDjBT04vsTxpbv10A==&domain=Uxijm857oHjeSHuzZgXyAA==",
+        "source_url": "https://www.myscheme.gov.in/schemes/spafsg",
+        "verified_on": null,
+        "tags": [
+          "farmer",
+          "business"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The scheme aims to support farmers by setting up information centers and computerizing market committees for better efficiency and transparency.",
+          "quote": "The scheme \"Scheme to Provide Assistance for Setting Up Farmer Support Centers in State Market Committees and for Computerization of All Market Committees\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to support farmers by setting up information centers and computerizing market committees for better efficiency and transparency.",
+          "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+        },
+        "eligibility": [
+          {
+            "value": "Market Committees of all areas of Gujarat State shall be eligible for this scheme.",
+            "quote": "Market Committees of all areas of Gujarat State shall be eligible for this scheme.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "Individual farmers are not eligible. The scheme is specifically designed for market committees.",
+            "quote": "No, individual farmers are not eligible. The scheme is specifically designed for market committees.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+          }
+        ],
+        "benefits": {
+          "value": "To create farmer support center: 50% of the cost incurred including manpower or a maximum of ₹2,00,000/-, whichever is less. For computerization: Assistance of up to 90% or ₹2,00,000/- for 'K' and 'D' categories on purchase of 2 computers, 2 printers, and software.",
+          "quote": "To create farmer support center | 50% of the cost incurred including manpower (employee salaries) or a maximum of ₹2,00,000/-, whichever is less.",
+          "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+        },
+        "documents": [
+          {
+            "value": "Proposal document from the Market Committee.",
+            "quote": "1. Proposal document from the Market Committee.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+          },
+          {
+            "value": "Budget estimation and cost details.",
+            "quote": "2. Budget estimation and cost details.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+          },
+          {
+            "value": "Market Committee registration certificate.",
+            "quote": "3. Market Committee registration certificate.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+          },
+          {
+            "value": "Purchase details (if applying for hardware/software assistance).",
+            "quote": "4. Purchase details (if applying for hardware/software assistance).",
+            "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+          },
+          {
+            "value": "Approval letter from concerned authorities.",
+            "quote": "5. Approval letter from concerned authorities.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+          },
+          {
+            "value": "Any other documents required by the authorities.",
+            "quote": "6. Any other documents required by the authorities.",
+            "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+          }
+        ],
+        "how_to_apply": {
+          "value": "The Market Committee should submit a proposal to the Deputy Director and District Registrar, Cooperative Societies through the Director, Agricultural Market and Rural Economy, Gandhinagar.",
+          "quote": "Step 1:The Market Committee should submit a proposal to the Deputy Director and District Registrar, Cooperative Societies through the Director, Agricultural Market and Rural Economy, Gandhinagar. Step 2: After verification, the proposal is forwarded to the Agriculture, Farmers Welfare, and Cooperation Department for approval.",
+          "source_url": "https://www.myscheme.gov.in/schemes/spafsg"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "credits_used": 53,
+  "credits_used": 78,
   "log": [
     {
       "ts": "2026-10-31T18:18:22+00:00",
@@ -422,6 +422,206 @@
       "kind": "scrape",
       "source": "myscheme",
       "url": "https://www.myscheme.gov.in/schemes/gspsg",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:30:06+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/kpyg",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:30:23+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/labs-glwb",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:30:41+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/mas-glwb",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:30:54+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/msgbcdc",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:31:09+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/mssg",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:31:25+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/msyggvn",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:31:37+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/psg",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:31:53+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/adas-glwb",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:32:09+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/cdsg",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:32:21+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/eas-glwb",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:32:33+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/fais",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:32:51+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/htagchrt-2",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:33:09+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/iascasf",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:33:24+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/mksy",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:33:41+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/mmgmy",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:33:52+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/pmmsyiceboxguj",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:34:05+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/pmsscs-g",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:34:19+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/scss-glwb",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:34:31+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/smts-glwb",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:34:42+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/spafsg",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:34:55+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/spfasae",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:35:08+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/ssieemaf",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:35:21+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/wfafcp",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:35:31+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/aaevcths",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:35:42+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/afmtptfm",
       "credits": 1,
       "estimated": false
     }

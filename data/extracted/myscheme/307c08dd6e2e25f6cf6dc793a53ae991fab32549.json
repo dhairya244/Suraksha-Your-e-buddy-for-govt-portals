@@ -1,0 +1,171 @@
+{
+  "url": "https://www.myscheme.gov.in/schemes/fais",
+  "source_id": "myscheme",
+  "page_source_id": "myscheme_307c08dd6e",
+  "file": "307c08dd6e2e25f6cf6dc793a53ae991fab32549.md",
+  "content_hash": "7d3415bdea9ea9e79c6c9e56ab11d210dd541cff",
+  "title": "Farmers Accidental Insurance Scheme",
+  "fetched_at": "2026-11-01T10:32:21+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:38:02+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [],
+  "schemes": [
+    {
+      "scheme": {
+        "scheme_id": "tmp_myscheme_307c08dd6e_0",
+        "name": "Farmers Accidental Insurance Scheme",
+        "level": "state",
+        "state": "Gujarat",
+        "summary": "The Farmers Accidental Insurance Scheme provides financial aid to the successors of registered farmers in case of accidental death or disability.",
+        "eligibility": [
+          "The applicant or their parent must have a registered land record before the date of the accident.",
+          "The death or disability must be caused by an accident.",
+          "The deceased/disabled person must be the registered farmer, their spouse, or any legal heir (son/daughter).",
+          "The applicant must possess a valid driving license in case of death/injury (For vehicular accident).",
+          "The beneficiary must be between 5 to 70 years of age (For accidental death or permanent disability).",
+          "Application should be made in the office of the concerned District Agriculture Officer within 150 days."
+        ],
+        "exclusions": [
+          "Incidence of Natural & suicidal death are excluded."
+        ],
+        "benefits": "Provides financial assistance up to ₹2,00,000/- for accidental death, 100% permanent disability, loss of two eyes/limbs/hand and leg, or one eye and one limb; and ₹1,00,000/- for the loss of one eye or one limb.",
+        "documents": [
+          "Application in prescribed form Annexure -1, 2,3, 3(A),4,5",
+          "Copy of 7/12, 8-A & hack Patrak (Form no: 6).",
+          "Copy of Post Mortem report",
+          "I.R & spot Panchami Police Inquest Report or Court Order",
+          "Proof of death (Death Certificate) & age from competent authority as the case may be.",
+          "Disability certificate form competent authority, in the case of disablement.",
+          "Sub Divisional Magistrate report and Police tapas report",
+          "Baydhari patrak in prescribe Performa.",
+          "Valid driving licence (in case deceaseddrive the vehicle)",
+          "In case of first legal heir (son/daughter) Death or disability produce Registered farmer’s (his father or mother) Pedhinamu or successive generations proof."
+        ],
+        "how_to_apply": "The successor of the deceased or disabled farmer must submit an application within 150 days of the accident to the concerned District Agriculture Officer.",
+        "official_url": "https://dag.gujarat.gov.in/Home/SchemesDetailsPage/Bu2wc90IXRdJKrcfHJ%E2%9C%A49ew%E2%99%AC%E2%99%AC",
+        "source_url": "https://www.myscheme.gov.in/schemes/fais",
+        "verified_on": null,
+        "tags": [
+          "farmer"
+        ],
+        "required_service_ids": [],
+        "verification_status": "pending"
+      },
+      "evidence": {
+        "summary": {
+          "value": "The Farmers Accidental Insurance Scheme provides financial aid to the successors of registered farmers in case of accidental death or disability.",
+          "quote": "The \"Farmers Accidental Insurance Scheme\" introduced by the Agriculture, Farmers Welfare and Cooperation Department, Gujarat, aims to provide financial aid to the successors of registered farmers in case of accidental death or disability. The scheme does not cover natural or suicidal deaths.",
+          "source_url": "https://www.myscheme.gov.in/schemes/fais"
+        },
+        "eligibility": [
+          {
+            "value": "The applicant or their parent must have a registered land record before the date of the accident.",
+            "quote": "The applicant or their parent must have a registered land record before the date of the accident.",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "The death or disability must be caused by an accident.",
+            "quote": "The death or disability must be caused by an accident.",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "The deceased/disabled person must be the registered farmer, their spouse, or any legal heir (son/daughter).",
+            "quote": "The deceased/disabled person must be the registered farmer, their spouse, or any legal heir (son/daughter).",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "The applicant must possess a valid driving license in case of death/injury (For vehicular accident).",
+            "quote": "The applicant must possess a valid driving license in case of death/injury (For vehicular accident).",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "The beneficiary must be between 5 to 70 years of age (For accidental death or permanent disability).",
+            "quote": "The beneficiary must be between 5 to 70 years of age (For accidental death or permanent disability).",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "Application should be made in the office of the concerned District Agriculture Officer within 150 days.",
+            "quote": "Application should be made in the office of the concerned District Agriculture Officer within 150 days.",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          }
+        ],
+        "exclusions": [
+          {
+            "value": "Incidence of Natural & suicidal death are excluded.",
+            "quote": "Incidence of Natural & suicidal death are excluded.",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          }
+        ],
+        "benefits": {
+          "value": "Provides financial assistance up to ₹2,00,000/- for accidental death, 100% permanent disability, loss of two eyes/limbs/hand and leg, or one eye and one limb; and ₹1,00,000/- for the loss of one eye or one limb.",
+          "quote": "1. Accidental death/ 100% permanent Disability: ₹2,00,000/-. 2. In case of Accidently Loss of two eyes or two limbs or Hand and leg: ₹2,00,000/-. 3. In case of Accidently Loss of one eye and one limb: ₹2,00,000/-. 4. In case of Accidently Loss of one eye or one limb: ₹2,00,000/-.",
+          "source_url": "https://www.myscheme.gov.in/schemes/fais"
+        },
+        "documents": [
+          {
+            "value": "Application in prescribed form Annexure -1, 2,3, 3(A),4,5",
+            "quote": "Application in prescribed form Annexure -1, 2,3, 3(A),4,5",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "Copy of 7/12, 8-A & hack Patrak (Form no: 6).",
+            "quote": "Copy of 7/12, 8-A & hack Patrak (Form no: 6).",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "Copy of Post Mortem report",
+            "quote": "Copy of Post Mortem report",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "I.R & spot Panchami Police Inquest Report or Court Order",
+            "quote": "I.R & spot Panchami Police Inquest Report or Court Order",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "Proof of death (Death Certificate) & age from competent authority as the case may be.",
+            "quote": "Proof of death (Death Certificate) & age from competent authority as the case may be.",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "Disability certificate form competent authority, in the case of disablement.",
+            "quote": "Disability certificate form competent authority, in the case of disablement.",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "Sub Divisional Magistrate report and Police tapas report",
+            "quote": "Sub Divisional Magistrate report and Police tapas report",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "Baydhari patrak in prescribe Performa.",
+            "quote": "Baydhari patrak in prescribe Performa.",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "Valid driving licence (in case deceaseddrive the vehicle)",
+            "quote": "Valid driving licence (in case deceaseddrive the vehicle)",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          },
+          {
+            "value": "In case of first legal heir (son/daughter) Death or disability produce Registered farmer’s (his father or mother) Pedhinamu or successive generations proof.",
+            "quote": "In case of first legal heir (son/daughter) Death or disability produce Registered farmer’s (his father or mother) Pedhinamu or successive generations proof.",
+            "source_url": "https://www.myscheme.gov.in/schemes/fais"
+          }
+        ],
+        "how_to_apply": {
+          "value": "The successor of the deceased or disabled farmer must submit an application within 150 days of the accident to the concerned District Agriculture Officer.",
+          "quote": "Step 1:The successor of the deceased or disabled farmer must submit an application within 150 days of the accident. Step 2: The application must be submitted to the concerned District Agriculture Officer.",
+          "source_url": "https://www.myscheme.gov.in/schemes/fais"
+        },
+        "needs_income_certificate": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        }
+      }
+    }
+  ]
+}

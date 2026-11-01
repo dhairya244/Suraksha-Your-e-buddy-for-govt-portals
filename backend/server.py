@@ -27,7 +27,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 
 from backend.config import env_int
 from backend.vision import PageType, SeenField, VisionResult, detect
-from backend.answer import answer
+from backend.answer import ScreenContext, answer
 from backend.knowledge import form_field
 from backend.tracker import Tracker
 from backend.voice import stt, tts
@@ -166,6 +166,8 @@ class Session:
         self.last_vision_t = 0.0
         self.force = False
         self.tracker = Tracker()
+        self.last_jpeg: bytes | None = None  # newest frame (for screen-aware answers); never stored to disk
+        self.last_vision: VisionResult | None = None
         self.last_frame_id: int | None = None  # frame the latest detection came from
         self.checkin_task: asyncio.Task | None = None
         self.said_errors: set[str] = set()
@@ -231,6 +233,8 @@ class Session:
                 await self.send("state", value="watching")
         elif t == "choice":
             await self.on_choice(msg.get("id"), msg.get("value"))
+        elif t == "ask_text":  # typed question (pill text box / tests)
+            self.spawn(self.handle_question(str(msg.get("text") or "")[:500], msg.get("lang") or self.lang))
         elif t == "ask":
             task = asyncio.create_task(self.handle_ask(msg))  # don't block frames while answering
             self.bg.add(task)
@@ -241,6 +245,7 @@ class Session:
             except (KeyError, ValueError):
                 return
             self.frame_seq += 1
+            self.last_jpeg = self.frame
             self.frame_id = msg.get("frame_id")
             self.own_ui_visible = bool(msg.get("own_ui_visible"))
             if msg.get("big_change"):
@@ -263,17 +268,34 @@ class Session:
             self.lang = heard.lang
             await self.send("lang", value=self.lang)
         await self.send("transcript", text=heard.text, lang=heard.lang, final=True)
+        await self.handle_question(heard.text, self.lang)
+
+    def screen_context(self) -> ScreenContext:
+        r = self.last_vision
+        cur, done, rest = self.tracker.summary()
+        ask_back = {} if self.has_account is None else {"has_digital_gujarat_account": self.has_account}
+        return ScreenContext(
+            page_type=r.page_type.value if r else None, page_title=(r.page_title or None) if r else None,
+            logged_in=r.logged_in if r else None, current_field=cur, fields_done=done, fields_remaining=rest,
+            ask_back=ask_back,
+        )
+
+    async def handle_question(self, text: str, lang: str) -> None:
+        if not text.strip():
+            return
+        heard_text = text
         if self.pending_choice == "has_account":  # spoken Haan / Nahi
-            no = bool(NO_RE.search(heard.text))
-            yes = bool(YES_RE.search(heard.text)) or (not no and bool(HAVE_RE.search(heard.text)))
+            no = bool(NO_RE.search(heard_text))
+            yes = bool(YES_RE.search(heard_text)) or (not no and bool(HAVE_RE.search(heard_text)))
             if yes != no:
                 await self.on_choice("has_account", "yes" if yes else "no")
                 return
         cur = self.tracker.current()
-        if cur and REPEAT_RE.search(heard.text) and len(heard.text) < 40:  # "phir se batao"
+        if cur and REPEAT_RE.search(heard_text) and len(heard_text) < 40:  # "phir se batao"
             await self.explain_current()
             return
-        a = await answer(heard.text, self.lang, self.page_title, cur.seen.label if cur else None)
+        await self.send("state", value="answering")
+        a = await answer(heard_text, lang, self.screen_context(), self.last_jpeg)
         if not a:
             await self.say(phrase(self.lang, "answer_fail"))
             return
@@ -304,7 +326,7 @@ class Session:
         return next((a for a in r.actions if rx.search(a.text)), None)
 
     async def explain_registration(self) -> None:
-        a = await answer(REGISTRATION_QUESTION, self.lang, self.page_title, None)
+        a = await answer(REGISTRATION_QUESTION, self.lang, self.screen_context(), self.last_jpeg)
         if a and a.say:
             await self.say(a.say)
             if a.sources:
@@ -367,6 +389,8 @@ class Session:
             self.timer.cancel()
             self.timer = None
         self.frame = None
+        self.last_jpeg = None
+        self.last_vision = None
         self.tracker = Tracker()
         self.said_errors.clear()
         self.last_no_form_t = 0.0
@@ -421,6 +445,7 @@ class Session:
 
     async def apply(self, r: VisionResult, frame_id: int | None = None) -> None:
         self.page_title = r.page_title or None
+        self.last_vision = r
         if await self.page_gate(r, frame_id):
             return
         if not r.is_form or not r.fields:

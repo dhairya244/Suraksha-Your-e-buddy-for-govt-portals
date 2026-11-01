@@ -89,6 +89,8 @@ PROMPT = """You are looking at a screenshot of a browser showing a government we
 - box_2d must tightly cover the input control itself (the box/dropdown/radio group), NOT the label text.
 - For a radio group, box the whole group of options as one field.
 - label: copy the label text exactly (Gujarati, Hindi or English as printed). Drop the trailing '*'.
+  If the control has no label, use its placeholder text (e.g. 'User Name', 'Enter Captcha'); for a dropdown whose only text is
+  'Select', name it by its purpose from nearby text or icon, e.g. 'Login type (Select)'.
 - kind: a <select>-style box with an arrow is 'dropdown' even if its label says 'Mobile No'. Masked dots = 'password'. Distorted text image + box = 'captcha'.
 - marker: 'star' only if a '*' is printed with the label, 'optional' only if the page literally says optional; otherwise 'none'. Do not guess.
 - filled: true only if a real value is typed or selected. Placeholders like 'Select', '--Select--', 'DD/MM/YYYY' mean NOT filled.

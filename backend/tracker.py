@@ -175,6 +175,16 @@ class Tracker:
         p = self.page
         return p.fields.get(p.target) if p and p.target else None
 
+    def summary(self) -> tuple[str | None, list[str], list[str]]:
+        """(current field label, done labels, remaining labels) for the current page, in form order."""
+        p = self.page
+        if not p:
+            return None, [], []
+        cur = self.current()
+        done = [p.fields[k].seen.label for k in p.order if p.fields[k].done or p.fields[k].filled_now]
+        rest = [p.fields[k].seen.label for k in p.order if not (p.fields[k].done or p.fields[k].filled_now)]
+        return (cur.seen.label if cur else None), done, rest
+
     def mark_unexplained(self) -> None:
         t = self.current()
         if t:

@@ -199,3 +199,7 @@ portal_ids:
   utiitsl.com: utiitsl_pan
   sarathi.parivahan.gov.in: sarathi_gujarat
   gssp.gujarat.gov.in: gssp
+
+# merge.py: services never written to data/services.json (off-topic for the demo)
+merge:
+  exclude_service_ids: [central_challan_correction_request, central_procedure_to_request_fvu]

@@ -87,6 +87,7 @@ def main() -> None:
     sources = load_sources()
     rules = cfg.get("service_ids", [])
     portal_map = cfg.get("portal_ids", {})
+    excluded = set((cfg.get("merge") or {}).get("exclude_service_ids", []))
     meta_by_url = {m["url"]: m for sid in sources for m in read_jsonl(sources[sid].meta_path) if m.get("status") == "ok"}
 
     services: dict[str, dict] = {}
@@ -114,6 +115,8 @@ def main() -> None:
                     sid_stable = s["service_id"]
                 else:
                     sid_stable = page_ids.get(doc["url"]) or service_id_for(s, rules)
+                if sid_stable in excluded:
+                    continue
                 s["service_id"] = d["service_id"] = sid_stable
                 if sid_stable not in services:
                     services[sid_stable], details[sid_stable] = s, d

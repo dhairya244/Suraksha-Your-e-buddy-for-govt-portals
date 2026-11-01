@@ -1,22 +1,5 @@
 [
   {
-    "service_id": "central_challan_correction_request",
-    "name": "Challan Correction Request",
-    "alternate_names": [],
-    "department": "Income Tax Department",
-    "government_level": "central",
-    "state": null,
-    "category": "tax_return",
-    "application_mode": "online",
-    "official_url": "https://www.incometax.gov.in/iec/foportal/help/ChallanCorrectionRequest-FAQ",
-    "portal_id": "incometax_efiling",
-    "verification_status": "pending",
-    "source_ids": [
-      "pan_349091262c"
-    ],
-    "last_verified_at": null
-  },
-  {
     "service_id": "central_epan_instant",
     "name": "Instant e-PAN",
     "alternate_names": [],
@@ -86,25 +69,6 @@
       "pan_85643ad4fd",
       "pan_89f2451aff",
       "pan_c9dce0e792"
-    ],
-    "last_verified_at": null
-  },
-  {
-    "service_id": "central_procedure_to_request_fvu",
-    "name": "Procedure to request FVU",
-    "alternate_names": [
-      "फॉर्म सं.१३७ / एफ्वीयू के लिए अनुरोध करने की प्रक्रिया"
-    ],
-    "department": "Protean",
-    "government_level": "central",
-    "state": null,
-    "category": "certificate",
-    "application_mode": "offline",
-    "official_url": "https://tinpan.proteantech.in/services/form-no_137/form-no_137-request-fvu-file.html",
-    "portal_id": "incometax_efiling",
-    "verification_status": "pending",
-    "source_ids": [
-      "pan_321b363d28"
     ],
     "last_verified_at": null
   },

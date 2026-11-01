@@ -40,9 +40,7 @@
     "gj_application_to_get_certificate_for_death_unnatural": "f0b575f2c736",
     "central_epan_instant": "f639a36b004d",
     "central_pan_correction": "25aaa379ecd7",
-    "central_pan_new": "d6e1854674e8",
-    "central_procedure_to_request_fvu": "5f5e6916b249",
-    "central_challan_correction_request": "98d1ecaed667"
+    "central_pan_new": "d6e1854674e8"
   },
   "schemes": {
     "darygbocwwb": "87cf80232215",

@@ -101,8 +101,28 @@ def phrase(lang: str, key: str, **kw) -> str:
     return T.get(lang, T["en"])[key].format(**kw)
 
 
+# Sensitive = password, OTP, Aadhaar NUMBER, PAN NUMBER, bank account/IFSC — typed inputs only.
+# Never: mobile number, captcha, dropdowns/radios/checkboxes, file uploads, "Name as per Aadhaar".
+SENSITIVE_RE = re.compile(
+    r"password|पासवर्ड|પાસવર્ડ"
+    r"|\botp\b|one.?time.?password|ओटीपी|ઓટીપી"
+    r"|aadha?ar\s*(no\.?|num(ber)?|card\s*(no\.?|num(ber)?))|^\s*aadha?ar\s*$|आधार\s*(नंबर|संख्या|क्रमांक|न\.)|આધાર\s*(નંબર|ક્રમાંક)"
+    r"|\bpan\s*(no\.?|num(ber)?|card\s*(no\.?|num(ber)?))|^\s*pan\s*$|पैन\s*(नंबर|संख्या)|પાન\s*(નંબર|ક્રમાંક)"
+    r"|account\s*(no\.?|num(ber)?)|a/c\s*(no\.?|num(ber)?)|\bifsc\b|खाता\s*(नंबर|संख्या)|ખાતા\s*(નંબર|ક્રમાંક)",
+    re.I,
+)
+NEVER_SENSITIVE_RE = re.compile(r"mobile|मोबाइल|મોબાઇલ|captcha|कैप्चा|કેપ્ચા", re.I)
+TYPED_KINDS = {"text", "number", "password", "textarea", "other"}
+
+
+def is_sensitive(f: SeenField) -> bool:
+    if f.kind.value not in TYPED_KINDS or NEVER_SENSITIVE_RE.search(f.label):
+        return False
+    return f.kind.value == "password" or bool(SENSITIVE_RE.search(f.label))
+
+
 def field_text(lang: str, f: SeenField) -> str:
-    if f.sensitive:
+    if is_sensitive(f):
         return phrase(lang, "sensitive", label=f.label)
     key = {"dropdown": "choose", "radio": "choose", "file": "upload", "checkbox": "tick"}.get(f.kind.value, "fill")
     text = phrase(lang, key, label=f.label)
@@ -427,7 +447,7 @@ class Session:
         k = field_key(f)
         self.target_label = f.label
         await self.send("highlight", frame_id=frame_id, bbox=f.box_2d, label=f.label)  # re-send: position may shift
-        if f.sensitive:
+        if is_sensitive(f):
             # Privacy pause (PLAYBOOK §16): stop capture before the user types Aadhaar/OTP/password/bank data.
             # The box stays; Next resumes capture and moves on.
             self.target = k

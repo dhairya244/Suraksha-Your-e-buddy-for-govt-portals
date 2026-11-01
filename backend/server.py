@@ -29,6 +29,7 @@ from backend.config import env_int
 from backend.vision import PageType, SeenField, VisionResult, detect
 from backend.answer import answer
 from backend.knowledge import form_field
+from backend.tracker import Tracker
 from backend.voice import stt, tts
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
@@ -62,6 +63,7 @@ T = {
         "not_heard": "माफ़ कीजिए, मैं सुन नहीं पाई। बटन दबाकर रखिए और फिर से बोलिए।",
         "answer_fail": "माफ़ कीजिए, अभी जवाब नहीं मिल पाया। थोड़ी देर में फिर पूछिए।",
         "vision_fail": "स्क्रीन पढ़ने में दिक्कत हुई, फिर से कोशिश कर रही हूँ…",
+        "check_in": "कोई दिक्कत? \"{label}\" के बारे में कुछ पूछना हो तो माइक बटन दबाकर पूछिए।",
         "has_account": "क्या आपका Digital Gujarat अकाउंट है?",
         "yes": "हाँ", "no": "नहीं",
         "login_fields": "ठीक है, लॉगिन करते हैं।",
@@ -86,6 +88,7 @@ T = {
         "not_heard": "Sorry, I didn't catch that. Hold the button and ask again.",
         "answer_fail": "Sorry, I couldn't get an answer right now. Please ask again in a moment.",
         "vision_fail": "Had trouble reading the screen, retrying…",
+        "check_in": "Any trouble? If you have a question about \"{label}\", hold the mic button and ask.",
         "has_account": "Do you have a Digital Gujarat account?",
         "yes": "Yes", "no": "No",
         "login_fields": "Okay, let's log in.",
@@ -142,8 +145,8 @@ NO_RE = re.compile(r"\b(nahi|nahin|nai|no|nope|na)\b|नहीं|नही|(?<!
 REGISTRATION_QUESTION = "How do I register a new citizen account on Digital Gujarat? Give the first 2-3 steps."
 
 
-def field_key(f: SeenField) -> str:
-    return " ".join(f.label.lower().split())
+REPEAT_RE = re.compile(r"repeat|again|dobara|phir se|fir se|फिर से|दोबारा|दुबारा|ફરી", re.I)
+CHECK_IN_POLL_S = 5.0
 
 
 # ------------------------------------------------------------------ session
@@ -162,17 +165,16 @@ class Session:
         self.vision_task: asyncio.Task | None = None
         self.last_vision_t = 0.0
         self.force = False
-        self.skipped: set[str] = set()
-        self.target: str | None = None  # field_key of the highlighted field
+        self.tracker = Tracker()
+        self.last_frame_id: int | None = None  # frame the latest detection came from
+        self.checkin_task: asyncio.Task | None = None
         self.said_errors: set[str] = set()
         self.last_no_form_t = 0.0
-        self.done_said = False
         self.paused = False  # privacy pause: no frames while the user fills a sensitive field
         self.say_seq = 0
         self.closed = False
         self.bg: set[asyncio.Task] = set()  # keep refs to fire-and-forget tasks
         self.page_title: str | None = None
-        self.target_label: str | None = None
         self.has_account: bool | None = None  # answer to "Do you have a Digital Gujarat account?"
         self.pending_choice: str | None = None
         self.once: set[str] = set()  # one-time announcements already made (keyed by page)
@@ -218,12 +220,9 @@ class Session:
             await self.send("state", value="idle")
         elif t == "lang":
             self.lang = msg.get("lang") or self.lang
-            self.target = None  # re-announce current field in the new language
-            self.force = True
+            await self.explain_current()  # user asked for the other language → say it again in that one
         elif t == "next":
-            if self.target:
-                self.skipped.add(self.target)
-            self.target = None
+            self.tracker.next(time.monotonic())
             self.force = True
             await self.send("clear")
             if self.paused:  # user finished the private field → resume watching
@@ -246,8 +245,7 @@ class Session:
             self.own_ui_visible = bool(msg.get("own_ui_visible"))
             if msg.get("big_change"):
                 self.last_big_change_seq = self.frame_seq
-                self.target = None  # page moved: re-highlight (overlay already cleared itself)
-                self.force = True
+                self.force = True  # page moved: re-locate the same target (overlay already cleared itself)
         self.maybe_run_vision()
 
     async def handle_ask(self, msg: dict) -> None:
@@ -271,14 +269,18 @@ class Session:
             if yes != no:
                 await self.on_choice("has_account", "yes" if yes else "no")
                 return
-        a = await answer(heard.text, self.lang, self.page_title, self.target_label)
+        cur = self.tracker.current()
+        if cur and REPEAT_RE.search(heard.text) and len(heard.text) < 40:  # "phir se batao"
+            await self.explain_current()
+            return
+        a = await answer(heard.text, self.lang, self.page_title, cur.seen.label if cur else None)
         if not a:
             await self.say(phrase(self.lang, "answer_fail"))
             return
         await self.say(a.say)
         if a.sources:
             await self.send("sources", urls=a.sources[:3])
-        await self.send("state", value="guiding_field" if self.target else ("watching" if self.active else "idle"))
+        await self.send("state", value="guiding_field" if self.tracker.current() else ("watching" if self.active else "idle"))
 
     async def on_choice(self, cid: str | None, value: str | None) -> None:
         if cid != "has_account" or value not in ("yes", "no"):
@@ -288,7 +290,6 @@ class Session:
         await self.send("choice.clear")
         if self.has_account:
             await self.say(phrase(self.lang, "login_fields"))
-        self.target = None
         self.force = True
         self.maybe_run_vision()
 
@@ -356,6 +357,9 @@ class Session:
 
     def reset(self) -> None:
         self.paused = False
+        if self.checkin_task and not self.checkin_task.done():
+            self.checkin_task.cancel()
+        self.checkin_task = None
         if self.vision_task and not self.vision_task.done():
             self.vision_task.cancel()
         self.vision_task = None
@@ -363,10 +367,8 @@ class Session:
             self.timer.cancel()
             self.timer = None
         self.frame = None
-        self.skipped.clear()
-        self.target = None
+        self.tracker = Tracker()
         self.said_errors.clear()
-        self.done_said = False
         self.last_no_form_t = 0.0
         self.pending_choice = None
         self.once.clear()
@@ -422,51 +424,68 @@ class Session:
         if await self.page_gate(r, frame_id):
             return
         if not r.is_form or not r.fields:
-            self.target = None
             await self.send("clear")
             if time.monotonic() - self.last_no_form_t > NO_FORM_REPEAT_S:
                 self.last_no_form_t = time.monotonic()
                 await self.say(phrase(self.lang, "no_form"))
             return
 
-        for e in r.errors:
+        self.last_frame_id = frame_id
+        d = self.tracker.update(r, time.monotonic())
+
+        for e in r.errors:  # new validation message → point at it once; the target stays the same
             k = e.text.strip().lower()
             if k and k not in self.said_errors:
                 self.said_errors.add(k)
                 await self.send("highlight", frame_id=frame_id, bbox=e.box_2d, label="⚠ " + e.text[:80])
                 await self.say(phrase(self.lang, "error", text=e.text))
-                self.target = None
                 return
 
-        todo = [f for f in r.fields if not f.filled and field_key(f) not in self.skipped]
-        if not todo:
-            self.target = None
+        if d.target is None:
             await self.send("clear")
-            if not self.done_said:
-                self.done_said = True
+            if d.all_done:
                 await self.say(phrase(self.lang, "done_visible"))
             return
 
-        self.done_said = False
-        f = todo[0]
-        k = field_key(f)
-        self.target_label = f.label
-        await self.send("highlight", frame_id=frame_id, bbox=f.box_2d, label=f.label)  # re-send: position may shift
-        if is_sensitive(f):
+        t = d.target
+        if t.bbox:
+            await self.send("highlight", frame_id=frame_id, bbox=t.bbox, label=t.seen.label)  # position may shift
+        else:
+            await self.send("clear")  # target scrolled out of view; keep it as target
+        if is_sensitive(t.seen) and t.bbox:
             # Privacy pause (PLAYBOOK §16): stop capture before the user types Aadhaar/OTP/password/bank data.
             # The box stays; Next resumes capture and moves on.
-            self.target = k
             self.paused = True
-            await self.send("redact", frame_id=frame_id, bbox=f.box_2d)  # client blanks it in later frames
+            await self.send("redact", frame_id=frame_id, bbox=t.bbox)  # client blanks it in later frames
             self.frame = None
             await self.send("capture", mode="paused")
             await self.send("state", value="paused_secure")
-            await self.say(field_text(self.lang, f))
+            if d.explain:
+                await self.say(field_text(self.lang, t.seen))
             return
-        if k != self.target:
-            self.target = k
+        if d.explain:
             await self.send("state", value="guiding_field")
-            await self.say(field_text(self.lang, f))
+            await self.say(field_text(self.lang, t.seen))
+        self.ensure_checkin_loop()
+
+    async def explain_current(self) -> None:
+        t = self.tracker.current()
+        if t:
+            await self.say(field_text(self.lang, t.seen))
+
+    def ensure_checkin_loop(self) -> None:
+        if not self.checkin_task or self.checkin_task.done():
+            self.checkin_task = asyncio.create_task(self._checkin_loop())
+
+    async def _checkin_loop(self) -> None:
+        """No progress for 30 s on the same field → one short check-in (per field)."""
+        while self.active and not self.closed:
+            await asyncio.sleep(CHECK_IN_POLL_S)
+            if self.paused or not self.active:
+                continue
+            t = self.tracker.check_in_due(time.monotonic())
+            if t:
+                await self.say(phrase(self.lang, "check_in", label=t.seen.label))
 
 
 @app.websocket("/ws/session")

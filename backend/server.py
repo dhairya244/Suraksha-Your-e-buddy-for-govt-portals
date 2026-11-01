@@ -22,6 +22,7 @@ import json
 import logging
 import re
 import time
+from collections import deque
 
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 
@@ -163,6 +164,7 @@ class Session:
         self.last_vision_t = 0.0
         self.force = False
         self.tracker = Tracker()
+        self.turns: deque[dict] = deque(maxlen=16)  # last 8 exchanges {role, text}; memory only
         self.last_jpeg: bytes | None = None  # newest frame (for screen-aware answers); never stored to disk
         self.last_vision: VisionResult | None = None
         self.last_frame_id: int | None = None  # frame the latest detection came from
@@ -267,6 +269,9 @@ class Session:
         await self.send("transcript", text=heard.text, lang=heard.lang, final=True)
         await self.handle_question(heard.text, self.lang)
 
+    def remember(self, role: str, text: str) -> None:
+        self.turns.append({"role": role, "text": text[:600]})
+
     def screen_context(self) -> ScreenContext:
         r = self.last_vision
         cur, done, rest = self.tracker.summary()
@@ -282,6 +287,7 @@ class Session:
             return
         r = route(text, pending_yes_no=self.pending_choice == "has_account", scheme_active=False)
         log.info("route=%s", r.value)
+        self.remember("user", text)
         if r in (Route.yes, Route.no):
             await self.on_choice("has_account", r.value)
             return
@@ -297,11 +303,12 @@ class Session:
             return
         heard_text = text
         await self.send("state", value="answering")
-        a = await answer(heard_text, lang, self.screen_context(), self.last_jpeg)
+        a = await answer(heard_text, lang, self.screen_context(), self.last_jpeg, list(self.turns)[:-1])
         if not a:
             await self.say(phrase(self.lang, "answer_fail"))
             return
         await self.say(a.say)
+        self.remember("assistant", a.say)
         if a.sources:
             await self.send("sources", urls=a.sources[:3])
         await self.send("state", value="guiding_field" if self.tracker.current() else ("watching" if self.active else "idle"))
@@ -328,9 +335,10 @@ class Session:
         return next((a for a in r.actions if rx.search(a.text)), None)
 
     async def explain_registration(self) -> None:
-        a = await answer(REGISTRATION_QUESTION, self.lang, self.screen_context(), self.last_jpeg)
+        a = await answer(REGISTRATION_QUESTION, self.lang, self.screen_context(), self.last_jpeg, list(self.turns))
         if a and a.say:
             await self.say(a.say)
+            self.remember("assistant", a.say)
             if a.sources:
                 await self.send("sources", urls=a.sources[:3])
 
@@ -347,6 +355,7 @@ class Session:
                                     options=[{"id": "yes", "label": phrase(self.lang, "yes")},
                                              {"id": "no", "label": phrase(self.lang, "no")}])
                     await self.say(phrase(self.lang, "has_account"))
+                    self.remember("assistant", phrase(self.lang, "has_account"))
                 return True
             if self.has_account is False:
                 btn = self.find_action(r, REGISTER_RE)

@@ -42,6 +42,10 @@ FACTS:
 - Never ask for or repeat Aadhaar numbers, OTPs, passwords or bank details. Never offer to fill or submit for them.
 - ITR/tax: process guidance only, never tax advice.
 
+FOLLOW-UPS: short questions with "iske / iska / uske / us ke liye / aur koi / aur / more / its" refer to the TOPIC OF THE
+PREVIOUS ANSWER in the conversation (e.g. after a PAN answer, "iske liye documents?" = documents for PAN), not to the
+form on screen — unless they explicitly say "is form / is page / yahan".
+
 QUESTION KINDS (set `kind`):
 - page_question → answer from the screenshot + session state (what to fill/click here, in order).
 - service_question → answer from the context JSON with sources.
@@ -51,7 +55,8 @@ QUESTION KINDS (set `kind`):
 STYLE: spoken aloud — plain everyday words, at most 3 short sentences (a list of up to 6 documents is fine),
 no markdown, no URLs in `say`. Reply in {lang_name}; English names of portal buttons/labels are fine.
 Hindi must be written in Devanagari script only (never romanized Hindi). You speak with a female voice:
-use feminine first-person forms (मैं मदद कर सकती हूँ, देख रही हूँ)."""
+use feminine forms ONLY for yourself (मैं मदद कर सकती हूँ). Address the user with the respectful plural, gender-neutral
+(आप भर सकते हैं, आपको चाहिए)."""
 
 
 class Answer(BaseModel):
@@ -78,9 +83,12 @@ class ScreenContext:
         return {k: v for k, v in self.__dict__.items() if v not in (None, [], {})}
 
 
-def answer_sync(question: str, lang: str, screen: ScreenContext, jpeg: bytes | None) -> Answer:
-    ctx = pick_context(question, screen.service_id)
+def answer_sync(question: str, lang: str, screen: ScreenContext, jpeg: bytes | None, turns: list[dict] | None = None) -> Answer:
+    history = " ".join(t["text"] for t in (turns or [])[-4:])  # follow-ups name topics from earlier turns
+    ctx = pick_context(f"{history} {question}", screen.service_id)
+    convo = "\n".join(f"{t['role']}: {t['text']}" for t in (turns or []))
     text = (
+        f"Conversation so far (oldest first; resolve follow-ups like 'aur koi?', 'iske documents?' against it):\n{convo or '(none)'}\n\n"
         f"Session state: {json.dumps(screen.as_json(), ensure_ascii=False)}\n"
         f"Screenshot attached: {'yes' if jpeg else 'no (screen not captured right now)'}\n"
         f"Context JSON (official data):\n{json.dumps(ctx, ensure_ascii=False, separators=(',', ':'))}\n\n"
@@ -98,9 +106,10 @@ def answer_sync(question: str, lang: str, screen: ScreenContext, jpeg: bytes | N
     return a
 
 
-async def answer(question: str, lang: str, screen: ScreenContext | None = None, jpeg: bytes | None = None) -> Answer | None:
+async def answer(question: str, lang: str, screen: ScreenContext | None = None, jpeg: bytes | None = None,
+                 turns: list[dict] | None = None) -> Answer | None:
     try:
-        return await asyncio.to_thread(answer_sync, question, lang, screen or ScreenContext(), jpeg)
+        return await asyncio.to_thread(answer_sync, question, lang, screen or ScreenContext(), jpeg, turns)
     except (LLMError, ValueError) as e:
         log.warning("answer failed: %s", e)
         return None

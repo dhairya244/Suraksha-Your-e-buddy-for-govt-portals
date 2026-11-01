@@ -1,0 +1,55 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Download/User_Manual_on_CSP_v1.1.pdf",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_f42a52b847",
+  "file": "f42a52b8477f9c528499ab1e5ac669ad1fb4eebb.md",
+  "content_hash": "d41953171fc1faedb4a46ea96951958f926bb734",
+  "title": "",
+  "fetched_at": "2026-11-01T10:24:07+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:25:22+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [
+    {
+      "portal_id": "digital_gujarat",
+      "name": "Digital Gujarat - Common Service Portal",
+      "url": "https://www.digitalgujarat.gov.in/",
+      "login_methods": [
+        "email id",
+        "mobile number"
+      ],
+      "registration_steps": [
+        {
+          "value": "Click on register to be redirected to the registration form page.",
+          "quote": "Click here to register You will be redirected to the registration form page",
+          "source_url": "https://www.digitalgujarat.gov.in/Download/User_Manual_on_CSP_v1.1.pdf"
+        }
+      ],
+      "common_problems": [
+        {
+          "problem": "Forgot password",
+          "fix": {
+            "value": "Go to the Forgot Password page and use email id or mobile number as user name.",
+            "quote": "If you forget your password, Donʼt Worry! You will be redirected to the Forgot Password page Use email id/mobile number as user name",
+            "source_url": "https://www.digitalgujarat.gov.in/Download/User_Manual_on_CSP_v1.1.pdf"
+          }
+        }
+      ],
+      "helpline": {
+        "value": "unknown",
+        "quote": null,
+        "source_url": null
+      },
+      "payment_methods": [
+        {
+          "value": "Online payment gateway",
+          "quote": "You will redirected to the payment gateway page",
+          "source_url": "https://www.digitalgujarat.gov.in/Download/User_Manual_on_CSP_v1.1.pdf"
+        }
+      ]
+    }
+  ],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:29:46+00:00"
+}

@@ -1,0 +1,100 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_1f923992e1",
+  "file": "1f923992e1baf07f4e897d321da8cd9da00b39b0.md",
+  "content_hash": "6b5cd7f6a7b77dceae5816cb78ca669dd10721e4",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:24:10+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:25:31+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_1f923992e1_0",
+        "name": "Income Certificate",
+        "alternate_names": [],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "online",
+        "official_url": "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_1f923992e1"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_1f923992e1_0",
+        "eligibility": [],
+        "documents": [
+          {
+            "name": "Proof of income, such as salary slips or bank statements",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof of income, such as salary slips or bank statements",
+              "quote": "upload documents showing proof of income, such as salary slips or bank statements.",
+              "source_url": "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx"
+            }
+          }
+        ],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Log in to Digital Gujarat, select 'Income Certificate' and upload documents showing proof of income, such as salary slips or bank statements.",
+            "quote": "To apply for an Income Certificate, log in to Digital Gujarat, select 'Income Certificate' and upload documents showing proof of income, such as salary slips or bank statements.",
+            "source_url": "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [
+    {
+      "portal_id": "digital_gujarat",
+      "name": "Digital Gujarat",
+      "url": "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx",
+      "login_methods": [
+        "Citizen Login"
+      ],
+      "registration_steps": [
+        {
+          "value": "Visit the Digital Gujarat homepage, click on 'Login/Register' and select Citizen Login to be redirected to Citizen SSO Portal.",
+          "quote": "To register, visit the Digital Gujarat homepage and click on the 'Login/Register' button and select Citizen Login. You will be redirect to Citizen SSO Portal.",
+          "source_url": "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx"
+        }
+      ],
+      "common_problems": [],
+      "helpline": {
+        "value": "unknown",
+        "quote": null,
+        "source_url": null
+      },
+      "payment_methods": []
+    }
+  ],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:27:46+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/CitizenServices.aspx",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_7f15828064",
+  "file": "7f15828064ad3978b89556acb82a693b503a8535.md",
+  "content_hash": "76bec33520f177efe6c48d262cefff41769b819e",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:24:33+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:26:06+00:00",
+  "relevant": false,
+  "services": [],
+  "portals": [],
+  "schemes": []
+}

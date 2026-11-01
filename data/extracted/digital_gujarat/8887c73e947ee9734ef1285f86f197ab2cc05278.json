@@ -1,0 +1,72 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_8887c73e94",
+  "file": "8887c73e947ee9734ef1285f86f197ab2cc05278.md",
+  "content_hash": "fe30ad7288b2e418157b9cd03dd6ee56d0a2665c",
+  "title": "",
+  "fetched_at": "2026-10-31T18:33:09+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:25:12+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [
+    {
+      "portal_id": "digital_gujarat",
+      "name": "Sugam Digital Gujarat Portal",
+      "url": "https://www.digitalgujarat.gov.in",
+      "login_methods": [
+        "Mobile Number",
+        "Email ID",
+        "Citizen ID",
+        "Password",
+        "OTP"
+      ],
+      "registration_steps": [
+        {
+          "value": "Visit www.digitalgujarat.gov.in and click New Registration (Citizen).",
+          "quote": "If u have new user than click below “New Registration (Citizen)” button.",
+          "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+        },
+        {
+          "value": "Fill in details such as Mobile Number and Email Address, review the Password Policy, enter Captcha, and click Save.",
+          "quote": "1. Please fill in the details such as Mobile Number and Email Address.",
+          "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+        },
+        {
+          "value": "Enter the OTP received on your mobile number and click the Confirm button.",
+          "quote": "After entering the login details, you will receive an OTP on your mobile number. Please enter the OTP and click the Confirm button.",
+          "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+        },
+        {
+          "value": "Provide consent and complete Aadhaar OTP-based authentication for e-KYC and personal information.",
+          "quote": "For Aadhaar OTP-based authentication, please read all the details, check the checkbox, and click the Accept & Continue button.",
+          "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+        },
+        {
+          "value": "Fill in address information manually or fetch address from Aadhaar, Property Tax, Electricity Bill, or Gas Connection.",
+          "quote": "Please fill in the details then click the Save Address Details button.",
+          "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+        },
+        {
+          "value": "Add family member details either by fetching from Ration Card or through manual entry.",
+          "quote": "Note : Family member details can be added either from the Ration Card OR by Manual entry.",
+          "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+        },
+        {
+          "value": "Click Save Profile Details & eSign and complete the Aadhaar OTP verification to finalize the profile.",
+          "quote": "Once family members are added, you will return to the previous screen. To delete a member, click ‘Remove’. After verifying all details, click ‘Save Profile Details & eSign’.",
+          "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+        }
+      ],
+      "common_problems": [],
+      "helpline": {
+        "value": "unknown",
+        "quote": null,
+        "source_url": null
+      },
+      "payment_methods": []
+    }
+  ],
+  "schemes": []
+}

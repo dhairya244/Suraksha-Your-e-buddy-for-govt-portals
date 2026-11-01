@@ -1,0 +1,84 @@
+{
+  "portal_id": "digital_gujarat",
+  "name": "Digital Gujarat",
+  "url": "https://www.digitalgujarat.gov.in/LinkPages/HelpDesk.aspx",
+  "login_methods": [
+    "Citizen Login",
+    "Mobile Number",
+    "Email ID",
+    "Citizen ID",
+    "Password",
+    "OTP",
+    "email id",
+    "mobile number"
+  ],
+  "registration_steps": [
+    {
+      "value": "Visit the Digital Gujarat homepage, click on 'Login/Register' and select Citizen Login to be redirected to Citizen SSO Portal.",
+      "quote": "To register, visit the Digital Gujarat homepage and click on the 'Login/Register' button and select Citizen Login. You will be redirect to Citizen SSO Portal.",
+      "source_url": "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx"
+    },
+    {
+      "value": "Visit www.digitalgujarat.gov.in and click New Registration (Citizen).",
+      "quote": "If u have new user than click below “New Registration (Citizen)” button.",
+      "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+    },
+    {
+      "value": "Fill in details such as Mobile Number and Email Address, review the Password Policy, enter Captcha, and click Save.",
+      "quote": "1. Please fill in the details such as Mobile Number and Email Address.",
+      "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+    },
+    {
+      "value": "Enter the OTP received on your mobile number and click the Confirm button.",
+      "quote": "After entering the login details, you will receive an OTP on your mobile number. Please enter the OTP and click the Confirm button.",
+      "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+    },
+    {
+      "value": "Provide consent and complete Aadhaar OTP-based authentication for e-KYC and personal information.",
+      "quote": "For Aadhaar OTP-based authentication, please read all the details, check the checkbox, and click the Accept & Continue button.",
+      "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+    },
+    {
+      "value": "Fill in address information manually or fetch address from Aadhaar, Property Tax, Electricity Bill, or Gas Connection.",
+      "quote": "Please fill in the details then click the Save Address Details button.",
+      "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+    },
+    {
+      "value": "Add family member details either by fetching from Ration Card or through manual entry.",
+      "quote": "Note : Family member details can be added either from the Ration Card OR by Manual entry.",
+      "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+    },
+    {
+      "value": "Click Save Profile Details & eSign and complete the Aadhaar OTP verification to finalize the profile.",
+      "quote": "Once family members are added, you will return to the previous screen. To delete a member, click ‘Remove’. After verifying all details, click ‘Save Profile Details & eSign’.",
+      "source_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf"
+    },
+    {
+      "value": "Click on register to be redirected to the registration form page.",
+      "quote": "Click here to register You will be redirected to the registration form page",
+      "source_url": "https://www.digitalgujarat.gov.in/Download/User_Manual_on_CSP_v1.1.pdf"
+    }
+  ],
+  "common_problems": [
+    {
+      "problem": "Forgot password",
+      "fix": {
+        "value": "Go to the Forgot Password page and use email id or mobile number as user name.",
+        "quote": "If you forget your password, Donʼt Worry! You will be redirected to the Forgot Password page Use email id/mobile number as user name",
+        "source_url": "https://www.digitalgujarat.gov.in/Download/User_Manual_on_CSP_v1.1.pdf"
+      }
+    }
+  ],
+  "helpline": {
+    "value": "Toll Free helpline 18002335500 and support email dss-support@gujarat.gov.in, available from 10:00 AM to 6:00 PM, Monday through Sunday.",
+    "quote": "The support team is available to assist you from 10:00 AM to 6:00 PM, Monday through Sunday.",
+    "source_url": "https://www.digitalgujarat.gov.in/LinkPages/HelpDesk.aspx"
+  },
+  "payment_methods": [
+    {
+      "value": "Online payment gateway",
+      "quote": "You will redirected to the payment gateway page",
+      "source_url": "https://www.digitalgujarat.gov.in/Download/User_Manual_on_CSP_v1.1.pdf"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "source_id": "digital_gujarat_060a5a53da",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/LinkPages/HelpDesk.aspx",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:24:18Z"
+  },
+  {
+    "source_id": "digital_gujarat_1f923992e1",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "faq",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:24:10Z"
+  },
+  {
+    "source_id": "digital_gujarat_8887c73e94",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "pdf",
+    "collection_method": "download",
+    "last_checked_at": "2026-10-31T18:33:09Z"
+  },
+  {
+    "source_id": "digital_gujarat_b2a3e32d0d",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-10-31T18:33:04Z"
+  },
+  {
+    "source_id": "digital_gujarat_d963285ae8",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_panchayat_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-10-31T18:32:56Z"
+  },
+  {
+    "source_id": "digital_gujarat_f42a52b847",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Download/User_Manual_on_CSP_v1.1.pdf",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "pdf",
+    "collection_method": "download",
+    "last_checked_at": "2026-11-01T10:24:07Z"
+  }
+]

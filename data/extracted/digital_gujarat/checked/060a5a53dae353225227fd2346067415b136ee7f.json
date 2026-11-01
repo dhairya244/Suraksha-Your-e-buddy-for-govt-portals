@@ -1,0 +1,31 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/LinkPages/HelpDesk.aspx",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_060a5a53da",
+  "file": "060a5a53dae353225227fd2346067415b136ee7f.md",
+  "content_hash": "4d32f7b00d3be308f5fc9be2e52b37d17dd2a672",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:24:18+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:25:40+00:00",
+  "relevant": true,
+  "services": [],
+  "portals": [
+    {
+      "portal_id": "digital_gujarat",
+      "name": "Digital Gujarat",
+      "url": "https://www.digitalgujarat.gov.in/LinkPages/HelpDesk.aspx",
+      "login_methods": [],
+      "registration_steps": [],
+      "common_problems": [],
+      "helpline": {
+        "value": "Toll Free helpline 18002335500 and support email dss-support@gujarat.gov.in, available from 10:00 AM to 6:00 PM, Monday through Sunday.",
+        "quote": "The support team is available to assist you from 10:00 AM to 6:00 PM, Monday through Sunday.",
+        "source_url": "https://www.digitalgujarat.gov.in/LinkPages/HelpDesk.aspx"
+      },
+      "payment_methods": []
+    }
+  ],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:27:06+00:00"
+}

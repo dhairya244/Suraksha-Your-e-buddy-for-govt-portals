@@ -1,0 +1,39 @@
+[
+  {
+    "service_id": "gj_income_certificate",
+    "name": "Income Certificate",
+    "alternate_names": [
+      "Income Certificate (Sugam)"
+    ],
+    "department": "unknown",
+    "government_level": "state",
+    "state": "Gujarat",
+    "category": "certificate",
+    "application_mode": "online",
+    "official_url": "https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx",
+    "portal_id": "digital_gujarat",
+    "verification_status": "pending",
+    "source_ids": [
+      "digital_gujarat_1f923992e1",
+      "digital_gujarat_b2a3e32d0d"
+    ],
+    "last_verified_at": null
+  },
+  {
+    "service_id": "gj_income_certificate_panchayat",
+    "name": "Income Certificate (Panchayat) (Sugam)",
+    "alternate_names": [],
+    "department": "unknown",
+    "government_level": "state",
+    "state": "Gujarat",
+    "category": "certificate",
+    "application_mode": "both",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_panchayat_sugam",
+    "portal_id": "digital_gujarat",
+    "verification_status": "pending",
+    "source_ids": [
+      "digital_gujarat_d963285ae8"
+    ],
+    "last_verified_at": null
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_acf330fbe1",
+  "file": "acf330fbe145b07e33bfb93c263b56a88c88a044.md",
+  "content_hash": "3d46f80974e26463a5c97a1b8c0491af1593c805",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:24:23+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:25:52+00:00",
+  "relevant": false,
+  "services": [],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:28:26+00:00"
+}

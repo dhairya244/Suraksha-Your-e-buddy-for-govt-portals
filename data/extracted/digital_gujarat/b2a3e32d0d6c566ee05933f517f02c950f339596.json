@@ -1,0 +1,86 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_b2a3e32d0d",
+  "file": "b2a3e32d0d6c566ee05933f517f02c950f339596.md",
+  "content_hash": "a1408fc06eb51ac8314e15c45103fd40b9ae562b",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-10-31T18:33:04+00:00",
+  "model": "gemini-3.6-flash",
+  "extracted_at": "2026-11-01T10:24:58+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_b2a3e32d0d_0",
+        "name": "Income Certificate (Sugam)",
+        "alternate_names": [],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_b2a3e32d0d"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_b2a3e32d0d_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [
+          {
+            "value": "Application fee is non-refundable if the application is disposed with rejection.",
+            "quote": "Application fee will not be refunded.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+          }
+        ],
+        "timeline": {
+          "value": "Returned applications must be resubmitted within 14 days.",
+          "quote": "If your application is returned for change or to fill incomplete details, kindly submit it within 14 days of return.",
+          "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+        },
+        "issuing_authority": {
+          "value": "Department Authorities",
+          "quote": "In case of any wrong/misleading information provided in application shall lead to rejection of the application by Department Authorities.",
+          "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+        },
+        "steps": [
+          {
+            "value": "Click 'Apply Online' to file online or 'Download Form' to fill offline.",
+            "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form\" button for filling the form offline.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+          },
+          {
+            "value": "Gather service specific details such as Occupational Details and Family details before submitting online.",
+            "quote": "Applicant should ready with service specific information like: Occupational Details, Family details, other than basic applicant details before moving with submitting application online.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+          },
+          {
+            "value": "Fill all mandatory fields marked with an asterisk.",
+            "quote": "All fields marked with *(star) are mandatory fields in Online Application.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+          },
+          {
+            "value": "Use the keyboard corresponding to the selected language (English or Gujarati).",
+            "quote": "As per the language selection English or Gujarati respective language keyboard should be used for filling an application form.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

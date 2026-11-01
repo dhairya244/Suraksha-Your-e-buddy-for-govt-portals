@@ -7,8 +7,10 @@ let rec = null, recChunks = [], recStream = null;
 let connected = false, permMsg = "";
 
 function status(t) { $("status").textContent = t; }
+// "backend not connected" only while the socket is really closed; otherwise "connected · <state>".
 function refreshStatus(extra) {
-  status(permMsg || extra || (connected ? "connected" : "backend not connected…"));
+  if (permMsg) return status(permMsg);
+  status(connected ? "connected" + (extra ? " · " + extra.replace(/_/g, " ") : "") : "backend not connected…");
 }
 
 // ---------- playback ----------
@@ -69,7 +71,7 @@ async function onRecStop() {
     const src = off.createBufferSource(); src.buffer = decoded; src.connect(off.destination); src.start();
     const rendered = await off.startRendering();
     S.send("ask", { audio_b64: wavB64(rendered.getChannelData(0), 16000), lang });
-    status("Soch raha hoon…");
+    status("Soch rahi hoon…");
   } catch { status("Audio record nahi ho paya"); }
 }
 function wavB64(f32, rate) {
@@ -120,3 +122,4 @@ S.on("choice", ({ id, question, options }) => {
   box.style.display = "flex";
 });
 S.on("choice.clear", () => { $("choice").style.display = "none"; });
+S.send("hello"); // ask main for the current connection state (we may have missed the open event)

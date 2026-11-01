@@ -17,6 +17,7 @@ const TEST_BOX = process.argv.includes("--test-box") || process.env.SURAKSHA_TES
 let overlay: BrowserWindow | null = null;
 let pill: BrowserWindow | null = null;
 let ws: WebSocket | null = null;
+let wsOpen = false; // source of truth for the pill's "connected" line (it may load after the socket opens)
 let captureMode: "on" | "off" | "paused" = "off";
 let captureTimer: NodeJS.Timeout | null = null;
 let lastGray: Uint8Array | null = null;
@@ -87,6 +88,7 @@ function createPill() {
   pill.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
   pill.setContentProtection(true); // keep the pill out of screenshots sent to vision
   pill.loadFile(renderer("pill.html"));
+  pill.webContents.on("did-finish-load", () => toPill("conn", { ok: wsOpen }));
   pill.once("ready-to-show", () => {
     checkPermissions();
     // debug flags: start visible to recordings / show calibration boxes
@@ -114,8 +116,8 @@ async function checkPermissions() {
 // ---------- WebSocket ----------
 function connect() {
   ws = new WebSocket(WS_URL);
-  ws.on("open", () => toPill("conn", { ok: true }));
-  ws.on("close", () => { toPill("conn", { ok: false }); ws = null; setTimeout(connect, 1500); });
+  ws.on("open", () => { wsOpen = true; toPill("conn", { ok: true }); });
+  ws.on("close", () => { wsOpen = false; toPill("conn", { ok: false }); ws = null; setTimeout(connect, 1500); });
   ws.on("error", () => {});
   ws.on("message", (raw) => {
     let msg: any;
@@ -311,6 +313,7 @@ ipcMain.on("lang", (_e, { lang }) => wsSend({ type: "lang", lang }));
 ipcMain.on("choice", (_e, { id, value }) => wsSend({ type: "choice", id, value }));
 ipcMain.on("open-link", (_e, { url }) => { if (/^https:\/\//.test(url)) shell.openExternal(url); });
 ipcMain.on("quit", () => app.quit());
+ipcMain.on("hello", () => toPill("conn", { ok: wsOpen }));
 
 ipcMain.on("recordable", (_e, { on }) => setRecordable(!!on));
 function setRecordable(on: boolean) {

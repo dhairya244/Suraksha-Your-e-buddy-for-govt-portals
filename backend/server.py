@@ -24,6 +24,7 @@ from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 
 from backend.config import env_int
 from backend.vision import SeenField, VisionResult, detect
+from backend.voice import tts
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
 log = logging.getLogger("suraksha.server")
@@ -42,19 +43,19 @@ def health() -> dict:
 # ------------------------------------------------------------------ phrasing (pre-written, no LLM)
 T = {
     "hi": {
-        "watching": "Theek hai, main screen dekh raha hoon. Form wala page kholiye.",
-        "no_form": "Mujhe abhi koi form nahi dikh raha. Form wala page kholiye.",
-        "fill": "Yahan \"{label}\" bhariye.",
-        "choose": "Yahan \"{label}\" mein se sahi vikalp chuniye.",
-        "upload": "Yahan \"{label}\" ke liye document upload kariye.",
-        "tick": "\"{label}\" — agar laagu ho to tick kariye.",
-        "sensitive": "\"{label}\" private jaankari hai — ise khud bhariye. Ho jaaye to Next dabaiye.",
-        "optional": " (Yeh zaroori nahi hai — chhodna ho to Next dabaiye.)",
-        "done_visible": "Is hisse ke saare khaane bhar gaye. Neeche scroll kariye ya agla button dabaiye.",
-        "error": "Dhyaan dijiye, form par galti dikh rahi hai: \"{text}\"",
-        "stopped": "Ruk gaya.",
-        "ask_todo": "Sawal-jawab jald aa raha hai. Abhi Next dabakar aage badhiye.",
-        "vision_fail": "Screen padhne mein dikkat hui, dobara koshish kar raha hoon…",
+        "watching": "ठीक है, मैं स्क्रीन देख रही हूँ। फ़ॉर्म वाला पेज खोलिए।",
+        "no_form": "मुझे अभी कोई फ़ॉर्म नहीं दिख रहा। फ़ॉर्म वाला पेज खोलिए।",
+        "fill": "यहाँ \"{label}\" भरिए।",
+        "choose": "यहाँ \"{label}\" में से सही विकल्प चुनिए।",
+        "upload": "यहाँ \"{label}\" के लिए दस्तावेज़ अपलोड कीजिए।",
+        "tick": "\"{label}\" — अगर लागू हो तो टिक कीजिए।",
+        "sensitive": "\"{label}\" निजी जानकारी है — इसे खुद भरिए, मैं स्क्रीन नहीं देखूँगी। हो जाए तो Next दबाइए।",
+        "optional": " यह ज़रूरी नहीं है — छोड़ना हो तो Next दबाइए।",
+        "done_visible": "इस हिस्से के सारे खाने भर गए। नीचे स्क्रॉल कीजिए या पेज पर अगला बटन दबाइए।",
+        "error": "ध्यान दीजिए, फ़ॉर्म पर गलती दिख रही है: \"{text}\"",
+        "stopped": "रुक गई।",
+        "ask_todo": "सवाल-जवाब जल्द आ रहा है। अभी Next दबाकर आगे बढ़िए।",
+        "vision_fail": "स्क्रीन पढ़ने में दिक्कत हुई, फिर से कोशिश कर रही हूँ…",
     },
     "en": {
         "watching": "Okay, I'm watching the screen. Please open the form page.",
@@ -112,12 +113,30 @@ class Session:
         self.last_no_form_t = 0.0
         self.done_said = False
         self.paused = False  # privacy pause: no frames while the user fills a sensitive field
+        self.say_seq = 0
+        self.closed = False
+        self.bg: set[asyncio.Task] = set()  # keep refs to fire-and-forget tasks
 
     async def send(self, type_: str, **data) -> None:
-        await self.ws.send_text(json.dumps({"type": type_, **data}, ensure_ascii=False))
+        if self.closed:
+            return
+        try:
+            await self.ws.send_text(json.dumps({"type": type_, **data}, ensure_ascii=False))
+        except (RuntimeError, WebSocketDisconnect):
+            self.closed = True
 
-    async def say(self, text: str) -> None:
+    async def say(self, text: str, lang: str | None = None) -> None:
+        """Caption now, audio when TTS returns — unless something newer was said meanwhile."""
+        self.say_seq += 1
         await self.send("say", text=text, audio_b64=None)
+        task = asyncio.create_task(self._speak(text, lang or self.lang, self.say_seq))
+        self.bg.add(task)
+        task.add_done_callback(self.bg.discard)
+
+    async def _speak(self, text: str, lang: str, seq: int) -> None:
+        wav = await tts(text, lang)
+        if wav and seq == self.say_seq and not self.closed:
+            await self.send("say", text=text, audio_b64=base64.b64encode(wav).decode())
 
     # ---- client messages
     async def handle(self, msg: dict) -> None:
@@ -131,6 +150,7 @@ class Session:
             await self.send("capture", mode="on")
             await self.say(phrase(self.lang, "watching"))
         elif t == "stop":
+            self.say_seq += 1  # drop audio still being synthesised
             self.active = False
             self.reset()
             await self.send("capture", mode="off")
@@ -290,6 +310,7 @@ async def ws_session(ws: WebSocket) -> None:
         pass
     finally:
         s.active = False
+        s.closed = True
         s.reset()
         log.info("session closed")
 

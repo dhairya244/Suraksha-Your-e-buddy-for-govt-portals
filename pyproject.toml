@@ -14,6 +14,10 @@ dependencies = [
     "httpx",
     "numpy",
     "silero-vad",
+    "playwright",
+    "markdownify",
+    "pypdf",
+    "pyyaml",
 ]
 
 [project.optional-dependencies]

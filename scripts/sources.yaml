@@ -1,0 +1,201 @@
+# Data sources for the pipeline (FINAL-PLAN §2, PLAYBOOK §6).
+# Seeds are portal entry points or pages found linked from them — discover.py finds deep URLs.
+# engine: local (Playwright from this Mac) | firecrawl | auto (Firecrawl first, local on failure)
+# priority: tier → regexes on "url + link text"; tier 1 is fetched first, unmatched = 3.
+
+# Domains accepted as official sources (check.py rule b). gov.in / nic.in cover the portals;
+# Protean (formerly NSDL e-Gov) and UTIITSL are the two authorised PAN service agencies.
+official_domain_suffixes:
+  - gov.in
+  - nic.in
+  - protean-tinpan.com
+  - proteantech.in
+  - utiitsl.com
+
+defaults:
+  max_urls: 60
+  max_depth: 2
+  max_crawl_pages: 40       # local crawl: pages opened to collect links
+  include: [service, apply, help, faq, manual, guideline, '\.pdf', scheme]
+  exclude: [login, log-in, signin, '\bsso\b', news, tender, recruit, career, press, gallery, video,
+            feedback, privacy, copyright, disclaimer, hyperlink, accessib, sitemap, terms,
+            holiday, facebook, instagram, youtube, twitter, 'x\.com', 'play\.google', 'apps\.apple',
+            'mailto:', 'tel:',
+            '/(hi|gu|mr|ta|te|bn|kn|ml|pa|or|as|ur)/']   # other-language duplicates of English pages
+
+sources:
+  digital_gujarat:
+    engine: local
+    name: Digital Gujarat
+    government_level: state
+    state: Gujarat
+    department: Science & Technology Department, Government of Gujarat
+    portal_id: digital_gujarat
+    domains: [digitalgujarat.gov.in]
+    seeds:
+      - https://www.digitalgujarat.gov.in/HomePage.aspx
+      - https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx
+      - https://www.digitalgujarat.gov.in/LinkPages/SugamUserManual.aspx
+      - https://www.digitalgujarat.gov.in/LinkPages/FAQ.aspx
+      - https://www.digitalgujarat.gov.in/LinkPages/HelpDesk.aspx
+    # Sugam "Read More" buttons are ASP.NET postbacks to a shared ServiceDetails.aspx
+    postback_selector: lnkReadmore
+    include: [income, aavak, 'આવક', 'sugam.*manual', usermanual, profile, regist, ekyc, 'mobile.*update',
+              mobilenumber, faq, helpdesk, help, citizenservices, 'csp', 'issued.*document', payment,
+              pdfforms]   # offline application-form PDFs linked from service pages
+    exclude: [caste, creamy, ration, sebc, nomadic, unreserved, '\bsc\b', '\bst\b', affidavit,
+              economically, getting.*copy, holiday]
+    priority:
+      1: ['income', 'aavak', 'આવક']
+      2: [profile, regist, ekyc, faq, helpdesk, mobile, payment, csp]
+
+  pan:
+    engine: auto
+    name: PAN (Income Tax Department, Protean, UTIITSL)
+    government_level: central
+    department: Income Tax Department, Ministry of Finance
+    portal_id: incometax_efiling
+    domains: [incometax.gov.in, protean-tinpan.com, proteantech.in, utiitsl.com]
+    seeds:
+      - url: https://www.incometax.gov.in/iec/foportal/
+        map_search: [instant e-PAN, PAN, e-PAN FAQ]
+      - url: https://www.protean-tinpan.com/
+        map_search: [PAN, new PAN, correction]
+      - url: https://www.utiitsl.com/
+        map_search: [PAN, new PAN, correction]
+    search_queries: ["apply new PAN card online", "instant e-PAN Aadhaar", "PAN correction"]
+    include: [pan, e-pan, epan, '49a', 'cs-?form', correction, faq, help]
+    exclude: ['tan\b', tds, '24q', '26q', etds, gst, '\bcareer', 'pan-verification', form52a,
+              'nsdl-addresses', 'e-payment', '\bcompany\b', 'form-?24g']
+    priority:
+      1: ['instant.*e-?pan', 'form-?49a\b', 'newA\.html', 'apply.*(new|for).*pan', 'new pan']
+      2: [correction, 'change.*pan', reprint, faq]
+
+  driving_licence:
+    engine: local
+    name: Sarathi (Gujarat)
+    government_level: state
+    state: Gujarat
+    department: Transport Department, Government of Gujarat (via MoRTH Sarathi)
+    portal_id: sarathi_gujarat
+    domains: [sarathi.parivahan.gov.in]
+    # Sarathi keeps the chosen state in the session: select Gujarat first.
+    setup:
+      - goto: https://sarathi.parivahan.gov.in/sarathiservice/stateSelection.do
+      - select: 'select[name=stName]'
+        value: GJ
+        wait_navigation: true
+    seeds:
+      - https://sarathi.parivahan.gov.in/sarathiservice/stateSelectBean.do
+    include: [newLLDet, newDLDet, faquest, ContactDet, qbankpdf, instruction, sarathiTutorials,
+              learner, 'driving licen', '\.pdf', manual, faq, help]
+    exclude: [slot, payment, print, search, cancel, status, upload, biometric, conductor, '/CL',
+              'CLHome', 'CLServices', dsl, school, ekycauth, contactless, edit, extract, club,
+              doctors, report, grievance, mobNum, idp]
+    priority:
+      1: [newLLDet, newDLDet, 'learner', 'new driving']
+      2: [faquest, faq, manual, '\.pdf', ContactDet]
+
+  itr:
+    engine: firecrawl
+    name: Income Tax e-Filing help
+    government_level: central
+    department: Income Tax Department, Ministry of Finance
+    portal_id: incometax_efiling
+    disclaimer: Guidance only, not tax advice.
+    domains: [incometax.gov.in]
+    seeds:
+      - url: https://www.incometax.gov.in/iec/foportal/
+        map_search: [file income tax return, ITR, e-filing help, ITR FAQ]
+    search_queries: ["how to file ITR online e-filing portal help", "which ITR form to file"]
+    include: [itr, return, e-filing, efiling, 'file-?itr', faq, help, user-manual, refund, e-verify]
+    exclude: [pan\b, e-pan, tan\b, tds, '24q', gst, 'circular', 'notification', 'judgement',
+              'act-?rules', '\bcareer', 'AY_?20(1\d|2[0-4])', '20(1\d|2[0-4])-(1\d|2[0-5])\.pdf',
+              '/company/', '/firm/', '/trust/', '/huf/', '/aop', '/llp/', 'local-authority',
+              'defective-notice', 'business-professional']
+    priority:
+      1: ['file-?itr-?[12]', 'itr-?1', 'sahaj', 'identification.*applicable.*itr', 'e-?verify', 'how-to-file']
+      2: ['itr-?[2-4]', 'sugam', faq, refund, 'user-?manual']
+
+  myscheme:
+    engine: firecrawl
+    wait_for_ms: 5000
+    max_urls: 150
+    name: myScheme
+    government_level: central
+    department: National e-Governance Division (MeitY)
+    domains: [myscheme.gov.in]
+    seeds:
+      - url: https://www.myscheme.gov.in/
+        map_search: [gujarat, gujarat scholarship, gujarat farmer, gujarat women, gujarat labour,
+                     income certificate, scholarship, farmer, women, unorganised worker, pension]
+    include: ['/schemes/']
+    priority_uses_description: true   # "resides in Gujarat" is usually only in the description
+    priority:
+      1: ['gujarat.*(scholar|student|farmer|kisan|krishi|women|mahila|girl|kanya|labou?r|worker|shramik|income certificate)',
+          '(scholar|student|farmer|kisan|krishi|women|mahila|girl|kanya|labou?r|worker|shramik|income certificate).*gujarat',
+          'pm-?kisan']
+      2: [gujarat, 'post-?matric', scholar, farmer, kisan, women, mahila, girl, 'labou?r', worker, shramik,
+          unorganised, pension]
+
+  gssp:
+    engine: local
+    name: Digital Gujarat Scholarship (GSSP)
+    government_level: state
+    state: Gujarat
+    department: Social Justice & Empowerment / Developing Castes / Tribal Development, Government of Gujarat
+    portal_id: gssp
+    domains: [gssp.gujarat.gov.in]
+    seeds:
+      - https://gssp.gujarat.gov.in/
+    include: [guideline, guidiline, '\.pdf', scholar, 'scheme', 'contactus', 'aboutus', help]
+    allow: ['LoginApp/DownLoad/.*\.pdf']   # guideline PDFs live under LoginApp/ but are public
+    exclude: [wifi, holiday, esurvey]
+    priority:
+      1: ['2026-27', '26-27', guideline, guidiline]
+      2: ['2025-26', '25-26', scholar, contactus]
+
+# ---------------------------------------------------------------- extract / merge settings
+extract:
+  # record kinds extract.py asks Gemini for, per source
+  kinds:
+    digital_gujarat: [service, portal]
+    pan: [service, portal]
+    driving_licence: [service, portal]
+    itr: [service, portal]
+    myscheme: [scheme]
+    gssp: [scheme, portal]
+  # lines removed before sending a page to Gemini (site boilerplate; the saved .md is untouched)
+  strip_lines:
+    myscheme:
+      - 'Something went wrong'
+      - 'sign out'
+      - 'Sign ?Out'
+      - 'redirected to an external website'
+      - 'already submitted an application'
+      - 'need to sign in'
+      - 'already initiated your application'
+      - 'Jan Samarth'
+      - 'Enter scheme name to search'
+      - '^(Yes ?No|Submit ?Reset|Ok|Cancel.*)$'
+
+# merge.py: stable service ids. First rule whose pattern matches (name + alternate names) wins.
+service_ids:
+  - {id: gj_income_certificate_panchayat, state: Gujarat, pattern: 'income certificate.*(panchayat|rural)|આવક.*(પંચાયત|ગ્રામીણ)'}
+  - {id: gj_income_certificate, state: Gujarat, pattern: 'income certificate|આવકનો દાખલો|આવક'}
+  - {id: central_epan_instant, pattern: 'instant.*e-?pan|e-?pan.*aadhaar'}
+  - {id: central_pan_correction, pattern: 'pan.*(correction|change|reprint|update)|(correction|change|reprint).*pan'}
+  - {id: central_pan_new, pattern: '(new|apply|allotment).*pan|pan.*(application|card)|form ?(49a|95)\b'}
+  - {id: gj_driving_licence_learner, state: Gujarat, pattern: "learner'?s? licen[cs]e|\\bLL\\b"}
+  - {id: gj_driving_licence_permanent, state: Gujarat, pattern: 'driving licen[cs]e|\bDL\b'}
+  - {id: central_itr_filing, pattern: 'itr|income tax return|e-?filing of (income tax )?return'}
+
+# merge.py: portal id by domain (falls back to the source's portal_id)
+portal_ids:
+  digitalgujarat.gov.in: digital_gujarat
+  incometax.gov.in: incometax_efiling
+  protean-tinpan.com: protean_pan
+  proteantech.in: protean_pan
+  utiitsl.com: utiitsl_pan
+  sarathi.parivahan.gov.in: sarathi_gujarat
+  gssp.gujarat.gov.in: gssp

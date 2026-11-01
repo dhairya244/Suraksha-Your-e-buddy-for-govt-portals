@@ -1,0 +1,429 @@
+{
+  "credits_used": 53,
+  "log": [
+    {
+      "ts": "2026-10-31T18:18:22+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/ search=instant e-PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:18:35+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/ search=PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:18:46+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/ search=e-PAN FAQ",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:18:55+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.protean-tinpan.com/ search=PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:19:04+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.protean-tinpan.com/ search=new PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:19:19+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.protean-tinpan.com/ search=correction",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:20:07+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.utiitsl.com/ search=PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:20:56+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.utiitsl.com/ search=new PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:21:45+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.utiitsl.com/ search=correction",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:21:55+00:00",
+      "kind": "map",
+      "source": "itr",
+      "url": "https://www.incometax.gov.in/iec/foportal/ search=file income tax return",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:22:07+00:00",
+      "kind": "map",
+      "source": "itr",
+      "url": "https://www.incometax.gov.in/iec/foportal/ search=ITR",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:22:16+00:00",
+      "kind": "map",
+      "source": "itr",
+      "url": "https://www.incometax.gov.in/iec/foportal/ search=e-filing help",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:22:25+00:00",
+      "kind": "map",
+      "source": "itr",
+      "url": "https://www.incometax.gov.in/iec/foportal/ search=ITR FAQ",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:22:39+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=gujarat",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:22:54+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=gujarat scholarship",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:23:03+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=gujarat farmer",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:23:16+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=gujarat women",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:23:28+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=gujarat labour",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:23:39+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=income certificate",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:23:47+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=scholarship",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:24:04+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=farmer",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:24:12+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=women",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:24:21+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=unorganised worker",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:24:33+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ search=pension",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:26:05+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/ | instant e-PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:26:10+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/ | PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:26:14+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/ | e-PAN FAQ",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:26:17+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.protean-tinpan.com/ | PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:26:21+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.protean-tinpan.com/ | new PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:26:27+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.protean-tinpan.com/ | correction",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:27:10+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.utiitsl.com/ | PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:27:53+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.utiitsl.com/ | new PAN",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:28:35+00:00",
+      "kind": "map",
+      "source": "pan",
+      "url": "https://www.utiitsl.com/ | correction",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:28:41+00:00",
+      "kind": "map",
+      "source": "itr",
+      "url": "https://www.incometax.gov.in/iec/foportal/ | file income tax return",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:28:46+00:00",
+      "kind": "map",
+      "source": "itr",
+      "url": "https://www.incometax.gov.in/iec/foportal/ | ITR",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:28:50+00:00",
+      "kind": "map",
+      "source": "itr",
+      "url": "https://www.incometax.gov.in/iec/foportal/ | e-filing help",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:28:54+00:00",
+      "kind": "map",
+      "source": "itr",
+      "url": "https://www.incometax.gov.in/iec/foportal/ | ITR FAQ",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:28:59+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | gujarat",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:29:03+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | gujarat scholarship",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:29:06+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | gujarat farmer",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:29:09+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | gujarat women",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:29:12+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | gujarat labour",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:29:17+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | income certificate",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:30:35+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | scholarship",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:30:38+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | farmer",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:30:43+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | women",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:30:46+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | unorganised worker",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:30:50+00:00",
+      "kind": "map",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/ | pension",
+      "credits": 1,
+      "estimated": true
+    },
+    {
+      "ts": "2026-10-31T18:33:38+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/mmksy",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-10-31T18:33:49+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/sbygbocwwb",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-10-31T18:34:05+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/spy-gbocwwb",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-10-31T18:34:20+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/darygbocwwb",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-10-31T18:34:33+00:00",
+      "kind": "scrape",
+      "source": "myscheme",
+      "url": "https://www.myscheme.gov.in/schemes/gspsg",
+      "credits": 1,
+      "estimated": false
+    }
+  ]
+}

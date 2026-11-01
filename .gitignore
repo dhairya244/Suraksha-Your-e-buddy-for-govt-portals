@@ -10,3 +10,5 @@ __pycache__/
 data/raw/**/*.md
 
 demo/backup.mp4
+# Downloaded PDFs (converted .md is also ignored; regenerate with scripts/fetch.py)
+data/raw/**/pdf/

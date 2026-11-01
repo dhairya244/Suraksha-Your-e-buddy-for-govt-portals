@@ -30,6 +30,27 @@ let lastMask: Uint8Array | null = null;
 // it leaves the laptop. Display-relative DIP. Dropped on scroll/page change (the field moved).
 let redactRects: Rect[] = [];
 
+let quitting = false;
+app.on("before-quit", () => { quitting = true; });
+
+// Log instead of Electron's modal error dialog (a dialog mid-demo blocks the screen).
+process.on("uncaughtException", (e) => console.error("[main] uncaught:", e?.stack || e));
+process.on("unhandledRejection", (e: any) => console.error("[main] unhandled rejection:", e?.stack || e));
+
+// A window can be destroyed under us (closed, renderer crash, app quitting): check before every use.
+const alive = (w: BrowserWindow | null): w is BrowserWindow =>
+  !!w && !w.isDestroyed() && !!w.webContents && !w.webContents.isDestroyed();
+
+// Run a handler; log and swallow its error so one bad message can't take the app down.
+function safe<A extends unknown[]>(name: string, fn: (...a: A) => unknown) {
+  return (...a: A) => {
+    try {
+      const r = fn(...a);
+      if (r && typeof (r as Promise<unknown>).catch === "function") (r as Promise<unknown>).catch((e) => console.error(`[${name}]`, e?.stack || e));
+    } catch (e: any) { console.error(`[${name}]`, e?.stack || e); }
+  };
+}
+
 const renderer = (f: string) => path.join(__dirname, "..", "renderer", f);
 const preload = path.join(__dirname, "preload.js");
 
@@ -49,14 +70,27 @@ function createOverlay() {
   overlay.setBounds(d.bounds); // macOS may push it below the menu bar on create; renderer compensates
   overlay.loadFile(renderer("overlay.html"));
   overlay.once("ready-to-show", () => {
-    overlay?.showInactive();
-    overlay?.setBounds(screen.getPrimaryDisplay().bounds);
+    if (!alive(overlay)) return;
+    overlay.showInactive();
+    overlay.setBounds(screen.getPrimaryDisplay().bounds);
+    if (recordable) { overlay.setContentProtection(false); toOverlay("recordable", { on: true }); }
     measureOverlay();
     setTimeout(measureOverlay, 400); // macOS may move the window after show
     if (TEST_BOX) toOverlay("highlight", { rect: { x: 0.3 * d.bounds.width, y: 0.3 * d.bounds.height, width: 0.4 * d.bounds.width, height: 0.06 * d.bounds.height }, label: "Test box" });
   });
-  overlay.on("move", measureOverlay);
-  overlay.on("resize", measureOverlay);
+  overlay.on("move", safe("overlay.move", measureOverlay));
+  overlay.on("resize", safe("overlay.resize", measureOverlay));
+  overlay.webContents.on("render-process-gone", () => { console.error("[overlay] renderer gone, recreating"); overlay?.destroy(); overlay = null; ensureOverlay(); });
+  overlay.on("closed", () => { overlay = null; });
+}
+
+// Recreate the overlay if it was destroyed (never while quitting).
+function ensureOverlay(): boolean {
+  if (alive(overlay)) return true;
+  overlay = null;
+  if (quitting) return false;
+  try { createOverlay(); } catch (e: any) { console.error("[overlay] recreate failed", e?.stack || e); }
+  return false; // new window isn't loaded yet; caller's message is dropped (highlights are re-sent)
 }
 
 // Where the overlay window REALLY is, relative to the primary display (DIP).
@@ -64,7 +98,7 @@ function createOverlay() {
 // bounds, so prefer the window server's answer (get-windows) and fall back to getBounds().
 let overlayOrigin = { x: 0, y: 0 };
 async function measureOverlay() {
-  if (!overlay) return;
+  if (!alive(overlay)) return;
   const d = screen.getPrimaryDisplay();
   const eb = overlay.getBounds();
   let x = eb.x, y = eb.y, src = "getBounds";
@@ -89,6 +123,8 @@ function createPill() {
   pill.setContentProtection(true); // keep the pill out of screenshots sent to vision
   pill.loadFile(renderer("pill.html"));
   pill.webContents.on("did-finish-load", () => toPill("conn", { ok: wsOpen }));
+  pill.on("closed", () => { pill = null; if (!quitting) app.quit(); }); // the pill is the app
+  pill.webContents.on("render-process-gone", () => { console.error("[pill] renderer gone, reloading"); setTimeout(() => { if (alive(pill)) pill.reload(); }, 300); });
   pill.once("ready-to-show", () => {
     checkPermissions();
     // debug flags: start visible to recordings / show calibration boxes
@@ -97,8 +133,14 @@ function createPill() {
   });
 }
 
-const toOverlay = (ch: string, data: unknown = {}) => overlay?.webContents.send(ch, data);
-const toPill = (ch: string, data: unknown = {}) => pill?.webContents.send(ch, data);
+function toOverlay(ch: string, data: unknown = {}) {
+  if (!ensureOverlay()) return;
+  try { overlay!.webContents.send(ch, data); } catch (e: any) { console.error("[toOverlay]", ch, e?.message); }
+}
+function toPill(ch: string, data: unknown = {}) {
+  if (!alive(pill)) return;
+  try { pill.webContents.send(ch, data); } catch (e: any) { console.error("[toPill]", ch, e?.message); }
+}
 
 // ---------- permissions ----------
 async function checkPermissions() {
@@ -116,10 +158,10 @@ async function checkPermissions() {
 // ---------- WebSocket ----------
 function connect() {
   ws = new WebSocket(WS_URL);
-  ws.on("open", () => { wsOpen = true; toPill("conn", { ok: true }); });
-  ws.on("close", () => { wsOpen = false; toPill("conn", { ok: false }); ws = null; setTimeout(connect, 1500); });
+  ws.on("open", safe("ws.open", () => { wsOpen = true; toPill("conn", { ok: true }); }));
+  ws.on("close", safe("ws.close", () => { wsOpen = false; ws = null; toPill("conn", { ok: false }); if (!quitting) setTimeout(safe("connect", connect), 1500); }));
   ws.on("error", () => {});
-  ws.on("message", (raw) => {
+  ws.on("message", safe("ws.message", (raw: WebSocket.RawData) => {
     let msg: any;
     try { msg = JSON.parse(raw.toString()); } catch { return; }
     switch (msg.type) {
@@ -130,11 +172,11 @@ function connect() {
       case "frame.request": forceFrame = true; if (captureMode === "on") tick(); break; // fresh look before a reminder
       case "say": case "state": case "link": case "transcript": case "lang": case "sources": case "choice": case "choice.clear": toPill(msg.type, msg); break;
     }
-  });
+  }));
 }
 
 function wsSend(obj: unknown) {
-  if (ws && ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(obj));
+  try { if (ws && ws.readyState === WebSocket.OPEN) ws.send(JSON.stringify(obj)); } catch (e: any) { console.error("[wsSend]", e?.message); }
 }
 
 function clearOverlay() {
@@ -238,7 +280,7 @@ function ownUiMask(crop: Rect): Uint8Array {
   const d = screen.getPrimaryDisplay().bounds;
   const rs: Rect[] = [];
   if (highlightRect) { const h = highlightRect; rs.push({ x: h.x - 10, y: h.y - 10 - 48, width: h.width + 20, height: h.height + 20 + 96 }); }
-  if (pill) { const p = pill.getBounds(); rs.push({ x: p.x - d.x - 10, y: p.y - d.y - 10, width: p.width + 20, height: p.height + 20 }); }
+  if (alive(pill)) { const p = pill.getBounds(); rs.push({ x: p.x - d.x - 10, y: p.y - d.y - 10, width: p.width + 20, height: p.height + 20 }); }
   const cw = crop.width / 64, ch = crop.height / 64;
   for (const r of rs) {
     const c0 = Math.max(0, Math.floor((r.x - crop.x) / cw)), c1 = Math.min(63, Math.floor((r.x + r.width - crop.x) / cw));
@@ -306,22 +348,22 @@ async function tick() {
 }
 
 // ---------- IPC from pill ----------
-ipcMain.on("start", (_e, { lang }) => { wsSend({ type: "start", lang }); });
-ipcMain.on("stop", () => { wsSend({ type: "stop" }); setCapture("off"); });
-ipcMain.on("reset", (_e, { lang }) => { wsSend({ type: "reset", lang }); setCapture("off"); }); // demo reset
-ipcMain.on("next", () => { wsSend({ type: "next" }); forceFrame = true; if (captureMode === "on") tick(); });
-ipcMain.on("ask", (_e, { audio_b64, lang }) => wsSend({ type: "ask", audio_b64, lang }));
-ipcMain.on("lang", (_e, { lang }) => wsSend({ type: "lang", lang }));
-ipcMain.on("choice", (_e, { id, value }) => wsSend({ type: "choice", id, value }));
-ipcMain.on("open-link", (_e, { url }) => { if (/^https:\/\//.test(url)) shell.openExternal(url); });
-ipcMain.on("quit", () => app.quit());
-ipcMain.on("hello", () => toPill("conn", { ok: wsOpen }));
+ipcMain.on("start", safe("ipc.start", (_e, { lang }) => { wsSend({ type: "start", lang }); }));
+ipcMain.on("stop", safe("ipc.stop", () => { wsSend({ type: "stop" }); setCapture("off"); }));
+ipcMain.on("reset", safe("ipc.reset", (_e, { lang }) => { wsSend({ type: "reset", lang }); setCapture("off"); })); // demo reset
+ipcMain.on("next", safe("ipc.next", () => { wsSend({ type: "next" }); forceFrame = true; if (captureMode === "on") tick(); }));
+ipcMain.on("ask", safe("ipc.ask", (_e, { audio_b64, lang }) => wsSend({ type: "ask", audio_b64, lang })));
+ipcMain.on("lang", safe("ipc.lang", (_e, { lang }) => wsSend({ type: "lang", lang })));
+ipcMain.on("choice", safe("ipc.choice", (_e, { id, value }) => wsSend({ type: "choice", id, value })));
+ipcMain.on("open-link", safe("ipc.open-link", (_e, { url }) => { if (/^https:\/\//.test(url)) shell.openExternal(url); }));
+ipcMain.on("quit", safe("ipc.quit", () => app.quit()));
+ipcMain.on("hello", safe("ipc.hello", () => toPill("conn", { ok: wsOpen })));
 
-ipcMain.on("recordable", (_e, { on }) => setRecordable(!!on));
+ipcMain.on("recordable", safe("ipc.recordable", (_e, { on }) => setRecordable(!!on)));
 function setRecordable(on: boolean) {
   recordable = on;
-  overlay?.setContentProtection(!recordable);
-  pill?.setContentProtection(!recordable);
+  if (alive(overlay)) overlay.setContentProtection(!recordable);
+  if (alive(pill)) pill.setContentProtection(!recordable);
   toOverlay("recordable", { on: recordable });
   lastGray = null; // baseline changes once our UI becomes visible in captures
   forceFrame = true;
@@ -331,7 +373,7 @@ function setRecordable(on: boolean) {
 // Debug: magenta boxes at the 4 display corners + centre (+ the browser capture rect) for 10 s.
 // If the drawn boxes don't sit exactly in the screen corners, the overlay origin is off.
 let calibTimer: NodeJS.Timeout | null = null;
-ipcMain.on("calibrate", () => calibrate());
+ipcMain.on("calibrate", safe("ipc.calibrate", () => calibrate()));
 async function calibrate() {
   await measureOverlay();
   await trackBrowser();
@@ -354,8 +396,14 @@ app.whenReady().then(() => {
   createOverlay();
   createPill();
   connect();
-  setInterval(trackBrowser, 500);
-  screen.on("display-metrics-changed", () => { overlay?.setBounds(screen.getPrimaryDisplay().bounds); measureOverlay(); });
+  setInterval(safe("trackBrowser", trackBrowser), 500);
+  if (process.argv.includes("--selftest-destroy")) { // crash-guard self test: destroy windows under live traffic, then quit
+    setTimeout(() => { overlay?.destroy(); toOverlay("highlight", { rect: { x: 10, y: 10, width: 50, height: 50 } }); console.log("[selftest] overlay destroyed + sent"); }, 2000);
+    setTimeout(() => { console.log("[selftest] overlay alive again:", alive(overlay)); toOverlay("clear"); setRecordable(true); setRecordable(false); }, 3500);
+    setTimeout(() => { pill?.webContents.forcefullyCrashRenderer(); toPill("say", { text: "x" }); console.log("[selftest] pill renderer crashed + sent"); }, 4000);
+    setTimeout(() => { console.log("[selftest] still running"); app.quit(); }, 5500);
+  }
+  screen.on("display-metrics-changed", safe("display", () => { if (alive(overlay)) overlay.setBounds(screen.getPrimaryDisplay().bounds); measureOverlay(); }));
 });
 
 app.on("window-all-closed", () => app.quit());

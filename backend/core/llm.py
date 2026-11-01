@@ -76,9 +76,11 @@ def call_gemini(
     max_backoff_s: float = 10.0,
     max_tries: int | None = None,
     system_instruction: str | None = None,
+    thinking_level: str | None = None,
 ) -> LLMResult:
     """Call `model` (up to `max_tries`, default GEMINI_MAX_TRIES, on 429/5xx/timeout), then each GEMINI_FALLBACK_MODELS entry.
 
+    `thinking_level` ("minimal" | "low" | ...) caps Gemini 3 thinking; vision uses "low" (~7 s → ~2.5 s).
     `schema` may be a pydantic model class (parsed into `.parsed`) or any type the SDK accepts
     as response_schema (e.g. list[Model]).
     """
@@ -90,6 +92,8 @@ def call_gemini(
 
     client = get_client(key, timeout_s)
     config = types.GenerateContentConfig(temperature=temperature, system_instruction=system_instruction)
+    if thinking_level:
+        config.thinking_config = types.ThinkingConfig(thinking_level=thinking_level)
     if schema is not None:
         config.response_mime_type = "application/json"
         config.response_schema = schema

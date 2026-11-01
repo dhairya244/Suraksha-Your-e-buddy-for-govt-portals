@@ -9,7 +9,7 @@ Protocol (matches desktop/src/main.ts):
   server → {type:"capture", mode} | {type:"highlight", frame_id, bbox, label} | {type:"clear"}
            | {type:"redact", frame_id, bbox} | {type:"transcript", text, lang, final}
            | {type:"lang", value} | {type:"sources", urls}
-           | {type:"choice", id, question, options:[{id,label}]} | {type:"choice.clear"}
+           | {type:"choice", id, question, options:[{id,label}]} | {type:"choice.clear"} | {type:"frame.request", reason}
            | {type:"say", text, audio_b64?} | {type:"state", value}
 bbox = [ymin, xmin, ymax, xmax] 0–1000 relative to the frame (the client maps it via that frame's crop).
 Frames and audio are processed in memory only; nothing is written to disk or logged.
@@ -105,6 +105,14 @@ T = {
 }
 
 
+def wav_seconds(wav: bytes) -> float:
+    """Duration of a PCM WAV (header: byte rate at offset 28)."""
+    if len(wav) < 44 or wav[:4] != b"RIFF":
+        return 0.0
+    byte_rate = int.from_bytes(wav[28:32], "little") or 1
+    return max(0.0, (len(wav) - 44) / byte_rate)
+
+
 def phrase(lang: str, key: str, **kw) -> str:
     return T.get(lang, T["en"])[key].format(**kw)
 
@@ -147,6 +155,8 @@ REGISTRATION_QUESTION = "How do I register a new citizen account on Digital Guja
 
 
 CHECK_IN_POLL_S = 5.0
+QUIET_AFTER_ANSWER_S = 5.0  # no field instructions / check-ins until this long after an answer's audio ends
+NO_CHECKIN_AFTER_USER_S = 60.0
 
 
 # ------------------------------------------------------------------ session
@@ -167,6 +177,11 @@ class Session:
         self.force = False
         self.tracker = Tracker()
         self.scheme = SchemeDialog()
+        self.answering = False
+        self.quiet_until = 0.0
+        self.quiet_timer: asyncio.TimerHandle | None = None
+        self.last_user_t = 0.0
+        self.pending_checkin: str | None = None  # field key awaiting a fresh-frame confirmation
         self.turns: deque[dict] = deque(maxlen=16)  # last 8 exchanges {role, text}; memory only
         self.last_jpeg: bytes | None = None  # newest frame (for screen-aware answers); never stored to disk
         self.last_vision: VisionResult | None = None
@@ -191,18 +206,47 @@ class Session:
         except (RuntimeError, WebSocketDisconnect):
             self.closed = True
 
-    async def say(self, text: str, lang: str | None = None) -> None:
-        """Caption now, audio when TTS returns — unless something newer was said meanwhile."""
+    async def say(self, text: str, lang: str | None = None, answer: bool = False) -> None:
+        """Caption now, audio when TTS returns — unless something newer was said meanwhile.
+        answer=True: keep guidance quiet until QUIET_AFTER_ANSWER_S after this audio finishes."""
         self.say_seq += 1
+        if answer:
+            self.quiet_until = time.monotonic() + 30  # provisional until we know the audio length
         await self.send("say", text=text, audio_b64=None)
-        task = asyncio.create_task(self._speak(text, lang or self.lang, self.say_seq))
+        task = asyncio.create_task(self._speak(text, lang or self.lang, self.say_seq, answer))
         self.bg.add(task)
         task.add_done_callback(self.bg.discard)
 
-    async def _speak(self, text: str, lang: str, seq: int) -> None:
+    async def _speak(self, text: str, lang: str, seq: int, answer: bool = False) -> None:
         wav = await tts(text, lang)
+        dur = wav_seconds(wav) if wav else 0.0
+        if answer and seq == self.say_seq:
+            self.end_quiet_at(time.monotonic() + dur + QUIET_AFTER_ANSWER_S)
         if wav and seq == self.say_seq and not self.closed:
             await self.send("say", text=text, audio_b64=base64.b64encode(wav).decode())
+
+    # ---- guidance pause around Q&A
+    def quiet(self) -> bool:
+        return self.answering or time.monotonic() < self.quiet_until
+
+    def end_quiet_at(self, t: float) -> None:
+        self.quiet_until = t
+        if self.quiet_timer:
+            self.quiet_timer.cancel()
+        self.quiet_timer = asyncio.get_running_loop().call_later(max(0.0, t - time.monotonic()) + 0.05, self._quiet_over)
+
+    def _quiet_over(self) -> None:
+        self.quiet_timer = None
+        if not self.active or self.quiet():
+            return
+        if self.paused:  # capture is off, so no new frame will trigger the held-back private-field line
+            t = self.tracker.current()
+            if t and not t.explained:
+                t.explained = True
+                self.spawn(self.say(field_text(self.lang, t.seen)))
+            return
+        self.force = True  # fresh look; a held-back instruction is spoken only if that field is still on screen
+        self.maybe_run_vision()
 
     # ---- client messages
     async def handle(self, msg: dict) -> None:
@@ -261,8 +305,11 @@ class Session:
         except ValueError:
             return
         self.say_seq += 1  # barge-in: drop any guidance audio still being synthesised
+        self.answering = True  # hold guidance while we transcribe
+        self.last_user_t = time.monotonic()
         await self.send("state", value="answering")
         heard = await stt(wav, msg.get("lang") or self.lang)
+        self.answering = False
         if not heard:
             await self.say(phrase(self.lang, "not_heard"))
             return
@@ -288,6 +335,18 @@ class Session:
     async def handle_question(self, text: str, lang: str) -> None:
         if not text.strip():
             return
+        self.last_user_t = time.monotonic()
+        self.pending_checkin = None
+        self.answering = True
+        try:
+            await self._handle_question(text, lang)
+        finally:
+            self.answering = False
+            # answers set their own quiet window from the audio length; control/yes-no want the next instruction now
+            if self.quiet_until > time.monotonic():
+                self.end_quiet_at(self.quiet_until)
+
+    async def _handle_question(self, text: str, lang: str) -> None:
         r = route(text, pending_yes_no=self.pending_choice == "has_account", scheme_active=self.scheme.active)
         log.info("route=%s", r.value)
         self.remember("user", text)
@@ -313,7 +372,7 @@ class Session:
                 await self.say(phrase(self.lang, "answer_fail"))
                 return
             if not st.exit:
-                await self.say(st.say)
+                await self.say(st.say, answer=True)
                 self.remember("assistant", st.say)
                 if st.sources:
                     await self.send("sources", urls=st.sources)
@@ -326,7 +385,7 @@ class Session:
         if not a:
             await self.say(phrase(self.lang, "answer_fail"))
             return
-        await self.say(a.say)
+        await self.say(a.say, answer=True)
         self.remember("assistant", a.say)
         if a.sources:
             await self.send("sources", urls=a.sources[:3])
@@ -409,6 +468,10 @@ class Session:
 
     def reset(self) -> None:
         self.paused = False
+        self.pending_checkin = None
+        if self.quiet_timer:
+            self.quiet_timer.cancel()
+            self.quiet_timer = None
         if self.checkin_task and not self.checkin_task.done():
             self.checkin_task.cancel()
         self.checkin_task = None
@@ -499,7 +562,10 @@ class Session:
         if d.target is None:
             await self.send("clear")
             if d.all_done:
-                await self.say(phrase(self.lang, "done_visible"))
+                if self.quiet():
+                    self.tracker.page.all_done_said = False  # say it after the pause instead
+                else:
+                    await self.say(phrase(self.lang, "done_visible"))
             return
 
         t = d.target
@@ -516,12 +582,26 @@ class Session:
             await self.send("capture", mode="paused")
             await self.send("state", value="paused_secure")
             if d.explain:
-                await self.say(field_text(self.lang, t.seen))
+                if self.quiet():
+                    t.explained = False  # _quiet_over speaks it
+                else:
+                    await self.say(field_text(self.lang, t.seen))
             return
         if d.explain:
-            await self.send("state", value="guiding_field")
-            await self.say(field_text(self.lang, t.seen))
+            if self.quiet() or not t.bbox:
+                t.explained = False  # held: answering, or the field isn't on screen right now
+            else:
+                await self.send("state", value="guiding_field")
+                await self.say(field_text(self.lang, t.seen))
+        # check-in confirmed on this fresh frame: same target, still on screen, still empty
+        if self.pending_checkin:
+            key, self.pending_checkin = self.pending_checkin, None
+            if t.key == key and t.bbox and not t.filled_now and not self.quiet() and not self.user_spoke_recently():
+                await self.say(phrase(self.lang, "check_in", label=t.seen.label))
         self.ensure_checkin_loop()
+
+    def user_spoke_recently(self) -> bool:
+        return time.monotonic() - self.last_user_t < NO_CHECKIN_AFTER_USER_S
 
     async def explain_current(self) -> None:
         t = self.tracker.current()
@@ -536,11 +616,15 @@ class Session:
         """No progress for 30 s on the same field → one short check-in (per field)."""
         while self.active and not self.closed:
             await asyncio.sleep(CHECK_IN_POLL_S)
-            if self.paused or not self.active:
+            if self.paused or not self.active or self.quiet() or self.user_spoke_recently() or self.pending_checkin:
                 continue
-            t = self.tracker.check_in_due(time.monotonic())
+            t = self.tracker.check_in_due(time.monotonic())  # consumes this field's single check-in
             if t:
-                await self.say(phrase(self.lang, "check_in", label=t.seen.label))
+                # never remind from a stale view: ask for a fresh frame, re-detect, speak only if still true
+                self.pending_checkin = t.key
+                await self.send("frame.request", reason="check_in")
+                self.force = True
+                self.maybe_run_vision()
 
 
 @app.websocket("/ws/session")

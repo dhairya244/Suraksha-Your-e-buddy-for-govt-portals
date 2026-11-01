@@ -127,6 +127,7 @@ function connect() {
       case "clear": clearOverlay(); break;
       case "redact": { const fr = frameRects.get(msg.frame_id) ?? lastCrop; if (fr) redactRects.push(bboxToRect(msg.bbox, fr)); break; }
       case "capture": setCapture(msg.mode); break;
+      case "frame.request": forceFrame = true; if (captureMode === "on") tick(); break; // fresh look before a reminder
       case "say": case "state": case "link": case "transcript": case "lang": case "sources": case "choice": case "choice.clear": toPill(msg.type, msg); break;
     }
   });

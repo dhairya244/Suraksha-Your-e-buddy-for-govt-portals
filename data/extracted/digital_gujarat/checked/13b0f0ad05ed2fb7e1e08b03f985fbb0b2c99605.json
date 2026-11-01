@@ -1,0 +1,60 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#unreserved_caste_certificate_directorate_developing_caste_we",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_13b0f0ad05",
+  "file": "13b0f0ad05ed2fb7e1e08b03f985fbb0b2c99605.md",
+  "content_hash": "0fdd68b7a13bbd799ab8a836c017e416fd08b122",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:57:37+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:02:04+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_13b0f0ad05_0",
+        "name": "Unreserved Caste Certificate Directorate, Developing Caste Welfare",
+        "alternate_names": [],
+        "department": "Developing Caste Welfare",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s831.pdf",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_13b0f0ad05"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_13b0f0ad05_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:05:50+00:00"
+}

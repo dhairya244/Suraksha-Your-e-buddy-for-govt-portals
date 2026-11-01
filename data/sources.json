@@ -1,5 +1,27 @@
 [
   {
+    "source_id": "digital_gujarat_00c6f39306",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:37Z"
+  },
+  {
+    "source_id": "digital_gujarat_00f49150bf",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#other_ready_affidavit_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:59:20Z"
+  },
+  {
     "source_id": "digital_gujarat_060a5a53da",
     "name": "Digital Gujarat",
     "official_url": "https://www.digitalgujarat.gov.in/LinkPages/HelpDesk.aspx",
@@ -9,6 +31,94 @@
     "source_type": "portal",
     "collection_method": "scrape",
     "last_checked_at": "2026-11-01T10:24:18Z"
+  },
+  {
+    "source_id": "digital_gujarat_0775809150",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_gujarat_government_panchaya",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:07Z"
+  },
+  {
+    "source_id": "digital_gujarat_093933a4db",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_district_social_welfare_officer_panchya",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:02Z"
+  },
+  {
+    "source_id": "digital_gujarat_0c6715dac4",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#religious_minority_certificate_directorate_developing_caste_",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:57Z"
+  },
+  {
+    "source_id": "digital_gujarat_0efa42dbe7",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#sc_caste_certificate_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:57Z"
+  },
+  {
+    "source_id": "digital_gujarat_0f45c24380",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "pdf",
+    "collection_method": "download",
+    "last_checked_at": "2026-11-01T10:59:32Z"
+  },
+  {
+    "source_id": "digital_gujarat_126a1fbc09",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_directorate_scheduled_caste_welfare_hos",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:56Z"
+  },
+  {
+    "source_id": "digital_gujarat_13b0f0ad05",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#unreserved_caste_certificate_directorate_developing_caste_we",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:37Z"
+  },
+  {
+    "source_id": "digital_gujarat_186e6eb138",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_gujarat_government_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:27Z"
   },
   {
     "source_id": "digital_gujarat_1f923992e1",
@@ -22,6 +132,171 @@
     "last_checked_at": "2026-11-01T10:24:10Z"
   },
   {
+    "source_id": "digital_gujarat_1f96cd94f4",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#sebc_certificate_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:52Z"
+  },
+  {
+    "source_id": "digital_gujarat_1fdd14df56",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#nomadic_tribes_and_denotified_tribes_caste_certificate_rural",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:17Z"
+  },
+  {
+    "source_id": "digital_gujarat_25427cd8bb",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_directorate_scheduled_caste_welfare_alt",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:52Z"
+  },
+  {
+    "source_id": "digital_gujarat_25b859e83f",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#change_in_ration_card_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:47Z"
+  },
+  {
+    "source_id": "digital_gujarat_42cec2c654",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#nomadic_tribes_and_denotified_tribes_caste_certificate_urban",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:33Z"
+  },
+  {
+    "source_id": "digital_gujarat_493b24ec89",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#st_scheduled_tribe_caste_certificate_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:12Z"
+  },
+  {
+    "source_id": "digital_gujarat_4ef6103389",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#application_for_duplicate_ration_card_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:52Z"
+  },
+  {
+    "source_id": "digital_gujarat_4fc981b5ee",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#sc_scheduled_caste_caste_certificate_panchayat_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:17Z"
+  },
+  {
+    "source_id": "digital_gujarat_669ac312ac",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#sebc_certificate_panchayat_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:02Z"
+  },
+  {
+    "source_id": "digital_gujarat_67884f72ac",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#nomadic_tribes_and_denotified_tribes_caste_certificate_direc",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:47Z"
+  },
+  {
+    "source_id": "digital_gujarat_6a2328cf68",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sebc_directorate_developing_caste_welfare_",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:12Z"
+  },
+  {
+    "source_id": "digital_gujarat_6f11ea635b",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#religious_minority_certificate_urban_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:59:02Z"
+  },
+  {
+    "source_id": "digital_gujarat_796a94a235",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#application_for_new_ration_card_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:22Z"
+  },
+  {
+    "source_id": "digital_gujarat_8544443d5c",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#eligibility_certificate_for_economically_weaker_sections_wit",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:42Z"
+  },
+  {
+    "source_id": "digital_gujarat_8662cdcb84",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "pdf",
+    "collection_method": "download",
+    "last_checked_at": "2026-11-01T10:59:30Z"
+  },
+  {
     "source_id": "digital_gujarat_8887c73e94",
     "name": "Digital Gujarat",
     "official_url": "https://www.digitalgujarat.gov.in/Download/SugamUserManual/1_SugamDigitalGujaratProfile.pdf",
@@ -31,6 +306,28 @@
     "source_type": "pdf",
     "collection_method": "download",
     "last_checked_at": "2026-10-31T18:33:09Z"
+  },
+  {
+    "source_id": "digital_gujarat_9c629a8cf6",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_directorate_scheduled_caste_welfare_mun",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:07Z"
+  },
+  {
+    "source_id": "digital_gujarat_a360348b7a",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#application_for_separate_ration_card_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:42Z"
   },
   {
     "source_id": "digital_gujarat_acf330fbe1",
@@ -55,6 +352,39 @@
     "last_checked_at": "2026-10-31T18:33:04Z"
   },
   {
+    "source_id": "digital_gujarat_d2aeaa7f52",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#unreserved_caste_certificate_rural_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:22Z"
+  },
+  {
+    "source_id": "digital_gujarat_d67a32264d",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#addition_of_name_in_ration_card_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:58:32Z"
+  },
+  {
+    "source_id": "digital_gujarat_d729bc9ed6",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#unreserved_caste_certificate_urban_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:57:27Z"
+  },
+  {
     "source_id": "digital_gujarat_d963285ae8",
     "name": "Digital Gujarat",
     "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_panchayat_sugam",
@@ -64,6 +394,50 @@
     "source_type": "portal",
     "collection_method": "scrape",
     "last_checked_at": "2026-10-31T18:32:56Z"
+  },
+  {
+    "source_id": "digital_gujarat_dda7285a0b",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#application_for_getting_copy_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:59:16Z"
+  },
+  {
+    "source_id": "digital_gujarat_df2b9b7261",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:59:25Z"
+  },
+  {
+    "source_id": "digital_gujarat_eb8847bbc8",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#religious_minority_certificate_rural_sugam",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:59:08Z"
+  },
+  {
+    "source_id": "digital_gujarat_ee5750a076",
+    "name": "Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_directorate_scheduled_caste_welfare_sug",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:42Z"
   },
   {
     "source_id": "digital_gujarat_f42a52b847",

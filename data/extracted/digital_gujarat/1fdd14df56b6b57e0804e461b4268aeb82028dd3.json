@@ -1,0 +1,65 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#nomadic_tribes_and_denotified_tribes_caste_certificate_rural",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_1fdd14df56",
+  "file": "1fdd14df56b6b57e0804e461b4268aeb82028dd3.md",
+  "content_hash": "0741bdac0a4a4ea89f7204b310edeca423dfac81",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:57:17+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:01:40+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_1fdd14df56_0",
+        "name": "Nomadic Tribes and Denotified Tribes Caste Certificate (Rural) (Sugam)",
+        "alternate_names": [],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#nomadic_tribes_and_denotified_tribes_caste_certificate_rural",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_1fdd14df56"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_1fdd14df56_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Click on Apply Online button for filing the form online or Download Form button for filling the form offline.",
+            "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#nomadic_tribes_and_denotified_tribes_caste_certificate_rural"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

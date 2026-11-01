@@ -13,7 +13,18 @@
     "quote": null,
     "source_url": null
   },
-  "steps": [],
+  "steps": [
+    {
+      "value": "Click on Apply Online button for filing the form online or Download Form button for filling the form offline.",
+      "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form\" button for filling the form offline.",
+      "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_directorate_scheduled_caste_welfare_mun"
+    },
+    {
+      "value": "Submit the application within 14 days if it is returned for change or incomplete details.",
+      "quote": "*If your application is returned for change or to fill incomplete details, kindly submit it within 14 days of return.",
+      "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_directorate_scheduled_caste_welfare_mun"
+    }
+  ],
   "tracking_url": null,
   "appeal": {
     "value": "unknown",

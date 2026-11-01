@@ -1,0 +1,60 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#unreserved_caste_certificate_urban_sugam",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_d729bc9ed6",
+  "file": "d729bc9ed67a28e44c8702a2b46facd0b672f5f1.md",
+  "content_hash": "0c8b69f71056d96ab8888317c823d87fd65e1bce",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:57:27+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:01:52+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_d729bc9ed6_0",
+        "name": "Unreserved Caste Certificate (Urban) (Sugam)",
+        "alternate_names": [],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#unreserved_caste_certificate_urban_sugam",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_d729bc9ed6"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_d729bc9ed6_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:07:11+00:00"
+}

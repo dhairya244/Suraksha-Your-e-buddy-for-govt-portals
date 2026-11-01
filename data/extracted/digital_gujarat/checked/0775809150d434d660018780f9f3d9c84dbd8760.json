@@ -1,0 +1,66 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_gujarat_government_panchaya",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_0775809150",
+  "file": "0775809150d434d660018780f9f3d9c84dbd8760.md",
+  "content_hash": "0b4be3631b5ba5fcecd6a59867648db6841fab4c",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:58:07+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:02:43+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_0775809150_0",
+        "name": "Non-Creamy Layer Certificate For Gujarat Government (Panchayat) (Sugam)",
+        "alternate_names": [],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_gujarat_government_panchaya",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_0775809150"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_0775809150_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Click on Apply Online button for filing the form online or Download Form button for filling the form offline.",
+            "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form\" button for filling the form offline.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_gujarat_government_panchaya"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:04:30+00:00"
+}

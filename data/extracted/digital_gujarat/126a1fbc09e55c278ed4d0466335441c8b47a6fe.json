@@ -1,0 +1,65 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_directorate_scheduled_caste_welfare_hos",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_126a1fbc09",
+  "file": "126a1fbc09e55c278ed4d0466335441c8b47a6fe.md",
+  "content_hash": "8f6cd91c6b10f2d544004f882df2de8cf5ee4f67",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:56:56+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:01:16+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_126a1fbc09_0",
+        "name": "Caste Certificate (SC) Directorate, Scheduled Caste Welfare (Hostel) (Sugam)",
+        "alternate_names": [],
+        "department": "Directorate, Scheduled Caste Welfare (Hostel)",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_directorate_scheduled_caste_welfare_hos",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_126a1fbc09"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_126a1fbc09_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Click on Apply Online button for filing the form online or Download Form button for filling the form offline.",
+            "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form\" button for filling the form offline.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_directorate_scheduled_caste_welfare_hos"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

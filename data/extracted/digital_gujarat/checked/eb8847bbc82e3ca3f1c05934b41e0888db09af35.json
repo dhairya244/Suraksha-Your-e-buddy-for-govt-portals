@@ -1,0 +1,60 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#religious_minority_certificate_rural_sugam",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_eb8847bbc8",
+  "file": "eb8847bbc82e3ca3f1c05934b41e0888db09af35.md",
+  "content_hash": "4eee5b02fd5854a8af25593fa8b9f83789a5542d",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:59:08+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:03:59+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_eb8847bbc8_0",
+        "name": "Religious Minority Certificate (Rural) (Sugam)",
+        "alternate_names": [],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#religious_minority_certificate_rural_sugam",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_eb8847bbc8"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_eb8847bbc8_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:07:11+00:00"
+}

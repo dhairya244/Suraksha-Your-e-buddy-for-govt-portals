@@ -1,0 +1,60 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#eligibility_certificate_for_economically_weaker_sections_wit",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_8544443d5c",
+  "file": "8544443d5ce57991a81e82ad71724ddc01472ae6.md",
+  "content_hash": "064324215799f100bbee72898f7bdd1642ba8ae2",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:57:42+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:02:13+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_8544443d5c_0",
+        "name": "Eligibility Certificate for Economically Weaker Sections (With Income)",
+        "alternate_names": [],
+        "department": "Directorate, Developing Caste Welfare (Sugam)",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "online",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#eligibility_certificate_for_economically_weaker_sections_wit",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_8544443d5c"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_8544443d5c_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Directorate, Developing Caste Welfare (Sugam)",
+          "quote": "Directorate, Developing Caste Welfare (Sugam)",
+          "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#eligibility_certificate_for_economically_weaker_sections_wit"
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:05:50+00:00"
+}

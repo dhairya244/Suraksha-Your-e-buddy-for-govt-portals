@@ -9,11 +9,17 @@
     "source_url": null
   },
   "issuing_authority": {
-    "value": "unknown",
-    "quote": null,
-    "source_url": null
+    "value": "District Social Welfare Officer (Panchyat)",
+    "quote": "Caste Certificate (SC), District Social Welfare Officer (Panchyat) (Rural) (Sugam)",
+    "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_district_social_welfare_officer_panchya"
   },
-  "steps": [],
+  "steps": [
+    {
+      "value": "Click on Apply Online button for filing the form online or Download Form button for filling the form offline.",
+      "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form",
+      "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sc_district_social_welfare_officer_panchya"
+    }
+  ],
   "tracking_url": null,
   "appeal": {
     "value": "unknown",

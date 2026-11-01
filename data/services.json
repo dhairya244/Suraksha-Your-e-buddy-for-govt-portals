@@ -121,7 +121,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_d67a32264d"
     ],
     "last_verified_at": null
   },
@@ -138,7 +139,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_4ef6103389"
     ],
     "last_verified_at": null
   },
@@ -155,7 +157,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_dda7285a0b"
     ],
     "last_verified_at": null
   },
@@ -172,7 +175,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_796a94a235"
     ],
     "last_verified_at": null
   },
@@ -189,7 +193,27 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_a360348b7a"
+    ],
+    "last_verified_at": null
+  },
+  {
+    "service_id": "gj_application_to_get_certificate_for_death_unnatural",
+    "name": "Application to get Certificate for Death / Unnatural Death",
+    "alternate_names": [
+      "VG];]lRT HFlTqVG];]lRT HGHFlT DF8[G] 5|DF65+ D[/JJFGL VZÒ"
+    ],
+    "department": "unknown",
+    "government_level": "state",
+    "state": "Gujarat",
+    "category": "certificate",
+    "application_mode": "offline",
+    "official_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf",
+    "portal_id": "digital_gujarat",
+    "verification_status": "pending",
+    "source_ids": [
+      "digital_gujarat_8662cdcb84"
     ],
     "last_verified_at": null
   },
@@ -206,7 +230,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_ee5750a076"
     ],
     "last_verified_at": null
   },
@@ -223,7 +248,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_25427cd8bb"
     ],
     "last_verified_at": null
   },
@@ -240,7 +266,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_126a1fbc09"
     ],
     "last_verified_at": null
   },
@@ -257,7 +284,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_9c629a8cf6"
     ],
     "last_verified_at": null
   },
@@ -274,7 +302,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_093933a4db"
     ],
     "last_verified_at": null
   },
@@ -291,7 +320,27 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_6a2328cf68"
+    ],
+    "last_verified_at": null
+  },
+  {
+    "service_id": "gj_certificate_for_unemployed_unemployed_non_employme",
+    "name": "Certificate for Unemployed / Unemployed Non-Employment",
+    "alternate_names": [
+      "VG];]lRT HFlTqVG];]lRT HGHFlT DF8[G] 5|DF65+ D[/JJFGL VZÒ"
+    ],
+    "department": "unknown",
+    "government_level": "state",
+    "state": "Gujarat",
+    "category": "certificate",
+    "application_mode": "offline",
+    "official_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf",
+    "portal_id": "digital_gujarat",
+    "verification_status": "pending",
+    "source_ids": [
+      "digital_gujarat_0f45c24380"
     ],
     "last_verified_at": null
   },
@@ -308,7 +357,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_25b859e83f"
     ],
     "last_verified_at": null
   },
@@ -349,8 +399,10 @@
   {
     "service_id": "gj_eligibility_certificate_for_economically_weaker_sections_with_income_panchayat",
     "name": "Eligibility Certificate for Economically Weaker Sections (With Income) - (Panchayat) (Sugam)",
-    "alternate_names": [],
-    "department": "unknown",
+    "alternate_names": [
+      "Eligibility Certificate for Economically Weaker Sections (With Income)"
+    ],
+    "department": "Directorate, Developing Caste Welfare (Sugam)",
     "government_level": "state",
     "state": "Gujarat",
     "category": "certificate",
@@ -359,7 +411,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_8544443d5c"
     ],
     "last_verified_at": null
   },
@@ -415,7 +468,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_67884f72ac"
     ],
     "last_verified_at": null
   },
@@ -432,7 +486,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_1fdd14df56"
     ],
     "last_verified_at": null
   },
@@ -449,7 +504,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_42cec2c654"
     ],
     "last_verified_at": null
   },
@@ -466,7 +522,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_df2b9b7261"
     ],
     "last_verified_at": null
   },
@@ -483,7 +540,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_186e6eb138"
     ],
     "last_verified_at": null
   },
@@ -500,7 +558,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_0775809150"
     ],
     "last_verified_at": null
   },
@@ -517,7 +576,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_00f49150bf"
     ],
     "last_verified_at": null
   },
@@ -534,7 +594,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_0c6715dac4"
     ],
     "last_verified_at": null
   },
@@ -551,7 +612,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_eb8847bbc8"
     ],
     "last_verified_at": null
   },
@@ -568,7 +630,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_6f11ea635b"
     ],
     "last_verified_at": null
   },
@@ -585,7 +648,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_00c6f39306"
     ],
     "last_verified_at": null
   },
@@ -602,7 +666,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_0efa42dbe7"
     ],
     "last_verified_at": null
   },
@@ -619,7 +684,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_4fc981b5ee"
     ],
     "last_verified_at": null
   },
@@ -636,7 +702,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_1f96cd94f4"
     ],
     "last_verified_at": null
   },
@@ -653,7 +720,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_669ac312ac"
     ],
     "last_verified_at": null
   },
@@ -670,14 +738,17 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_493b24ec89"
     ],
     "last_verified_at": null
   },
   {
     "service_id": "gj_unreserved_caste_certificate_directorate_developing_caste_welfare",
     "name": "Unreserved Caste Certificate Directorate, Developing Caste Welfare (Sugam)",
-    "alternate_names": [],
+    "alternate_names": [
+      "Unreserved Caste Certificate Directorate, Developing Caste Welfare"
+    ],
     "department": "Directorate, Developing Caste Welfare",
     "government_level": "state",
     "state": "Gujarat",
@@ -687,7 +758,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_13b0f0ad05"
     ],
     "last_verified_at": null
   },
@@ -704,7 +776,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_d2aeaa7f52"
     ],
     "last_verified_at": null
   },
@@ -721,7 +794,8 @@
     "portal_id": "digital_gujarat",
     "verification_status": "pending",
     "source_ids": [
-      "digital_gujarat_acf330fbe1"
+      "digital_gujarat_acf330fbe1",
+      "digital_gujarat_d729bc9ed6"
     ],
     "last_verified_at": null
   }

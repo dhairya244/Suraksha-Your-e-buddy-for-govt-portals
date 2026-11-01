@@ -1,0 +1,59 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#nomadic_tribes_and_denotified_tribes_caste_certificate_direc",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_67884f72ac",
+  "file": "67884f72ac89de32a57204f840624b14fc77edc4.md",
+  "content_hash": "bb0909fd9d170705d75f2b64454e8f79c1e96ac1",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:57:47+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:02:18+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_67884f72ac_0",
+        "name": "Nomadic Tribes and Denotified Tribes Caste Certificate Directorate, Developing Caste Welfare (Sugam)",
+        "alternate_names": [],
+        "department": "Developing Caste Welfare",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#nomadic_tribes_and_denotified_tribes_caste_certificate_direc",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_67884f72ac"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_67884f72ac_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

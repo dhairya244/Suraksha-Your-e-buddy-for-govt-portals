@@ -1,0 +1,109 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_0f45c24380",
+  "file": "0f45c24380f5cd0996f280ecca7008c6a0c00b60.md",
+  "content_hash": "20d968ae1d3ca5afb48301e50b1ef4d11813f35b",
+  "title": "",
+  "fetched_at": "2026-11-01T10:59:32+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:04:29+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_0f45c24380_0",
+        "name": "Certificate for Unemployed / Unemployed Non-Employment",
+        "alternate_names": [
+          "VG];]lRT HFlTqVG];]lRT HGHFlT DF8[G] 5|DF65+ D[/JJFGL VZÒ"
+        ],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "offline",
+        "official_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_0f45c24380"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_0f45c24380_0",
+        "eligibility": [],
+        "documents": [
+          {
+            "name": "Ration Card",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Ration Card",
+              "quote": "Z[XGSF0\"",
+              "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+            }
+          },
+          {
+            "name": "Residence proof",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Residence proof",
+              "quote": "ZC[9F6GM 5]ZFJM",
+              "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+            }
+          },
+          {
+            "name": "Income proof",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Income proof",
+              "quote": "XF/F KM0IF V\nU[GM NFB,M",
+              "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+            }
+          },
+          {
+            "name": "Employment proof",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Employment proof",
+              "quote": "HFlT V\nU[GM NFB,M",
+              "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+            }
+          }
+        ],
+        "fees": [
+          {
+            "value": "Rs. 3/-",
+            "quote": "~FP #v__",
+            "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+          }
+        ],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:05:10+00:00"
+}

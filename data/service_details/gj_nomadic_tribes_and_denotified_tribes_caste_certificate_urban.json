@@ -13,7 +13,13 @@
     "quote": null,
     "source_url": null
   },
-  "steps": [],
+  "steps": [
+    {
+      "value": "Click on Apply Online button for filing the form online or Download Form button for filling the form offline.",
+      "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form\" button for filling the form offline.",
+      "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#nomadic_tribes_and_denotified_tribes_caste_certificate_urban"
+    }
+  ],
   "tracking_url": null,
   "appeal": {
     "value": "unknown",

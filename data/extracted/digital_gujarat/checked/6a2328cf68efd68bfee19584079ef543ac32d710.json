@@ -1,0 +1,66 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sebc_directorate_developing_caste_welfare_",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_6a2328cf68",
+  "file": "6a2328cf68efd68bfee19584079ef543ac32d710.md",
+  "content_hash": "aeb4c9e2a0943da20cebdb077688f3f0babeb5f0",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:57:12+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:01:35+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_6a2328cf68_0",
+        "name": "Caste Certificate (SEBC) Directorate, Developing Caste Welfare (Sugam)",
+        "alternate_names": [],
+        "department": "Directorate, Developing Caste Welfare",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sebc_directorate_developing_caste_welfare_",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_6a2328cf68"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_6a2328cf68_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "submit within 14 days of return if your application is returned for change or to fill incomplete details",
+          "quote": "*If your application is returned for change or to fill incomplete details, kindly submit it within 14 days of return.",
+          "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sebc_directorate_developing_caste_welfare_"
+        },
+        "issuing_authority": {
+          "value": "Department Authorities",
+          "quote": "In case of any wrong/misleading information provided in application shall lead to rejection of the application by Department Authorities.",
+          "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sebc_directorate_developing_caste_welfare_"
+        },
+        "steps": [
+          {
+            "value": "Click on Apply Online button for filing the form online or Download Form button for filling the form offline",
+            "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form\" button for filling the form offline.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#caste_certificate_sebc_directorate_developing_caste_welfare_"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:05:50+00:00"
+}

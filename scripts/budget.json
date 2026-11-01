@@ -1,5 +1,5 @@
 {
-  "credits_used": 88,
+  "credits_used": 89,
   "log": [
     {
       "ts": "2026-10-31T18:18:22+00:00",
@@ -702,6 +702,14 @@
       "kind": "scrape",
       "source": "pan",
       "url": "https://www.pan.utiitsl.com/PAN/newAA.html",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T11:01:33+00:00",
+      "kind": "scrape",
+      "source": "driving_licence",
+      "url": "https://sarathi.parivahan.gov.in/sarathiservice/faquest.do?helpType=FA",
       "credits": 1,
       "estimated": false
     }

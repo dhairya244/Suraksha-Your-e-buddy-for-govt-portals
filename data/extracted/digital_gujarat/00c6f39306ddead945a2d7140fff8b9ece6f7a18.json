@@ -1,0 +1,236 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_00c6f39306",
+  "file": "00c6f39306ddead945a2d7140fff8b9ece6f7a18.md",
+  "content_hash": "df7153588c86bfdbdb039e29624b99e3160557f1",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:58:37+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:03:24+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_00c6f39306_0",
+        "name": "Removal of Name from Ration Card (Sugam)",
+        "alternate_names": [],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_00c6f39306"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_00c6f39306_0",
+        "eligibility": [],
+        "documents": [
+          {
+            "name": "Ration Card",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Ration Card",
+              "quote": "Ration Card",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "True Copy of Electricity Bill.",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of Electricity Bill.",
+              "quote": "True Copy of Electricity Bill.",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "True Copy of Telephone Bill.",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of Telephone Bill.",
+              "quote": "True Copy of Telephone Bill.",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "True Copy of Election Card.",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of Election Card.",
+              "quote": "True Copy of Election Card.",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "True Copy of Passport",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of Passport",
+              "quote": "True Copy of Passport",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "First Page Of Bank PassBook/Cancelled Cheque",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "First Page Of Bank PassBook/Cancelled Cheque",
+              "quote": "First Page Of Bank PassBook/Cancelled Cheque",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Post Office Account Statement/Passbook",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Post Office Account Statement/Passbook",
+              "quote": "Post Office Account Statement/Passbook",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Driving License",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Driving License",
+              "quote": "Driving License",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Government Photo ID cards/ service photo identity card issued by PSU",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Government Photo ID cards/ service photo identity card issued by PSU",
+              "quote": "Government Photo ID cards/ service photo identity card issued by PSU",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Water bill (not older than 3 months)",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Water bill (not older than 3 months)",
+              "quote": "Water bill (not older than 3 months)",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "True Copy Income Tax PAN Card",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy Income Tax PAN Card",
+              "quote": "True Copy Income Tax PAN Card",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Any Government Document having citizen photo",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Any Government Document having citizen photo",
+              "quote": "Any Government Document having citizen photo",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Photo ID issued by Recognized Educational Institution",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Photo ID issued by Recognized Educational Institution",
+              "quote": "Photo ID issued by Recognized Educational Institution",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Original Ration Card",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Original Ration Card",
+              "quote": "Original Ration Card",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Death Certificate",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Death Certificate",
+              "quote": "Death Certificate",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Marriage Certificate",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Marriage Certificate",
+              "quote": "Marriage Certificate",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          },
+          {
+            "name": "Divorce Certificate",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Divorce Certificate",
+              "quote": "Divorce Certificate",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+            }
+          }
+        ],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Click on 'Apply Online' button for filing the form online or 'Download Form' button for filling the form offline.",
+            "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form\" button for filling the form offline.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#removal_of_name_from_ration_card_sugam"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

@@ -1,0 +1,71 @@
+{
+  "service_id": "gj_certificate_for_unemployed_unemployed_non_employme",
+  "eligibility": [],
+  "documents": [
+    {
+      "name": "Ration Card",
+      "formats": [],
+      "max_size_kb": null,
+      "fact": {
+        "value": "Ration Card",
+        "quote": "Z[XGSF0\"",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+      }
+    },
+    {
+      "name": "Residence proof",
+      "formats": [],
+      "max_size_kb": null,
+      "fact": {
+        "value": "Residence proof",
+        "quote": "ZC[9F6GM 5]ZFJM",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+      }
+    },
+    {
+      "name": "Income proof",
+      "formats": [],
+      "max_size_kb": null,
+      "fact": {
+        "value": "Income proof",
+        "quote": "XF/F KM0IF V\nU[GM NFB,M",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+      }
+    },
+    {
+      "name": "Employment proof",
+      "formats": [],
+      "max_size_kb": null,
+      "fact": {
+        "value": "Employment proof",
+        "quote": "HFlT V\nU[GM NFB,M",
+        "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+      }
+    }
+  ],
+  "fees": [
+    {
+      "value": "Rs. 3/-",
+      "quote": "~FP #v__",
+      "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s821.pdf"
+    }
+  ],
+  "timeline": {
+    "value": "unknown",
+    "quote": null,
+    "source_url": null
+  },
+  "issuing_authority": {
+    "value": "unknown",
+    "quote": null,
+    "source_url": null
+  },
+  "steps": [],
+  "tracking_url": null,
+  "appeal": {
+    "value": "unknown",
+    "quote": null,
+    "source_url": null
+  },
+  "disclaimer": null
+}

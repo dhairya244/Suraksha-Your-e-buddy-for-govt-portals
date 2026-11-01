@@ -1,0 +1,65 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#sc_caste_certificate_sugam",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_0efa42dbe7",
+  "file": "0efa42dbe7708d8ae1a40c87781a3c63d53f7065.md",
+  "content_hash": "ddc1629e88f2daf27f27b8d3bb0e8997adb17c47",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:57:57+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:02:35+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_0efa42dbe7_0",
+        "name": "SC Caste Certificate (Sugam)",
+        "alternate_names": [],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#sc_caste_certificate_sugam",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_0efa42dbe7"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_0efa42dbe7_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Click on Apply Online button for filing the form online or Download Form button for filling the form offline.",
+            "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form” button for filling the form offline.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#sc_caste_certificate_sugam"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

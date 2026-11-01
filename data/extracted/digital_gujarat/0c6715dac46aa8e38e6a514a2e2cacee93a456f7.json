@@ -1,0 +1,59 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#religious_minority_certificate_directorate_developing_caste_",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_0c6715dac4",
+  "file": "0c6715dac46aa8e38e6a514a2e2cacee93a456f7.md",
+  "content_hash": "97e212a08e192614f3e3b6969332cf084d9974cf",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:58:57+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:03:47+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_0c6715dac4_0",
+        "name": "Religious Minority Certificate Directorate Developing Caste Welfare (Sugam)",
+        "alternate_names": [],
+        "department": "Directorate Developing Caste Welfare",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "online",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#religious_minority_certificate_directorate_developing_caste_",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_0c6715dac4"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_0c6715dac4_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Directorate Developing Caste Welfare",
+          "quote": "Religious Minority Certificate Directorate Developing Caste Welfare (Sugam)",
+          "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#religious_minority_certificate_directorate_developing_caste_"
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

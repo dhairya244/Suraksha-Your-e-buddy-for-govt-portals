@@ -1,0 +1,121 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_8662cdcb84",
+  "file": "8662cdcb848f34f01bb344d7c9029c229d657e8d.md",
+  "content_hash": "20d968ae1d3ca5afb48301e50b1ef4d11813f35b",
+  "title": "",
+  "fetched_at": "2026-11-01T10:59:30+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:04:24+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_8662cdcb84_0",
+        "name": "Application to get Certificate for Death / Unnatural Death",
+        "alternate_names": [
+          "VG];]lRT HFlTqVG];]lRT HGHFlT DF8[G] 5|DF65+ D[/JJFGL VZÒ"
+        ],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "offline",
+        "official_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_8662cdcb84"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_8662cdcb84_0",
+        "eligibility": [
+          {
+            "value": "Any relative of the deceased person, or resident/family member or authorized person can apply.",
+            "quote": ";\nA\n\\lWT DFD,TNFZzL4U|FdI lJ:TFZ DF8[4                                   hMG, VlWSFZLzL XC[ZL lJ:TFZ DF8[",
+            "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf"
+          }
+        ],
+        "documents": [
+          {
+            "name": "Ration Card",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Ration Card",
+              "quote": "Z[XGSF0\"",
+              "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf"
+            }
+          },
+          {
+            "name": "Residence proof (Light bill, Receipt of house tax, Election card, Passport, Driving licence, Telephone bill, Bank passbook)",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Residence proof (Light bill, Receipt of house tax, Election card, Passport, Driving licence, Telephone bill, Bank passbook)",
+              "quote": "ZC[9F6GM 5]ZFJM",
+              "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf"
+            }
+          },
+          {
+            "name": "Affidavit regarding breaking of marriage",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Affidavit regarding breaking of marriage",
+              "quote": "XF/F KM0IF V\n\\U[GM NFB,M",
+              "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf"
+            }
+          },
+          {
+            "name": "Affidavit regarding death",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Affidavit regarding death",
+              "quote": "HFlT V\n\\U[GM NFB,M",
+              "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf"
+            }
+          }
+        ],
+        "fees": [
+          {
+            "value": "3 Rupees",
+            "quote": "~FP #v__",
+            "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf"
+          }
+        ],
+        "timeline": {
+          "value": "1 day",
+          "quote": "lNJ;",
+          "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf"
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Fill out the application form with all required details and attach necessary documents.",
+            "quote": "VZÒDF\n\\\n;\n\\5]6\" lJUTM :5Q8 ZLT[ JF\n\\RL XSFI T[JL ZLT[ EZJFGL ZC[[X[P T[D\nH VZÒ ;FY[ DF\n\\uIF D]HAGF TDFD \n5]ZFJFVMGL 5|DFl6T GS, AL0JFGL ZC[X\n[\nP",
+            "source_url": "https://www.digitalgujarat.gov.in/DownLoad/pdfforms/s820.pdf"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T11:06:31+00:00"
+}

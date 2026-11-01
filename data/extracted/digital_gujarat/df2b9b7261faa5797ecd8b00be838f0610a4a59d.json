@@ -1,0 +1,276 @@
+{
+  "url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam",
+  "source_id": "digital_gujarat",
+  "page_source_id": "digital_gujarat_df2b9b7261",
+  "file": "df2b9b7261faa5797ecd8b00be838f0610a4a59d.md",
+  "content_hash": "6d4d0d460eb1b9bc8059c9ecc19a719947b510fa",
+  "title": "Digital Gujarat",
+  "fetched_at": "2026-11-01T10:59:25+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T11:04:20+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_digital_gujarat_df2b9b7261_0",
+        "name": "Non-Creamy layer Certificate For Central Government (Sugam)",
+        "alternate_names": [],
+        "department": "unknown",
+        "government_level": "state",
+        "state": "Gujarat",
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam",
+        "portal_id": "digital_gujarat",
+        "verification_status": "pending",
+        "source_ids": [
+          "digital_gujarat_df2b9b7261"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_digital_gujarat_df2b9b7261_0",
+        "eligibility": [],
+        "documents": [
+          {
+            "name": "Ration Card",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Ration Card",
+              "quote": "Ration Card",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "True Copy of Electricity Bill.",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of Electricity Bill.",
+              "quote": "True Copy of Electricity Bill.",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "True Copy of Telephone Bill.",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of Telephone Bill.",
+              "quote": "True Copy of Telephone Bill.",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "True Copy of Election Card.",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of Election Card.",
+              "quote": "True Copy of Election Card.",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "True Copy of Passport",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of Passport",
+              "quote": "True Copy of Passport",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "First Page Of Bank PassBook/Cancelled Cheque",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "First Page Of Bank PassBook/Cancelled Cheque",
+              "quote": "First Page Of Bank PassBook/Cancelled Cheque",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Post Office Account Statement/Passbook",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Post Office Account Statement/Passbook",
+              "quote": "Post Office Account Statement/Passbook",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Driving License",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Driving License",
+              "quote": "Driving License",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Government Photo ID cards/ service photo identity card issued by PSU",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Government Photo ID cards/ service photo identity card issued by PSU",
+              "quote": "Government Photo ID cards/ service photo identity card issued by PSU",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Water bill (not older than 3 months)",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Water bill (not older than 3 months)",
+              "quote": "Water bill (not older than 3 months)",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "True Copy Income Tax PAN Card",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy Income Tax PAN Card",
+              "quote": "True Copy Income Tax PAN Card",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Any Government Document having citizen photo",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Any Government Document having citizen photo",
+              "quote": "Any Government Document having citizen photo",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Photo ID issued by Recognized Educational Institution",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Photo ID issued by Recognized Educational Institution",
+              "quote": "Photo ID issued by Recognized Educational Institution",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Income Certificate",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Income Certificate",
+              "quote": "Income Certificate",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Last Pay Slip orTrue copy of Last Three Years Income Tax Return",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Last Pay Slip orTrue copy of Last Three Years Income Tax Return",
+              "quote": "Last Pay Slip orTrue copy of Last Three Years Income Tax Return",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Certified copy of village reg. no. 7/12, no. 8-A & No. 6 for which land is assumed to",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Certified copy of village reg. no. 7/12, no. 8-A & No. 6 for which land is assumed to",
+              "quote": "Certified copy of village reg. no. 7/12, no. 8-A & No. 6 for which land is assumed to",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "True Copy of School Leaving Certificate",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of School Leaving Certificate",
+              "quote": "True Copy of School Leaving Certificate",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Self Attested Caste Certificate From the Competent Authorities",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Self Attested Caste Certificate From the Competent Authorities",
+              "quote": "Self Attested Caste Certificate From the Competent Authorities",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "True Copy of School Leaving Certificate of Father/Uncle/Aunty",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "True Copy of School Leaving Certificate of Father/Uncle/Aunty",
+              "quote": "True Copy of School Leaving Certificate of Father/Uncle/Aunty",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Affidavit attached with the application.",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Affidavit attached with the application.",
+              "quote": "Affidavit attached with the application.",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          },
+          {
+            "name": "Other necessary documents",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Other necessary documents",
+              "quote": "Other necessary documents",
+              "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+            }
+          }
+        ],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Click on Apply Online button for filing the form online or Download Form button for filling the form offline.",
+            "quote": "You will be required to click on \"Apply Online” button for filing the form online or \"Download Form\" button for filling the form offline.",
+            "source_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#non_creamy_layer_certificate_for_central_government_sugam"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

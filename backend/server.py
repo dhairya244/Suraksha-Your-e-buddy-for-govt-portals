@@ -31,6 +31,8 @@ from backend.vision import PageType, SeenField, VisionResult, detect
 from backend.answer import ScreenContext, answer
 from backend.knowledge import form_field
 from backend.router import Route, route
+from backend.schemes import SchemeDialog
+from backend.schemes import step as scheme_step
 from backend.tracker import Tracker
 from backend.voice import stt, tts
 
@@ -164,6 +166,7 @@ class Session:
         self.last_vision_t = 0.0
         self.force = False
         self.tracker = Tracker()
+        self.scheme = SchemeDialog()
         self.turns: deque[dict] = deque(maxlen=16)  # last 8 exchanges {role, text}; memory only
         self.last_jpeg: bytes | None = None  # newest frame (for screen-aware answers); never stored to disk
         self.last_vision: VisionResult | None = None
@@ -285,7 +288,7 @@ class Session:
     async def handle_question(self, text: str, lang: str) -> None:
         if not text.strip():
             return
-        r = route(text, pending_yes_no=self.pending_choice == "has_account", scheme_active=False)
+        r = route(text, pending_yes_no=self.pending_choice == "has_account", scheme_active=self.scheme.active)
         log.info("route=%s", r.value)
         self.remember("user", text)
         if r in (Route.yes, Route.no):
@@ -302,6 +305,22 @@ class Session:
             await self.say(phrase(lang, "stopped"))
             return
         heard_text = text
+        if r == Route.scheme:
+            await self.send("state", value="answering")
+            on_form = self.last_vision is not None and self.last_vision.page_type == PageType.application_form
+            st = await scheme_step(self.scheme, text, lang, list(self.turns)[:-1], "gj_income_certificate" if on_form else None)
+            if st is None:
+                await self.say(phrase(self.lang, "answer_fail"))
+                return
+            if not st.exit:
+                await self.say(st.say)
+                self.remember("assistant", st.say)
+                if st.sources:
+                    await self.send("sources", urls=st.sources)
+                if st.link:
+                    await self.send("link", url=st.link["url"], title=st.link["title"])
+                await self.send("state", value="scheme")
+                return
         await self.send("state", value="answering")
         a = await answer(heard_text, lang, self.screen_context(), self.last_jpeg, list(self.turns)[:-1])
         if not a:

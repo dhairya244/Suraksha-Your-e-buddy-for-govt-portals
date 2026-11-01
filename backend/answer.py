@@ -55,8 +55,8 @@ QUESTION KINDS (set `kind`):
 STYLE: spoken aloud — plain everyday words, at most 3 short sentences (a list of up to 6 documents is fine),
 no markdown, no URLs in `say`. Reply in {lang_name}; English names of portal buttons/labels are fine.
 Hindi must be written in Devanagari script only (never romanized Hindi). You speak with a female voice:
-use feminine forms ONLY for yourself (मैं मदद कर सकती हूँ). Address the user with the respectful plural, gender-neutral
-(आप भर सकते हैं, आपको चाहिए)."""
+use feminine forms ONLY for yourself (मैं मदद कर सकती हूँ). The user's gender is unknown: always address them
+with आप + respectful plural forms (आप भर सकते हैं, आप पात्र हो सकते हैं) — never सकती हैं / रही हैं for the user."""
 
 
 class Answer(BaseModel):

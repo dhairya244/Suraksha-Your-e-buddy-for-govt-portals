@@ -102,7 +102,8 @@ def main() -> None:
             psid = doc["page_source_id"]
             for rec in doc["services"]:
                 s, d = rec["service"], rec["details"]
-                sid_stable = service_id_for(s, rules)
+                # catalog records arrive with stable ids already; LLM ones carry tmp_ ids
+                sid_stable = s["service_id"] if not s["service_id"].startswith("tmp_") else service_id_for(s, rules)
                 s["service_id"] = d["service_id"] = sid_stable
                 if sid_stable not in services:
                     services[sid_stable], details[sid_stable] = s, d

@@ -33,6 +33,17 @@
     "last_checked_at": "2026-10-31T18:33:09Z"
   },
   {
+    "source_id": "digital_gujarat_acf330fbe1",
+    "name": "Sugam Digital Gujarat",
+    "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx",
+    "government_level": "state",
+    "state": "Gujarat",
+    "department": "Science & Technology Department, Government of Gujarat",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:24:23Z"
+  },
+  {
     "source_id": "digital_gujarat_b2a3e32d0d",
     "name": "Digital Gujarat",
     "official_url": "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx#income_certificate_sugam",

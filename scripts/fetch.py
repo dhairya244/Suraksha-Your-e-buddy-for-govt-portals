@@ -11,6 +11,7 @@ login pages skipped.
 from __future__ import annotations
 
 import argparse
+import re
 import sys
 
 import httpx
@@ -23,6 +24,7 @@ from pipeline import (
 
 DONE_STATUSES = {"ok", "skipped_login", "robots_disallowed"}
 MIN_CHARS = 50
+BLOCKED_RE = re.compile(r"^#+\s*403\b[\s\S]{0,40}Forbidden", re.M)  # 403 page served with HTTP 200
 
 
 class Fetcher:
@@ -185,6 +187,8 @@ def main() -> None:
             if md is not None:
                 if len(md) < MIN_CHARS:
                     out["status"] = "empty"
+                elif BLOCKED_RE.search(md):
+                    out["status"] = "blocked_403"
                 else:
                     path = src.dir / f"{sha1(entry['url'])}.md"
                     path.write_text(md + "\n", encoding="utf-8")

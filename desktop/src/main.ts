@@ -158,8 +158,8 @@ async function checkPermissions() {
 // ---------- WebSocket ----------
 function connect() {
   ws = new WebSocket(WS_URL);
-  ws.on("open", safe("ws.open", () => { wsOpen = true; toPill("conn", { ok: true }); }));
-  ws.on("close", safe("ws.close", () => { wsOpen = false; ws = null; toPill("conn", { ok: false }); if (!quitting) setTimeout(safe("connect", connect), 1500); }));
+  ws.on("open", safe("ws.open", () => { wsOpen = true; toPill("conn", { ok: true }); maybeHello(); }));
+  ws.on("close", safe("ws.close", () => { wsOpen = false; helloSent = false; ws = null; toPill("conn", { ok: false }); if (!quitting) setTimeout(safe("connect", connect), 1500); }));
   ws.on("error", () => {});
   ws.on("message", safe("ws.message", (raw: WebSocket.RawData) => {
     let msg: any;
@@ -353,11 +353,16 @@ ipcMain.on("stop", safe("ipc.stop", () => { wsSend({ type: "stop" }); setCapture
 ipcMain.on("reset", safe("ipc.reset", (_e, { lang }) => { wsSend({ type: "reset", lang }); setCapture("off"); })); // demo reset
 ipcMain.on("next", safe("ipc.next", () => { wsSend({ type: "next" }); forceFrame = true; if (captureMode === "on") tick(); }));
 ipcMain.on("ask", safe("ipc.ask", (_e, { audio_b64, lang }) => wsSend({ type: "ask", audio_b64, lang })));
-ipcMain.on("lang", safe("ipc.lang", (_e, { lang }) => wsSend({ type: "lang", lang })));
+ipcMain.on("lang", safe("ipc.lang", (_e, { lang }) => { pillLang = lang; wsSend({ type: "lang", lang }); }));
 ipcMain.on("choice", safe("ipc.choice", (_e, { id, value }) => wsSend({ type: "choice", id, value })));
 ipcMain.on("open-link", safe("ipc.open-link", (_e, { url }) => { if (/^https:\/\//.test(url)) shell.openExternal(url); }));
 ipcMain.on("quit", safe("ipc.quit", () => app.quit()));
-ipcMain.on("hello", safe("ipc.hello", () => toPill("conn", { ok: wsOpen })));
+// Greeting: the backend greets once both the socket and the pill are up (either can come first).
+let pillReady = false, helloSent = false, pillLang = "auto";
+function maybeHello() {
+  if (wsOpen && pillReady && !helloSent) { helloSent = true; wsSend({ type: "hello", lang: pillLang }); }
+}
+ipcMain.on("hello", safe("ipc.hello", (_e, d) => { pillReady = true; pillLang = d?.lang || pillLang; toPill("conn", { ok: wsOpen }); maybeHello(); }));
 
 ipcMain.on("recordable", safe("ipc.recordable", (_e, { on }) => setRecordable(!!on)));
 function setRecordable(on: boolean) {

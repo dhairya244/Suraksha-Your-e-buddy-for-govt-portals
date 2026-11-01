@@ -1,6 +1,11 @@
 const S = window.suraksha;
 const $ = (id) => document.getElementById(id);
-let lang = "hi";
+// language mode: "auto" (reply in the language of each question) or a fixed override
+const MODES = ["auto", "hi", "en", "gu"];
+const NAMES = { hi: "हिंदी", en: "EN", gu: "ગુજરાતી", mr: "मराठी", bn: "বাংলা", ta: "தமிழ்", te: "తెలుగు", kn: "ಕನ್ನಡ", ml: "മലയാളം", pa: "ਪੰਜਾਬੀ", od: "ଓଡ଼ିଆ" };
+let lang = "auto"; // the mode we send
+let spoken = "hi"; // language Suraksha is currently speaking (shown next to Auto)
+function langLabel() { $("lang").textContent = lang === "auto" ? `Auto · ${NAMES[spoken] || spoken}` : NAMES[lang]; }
 let linkUrl = null;
 let audio = null;
 let rec = null, recChunks = [], recStream = null;
@@ -24,10 +29,12 @@ function play(b64) {
 
 // ---------- buttons ----------
 $("lang").onclick = () => {
-  lang = lang === "hi" ? "en" : "hi";
-  $("lang").textContent = lang === "hi" ? "हिंदी" : "EN";
+  lang = MODES[(MODES.indexOf(lang) + 1) % MODES.length];
+  if (lang !== "auto") spoken = lang;
+  langLabel();
   S.send("lang", { lang });
 };
+langLabel();
 $("start").onclick = () => { stopAudio(); S.send("start", { lang }); };
 $("next").onclick = () => { stopAudio(); S.send("next"); };
 $("stop").onclick = () => { stopAudio(); S.send("stop"); $("caption").textContent = "Ruk gaya. Phir se shuru karne ke liye Start guiding dabaiye."; };
@@ -36,7 +43,7 @@ $("reset").onclick = () => {
   stopAudio();
   S.send("reset", { lang });
   linkUrl = null; $("link").style.display = "none"; $("choice").style.display = "none";
-  $("caption").textContent = 'Namaste! "Start guiding" dabaiye.';
+  $("caption").textContent = "…"; // the backend greets after a reset
 };
 $("calib").onclick = () => S.send("calibrate");
 $("x").onclick = () => S.send("quit");
@@ -114,7 +121,7 @@ S.on("capture", ({ mode }) => {
 S.on("status", ({ text }) => status(text));
 S.on("recordable", ({ on }) => { $("rec").checked = !!on; });
 S.on("transcript", ({ text }) => { $("caption").textContent = "🗣 " + text; status("Soch rahi hoon…"); });
-S.on("lang", ({ value }) => { lang = value; $("lang").textContent = lang === "hi" ? "हिंदी" : lang === "gu" ? "ગુજરાતી" : "EN"; });
+S.on("lang", ({ value }) => { spoken = value; langLabel(); });
 S.on("choice", ({ id, question, options }) => {
   const box = $("choice");
   box.innerHTML = "";
@@ -128,4 +135,4 @@ S.on("choice", ({ id, question, options }) => {
   box.style.display = "flex";
 });
 S.on("choice.clear", () => { $("choice").style.display = "none"; });
-S.send("hello"); // ask main for the current connection state (we may have missed the open event)
+S.send("hello", { lang }); // ask main for the current connection state (we may have missed the open event)

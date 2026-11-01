@@ -35,7 +35,7 @@ from backend.schemes import SchemeDialog
 from backend.schemes import step as scheme_step
 from backend.task import ALL_STEPS_RE, SUBMIT_RE, Step, Task, find_service, is_need
 from backend.tracker import Tracker
-from backend.voice import stt, tts
+from backend.voice import LANG_CODE, detect_lang, stt, tts
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(name)s %(levelname)s %(message)s")
 log = logging.getLogger("suraksha.server")
@@ -54,29 +54,29 @@ def health() -> dict:
 # ------------------------------------------------------------------ phrasing (pre-written, no LLM)
 T = {
     "hi": {
-        "watching": "ठीक है, मैं स्क्रीन देख रही हूँ। फ़ॉर्म वाला पेज खोलिए।",
-        "no_form": "मुझे अभी कोई फ़ॉर्म नहीं दिख रहा। फ़ॉर्म वाला पेज खोलिए।",
-        "fill": "यहाँ \"{label}\" भरिए।",
-        "choose": "यहाँ \"{label}\" में से सही विकल्प चुनिए।",
-        "upload": "यहाँ \"{label}\" के लिए दस्तावेज़ अपलोड कीजिए।",
+        "watching": "ठीक है, मैं आपकी स्क्रीन देख रही हूँ। कृपया फ़ॉर्म वाला पेज खोलिए।",
+        "no_form": "मुझे अभी कोई फ़ॉर्म नहीं दिख रहा। कृपया फ़ॉर्म वाला पेज खोलिए।",
+        "fill": "कृपया यहाँ \"{label}\" भरिए।",
+        "choose": "कृपया \"{label}\" में से सही विकल्प चुनिए।",
+        "upload": "कृपया यहाँ \"{label}\" के लिए दस्तावेज़ अपलोड कीजिए।",
         "tick": "\"{label}\" — अगर लागू हो तो टिक कीजिए।",
-        "sensitive": "\"{label}\" निजी जानकारी है — इसे खुद भरिए, मैं स्क्रीन नहीं देखूँगी। हो जाए तो Next दबाइए।",
+        "sensitive": "\"{label}\" निजी जानकारी है — कृपया इसे आप खुद भरिए, मैं स्क्रीन नहीं देखूँगी। भर जाए तो Next दबाइए।",
         "optional": " पेज पर इसे वैकल्पिक लिखा है।",
-        "done_visible": "इस हिस्से के सारे खाने भर गए। नीचे स्क्रॉल कीजिए या पेज पर अगला बटन दबाइए।",
+        "done_visible": "इस हिस्से के सारे खाने भर गए। कृपया नीचे स्क्रॉल कीजिए या पेज पर अगला बटन दबाइए।",
         "error": "ध्यान दीजिए, फ़ॉर्म पर गलती दिख रही है: \"{text}\"",
         "stopped": "रुक गई।",
-        "not_heard": "माफ़ कीजिए, मैं सुन नहीं पाई। बटन दबाकर रखिए और फिर से बोलिए।",
-        "answer_fail": "माफ़ कीजिए, अभी जवाब नहीं मिल पाया। थोड़ी देर में फिर पूछिए।",
+        "not_heard": "माफ़ कीजिए, मैं सुन नहीं पाई। कृपया बटन दबाकर रखिए और फिर से बोलिए।",
+        "answer_fail": "माफ़ कीजिए, अभी जवाब नहीं मिल पाया। कृपया थोड़ी देर में फिर पूछिए।",
         "vision_fail": "स्क्रीन पढ़ने में दिक्कत हुई, फिर से कोशिश कर रही हूँ…",
         "check_in": "कोई दिक्कत? \"{label}\" के बारे में कुछ पूछना हो तो माइक बटन दबाकर पूछिए।",
         "has_account": "क्या आपका Digital Gujarat अकाउंट है?",
         "yes": "हाँ", "no": "नहीं",
         "login_fields": "ठीक है, लॉगिन करते हैं।",
-        "register_btn": "आपका अकाउंट नहीं है तो पहले रजिस्टर करना होगा। \"{label}\" बटन दबाइए।",
-        "register_find": "आपका अकाउंट नहीं है तो पहले रजिस्टर करना होगा। पेज पर \"New Registration (Citizen)\" ढूँढिए।",
-        "login_first": "यह सेवा इस्तेमाल करने के लिए पहले Digital Gujarat पर लॉगिन कीजिए।",
-        "payment": "यह पेमेंट पेज है। भुगतान का तरीका चुनिए — Pay बटन आप खुद दबाइए।",
-        "ack": "आवेदन जमा हो गया लगता है। आवेदन नंबर लिख लीजिए या रसीद डाउनलोड कर लीजिए।",
+        "register_btn": "आपका अकाउंट नहीं है तो पहले रजिस्टर करना होगा। कृपया \"{label}\" बटन दबाइए।",
+        "register_find": "आपका अकाउंट नहीं है तो पहले रजिस्टर करना होगा। कृपया पेज पर \"New Registration (Citizen)\" ढूँढिए।",
+        "login_first": "यह सेवा इस्तेमाल करने के लिए कृपया पहले Digital Gujarat पर लॉगिन कीजिए।",
+        "payment": "यह पेमेंट पेज है। कृपया भुगतान का तरीका चुनिए — Pay बटन आप खुद दबाइए।",
+        "ack": "आवेदन जमा हो गया लगता है। कृपया आवेदन नंबर लिख लीजिए या रसीद डाउनलोड कर लीजिए।",
         "goal_set": "ठीक है, {name} बनाते हैं।",
         "goal_same": "हम {name} पर ही काम कर रहे हैं।",
         "switch_q": "{old} छोड़कर {new} शुरू करें?",
@@ -84,17 +84,19 @@ T = {
         "switch_no": "ठीक है, {name} जारी रखते हैं।",
         "back": "चलिए, वापस {name} पर — {step}।",
         "link_only": "{name} के लिए मेरे पास अभी जाँची हुई जानकारी नहीं है। इसकी आधिकारिक वेबसाइट का लिंक पिल में दे दिया है।",
-        "nav": "{step}।",
-        "goto_list": "इसके लिए Sugam सेवाओं की सूची खोलिए और \"{name}\" चुनिए।",
-        "ask_goal": "आपको कौन सी सेवा चाहिए? माइक बटन दबाकर बताइए, जैसे \"आय प्रमाण पत्र बनाना है\"।",
-        "submit": "सारे खाने भर गए। एक बार सब जाँच लीजिए, फिर \"{label}\" आप खुद दबाइए।",
+        "nav": "कृपया {step}।",
+        "goto_list": "इसके लिए कृपया Sugam सेवाओं की सूची खोलिए और \"{name}\" चुनिए।",
+        "greeting": "नमस्ते! मैं सुरक्षा हूँ, सरकारी फ़ॉर्म भरने में आपकी मदद करती हूँ। आज मैं आपकी क्या मदद कर सकती हूँ?",
+        "great": "बहुत बढ़िया!",
+        "ask_goal": "आपको कौन सी सेवा चाहिए? कृपया माइक बटन दबाकर बताइए, जैसे \"आय प्रमाण पत्र बनाना है\"।",
+        "submit": "बहुत बढ़िया, सारे खाने भर गए। कृपया एक बार सब जाँच लीजिए, फिर \"{label}\" आप खुद दबाइए।",
     },
     "en": {
-        "watching": "Okay, I'm watching the screen. Please open the form page.",
+        "watching": "Okay, I'm watching your screen. Please open the form page.",
         "no_form": "I can't see a form right now. Please open the form page.",
-        "fill": "Fill in \"{label}\" here.",
-        "choose": "Choose the right option for \"{label}\" here.",
-        "upload": "Upload the document for \"{label}\" here.",
+        "fill": "Please fill in \"{label}\" here.",
+        "choose": "Please choose the right option for \"{label}\".",
+        "upload": "Please upload the document for \"{label}\" here.",
         "tick": "\"{label}\" — tick this if it applies.",
         "sensitive": "\"{label}\" is private — please fill it yourself. Press Next when done.",
         "optional": " The page marks this as optional.",
@@ -122,10 +124,53 @@ T = {
         "link_only": "I don't have verified details for {name} yet. I've put its official website link in the pill.",
         "nav": "Please {step}.",
         "goto_list": "For this, open the Sugam services list and choose \"{name}\".",
+        "greeting": "Hello! I'm Suraksha. I help you fill government forms step by step. How may I help you today?",
+        "great": "Great!",
         "ask_goal": "Which service do you need? Hold the mic button and tell me, e.g. \"I want an income certificate\".",
-        "submit": "All fields are filled. Check everything once, then press \"{label}\" yourself.",
+        "submit": "Great, all fields are filled. Please check everything once, then press \"{label}\" yourself.",
     },
 }
+
+
+T["gu"] = {
+    "watching": "ઠીક છે, હું તમારી સ્ક્રીન જોઈ રહી છું. કૃપા કરીને ફોર્મવાળું પેજ ખોલો.",
+    "no_form": "મને હમણાં કોઈ ફોર્મ દેખાતું નથી. કૃપા કરીને ફોર્મવાળું પેજ ખોલો.",
+    "fill": "કૃપા કરીને અહીં \"{label}\" ભરો.",
+    "choose": "કૃપા કરીને \"{label}\" માં સાચો વિકલ્પ પસંદ કરો.",
+    "upload": "કૃપા કરીને અહીં \"{label}\" માટે દસ્તાવેજ અપલોડ કરો.",
+    "tick": "\"{label}\" — લાગુ પડતું હોય તો ટિક કરો.",
+    "sensitive": "\"{label}\" ખાનગી માહિતી છે — કૃપા કરીને તે તમે જાતે ભરો, હું સ્ક્રીન નહીં જોઉં. ભરાઈ જાય પછી Next દબાવો.",
+    "optional": " પેજ પર આ વૈકલ્પિક લખેલું છે.",
+    "done_visible": "આ ભાગના બધા ખાના ભરાઈ ગયા. કૃપા કરીને નીચે સ્ક્રોલ કરો અથવા પેજ પરનું આગળનું બટન દબાવો.",
+    "error": "ધ્યાન આપો, ફોર્મ પર ભૂલ દેખાય છે: \"{text}\"",
+    "stopped": "હું રોકાઈ ગઈ.",
+    "not_heard": "માફ કરશો, હું સાંભળી ન શકી. કૃપા કરીને બટન દબાવી રાખીને ફરી બોલો.",
+    "answer_fail": "માફ કરશો, હમણાં જવાબ ન મળ્યો. કૃપા કરીને થોડી વાર પછી ફરી પૂછો.",
+    "vision_fail": "સ્ક્રીન વાંચવામાં તકલીફ થઈ, ફરી પ્રયત્ન કરું છું…",
+    "check_in": "કોઈ તકલીફ છે? \"{label}\" વિશે કંઈ પૂછવું હોય તો માઇક બટન દબાવીને પૂછો.",
+    "has_account": "શું તમારું Digital Gujarat એકાઉન્ટ છે?",
+    "yes": "હા", "no": "ના",
+    "login_fields": "ઠીક છે, લૉગિન કરીએ.",
+    "register_btn": "એકાઉન્ટ ન હોય તો પહેલાં નોંધણી કરવી પડશે. કૃપા કરીને \"{label}\" બટન દબાવો.",
+    "register_find": "એકાઉન્ટ ન હોય તો પહેલાં નોંધણી કરવી પડશે. કૃપા કરીને પેજ પર \"New Registration (Citizen)\" શોધો.",
+    "login_first": "આ સેવા માટે કૃપા કરીને પહેલાં Digital Gujarat પર લૉગિન કરો.",
+    "payment": "આ પેમેન્ટ પેજ છે. કૃપા કરીને ચુકવણીની રીત પસંદ કરો — Pay બટન તમે જાતે દબાવજો.",
+    "ack": "અરજી જમા થઈ ગઈ લાગે છે. કૃપા કરીને અરજી નંબર લખી લો અથવા રસીદ ડાઉનલોડ કરી લો.",
+    "goal_set": "ઠીક છે, {name} બનાવીએ.",
+    "goal_same": "આપણે {name} પર જ કામ કરી રહ્યા છીએ.",
+    "switch_q": "{old} છોડીને {new} શરૂ કરીએ?",
+    "switch_yes": "ઠીક છે, હવે {name}.",
+    "switch_no": "ઠીક છે, {name} ચાલુ રાખીએ.",
+    "back": "ચાલો, પાછા {name} પર — {step}.",
+    "link_only": "{name} માટે મારી પાસે હજી ચકાસેલી માહિતી નથી. તેની સત્તાવાર વેબસાઇટની લિંક પિલમાં આપી છે.",
+    "nav": "કૃપા કરીને {step}.",
+    "goto_list": "આ માટે કૃપા કરીને Sugam સેવાઓની યાદી ખોલો અને \"{name}\" પસંદ કરો.",
+    "greeting": "નમસ્તે! હું સુરક્ષા છું, સરકારી ફોર્મ ભરવામાં તમારી મદદ કરું છું. આજે હું તમારી શું મદદ કરી શકું?",
+    "great": "ખૂબ સરસ!",
+    "ask_goal": "તમારે કઈ સેવા જોઈએ છે? કૃપા કરીને માઇક બટન દબાવીને કહો, જેમ કે \"આવકનો દાખલો કઢાવવો છે\".",
+    "submit": "ખૂબ સરસ, બધા ખાના ભરાઈ ગયા. કૃપા કરીને એક વાર બધું તપાસી લો, પછી \"{label}\" તમે જાતે દબાવો.",
+}
+assert set(T["gu"]) == set(T["hi"]) == set(T["en"]), set(T["hi"]) ^ set(T["gu"])
 
 
 _INDIC = "\u0900-\u0963\u0966-\u097F\u0A80-\u0AFF"  # Devanagari (minus । ॥) + Gujarati
@@ -240,6 +285,11 @@ class Session:
         self.pending_choice: str | None = None
         self.once: set[str] = set()  # one-time announcements already made (keyed by page)
         self.task = Task()  # goal + current step (persists across Start/Stop; cleared by Reset)
+        self.lang_mode = "auto"  # "auto": reply in the language of the user's latest question; else a fixed code
+        self.greeted = False
+        self.steps_done = 0  # completed steps (for the occasional "बहुत बढ़िया")
+        self.last_ack_step = 0
+        self.last_step_key: str | None = None
 
     async def send(self, type_: str, **data) -> None:
         if self.closed:
@@ -295,11 +345,58 @@ class Session:
         self.spawn(self.send("frame.request", reason="resume"))
         self.maybe_run_vision()
 
+    # ---- language
+    def set_mode(self, mode: str | None) -> None:
+        """Pill toggle: "auto" (default) or a fixed language code."""
+        if not mode:
+            return
+        self.lang_mode = mode if mode == "auto" or mode in LANG_CODE else "auto"
+        if self.lang_mode != "auto":
+            self.lang = self.lang_mode
+
+    async def adopt_lang(self, detected: str | None, text: str) -> None:
+        """Auto mode: answers AND later field instructions follow the language of the latest question."""
+        if self.lang_mode != "auto" or not detected or detected not in LANG_CODE or detected == self.lang:
+            return
+        if detected == "en" and len(text.split()) < 2:  # "ok", "next", "yes" don't switch the language
+            return
+        self.lang = detected
+        await self.send("lang", value=self.lang, mode=self.lang_mode)
+
+    async def greet(self) -> None:
+        self.greeted = True
+        g = phrase(self.lang, "greeting")
+        await self.send("state", value="idle")
+        await self.say(g)
+        self.remember("assistant", g)
+
+    def with_ack(self, step_key: str, text: str) -> str:
+        """A new step after a completed one; "बहुत बढ़िया!" at most once every 3 steps."""
+        if self.last_step_key is not None and step_key != self.last_step_key:
+            self.steps_done += 1
+        self.last_step_key = step_key
+        if self.steps_done - self.last_ack_step >= 3:
+            self.last_ack_step = self.steps_done
+            return f"{phrase(self.lang, 'great')} {text}"
+        return text
+
+    async def activate(self) -> None:
+        """Start guiding (pill Start, or the user said what they need)."""
+        self.reset()
+        self.active = True
+        self.force = True
+        await self.send("state", value="watching")
+        await self.send("capture", mode="on")
+
     # ---- client messages
     async def handle(self, msg: dict) -> None:
         t = msg.get("type")
-        if t == "start":
-            self.lang = msg.get("lang") or self.lang
+        if t == "hello":  # app (re)started: greet once, then wait for a need or Start
+            self.set_mode(msg.get("lang"))
+            if not self.greeted:
+                await self.greet()
+        elif t == "start":
+            self.set_mode(msg.get("lang"))
             self.reset()
             self.active = True
             self.force = True
@@ -321,15 +418,20 @@ class Session:
             self.scheme = SchemeDialog()
             self.task = Task()
             self.has_account = None
-            self.lang = msg.get("lang") or "hi"
+            self.steps_done = self.last_ack_step = 0
+            self.last_step_key = None
+            self.lang = "hi"
+            self.set_mode(msg.get("lang") or "auto")
             await self.send("capture", mode="off")
             await self.send("clear")
             await self.send("choice.clear")
-            await self.send("state", value="idle")
             log.info("session reset")
+            await self.greet()
         elif t == "lang":
-            self.lang = msg.get("lang") or self.lang
-            await self.explain_current()  # user asked for the other language → say it again in that one
+            self.set_mode(msg.get("lang"))
+            await self.send("lang", value=self.lang, mode=self.lang_mode)
+            if self.lang_mode != "auto":
+                await self.explain_current()  # user asked for the other language → say it again in that one
         elif t == "next":
             self.tracker.next(time.monotonic())
             self.force = True
@@ -341,7 +443,7 @@ class Session:
         elif t == "choice":
             await self.on_choice(msg.get("id"), msg.get("value"))
         elif t == "ask_text":  # typed question (pill text box / tests)
-            self.spawn(self.handle_question(str(msg.get("text") or "")[:500], msg.get("lang") or self.lang))
+            self.spawn(self.handle_question(str(msg.get("text") or "")[:500]))
         elif t == "ask":
             task = asyncio.create_task(self.handle_ask(msg))  # don't block frames while answering
             self.bg.add(task)
@@ -369,16 +471,13 @@ class Session:
         self.answering = True  # hold guidance while we transcribe
         self.last_user_t = time.monotonic()
         await self.send("state", value="answering")
-        heard = await stt(wav, msg.get("lang") or self.lang)
+        heard = await stt(wav, self.lang)
         self.answering = False
         if not heard:
             await self.say(phrase(self.lang, "not_heard"))
             return
-        if heard.lang in T and heard.lang != self.lang:  # user switched language by speaking
-            self.lang = heard.lang
-            await self.send("lang", value=self.lang)
         await self.send("transcript", text=heard.text, lang=heard.lang, final=True)
-        await self.handle_question(heard.text, self.lang)
+        await self.handle_question(heard.text, heard.lang)
 
     def remember(self, role: str, text: str) -> None:
         self.turns.append({"role": role, "text": text[:600]})
@@ -393,9 +492,11 @@ class Session:
             ask_back=ask_back, service_id=self.task.goal or "gj_income_certificate", task=self.task.describe(),
         )
 
-    async def handle_question(self, text: str, lang: str) -> None:
+    async def handle_question(self, text: str, detected: str | None = None) -> None:
         if not text.strip():
             return
+        await self.adopt_lang(detected or detect_lang(text), text)
+        lang = self.lang
         self.last_user_t = time.monotonic()
         self.pending_checkin = None
         self.answering = True
@@ -485,6 +586,8 @@ class Session:
         """User stated a need for a covered service: set the goal, or confirm a switch (never switch silently)."""
         if not self.task.goal:
             self.task.set_goal(sid, name)
+            if not self.active:  # "what do you need?" answered → start guiding without pressing Start
+                await self.activate()
             await self.say(phrase(self.lang, "goal_set", name=name))
             self.remember("assistant", phrase(self.lang, "goal_set", name=name))
             self.once = {k for k in self.once if not k.startswith("nav:")}  # speak the first step on this screen
@@ -583,8 +686,10 @@ class Session:
             else:
                 await self.send("clear")
             await self.send("state", value="guiding_step")
-            await self.say_once(f"nav:{page}:{nav.kind}:{nav.label.strip().lower()}",
-                                phrase(self.lang, "nav", step=self.task.step_text(self.lang)))
+            key = f"nav:{page}:{nav.kind}:{nav.label.strip().lower()}"
+            if key not in self.once:
+                await self.say_once(key, self.with_ack(f"{nav.kind}:{nav.label.strip().lower()}",
+                                                       phrase(self.lang, "nav", step=self.task.step_text(self.lang))))
             return True
         if pt == PageType.application_form and self.task.left_form is not None \
                 and (r.page_title or "").strip().lower() == self.task.left_form:
@@ -779,7 +884,7 @@ class Session:
                 t.explained = False  # held: answering, or the field isn't on screen right now
             else:
                 await self.send("state", value="guiding_field")
-                await self.say(field_text(self.lang, t.seen))
+                await self.say(self.with_ack("field:" + t.key, field_text(self.lang, t.seen)))
         # check-in confirmed on this fresh frame: same target, still on screen, still empty
         if self.pending_checkin:
             key, self.pending_checkin = self.pending_checkin, None

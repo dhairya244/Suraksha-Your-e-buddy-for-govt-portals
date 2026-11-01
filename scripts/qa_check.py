@@ -68,6 +68,8 @@ async def scenario(a: argparse.Namespace) -> None:
             elif m["type"] == "choice":
                 pending_choice["id"] = m["id"]
                 print(f"   {time.time() - t0:5.1f}s [choice] {m.get('question')} {[o['label'] for o in m['options']]}")
+            elif m["type"] == "lang":
+                print(f"   {time.time() - t0:5.1f}s [lang] {m.get('value')} ({m.get('mode')})")
             elif m["type"] in ("sources", "link", "choice.clear", "clear"):
                 print(f"   {time.time() - t0:5.1f}s [{m['type']}] {m.get('urls') or m.get('url') or ''}")
 
@@ -82,8 +84,9 @@ async def scenario(a: argparse.Namespace) -> None:
                 if until and until(m):
                     return
 
-        await ws.send(json.dumps({"type": "start", "lang": a.lang}))
-        await drain(1.0)
+        if not a.step[0].startswith("hello"):
+            await ws.send(json.dumps({"type": "start", "lang": a.lang}))
+            await drain(1.0)
         for st in a.step:
             kind, _, val = st.partition("=")
             print(f"\n== {kind}: {val}")
@@ -98,6 +101,9 @@ async def scenario(a: argparse.Namespace) -> None:
             elif kind == "choice":
                 await ws.send(json.dumps({"type": "choice", "id": pending_choice.get("id", "has_account"), "value": val}))
                 await drain(a.settle)
+            elif kind in ("hello", "lang", "reset"):  # hello=auto|hi|en|gu, lang=auto|hi|en|gu, reset=
+                await ws.send(json.dumps({"type": kind, "lang": val or "auto"}))
+                await drain(4)
             elif kind == "wait":
                 await drain(float(val))
 
@@ -141,7 +147,7 @@ async def main(a: argparse.Namespace) -> None:
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--image", type=Path)
-    ap.add_argument("--step", action="append", help="scenario step: img=PATH | q=TEXT | choice=yes|no | wait=SEC")
+    ap.add_argument("--step", action="append", help="scenario step: hello=MODE | lang=MODE | reset= | img=PATH | q=TEXT | choice=yes|no | wait=SEC")
     ap.add_argument("--q", action="append", help="question (repeatable); default = live-test set")
     ap.add_argument("--lang", default="hi")
     ap.add_argument("--port", default="8765")

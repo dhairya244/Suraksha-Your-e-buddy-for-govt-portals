@@ -22,7 +22,10 @@ log = logging.getLogger("suraksha.answer")
 
 KEY = "GEMINI_API_KEY_DEMO"  # answers; vision uses GEMINI_API_KEY_BACKUP (separate quotas)
 TIMEOUT_S = REQUEST_TIMEOUT_S  # GEMINI_TIMEOUT_SECONDS
-LANG_NAME = {"hi": "Hindi (Devanagari script)", "en": "simple Indian English", "gu": "Gujarati (Gujarati script)"}
+LANG_NAME = {"hi": "Hindi (Devanagari script)", "en": "simple Indian English", "gu": "Gujarati (Gujarati script)",
+             "mr": "Marathi (Devanagari script)", "bn": "Bengali (Bengali script)", "ta": "Tamil (Tamil script)",
+             "te": "Telugu (Telugu script)", "kn": "Kannada (Kannada script)", "ml": "Malayalam (Malayalam script)",
+             "pa": "Punjabi (Gurmukhi script)", "od": "Odia (Odia script)"}
 
 SYSTEM = """You are Suraksha, a voice assistant sitting next to someone who is filling a Gujarat government form
 (Digital Gujarat portal) in their browser. You can see their screen (the image) and the session state.
@@ -70,6 +73,9 @@ QUESTION KINDS (set `kind`):
   form and government services. No facts, empty sources. Do not offer to continue / ask "shall we continue?" —
   when the user has a goal the app itself adds the line that brings them back to it.
 
+TONE: always polite, gentle and respectful — "कृपया", "आप", "…भरिए / …दबाइए / …कीजिए"; never bare commands like
+"दबाओ / भरो / करो". English: "please …". Gujarati: "કૃપા કરીને", "તમે". Keep official terms and quotes exactly as in the source.
+
 STYLE: spoken aloud — plain everyday words, at most 3 short sentences (a list of up to 6 documents is fine),
 no markdown, no URLs in `say`. Reply in {lang_name}; English names of portal buttons/labels are fine.
 Hindi must be written in Devanagari script only (never romanized Hindi). You speak with a female voice:
@@ -116,6 +122,7 @@ def answer_sync(question: str, lang: str, screen: ScreenContext, jpeg: bytes | N
         f"Context JSON (official data):\n{json.dumps(ctx, ensure_ascii=False, separators=(',', ':'))}\n\n"
         f"Flags: {json.dumps(flags)}\n"
         f"User asked: \"{question}\""
+        f"\n\nREPLY LANGUAGE: {LANG_NAME.get(lang, LANG_NAME['hi'])} only — the user asked in this language; ignore the language of earlier turns."
     )
     parts: list = [types.Part.from_bytes(data=jpeg, mime_type="image/jpeg")] if jpeg else []
     parts.append(text)

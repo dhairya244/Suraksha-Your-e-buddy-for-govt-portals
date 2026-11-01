@@ -47,6 +47,19 @@ ASK = {
         "offer_service": "इसके लिए {service} चाहिए — मैं उसका फ़ॉर्म भरने में मदद कर सकती हूँ।",
         "offer_here": "इसके लिए {service} चाहिए — आप अभी वही फ़ॉर्म भर रहे हैं, चलिए जारी रखते हैं।",
     },
+    "gu": {
+        "occupation": "તમે શું કામ કરો છો — ખેતી, અભ્યાસ, મજૂરી કે નોકરી, પોતાનો ધંધો, કે બીજું કંઈ?",
+        "student": "શું તમે હાલ અભ્યાસ કરો છો?",
+        "gender": "કેટલીક યોજનાઓ મહિલાઓ માટે છે — તમે મહિલા છો કે પુરુષ?",
+        "category": "તમારી શ્રેણી કઈ છે — SC, ST, OBC, General કે EWS?",
+        "age": "તમારી ઉંમર કેટલી છે?",
+        "income": "તમારા પરિવારની વાર્ષિક આવક આશરે કેટલી છે?",
+        "state": "તમે કયા રાજ્યમાં રહો છો?",
+        "none": "તમારી માહિતી સાથે મેળ ખાતી કોઈ યોજના મારી યાદીમાં નથી. myScheme અથવા Digital Gujarat પર વધુ યોજનાઓ જોઈ શકો છો.",
+        "no_more": "મારી પાસે આનાથી વધુ મેળ ખાતી યોજનાઓ નથી.",
+        "offer_service": "આ માટે {service} જોઈએ — હું તેનું ફોર્મ ભરવામાં મદદ કરી શકું છું.",
+        "offer_here": "આ માટે {service} જોઈએ — તમે અત્યારે એ જ ફોર્મ ભરી રહ્યા છો, ચાલો આગળ વધીએ.",
+    },
     "en": {
         "occupation": "What do you do — farming, studying, labour or a job, your own business, or something else?",
         "student": "Are you studying right now?",
@@ -214,7 +227,8 @@ class Reply(BaseModel):
     sources: list[str]
 
 
-REPLY_SYS = """You are Suraksha (female voice) telling someone about government schemes, spoken aloud, mid-conversation:
+REPLY_SYS = """REPLY LANGUAGE: {lang_name}. Every word of `say` must be in this language (scheme names stay as written).
+You are Suraksha (female voice) telling someone about government schemes, spoken aloud, mid-conversation:
 no greeting, no self-introduction. Use ONLY the scheme JSON given.
 PRESENTING schemes: mention EVERY scheme in the JSON, each with its name and ONE short reason tied to the eligibility
 line that matches the user's details in `matched_on` (e.g. student → the line about students), paraphrased faithfully.
@@ -222,10 +236,13 @@ Say they 'may be eligible' and end with one sentence: confirm eligibility on the
 DOCUMENTS / HOW TO APPLY / BENEFITS / ELIGIBILITY of one scheme: answer only that, from that field; if it is empty,
 say it isn't listed and to check the official page. Don't repeat the eligibility reason or the confirm line.
 No URLs in `say`; at most 4 short sentences (a document list may be longer); no markdown.
-Reply in {lang_name}. Hindi only in Devanagari. Feminine verb forms ONLY for yourself (मैं बता सकती हूँ).
-The user's gender is unknown: address them with आप + the respectful plural forms (आप पात्र हो सकते हैं, आप हैं) — never
-सकती हैं / रही हैं for the user."""
-LANG_NAME = {"hi": "Hindi", "en": "simple Indian English", "gu": "Gujarati"}
+Polite and gentle ("please" / "कृपया").
+If (and only if) the reply language is Hindi: Devanagari only; feminine verb forms ONLY for yourself (मैं बता सकती हूँ);
+address the user with आप + respectful plural forms (आप पात्र हो सकते हैं) — never सकती हैं / रही हैं for the user."""
+LANG_NAME = {"hi": "Hindi (Devanagari script)", "en": "simple Indian English", "gu": "Gujarati (Gujarati script)",
+             "mr": "Marathi (Devanagari script)", "bn": "Bengali (Bengali script)", "ta": "Tamil (Tamil script)",
+             "te": "Telugu (Telugu script)", "kn": "Kannada (Kannada script)", "ml": "Malayalam (Malayalam script)",
+             "pa": "Punjabi (Gurmukhi script)", "od": "Odia (Odia script)"}
 
 
 def _call(parts: list, schema, system: str):
@@ -304,7 +321,8 @@ class SchemeDialog:
         return self._word(lang, task, data, focus=batch[0].scheme, current_service=current_service)
 
     def _word(self, lang: str, task: str, data: list[dict], focus: dict, current_service: str | None) -> Turn:
-        rep: Reply = _call([f"Task: {task}\nScheme JSON: {json.dumps(data, ensure_ascii=False)}"], Reply,
+        rep: Reply = _call([f"Task: {task}\nScheme JSON: {json.dumps(data, ensure_ascii=False)}\n"
+                            f"REPLY LANGUAGE: {LANG_NAME.get(lang, 'Hindi')} only."], Reply,
                            REPLY_SYS.format(lang_name=LANG_NAME.get(lang, "Hindi")))
         say = rep.say
         req = (focus.get("required_service_ids") or [])

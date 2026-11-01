@@ -81,6 +81,23 @@ def is_need(text: str) -> bool:
     return bool(NEED_RE.search(text)) and not ASK_RE.search(text) and not DOCS_RE.search(text)
 
 
+# one polite step, without "कृपया" (the caller adds it); {label} stays exactly as on screen
+STEP_TEXT = {
+    "hi": {"card": "\"{label}\" पर क्लिक कीजिए", "find_card": "सूची में \"{label}\" ढूँढिए — दिखे नहीं तो नीचे स्क्रॉल कीजिए",
+           "find_generic": "सूची में अपनी जाति वाला Caste Certificate चुनिए — जैसे SC, SEBC या Unreserved",
+           "apply": "\"{label}\" बटन दबाइए", "login": "लॉगिन कीजिए", "field": "\"{label}\" भरिए",
+           "submit": "सब जाँच कर \"{label}\" आप खुद दबाइए"},
+    "en": {"card": "click \"{label}\"", "find_card": "find \"{label}\" in the list — scroll down if you can't see it",
+           "find_generic": "choose the Caste Certificate for your category in the list — e.g. SC, SEBC or Unreserved",
+           "apply": "press \"{label}\"", "login": "log in", "field": "fill \"{label}\"",
+           "submit": "check everything, then press \"{label}\" yourself"},
+    "gu": {"card": "\"{label}\" પર ક્લિક કરો", "find_card": "યાદીમાં \"{label}\" શોધો — ન દેખાય તો નીચે સ્ક્રોલ કરો",
+           "find_generic": "યાદીમાં તમારી જાતિ માટેનું Caste Certificate પસંદ કરો — જેમ કે SC, SEBC અથવા Unreserved",
+           "apply": "\"{label}\" બટન દબાવો", "login": "લૉગિન કરો", "field": "\"{label}\" ભરો",
+           "submit": "બધું તપાસીને \"{label}\" તમે જાતે દબાવો"},
+}
+
+
 @dataclass
 class Step:
     kind: str  # card | find_card | apply | login | field | submit | done | none
@@ -152,24 +169,12 @@ class Task:
     # ------------------------------------------------------------- speech
     def step_text(self, lang: str) -> str:
         s = self.step
-        hi = lang != "en"
-        if s.kind == "card":
-            return f"\"{s.label}\" पर क्लिक कीजिए" if hi else f"click \"{s.label}\""
-        if s.kind == "find_card" and self.generic():
-            return ("सूची में अपनी जाति वाला Caste Certificate चुनिए — जैसे SC, SEBC या Unreserved" if hi
-                    else "choose the Caste Certificate for your category in the list — e.g. SC, SEBC or Unreserved")
-        if s.kind == "find_card":
-            return (f"सूची में \"{s.label}\" ढूँढिए — दिखे नहीं तो नीचे स्क्रॉल कीजिए" if hi
-                    else f"find \"{s.label}\" in the list — scroll down if you can't see it")
-        if s.kind == "apply":
-            return f"\"{s.label}\" बटन दबाइए" if hi else f"press \"{s.label}\""
-        if s.kind == "login":
-            return "लॉगिन कीजिए" if hi else "log in"
-        if s.kind == "field":
-            return f"\"{s.label}\" भरिए" if hi else f"fill \"{s.label}\""
-        if s.kind == "submit":
-            return (f"सब जाँच कर \"{s.label}\" आप खुद दबाइए" if hi else f"check everything, then press \"{s.label}\" yourself")
-        return ""
+        if s.kind == "none":
+            return ""
+        lang = lang if lang in STEP_TEXT else "en"
+        key = "find_generic" if s.kind == "find_card" and self.generic() else s.kind
+        tpl = STEP_TEXT[lang].get(key, "")
+        return tpl.format(label=s.label)
 
     def describe(self) -> dict:
         """Goal + current step for the answer prompt."""

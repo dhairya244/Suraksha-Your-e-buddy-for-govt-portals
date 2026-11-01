@@ -1,0 +1,136 @@
+{
+  "url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf",
+  "source_id": "pan",
+  "page_source_id": "pan_e6719ead79",
+  "file": "e6719ead79546dad59b6fc0c72810c9651b9660d.md",
+  "content_hash": "ecb09b5214d416a848a27d3f5b8071816fbfb263",
+  "title": "",
+  "fetched_at": "2026-11-01T10:56:49+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:58:12+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_e6719ead79_0",
+        "name": "Request for New PAN Card or/and Changes or Correction in PAN Data",
+        "alternate_names": [
+          "Request For Changes Or Correction in PAN Data Or/ And reprint of New PAN Card"
+        ],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "both",
+        "official_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_e6719ead79"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_e6719ead79_0",
+        "eligibility": [
+          {
+            "value": "Any person or entity requiring a new PAN card, reprint, or changes/correction in PAN data.",
+            "quote": "Request For Changes Or Correction in PAN Data Or/ And reprint of New PAN Card",
+            "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+          }
+        ],
+        "documents": [
+          {
+            "name": "Proof of Identity",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof of Identity",
+              "quote": "It is mandatory to attach proof of identity, proof of address and proof of date of birth with PAN application.",
+              "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+            }
+          },
+          {
+            "name": "Proof of Address",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof of Address",
+              "quote": "It is mandatory to attach proof of identity, proof of address and proof of date of birth with PAN application.",
+              "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+            }
+          },
+          {
+            "name": "Proof of date of birth",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof of date of birth",
+              "quote": "It is mandatory to attach proof of identity, proof of address and proof of date of birth with PAN application.",
+              "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+            }
+          }
+        ],
+        "fees": [
+          {
+            "value": "107 Rupees if physical PAN Card is required within India.",
+            "quote": "If physical PAN Card is required, ` 107/- (including goods & service tax) will have to be paid by the applicant.",
+            "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+          },
+          {
+            "value": "910 Rupees additional dispatch charge if PAN card is to be dispatched outside India.",
+            "quote": "In case, the PAN card is to be dispatched outside India then additional dispatch charge of ` 910/- will have to be paid by applicant.",
+            "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+          },
+          {
+            "value": "72 Rupees if physical PAN Card is not required.",
+            "quote": "If physical PAN Card is not required ` 72/- (including goods & service tax) will have to be paid by the applicant.",
+            "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+          }
+        ],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Income Tax Department",
+          "quote": "Applicants may obtain the ‘Request for New PAN Card or/and Changes or Correction in PAN Data’ Form in the format prescribed by Income Tax Department",
+          "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+        },
+        "steps": [
+          {
+            "value": "Obtain the application form from IT PAN Service Centres, TIN-Facilitation Centres, or download it from the specified websites.",
+            "quote": "Applicants may obtain the ‘Request for New PAN Card or/and Changes or Correction in PAN Data’ Form in the format prescribed by Income Tax Department from any IT PAN Service Centres (managed by UTIITSL) or TIN-Facilitation Centres (TIN-FCs)/PAN Centres (managed by Protean), or any other stationery vendor providing such forms or download from the Income Tax Department ia.gov.in) / UTIITSL website (www.utiitsl.com) / Protean website (www.protean-tinpan.com).",
+            "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+          },
+          {
+            "value": "Fill the form legibly in BLOCK LETTERS and preferably in BLACK INK in English.",
+            "quote": "Form to be filled legibly in BLOCK LETTERS and preferably in BLACK INK. Form should be filled in English only",
+            "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+          },
+          {
+            "value": "Attach required supporting documents for identity, address, date of birth, or changes.",
+            "quote": "It is mandatory to attach proof of identity, proof of address and proof of date of birth with PAN application.",
+            "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+          },
+          {
+            "value": "Submit the application form along with the prescribed fee and receive an acknowledgment containing a unique number.",
+            "quote": "Applicant will receive an acknowledgment containing a unique number on acceptance of this form.",
+            "source_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:58:33+00:00"
+}

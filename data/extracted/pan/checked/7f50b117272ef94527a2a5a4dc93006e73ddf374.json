@@ -1,0 +1,136 @@
+{
+  "url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan",
+  "source_id": "pan",
+  "page_source_id": "pan_7f50b11727",
+  "file": "7f50b117272ef94527a2a5a4dc93006e73ddf374.md",
+  "content_hash": "2915c464de884f2807a23362238d007007385506",
+  "title": "Instant E-PAN User Manual | Income Tax Department",
+  "fetched_at": "2026-11-01T10:56:27+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:57:47+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_7f50b11727_0",
+        "name": "Instant e-PAN",
+        "alternate_names": [],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_7f50b11727"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_7f50b11727_0",
+        "eligibility": [
+          {
+            "value": "All Individual taxpayers, who have not been allotted a Permanent Account Number (PAN) but possess Aadhaar",
+            "quote": "The Instant e-PAN service is available to all Individual taxpayers, who have not been allotted a Permanent Account Number (PAN) but possess Aadhaar.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          },
+          {
+            "value": "User not a minor as on date of request",
+            "quote": "User not a minor as on date of request;",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          },
+          {
+            "value": "User not covered under the definition of Representative Assessee u/s 160 of the Income Tax Act",
+            "quote": "User not covered under the definition of Representative Assessee u/s 160 of the Income Tax Act.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          }
+        ],
+        "documents": [],
+        "fees": [
+          {
+            "value": "free of cost",
+            "quote": "Obtain digitally signed PAN in electronic format, free of cost, with the help of Aadhaar and your mobile number linked with Aadhaar",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          }
+        ],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Income Tax Department",
+          "quote": "Instant E-PAN User Manual | Income Tax Department",
+          "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+        },
+        "steps": [
+          {
+            "value": "Go to the e-Filing portal homepage, click Instant e-PAN.",
+            "quote": "Go to the e-Filing portal homepage, click Instant e-PAN.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          },
+          {
+            "value": "On the e-PAN page, click Get New e-PAN.",
+            "quote": "On the e-PAN page, click Get New e-PAN.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          },
+          {
+            "value": "Enter your 12-digit Aadhaar number, select the I confirm that checkbox and click Continue.",
+            "quote": "On the Get New e-PAN page, enter your 12-digit Aadhaar number, select the I confirm that checkbox and click Continue.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          },
+          {
+            "value": "On the OTP validation page, click I have read the consent terms and agree to proceed further and click Continue.",
+            "quote": "On the OTP validation page, click I have read the consent terms and agree to proceed further. Click Continue.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          },
+          {
+            "value": "Enter the 6-digit OTP received on the mobile number linked with Aadhaar, select the checkbox to validate the Aadhaar details with UIDAI and click Continue.",
+            "quote": "On the OTP validation page, enter the 6-digit OTP received on the mobile number linked with Aadhaar, select the checkbox to validate the Aadhaar details with UIDAI and click Continue.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          },
+          {
+            "value": "On the Validate Aadhaar Details page, select the I Accept that checkbox and click Continue.",
+            "quote": "On the Validate Aadhaar Details page, select the I Accept that checkbox and click Continue.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [
+    {
+      "portal_id": "incometax_efiling",
+      "name": "e-Filing portal",
+      "url": "https://eportal.incometax.gov.in/iec/foservices/#/login",
+      "login_methods": [
+        "User ID and password"
+      ],
+      "registration_steps": [
+        {
+          "value": "Click Register on the e-Filing portal homepage",
+          "quote": "Do not have an account? Register",
+          "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+        }
+      ],
+      "common_problems": [],
+      "helpline": {
+        "value": "1800 103 0025, 1800 419 0025, +91-80-46122000, +91-80-61464700",
+        "quote": "1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+      },
+      "payment_methods": []
+    }
+  ],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:58:32+00:00"
+}

@@ -1,0 +1,68 @@
+{
+  "portal_id": "incometax_efiling",
+  "name": "e-Filing and Centralized Processing Center",
+  "url": "https://www.incometax.gov.in/iec/foportal/",
+  "login_methods": [
+    "User ID and password"
+  ],
+  "registration_steps": [
+    {
+      "value": "Click Register on the e-Filing portal.",
+      "quote": "[Register](https://eportal.incometax.gov.in/iec/foservices/#/register-home)",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+    },
+    {
+      "value": "Click Register on the e-Filing portal homepage",
+      "quote": "Do not have an account? Register",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+    }
+  ],
+  "common_problems": [
+    {
+      "problem": "Aadhaar authentication gets rejected during e-KYC",
+      "fix": {
+        "value": "Enter the correct OTP or contact UIDAI",
+        "quote": "Aadhaar authentication may get rejected due to using the wrong OTP. The problem can be resolved by entering the correct OTP. If it still gets rejected, you have to contact UIDAI.",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+      }
+    },
+    {
+      "problem": "Aadhaar details not matching with DigiLocker details",
+      "fix": {
+        "value": "An error message will be displayed indicating the mismatch",
+        "quote": "If your Aadhaar details are not matching with the Digi locker details, it will show below error:",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+      }
+    },
+    {
+      "problem": "PAN already allotted and linked with Aadhaar or linked with some other PAN",
+      "fix": {
+        "value": "An error message will be displayed",
+        "quote": "If PAN is already allotted and link with the Aadhaar or link with some other PAN, it will show below error:",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+      }
+    },
+    {
+      "problem": "DigiLocker platform is down or not loading",
+      "fix": {
+        "value": "Wait for few minutes and retry, as this is often a temporary service outage.",
+        "quote": "If the DigiLocker platform is down or not loading Wait for few minutes and retry, as this is often a temporary service outage.",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+      }
+    },
+    {
+      "problem": "Newly created DigiLocker account does not show documents yet",
+      "fix": {
+        "value": "Wait for few minutes and refresh the 'Issued Documents' section before retrying the Instant e-PAN request.",
+        "quote": "Wait for few minutes and refresh the ‘Issued Documents’ section before retrying the Instant e-PAN request.",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+      }
+    }
+  ],
+  "helpline": {
+    "value": "1800 103 0025, 1800 419 0025, +91-80-46122000, +91-80-61464700",
+    "quote": "1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700",
+    "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+  },
+  "payment_methods": []
+}

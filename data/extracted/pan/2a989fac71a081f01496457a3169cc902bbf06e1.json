@@ -1,0 +1,67 @@
+{
+  "url": "https://www.pan.utiitsl.com/PAN/newA.html",
+  "source_id": "pan",
+  "page_source_id": "pan_2a989fac71",
+  "file": "2a989fac71a081f01496457a3169cc902bbf06e1.md",
+  "content_hash": "56d08b63aa7dc6a1e28e6ebf64311972f05a50aa",
+  "title": "PAN Card  | PAN Card Online | PAN Card Services | PAN Card Apply",
+  "fetched_at": "2026-11-01T10:56:31+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:57:51+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_2a989fac71_0",
+        "name": "Apply for New PAN Card",
+        "alternate_names": [
+          "Form No. 93 and Form No. 94"
+        ],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://www.pan.utiitsl.com/panonline_website/redirect/formLanding",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_2a989fac71"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_2a989fac71_0",
+        "eligibility": [
+          {
+            "value": "Indian Citizen / Indian Entity",
+            "quote": "Apply for PAN Card as an Indian Citizen / Indian Entity",
+            "source_url": "https://www.pan.utiitsl.com/PAN/newA.html"
+          }
+        ],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Income Tax Department",
+          "quote": "PAN (Income Tax Department, Protean, UTIITSL) (India)",
+          "source_url": "https://www.pan.utiitsl.com/PAN/newA.html"
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

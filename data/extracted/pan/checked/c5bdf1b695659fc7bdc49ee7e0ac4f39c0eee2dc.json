@@ -1,0 +1,111 @@
+{
+  "url": "https://tinpan.proteantech.in/downloads/pan/Additional-Documents.pdf",
+  "source_id": "pan",
+  "page_source_id": "pan_c5bdf1b695",
+  "file": "c5bdf1b695659fc7bdc49ee7e0ac4f39c0eee2dc.md",
+  "content_hash": "39307ec10f1f4056b3ff2cfec54df7acb368650e",
+  "title": "",
+  "fetched_at": "2026-11-01T10:56:49+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:58:16+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_c5bdf1b695_0",
+        "name": "reprint of PAN card or corrections/changes in existing PAN card details",
+        "alternate_names": [],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "unknown",
+        "official_url": "https://tinpan.proteantech.in/downloads/pan/Additional-Documents.pdf",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_c5bdf1b695"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_c5bdf1b695_0",
+        "eligibility": [],
+        "documents": [
+          {
+            "name": "Copy of PAN card / PAN allotment letter issued by ITD",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Copy of PAN card / PAN allotment letter issued by ITD",
+              "quote": "Proof of PAN: - Copy of PAN card / PAN allotment letter issued by ITD (if available)",
+              "source_url": "https://tinpan.proteantech.in/downloads/pan/Additional-Documents.pdf"
+            }
+          },
+          {
+            "name": "Marriage certificate /marriage invitation card/publication of name change in official gazette/ copy of passport showing husband’s name/ certificate from a gazetted officer",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Marriage certificate /marriage invitation card/publication of name change in official gazette/ copy of passport showing husband’s name/ certificate from a gazetted officer",
+              "quote": "Married ladies - Marriage certificate /marriage invitation card/publication of name change in official gazette/ copy of passport showing husband’s name/ certificate from a gazetted officer",
+              "source_url": "https://tinpan.proteantech.in/downloads/pan/Additional-Documents.pdf"
+            }
+          },
+          {
+            "name": "Publication of name change in official gazette or certificate from a gazetted officer",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Publication of name change in official gazette or certificate from a gazetted officer",
+              "quote": "Other than married ladies  - Publication of name change in official gazette or certificate from a gazetted officer",
+              "source_url": "https://tinpan.proteantech.in/downloads/pan/Additional-Documents.pdf"
+            }
+          },
+          {
+            "name": "Revised registration certificate / deed or agreement as applicable",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Revised registration certificate / deed or agreement as applicable",
+              "quote": "Non individuals  - Revised registration certificate / deed or agreement as applicable",
+              "source_url": "https://tinpan.proteantech.in/downloads/pan/Additional-Documents.pdf"
+            }
+          },
+          {
+            "name": "Transgender Certificate issued by the District Magistrate",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Transgender Certificate issued by the District Magistrate",
+              "quote": "Transgenders  - Transgender Certificate issued by the District Magistrate",
+              "source_url": "https://tinpan.proteantech.in/downloads/pan/Additional-Documents.pdf"
+            }
+          }
+        ],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:58:32+00:00"
+}

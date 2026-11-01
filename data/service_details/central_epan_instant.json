@@ -1,0 +1,178 @@
+{
+  "service_id": "central_epan_instant",
+  "eligibility": [
+    {
+      "value": "Individual who has not been allotted a PAN",
+      "quote": "Individual who has not been allotted a PAN",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+    },
+    {
+      "value": "Valid Aadhaar and mobile number linked to Aadhaar",
+      "quote": "Valid Aadhaar and mobile number linked to Aadhaar",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+    },
+    {
+      "value": "User not a minor as on date of request",
+      "quote": "User not a minor as on date of request; and",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+    },
+    {
+      "value": "User not covered under the definition of Representative Assessee u/s 160 of the Income Tax Act",
+      "quote": "User not covered under the definition of Representative Assessee u/s 160 of the Income Tax Act.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+    },
+    {
+      "value": "Individual taxpayers who have not been allotted a Permanent Account Number (PAN)",
+      "quote": "The Instant e-PAN service is available to all Individual taxpayers, who have not been allotted a Permanent Account Number (PAN) but possess Aadhaar and access to DigiLocker for fetching documents related to valid proof of Date of Birth upon obtaining the applicant’s consent.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "Possess Aadhaar and access to DigiLocker",
+      "quote": "The Instant e-PAN service is available to all Individual taxpayers, who have not been allotted a Permanent Account Number (PAN) but possess Aadhaar and access to DigiLocker for fetching documents related to valid proof of Date of Birth upon obtaining the applicant’s consent.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "User not covered under the definition of Representative Assessee u/s 160 of the Income Tax Act,1961 or u/s 303 of Income Tax Act, 2025",
+      "quote": "User not covered under the definition of Representative Assessee u/s 160 of the Income Tax Act,1961 or u/s 303 of Income Tax Act, 2025",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "Any individual who does not already have a PAN, has a valid Aadhaar linked to an active mobile number, and has access to DigiLocker.",
+      "quote": "This Instant e-PAN service can be used by any individual who does not already have a PAN, has a valid Aadhaar linked to an active mobile number, and has access to DigiLocker.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+    },
+    {
+      "value": "All Individual taxpayers, who have not been allotted a Permanent Account Number (PAN) but possess Aadhaar",
+      "quote": "The Instant e-PAN service is available to all Individual taxpayers, who have not been allotted a Permanent Account Number (PAN) but possess Aadhaar.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Aadhaar",
+      "formats": [],
+      "max_size_kb": null,
+      "fact": {
+        "value": "Aadhaar",
+        "quote": "You only require a valid Aadhaar with updated KYC details, and a valid mobile number linked with your Aadhaar.",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+      }
+    }
+  ],
+  "fees": [
+    {
+      "value": "Free of cost",
+      "quote": "No. It is completely free of cost.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+    },
+    {
+      "value": "The service is free of cost.",
+      "quote": "No. The service is free of cost.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+    }
+  ],
+  "timeline": {
+    "value": "unknown",
+    "quote": null,
+    "source_url": null
+  },
+  "issuing_authority": {
+    "value": "Income Tax Department",
+    "quote": "Select the documents to be shared with Income Tax Department for proof of date of birth.",
+    "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+  },
+  "steps": [
+    {
+      "value": "Generate e-PAN with the help of Aadhaar and a mobile number registered with Aadhaar online without filling up any forms",
+      "quote": "If you have not been allotted a PAN, you can generate your e-PAN with the help of your Aadhaar and a mobile number registered with your Aadhaar. Generating e-PAN is free of cost, online process and does not require you to fill up any forms.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+    },
+    {
+      "value": "Click Get New e-PAN on the e-PAN page",
+      "quote": "Step 2: On the ‘e-PAN’ page, click ‘Get New e-PAN’.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "Confirm all eligibility declaration checkboxes and consent checkbox, then click Continue",
+      "quote": "Step 3: On the Get New e-PAN page, confirm all four eligibility declaration checkboxes and also, checkbox for declaration for consent for the generation of a new PAN based on Digi Locker data and Aadhaar e-KYC details, after confirming all check boxes Continue button will enable. click ‘Continue’.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "Read the disclaimer and click Continue to access DigiLocker",
+      "quote": "Step 4: Read the disclaimer and click “Continue”. You will be redirected to access the Digi Locker platform for fetching Date of Birth details and supporting proof.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "Enter Aadhaar or VID number and captcha code, then click Next",
+      "quote": "Step 5: Enter the Aadhaar / VID number, captcha code and click Next.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "Enter the OTP sent to mobile number registered with Aadhaar and click continue",
+      "quote": "Step 6: Enter the OTP sent to the mobile number registered with Aadhaar and click continue.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "Enter 6-digit security PIN and click Continue",
+      "quote": "Step 7: Enter your 6-digit security PIN and click Continue.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "Select documents for proof of date of birth and click Allow",
+      "quote": "Step 8: Select the documents to be shared with Income Tax Department for proof of date of birth. Click Allow",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "On Aadhaar validation page, enter Aadhaar Number for PAN allotment and click generate OTP",
+      "quote": "Step 9: On the Aadhaar validation page, enter the Aadhaar Number for PAN allotment and click generate OTP.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "Enter OTP received on Aadhaar registered mobile number and click continue",
+      "quote": "Step 10: Enter the OTP received on Aadhaar registered Mobile no. and click continue",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM"
+    },
+    {
+      "value": "On the e-Filing portal homepage, click 'Instant e-PAN' under Quick Links, then click 'Get New e-PAN' on the e-PAN page.",
+      "quote": "On the e-Filing portal homepage, click ‘Instant e-PAN’ under Quick Links, then click ‘Get New e-PAN’ on the e-PAN page.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+    },
+    {
+      "value": "Go to the e-Filing portal homepage, click Instant e-PAN.",
+      "quote": "Go to the e-Filing portal homepage, click Instant e-PAN.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+    },
+    {
+      "value": "On the e-PAN page, click Get New e-PAN.",
+      "quote": "On the e-PAN page, click Get New e-PAN.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+    },
+    {
+      "value": "Enter your 12-digit Aadhaar number, select the I confirm that checkbox and click Continue.",
+      "quote": "On the Get New e-PAN page, enter your 12-digit Aadhaar number, select the I confirm that checkbox and click Continue.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+    },
+    {
+      "value": "On the OTP validation page, click I have read the consent terms and agree to proceed further and click Continue.",
+      "quote": "On the OTP validation page, click I have read the consent terms and agree to proceed further. Click Continue.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+    },
+    {
+      "value": "Enter the 6-digit OTP received on the mobile number linked with Aadhaar, select the checkbox to validate the Aadhaar details with UIDAI and click Continue.",
+      "quote": "On the OTP validation page, enter the 6-digit OTP received on the mobile number linked with Aadhaar, select the checkbox to validate the Aadhaar details with UIDAI and click Continue.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+    },
+    {
+      "value": "On the Validate Aadhaar Details page, select the I Accept that checkbox and click Continue.",
+      "quote": "On the Validate Aadhaar Details page, select the I Accept that checkbox and click Continue.",
+      "source_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan"
+    }
+  ],
+  "tracking_url": null,
+  "appeal": {
+    "value": "unknown",
+    "quote": null,
+    "source_url": null
+  },
+  "disclaimer": null
+}

@@ -64,3 +64,8 @@
 {"ts": "2026-11-01T10:55:47+00:00", "action": "merge", "kind": "service", "id": "gj_application_for_getting_copy", "status": "pending"}
 {"ts": "2026-11-01T10:55:47+00:00", "action": "merge", "kind": "service", "id": "gj_other_ready_affidavit", "status": "pending"}
 {"ts": "2026-11-01T10:55:47+00:00", "action": "merge", "kind": "service", "id": "gj_non_creamy_layer_certificate_for_central_government", "status": "pending"}
+{"ts": "2026-11-01T10:58:33+00:00", "action": "merge", "kind": "service", "id": "central_epan_instant", "status": "pending"}
+{"ts": "2026-11-01T10:58:33+00:00", "action": "merge", "kind": "service", "id": "central_pan_correction", "status": "pending"}
+{"ts": "2026-11-01T10:58:33+00:00", "action": "merge", "kind": "service", "id": "central_pan_new", "status": "pending"}
+{"ts": "2026-11-01T10:58:33+00:00", "action": "merge", "kind": "service", "id": "central_procedure_to_request_fvu", "status": "pending"}
+{"ts": "2026-11-01T10:58:33+00:00", "action": "merge", "kind": "service", "id": "central_challan_correction_request", "status": "pending"}

@@ -1,0 +1,102 @@
+{
+  "service_id": "central_pan_new",
+  "eligibility": [
+    {
+      "value": "Indian Citizen / Indian Entity",
+      "quote": "Apply for PAN Card as an Indian Citizen / Indian Entity",
+      "source_url": "https://www.pan.utiitsl.com/PAN/newA.html"
+    },
+    {
+      "value": "Citizens of India who have never applied for a PAN or do not have a PAN allotted to them.",
+      "quote": "This form should be used when the applicant has never applied for a PAN or does not have PAN allotted to him.",
+      "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+    },
+    {
+      "value": "Foreign citizens who have never applied for a PAN or do not have a PAN allotted to them.",
+      "quote": "This form should be used when the applicant has never applied for a PAN or does not have PAN allotted to him.",
+      "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+    },
+    {
+      "value": "Foreign citizens or foreign entities",
+      "quote": "Apply for PAN Card as Foreign Citizen / Foreign Entitiy",
+      "source_url": "https://www.pan.utiitsl.com/PAN/newAA.html"
+    },
+    {
+      "value": "Non-citizens of India should only use Form No. 95 / Form No. 96 for submitting application for allotment of PAN.",
+      "quote": "Non-citizens of India should only use this form (i.e. Form No. 95 / Form No. 96) for submitting application for allotment of PAN.",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "A Qualified Foreign Investor (QFI) has to apply for PAN in Form No. 95 / Form No. 96 through a Depository Participant only.",
+      "quote": "However, a Qualified Foreign Investor (QFI) has to apply for PAN in Form No. 95 / Form No. 96 through a Depository Participant only.",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    }
+  ],
+  "documents": [],
+  "fees": [
+    {
+      "value": "Dispatch of physical PAN Card in India (Online using physical mode): 107 INR (inclusive of taxes)",
+      "quote": "1 | Dispatch of physical PAN Card in India (Communication address is Indian address) | 91 | 107",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "Dispatch of physical PAN Card outside India (Online using physical mode): 1,017 INR (inclusive of taxes)",
+      "quote": "2 | Dispatch of physical PAN Card outside India (where foreign address is provided as address for communication) | 862 | 1,017",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "Dispatch of physical PAN Card in India (Paperless modes using DSC & Scanned documents): 101 INR (inclusive of taxes)",
+      "quote": "1 | Dispatch of physical PAN Card in India (Communication address is Indian address) | 86 | 101",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "Dispatch of physical PAN Card outside India (Paperless modes using DSC & Scanned documents): 1,011 INR (inclusive of taxes)",
+      "quote": "2 | Dispatch of physical PAN Card outside India (where foreign address is provided as address for communication) | 857 | 1,011",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "e-PAN Card dispatched at email ID (Physical mode): 72 INR (inclusive of taxes)",
+      "quote": "1 | e-PAN Card will be dispatched at the email ID mentioned in the PAN application form | 61 | 72",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "e-PAN Card dispatched at email ID (Paperless mode): 66 INR (inclusive of taxes)",
+      "quote": "1 | e-PAN Card will be dispatched at the email ID mentioned in the PAN application form | 56 | 66",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    }
+  ],
+  "timeline": {
+    "value": "Your acknowledgment, demand draft, if any, and proofs, should reach Protean within 15 days from the date of online application.",
+    "quote": "Your acknowledgment, demand draft, if any, and proofs, should reach Protean within 15 days from the date of online application.",
+    "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+  },
+  "issuing_authority": {
+    "value": "Income Tax Department",
+    "quote": "Income Tax Department (ITD)",
+    "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+  },
+  "steps": [
+    {
+      "value": "Apply for New PAN Card using Form No. 95 and Form No. 96 online",
+      "quote": "Apply for New PAN Card\n\n(Form No. 95 and Form No. 96)",
+      "source_url": "https://www.pan.utiitsl.com/PAN/newAA.html"
+    },
+    {
+      "value": "Applicant registers by selecting Form No. 95 / Form No. 96 along with category and title, enters required details, and submits to generate a token number.",
+      "quote": "Applicant will initially register by selecting Form No. 95 / Form No. 96 along with category and title of the applicant and enter the required details and submit. A token number will be generated and displayed to the applicant before filling the form.",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "On confirmation and successful payment, an acknowledgment screen is displayed and a PDF receipt is sent via email.",
+      "quote": "On confirmation, and in case of credit card / debit card / net banking payment (on successful payment), an acknowledgment screen with downloadable acknowledgement receipt will be displayed. An e-mail containing this acknowledgement receipt (in PDF) as well as payment receipt (in PDF) as attachments will be sent to applicant's e-mail ID mentioned in the application.",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    }
+  ],
+  "tracking_url": "https://tin.tin.proteantech.in/pantan/StatusTrack.html",
+  "appeal": {
+    "value": "unknown",
+    "quote": null,
+    "source_url": null
+  },
+  "disclaimer": null
+}

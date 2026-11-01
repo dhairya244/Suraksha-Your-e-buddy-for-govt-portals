@@ -1,0 +1,117 @@
+{
+  "url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan",
+  "source_id": "pan",
+  "page_source_id": "pan_3194c17250",
+  "file": "3194c17250a209e4739440fb2d6ad4fa966e12cd.md",
+  "content_hash": "4171675bf6d998976672495c4d60e7ac4f957cc3",
+  "title": "Instant e-PAN | Income Tax Department",
+  "fetched_at": "2026-11-01T10:56:19+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:57:35+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_3194c17250_0",
+        "name": "Instant e-PAN",
+        "alternate_names": [],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_3194c17250"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_3194c17250_0",
+        "eligibility": [
+          {
+            "value": "Any individual who does not already have a PAN, has a valid Aadhaar linked to an active mobile number, and has access to DigiLocker.",
+            "quote": "This Instant e-PAN service can be used by any individual who does not already have a PAN, has a valid Aadhaar linked to an active mobile number, and has access to DigiLocker.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+          }
+        ],
+        "documents": [],
+        "fees": [
+          {
+            "value": "The service is free of cost.",
+            "quote": "No. The service is free of cost.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+          }
+        ],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Income Tax Department",
+          "quote": "You may select the any one of the documents(s) to be shared with the Income Tax Department as proof of date of birth.",
+          "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+        },
+        "steps": [
+          {
+            "value": "On the e-Filing portal homepage, click 'Instant e-PAN' under Quick Links, then click 'Get New e-PAN' on the e-PAN page.",
+            "quote": "On the e-Filing portal homepage, click ‘Instant e-PAN’ under Quick Links, then click ‘Get New e-PAN’ on the e-PAN page.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [
+    {
+      "portal_id": "incometax_efiling",
+      "name": "e-Filing portal",
+      "url": "https://www.incometax.gov.in/iec/foportal/",
+      "login_methods": [
+        "User ID and password"
+      ],
+      "registration_steps": [
+        {
+          "value": "Click Register on the e-Filing portal.",
+          "quote": "[Register](https://eportal.incometax.gov.in/iec/foservices/#/register-home)",
+          "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+        }
+      ],
+      "common_problems": [
+        {
+          "problem": "DigiLocker platform is down or not loading",
+          "fix": {
+            "value": "Wait for few minutes and retry, as this is often a temporary service outage.",
+            "quote": "If the DigiLocker platform is down or not loading Wait for few minutes and retry, as this is often a temporary service outage.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+          }
+        },
+        {
+          "problem": "Newly created DigiLocker account does not show documents yet",
+          "fix": {
+            "value": "Wait for few minutes and refresh the 'Issued Documents' section before retrying the Instant e-PAN request.",
+            "quote": "Wait for few minutes and refresh the ‘Issued Documents’ section before retrying the Instant e-PAN request.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+          }
+        }
+      ],
+      "helpline": {
+        "value": "1800 103 0025 (or) 1800 419 0025",
+        "quote": "1800 103 0025 (or) \n\n1800 419 0025",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan"
+      },
+      "payment_methods": []
+    }
+  ],
+  "schemes": []
+}

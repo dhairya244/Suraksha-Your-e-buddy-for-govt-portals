@@ -1,0 +1,87 @@
+{
+  "url": "https://www.incometax.gov.in/iec/foportal/help/ChallanCorrectionRequest-FAQ",
+  "source_id": "pan",
+  "page_source_id": "pan_349091262c",
+  "file": "349091262ca6eead00cbb1098b5de73eb10141da.md",
+  "content_hash": "5a3e7269e7364bf02cf60ee9098d25e8ab97141b",
+  "title": "Challan Correction Request FAQs | Income Tax Department",
+  "fetched_at": "2026-11-01T10:56:50+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:58:22+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_349091262c_0",
+        "name": "Challan Correction Request",
+        "alternate_names": [],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "tax_return",
+        "application_mode": "online",
+        "official_url": "https://www.incometax.gov.in/iec/foportal/help/ChallanCorrectionRequest-FAQ",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_349091262c"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_349091262c_0",
+        "eligibility": [
+          {
+            "value": "All paid and open/unconsumed challans pertaining to A.Y 2020-21 onwards with Minor Heads 100 (Advance Tax), 300 (Self-Assessment Tax) and 400 (Demand Payment as Regular Assessment Tax)",
+            "quote": "a) All paid and open/unconsumed challans pertaining to A.Y 2020-21 onwards\nb) Challans with Minor Heads 100 (Advance Tax), 300 (Self-Assessment Tax) and 400 (Demand Payment as Regular Assessment Tax)\nc) Both the above\nd) None of the above\nAnswer –c) Both the above",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/ChallanCorrectionRequest-FAQ"
+          }
+        ],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Jurisdictional Assessing Officer",
+          "quote": "If user wants to make further corrections in the challan, he/she may approach the Jurisdictional Assessing Officer.",
+          "source_url": "https://www.incometax.gov.in/iec/foportal/help/ChallanCorrectionRequest-FAQ"
+        },
+        "steps": [
+          {
+            "value": "File a correction request on the e-filing portal (allowed only once).",
+            "quote": "Challan Correction request will be allowed only once on the e-filing portal for any submitted challan.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/ChallanCorrectionRequest-FAQ"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "If user wants to make further corrections in the challan, he/she may approach the Jurisdictional Assessing Officer.",
+          "quote": "If user wants to make further corrections in the challan, he/she may approach the Jurisdictional Assessing Officer.",
+          "source_url": "https://www.incometax.gov.in/iec/foportal/help/ChallanCorrectionRequest-FAQ"
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [
+    {
+      "portal_id": "incometax_efiling",
+      "name": "e-filing portal",
+      "url": "http://www.incometax.gov.in/iec/foportal/contact-us",
+      "login_methods": [],
+      "registration_steps": [],
+      "common_problems": [],
+      "helpline": {
+        "value": "1800 103 0025 or 1800 419 0025 or +91-80-46122000 or +91-80-61464700",
+        "quote": "1800 103 0025 (or)\n1800 419 0025\n+91-80-46122000\n+91-80-61464700",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/ChallanCorrectionRequest-FAQ"
+      },
+      "payment_methods": []
+    }
+  ],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:58:32+00:00"
+}

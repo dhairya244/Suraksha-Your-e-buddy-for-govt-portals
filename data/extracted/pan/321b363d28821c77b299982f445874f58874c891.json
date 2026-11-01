@@ -1,0 +1,100 @@
+{
+  "url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html",
+  "source_id": "pan",
+  "page_source_id": "pan_321b363d28",
+  "file": "321b363d28821c77b299982f445874f58874c891.md",
+  "content_hash": "bc226a9031e73766da9281f086847bc5ebe629d5",
+  "title": "FAQ - Form No. 137 FVU request",
+  "fetched_at": "2026-11-01T10:56:54+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:58:29+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_321b363d28_0",
+        "name": "Procedure to request FVU",
+        "alternate_names": [
+          "फॉर्म सं.१३७ / एफ्वीयू के लिए अनुरोध करने की प्रक्रिया"
+        ],
+        "department": "Protean",
+        "government_level": "central",
+        "state": null,
+        "category": "certificate",
+        "application_mode": "offline",
+        "official_url": "https://tinpan.proteantech.in/services/form-no_137/form-no_137-request-fvu-file.html",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_321b363d28"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_321b363d28_0",
+        "eligibility": [
+          {
+            "value": "Offices that have lost the FVU file of the Original or Correction Form No. 137 statement accepted at the TIN central system.",
+            "quote": "In case our office has lost the FVU file of the Original/Correction Form No. 137 statement accepted at TIN central system, can we request the FVU file?",
+            "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+          }
+        ],
+        "documents": [
+          {
+            "name": "Request letter on office letter head",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Request letter on office letter head",
+              "quote": "No documents are required to be submitted along with the request letter for FVU file. However, the request needs to be provided on office letter head duly signed by authorized signatory with name and designation of the authorized person.",
+              "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+            }
+          }
+        ],
+        "fees": [
+          {
+            "value": "No charges need to be paid.",
+            "quote": "No charges need to be paid to request for FVU file.",
+            "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+          }
+        ],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Protean",
+          "quote": "Yes, the FVU file can be obtained by sending a request to Protean in prescribed Request Form",
+          "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+        },
+        "steps": [
+          {
+            "value": "Download the prescribed request format from the TIN website.",
+            "quote": "The prescribed format to request FVU file is available at TIN website under url https://tinpan.proteantech.in/services/form-no_137/form-no_137-request-fvu-file.html",
+            "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+          },
+          {
+            "value": "Prepare a request letter on office letter head containing required details (AIN, Name of AO, Provisional Receipt Number, Financial Year, Month of filling, Reason, Signed by authorized signatory with name and designation, Email ID).",
+            "quote": "However, the request needs to be provided on office letter head duly signed by authorized signatory with name and designation of the authorized person.",
+            "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+          },
+          {
+            "value": "Send the filled request form to TIN Operations, Protean e-Gov Technologies Limited, 1st Floor, Times Tower, Kamala Mills Compound, Senapati Bapat Marg, Lower Parel, Mumbai - 400 0013, superscribing the envelope with Request for Form No. 137 FVU file.",
+            "quote": "The duly filled request Form for FVU fileshould be sentat below mentioned address:- TIN Operations Protean e-Gov Technologies Limited 1st Floor, Times Tower Kamala Mills Compound Senapati Bapat Marg Lower Parel Mumbai - 400 0013. Super scribe the envelope with \"Request for Form No. 137 FVU file\".",
+            "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

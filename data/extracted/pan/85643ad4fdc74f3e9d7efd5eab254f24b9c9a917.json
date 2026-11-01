@@ -1,0 +1,218 @@
+{
+  "url": "https://tinpan.proteantech.in/services/pan/pan-index.html",
+  "source_id": "pan",
+  "page_source_id": "pan_85643ad4fd",
+  "file": "85643ad4fdc74f3e9d7efd5eab254f24b9c9a917.md",
+  "content_hash": "c8abea776d65a847a3de1806ecabf917391fc5b0",
+  "title": "Apply for PAN Card, Track Status, Change, Correction, Reprint, Docs",
+  "fetched_at": "2026-11-01T10:55:56+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:57:07+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_85643ad4fd_0",
+        "name": "Application for allotment of New PAN (Form No. 93 / Form No. 94) – applicable for Citizens of India",
+        "alternate_names": [],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://onlineservices.proteantech.in/paam/endUserRegisterContact.html",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_85643ad4fd"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_85643ad4fd_0",
+        "eligibility": [
+          {
+            "value": "Citizens of India who have never applied for a PAN or do not have a PAN allotted to them.",
+            "quote": "This form should be used when the applicant has never applied for a PAN or does not have PAN allotted to him.",
+            "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+          }
+        ],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Income Tax Department",
+          "quote": "Income Tax Department (ITD)",
+          "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+        },
+        "steps": [],
+        "tracking_url": "https://tin.tin.proteantech.in/pantan/StatusTrack.html",
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    },
+    {
+      "service": {
+        "service_id": "tmp_pan_85643ad4fd_1",
+        "name": "Application for allotment of New PAN (Form No. 95 / Form No.96) – applicable for foreign citizens",
+        "alternate_names": [],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://onlineservices.proteantech.in/paam/endUserRegisterContact.html",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_85643ad4fd"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_85643ad4fd_1",
+        "eligibility": [
+          {
+            "value": "Foreign citizens who have never applied for a PAN or do not have a PAN allotted to them.",
+            "quote": "This form should be used when the applicant has never applied for a PAN or does not have PAN allotted to him.",
+            "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+          }
+        ],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Income Tax Department",
+          "quote": "Income Tax Department (ITD)",
+          "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+        },
+        "steps": [],
+        "tracking_url": "https://tin.tin.proteantech.in/pantan/StatusTrack.html",
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    },
+    {
+      "service": {
+        "service_id": "tmp_pan_85643ad4fd_2",
+        "name": "Reprint of PAN Card",
+        "alternate_names": [],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://onlineservices.proteantech.in/paam/ReprintEPan.html",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_85643ad4fd"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_85643ad4fd_2",
+        "eligibility": [
+          {
+            "value": "Applicants who already have a PAN allotted but require a PAN card with no data changes.",
+            "quote": "This application should be used when PAN has already been allotted to the applicant but applicant requires a PAN card.",
+            "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+          }
+        ],
+        "documents": [],
+        "fees": [
+          {
+            "value": "₹50 inclusive of taxes if communication address is an Indian address, and ₹959 inclusive of taxes if it is a foreign address.",
+            "quote": "if the communication address of an applicant as per latest records available with Protean is an Indian address, then applicant needs to make an online fee payment of ₹50 (inclusive of taxes) and if it is a foreign address, then payment of ₹959 (inclusive of taxes) has to be made by the applicant.",
+            "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+          }
+        ],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Income Tax Department",
+          "quote": "Income Tax Department",
+          "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+        },
+        "steps": [],
+        "tracking_url": "https://tin.tin.proteantech.in/pantan/StatusTrack.html",
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    },
+    {
+      "service": {
+        "service_id": "tmp_pan_85643ad4fd_3",
+        "name": "Change/Correction in PAN Data",
+        "alternate_names": [],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://onlineservices.proteantech.in/paam/endUserRegisterContact.html",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_85643ad4fd"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_85643ad4fd_3",
+        "eligibility": [
+          {
+            "value": "Applicants who have already been allotted a PAN but want to make change or correction in PAN data.",
+            "quote": "This application should be used when PAN has already been allotted to the applicant but applicant wants to make change/correction in PAN data.",
+            "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+          }
+        ],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Income Tax Department",
+          "quote": "ITD",
+          "source_url": "https://tinpan.proteantech.in/services/pan/pan-index.html"
+        },
+        "steps": [],
+        "tracking_url": "https://tin.tin.proteantech.in/pantan/StatusTrack.html",
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": []
+}

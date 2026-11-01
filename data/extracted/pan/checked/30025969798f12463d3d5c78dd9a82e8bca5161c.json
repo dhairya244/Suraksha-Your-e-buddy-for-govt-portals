@@ -1,0 +1,62 @@
+{
+  "url": "https://www.pan.utiitsl.com/newA.html",
+  "source_id": "pan",
+  "page_source_id": "pan_3002596979",
+  "file": "30025969798f12463d3d5c78dd9a82e8bca5161c.md",
+  "content_hash": "984e9c712fadc03bf7b178ac1572d46d8f57ae26",
+  "title": "PAN Card | PAN Card Online | PAN Card Services | PAN Card Apply",
+  "fetched_at": "2026-11-01T10:56:44+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:58:03+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_3002596979_0",
+        "name": "Apply for New PAN Card",
+        "alternate_names": [
+          "Form No. 93 and Form No. 94"
+        ],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://www.pan.utiitsl.com/panonline_website/redirect/formLanding",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_3002596979"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_3002596979_0",
+        "eligibility": [],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:58:31+00:00"
+}

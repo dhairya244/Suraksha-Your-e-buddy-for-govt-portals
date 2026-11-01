@@ -1,0 +1,127 @@
+{
+  "url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq",
+  "source_id": "pan",
+  "page_source_id": "pan_06d592735b",
+  "file": "06d592735bdcb73dc6df559d99eaca01e819af92.md",
+  "content_hash": "90ca7f4b3e83c2bb7e894f9935bd90045beb5e86",
+  "title": "Instant e-PAN FAQ | Income Tax Department",
+  "fetched_at": "2026-11-01T10:56:07+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:57:17+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_06d592735b_0",
+        "name": "Instant e-PAN",
+        "alternate_names": [],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_06d592735b"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_06d592735b_0",
+        "eligibility": [
+          {
+            "value": "Individual who has not been allotted a PAN",
+            "quote": "Individual who has not been allotted a PAN",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+          },
+          {
+            "value": "Valid Aadhaar and mobile number linked to Aadhaar",
+            "quote": "Valid Aadhaar and mobile number linked to Aadhaar",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+          },
+          {
+            "value": "User not a minor as on date of request",
+            "quote": "User not a minor as on date of request; and",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+          },
+          {
+            "value": "User not covered under the definition of Representative Assessee u/s 160 of the Income Tax Act",
+            "quote": "User not covered under the definition of Representative Assessee u/s 160 of the Income Tax Act.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+          }
+        ],
+        "documents": [
+          {
+            "name": "Aadhaar",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Aadhaar",
+              "quote": "You only require a valid Aadhaar with updated KYC details, and a valid mobile number linked with your Aadhaar.",
+              "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+            }
+          }
+        ],
+        "fees": [
+          {
+            "value": "Free of cost",
+            "quote": "No. It is completely free of cost.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+          }
+        ],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Generate e-PAN with the help of Aadhaar and a mobile number registered with Aadhaar online without filling up any forms",
+            "quote": "If you have not been allotted a PAN, you can generate your e-PAN with the help of your Aadhaar and a mobile number registered with your Aadhaar. Generating e-PAN is free of cost, online process and does not require you to fill up any forms.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [
+    {
+      "portal_id": "incometax_efiling",
+      "name": "e-Filing and Centralized Processing Center",
+      "url": "https://www.incometax.gov.in/iec/foportal/",
+      "login_methods": [],
+      "registration_steps": [],
+      "common_problems": [
+        {
+          "problem": "Aadhaar authentication gets rejected during e-KYC",
+          "fix": {
+            "value": "Enter the correct OTP or contact UIDAI",
+            "quote": "Aadhaar authentication may get rejected due to using the wrong OTP. The problem can be resolved by entering the correct OTP. If it still gets rejected, you have to contact UIDAI.",
+            "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+          }
+        }
+      ],
+      "helpline": {
+        "value": "1800 103 0025, 1800 419 0025, +91-80-46122000, +91-80-61464700",
+        "quote": "1800 103 0025 (or) 1800 419 0025 +91-80-46122000 +91-80-61464700",
+        "source_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq"
+      },
+      "payment_methods": []
+    }
+  ],
+  "schemes": []
+}

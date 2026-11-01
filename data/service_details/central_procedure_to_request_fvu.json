@@ -1,0 +1,58 @@
+{
+  "service_id": "central_procedure_to_request_fvu",
+  "eligibility": [
+    {
+      "value": "Offices that have lost the FVU file of the Original or Correction Form No. 137 statement accepted at the TIN central system.",
+      "quote": "In case our office has lost the FVU file of the Original/Correction Form No. 137 statement accepted at TIN central system, can we request the FVU file?",
+      "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+    }
+  ],
+  "documents": [
+    {
+      "name": "Request letter on office letter head",
+      "formats": [],
+      "max_size_kb": null,
+      "fact": {
+        "value": "Request letter on office letter head",
+        "quote": "No documents are required to be submitted along with the request letter for FVU file. However, the request needs to be provided on office letter head duly signed by authorized signatory with name and designation of the authorized person.",
+        "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+      }
+    }
+  ],
+  "fees": [
+    {
+      "value": "No charges need to be paid.",
+      "quote": "No charges need to be paid to request for FVU file.",
+      "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+    }
+  ],
+  "timeline": {
+    "value": "unknown",
+    "quote": null,
+    "source_url": null
+  },
+  "issuing_authority": {
+    "value": "Protean",
+    "quote": "Yes, the FVU file can be obtained by sending a request to Protean in prescribed Request Form",
+    "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+  },
+  "steps": [
+    {
+      "value": "Download the prescribed request format from the TIN website.",
+      "quote": "The prescribed format to request FVU file is available at TIN website under url https://tinpan.proteantech.in/services/form-no_137/form-no_137-request-fvu-file.html",
+      "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+    },
+    {
+      "value": "Prepare a request letter on office letter head containing required details (AIN, Name of AO, Provisional Receipt Number, Financial Year, Month of filling, Reason, Signed by authorized signatory with name and designation, Email ID).",
+      "quote": "However, the request needs to be provided on office letter head duly signed by authorized signatory with name and designation of the authorized person.",
+      "source_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html"
+    }
+  ],
+  "tracking_url": null,
+  "appeal": {
+    "value": "unknown",
+    "quote": null,
+    "source_url": null
+  },
+  "disclaimer": null
+}

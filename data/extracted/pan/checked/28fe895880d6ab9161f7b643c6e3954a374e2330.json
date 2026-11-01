@@ -1,0 +1,141 @@
+{
+  "url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html",
+  "source_id": "pan",
+  "page_source_id": "pan_28fe895880",
+  "file": "28fe895880d6ab9161f7b643c6e3954a374e2330.md",
+  "content_hash": "7a21631f42031e6343aa9bcf5eff6ce51a71754d",
+  "title": "FAQs - Request for New PAN - Protean Pan & Tan Services",
+  "fetched_at": "2026-11-01T10:56:02+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:57:11+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_28fe895880_0",
+        "name": "Request for New PAN Card or/and Changes or Correction in PAN data",
+        "alternate_names": [
+          "नये पैन कार्ड या / और पैन डेटा में परिवर्तन या संशोधन के लिए अनुरोध"
+        ],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "certificate",
+        "application_mode": "both",
+        "official_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_28fe895880"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_28fe895880_0",
+        "eligibility": [
+          {
+            "value": "Persons who already have PAN but want a new PAN card, or want to make changes/corrections in existing PAN details.",
+            "quote": "You can submit the application in the form \"Request for New PAN Card or/and Changes or Correction in PAN data\" in the following cases: 1. When you already have PAN but want a new PAN card, 2. When you want to make some changes or corrections in your existing PAN details.",
+            "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+          }
+        ],
+        "documents": [
+          {
+            "name": "Proof of PAN",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof of PAN",
+              "quote": "Proof of PAN (the one currently in use - mentioned at the top of the application) if available;",
+              "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+            }
+          },
+          {
+            "name": "Proof of Identity",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof of Identity",
+              "quote": "Proof of Identity;",
+              "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+            }
+          },
+          {
+            "name": "Proof of Address",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof of Address",
+              "quote": "Proof of Address;",
+              "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+            }
+          },
+          {
+            "name": "Proof of Date of Birth",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof of Date of Birth",
+              "quote": "Proof of Date of Birth (for Individual and Karta of HUF)",
+              "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+            }
+          },
+          {
+            "name": "Proof in support of changes sought",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof in support of changes sought",
+              "quote": "Proof in support of changes sought*, if any;",
+              "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+            }
+          },
+          {
+            "name": "Proof of PAN(s) surrendered",
+            "formats": [],
+            "max_size_kb": null,
+            "fact": {
+              "value": "Proof of PAN(s) surrendered",
+              "quote": "Proof of PAN(s) surrendered, if any;",
+              "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+            }
+          }
+        ],
+        "fees": [
+          {
+            "value": "Fee for physical PAN card dispatch in India is Rs 107 (inclusive of taxes) at TIN-FCs/Physical mode, or Rs 101 via paperless mode. Dispatch outside India is Rs 1,017 or Rs 1,011 respectively. Without physical PAN card (e-PAN only) fee is Rs 72 or Rs 66.",
+            "quote": "Dispatch of physical PAN Card in India (Communication address is Indian address) | 91 | 107",
+            "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+          }
+        ],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "Income Tax Department",
+          "quote": "This facility is only available for those PAN holders whose latest PAN application was processed through Protean e-Gov and / or e-Filing portal of Income Tax Department.",
+          "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+        },
+        "steps": [
+          {
+            "value": "Fill all the columns of the form and tick the box(es) on the left margin of the appropriate item where change/correction is to be done.",
+            "quote": "The applicant is required to fill all the columns of the form and tick the box(es) on the left margin of the appropriate item where change/correction is to be done.",
+            "source_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html"
+          }
+        ],
+        "tracking_url": "https://tin.tin.proteantech.in/pantan/StatusTrack.html",
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:58:30+00:00"
+}

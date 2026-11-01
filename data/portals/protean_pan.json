@@ -1,0 +1,35 @@
+{
+  "portal_id": "protean_pan",
+  "name": "TIN",
+  "url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html",
+  "login_methods": [],
+  "registration_steps": [],
+  "common_problems": [],
+  "helpline": {
+    "value": "Call PAN/TDS Call Centre at 020 - 27218080",
+    "quote": "Call PAN/TDS Call Centre at 020 - 27218080",
+    "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+  },
+  "payment_methods": [
+    {
+      "value": "credit card",
+      "quote": "credit card/debit card/Net banking / Demand Draft payable at Mumbai",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "debit card",
+      "quote": "credit card/debit card/Net banking / Demand Draft payable at Mumbai",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "Net banking",
+      "quote": "credit card/debit card/Net banking / Demand Draft payable at Mumbai",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    },
+    {
+      "value": "Demand Draft payable at Mumbai",
+      "quote": "credit card/debit card/Net banking / Demand Draft payable at Mumbai",
+      "source_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html"
+    }
+  ]
+}

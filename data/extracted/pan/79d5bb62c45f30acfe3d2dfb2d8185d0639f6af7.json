@@ -1,0 +1,15 @@
+{
+  "url": "https://www.pan.utiitsl.com/PAN/downloadFile",
+  "source_id": "pan",
+  "page_source_id": "pan_79d5bb62c4",
+  "file": "79d5bb62c45f30acfe3d2dfb2d8185d0639f6af7.md",
+  "content_hash": "4164d8f19893947f6472cfa1ec5fc65b4c3ede63",
+  "title": "HTTP Status 400 – Bad Request",
+  "fetched_at": "2026-11-01T10:56:11+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:57:21+00:00",
+  "relevant": false,
+  "services": [],
+  "portals": [],
+  "schemes": []
+}

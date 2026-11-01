@@ -1,5 +1,5 @@
 {
-  "credits_used": 78,
+  "credits_used": 88,
   "log": [
     {
       "ts": "2026-10-31T18:18:22+00:00",
@@ -622,6 +622,86 @@
       "kind": "scrape",
       "source": "myscheme",
       "url": "https://www.myscheme.gov.in/schemes/afmtptfm",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:02+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://tinpan.proteantech.in/services/pan/pan-index.html",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:07+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:11+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:15+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://www.pan.utiitsl.com/PAN/downloadFile",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:19+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:23+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:27+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:31+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:39+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://www.pan.utiitsl.com/PAN/newA.html",
+      "credits": 1,
+      "estimated": false
+    },
+    {
+      "ts": "2026-11-01T10:56:44+00:00",
+      "kind": "scrape",
+      "source": "pan",
+      "url": "https://www.pan.utiitsl.com/PAN/newAA.html",
       "credits": 1,
       "estimated": false
     }

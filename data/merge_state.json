@@ -1,7 +1,5 @@
 {
   "services": {
-    "gj_income_certificate": "84e370f6680e",
-    "gj_income_certificate_panchayat": "0c1a988cb720",
     "gj_caste_certificate_sc_directorate_scheduled_caste_welfare": "1b9b60126fcb",
     "gj_caste_certificate_sc_directorate_scheduled_caste_welfare_alternate_authority": "45618f0f2f2e",
     "gj_caste_certificate_sc_directorate_scheduled_caste_welfare_hostel": "fe4db577318e",
@@ -18,6 +16,7 @@
     "gj_sebc_certificate": "55479d911947",
     "gj_sc_caste_certificate": "d4e57099b28b",
     "gj_eligibility_certificate_for_economically_weaker_sections_with_income": "b7f6f57ac3dc",
+    "gj_income_certificate_panchayat": "0c1a988cb720",
     "gj_sebc_certificate_panchayat": "7ea7d47833d5",
     "gj_eligibility_certificate_for_economically_weaker_sections_with_income_panchayat": "221aaed9101f",
     "gj_non_creamy_layer_certificate_for_gujarat_government_panchayat": "f1f21eb60636",
@@ -26,6 +25,7 @@
     "gj_application_for_new_ration_card": "44ea404c8a5d",
     "gj_non_creamy_layer_certificate_for_gujarat_government": "bd2b9cf41a87",
     "gj_addition_of_name_in_ration_card": "782713e67cfd",
+    "gj_income_certificate": "84e370f6680e",
     "gj_removal_of_name_from_ration_card": "eb8b4caf6ae9",
     "gj_application_for_separate_ration_card": "e8366bf5ad44",
     "gj_change_in_ration_card": "9323a04d6ed6",
@@ -35,7 +35,12 @@
     "gj_religious_minority_certificate_rural": "b7ce185121c4",
     "gj_application_for_getting_copy": "e1c7e7541791",
     "gj_other_ready_affidavit": "e41cc6f0a428",
-    "gj_non_creamy_layer_certificate_for_central_government": "d8f9eeef5e99"
+    "gj_non_creamy_layer_certificate_for_central_government": "d8f9eeef5e99",
+    "central_epan_instant": "f639a36b004d",
+    "central_pan_correction": "25aaa379ecd7",
+    "central_pan_new": "d6e1854674e8",
+    "central_procedure_to_request_fvu": "5f5e6916b249",
+    "central_challan_correction_request": "98d1ecaed667"
   },
   "schemes": {
     "darygbocwwb": "87cf80232215",

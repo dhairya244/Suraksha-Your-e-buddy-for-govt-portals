@@ -1,0 +1,74 @@
+{
+  "url": "https://www.pan.utiitsl.com/PAN/newAA.html",
+  "source_id": "pan",
+  "page_source_id": "pan_89f2451aff",
+  "file": "89f2451aff5d7a0f89f8445187cd8e8f666a80ba.md",
+  "content_hash": "cbd28068447ef469225f2d481fc99fe84f95ecda",
+  "title": "PAN Card  | PAN Card Online | PAN Card Services | PAN Card Apply",
+  "fetched_at": "2026-11-01T10:56:39+00:00",
+  "model": "gemini-3.5-flash-lite",
+  "extracted_at": "2026-11-01T10:57:57+00:00",
+  "relevant": true,
+  "services": [
+    {
+      "service": {
+        "service_id": "tmp_pan_89f2451aff_0",
+        "name": "Apply for New PAN Card",
+        "alternate_names": [
+          "Form No. 95 and Form No. 96"
+        ],
+        "department": "Income Tax Department",
+        "government_level": "central",
+        "state": null,
+        "category": "pan",
+        "application_mode": "online",
+        "official_url": "https://www.pan.utiitsl.com/panonline_website/redirect/formLanding49AA",
+        "portal_id": "incometax_efiling",
+        "verification_status": "pending",
+        "source_ids": [
+          "pan_89f2451aff"
+        ],
+        "last_verified_at": null
+      },
+      "details": {
+        "service_id": "tmp_pan_89f2451aff_0",
+        "eligibility": [
+          {
+            "value": "Foreign citizens or foreign entities",
+            "quote": "Apply for PAN Card as Foreign Citizen / Foreign Entitiy",
+            "source_url": "https://www.pan.utiitsl.com/PAN/newAA.html"
+          }
+        ],
+        "documents": [],
+        "fees": [],
+        "timeline": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "issuing_authority": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "steps": [
+          {
+            "value": "Apply for New PAN Card using Form No. 95 and Form No. 96 online",
+            "quote": "Apply for New PAN Card\n\n(Form No. 95 and Form No. 96)",
+            "source_url": "https://www.pan.utiitsl.com/PAN/newAA.html"
+          }
+        ],
+        "tracking_url": null,
+        "appeal": {
+          "value": "unknown",
+          "quote": null,
+          "source_url": null
+        },
+        "disclaimer": null
+      }
+    }
+  ],
+  "portals": [],
+  "schemes": [],
+  "checked_at": "2026-11-01T10:58:32+00:00"
+}

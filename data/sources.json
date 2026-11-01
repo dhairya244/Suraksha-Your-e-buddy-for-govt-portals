@@ -405,5 +405,159 @@
     "source_type": "portal",
     "collection_method": "scrape",
     "last_checked_at": "2026-11-01T10:32:51Z"
+  },
+  {
+    "source_id": "pan_06d592735b",
+    "name": "Instant e-PAN FAQ | Income Tax Department",
+    "official_url": "https://www.incometax.gov.in/iec/foportal/help/e-filing-generate-instant-e-pan-faq",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "faq",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:07Z"
+  },
+  {
+    "source_id": "pan_20296097f0",
+    "name": "Instant E-PAN User Manual | Income Tax Department",
+    "official_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan/instant-UM",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:23Z"
+  },
+  {
+    "source_id": "pan_28fe895880",
+    "name": "FAQs - Request for New PAN - Protean Pan & Tan Services",
+    "official_url": "https://tinpan.proteantech.in/faqs/pan/faq-pan-reqfornewpan.html",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "faq",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:02Z"
+  },
+  {
+    "source_id": "pan_2a989fac71",
+    "name": "PAN Card  | PAN Card Online | PAN Card Services | PAN Card Apply",
+    "official_url": "https://www.pan.utiitsl.com/PAN/newA.html",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:31Z"
+  },
+  {
+    "source_id": "pan_3002596979",
+    "name": "PAN Card | PAN Card Online | PAN Card Services | PAN Card Apply",
+    "official_url": "https://www.pan.utiitsl.com/newA.html",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:44Z"
+  },
+  {
+    "source_id": "pan_3194c17250",
+    "name": "Instant e-PAN | Income Tax Department",
+    "official_url": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/instant-e-pan",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:19Z"
+  },
+  {
+    "source_id": "pan_321b363d28",
+    "name": "FAQ - Form No. 137 FVU request",
+    "official_url": "https://tinpan.proteantech.in/faqs/form-no_137/form-no_137-faq-RequestFVUfile.html",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "faq",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:54Z"
+  },
+  {
+    "source_id": "pan_349091262c",
+    "name": "Challan Correction Request FAQs | Income Tax Department",
+    "official_url": "https://www.incometax.gov.in/iec/foportal/help/ChallanCorrectionRequest-FAQ",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "faq",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:50Z"
+  },
+  {
+    "source_id": "pan_7f50b11727",
+    "name": "Instant E-PAN User Manual | Income Tax Department",
+    "official_url": "https://www.incometax.gov.in/iec/foportal/help/how-to-generate-instant-e-pan",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:27Z"
+  },
+  {
+    "source_id": "pan_85643ad4fd",
+    "name": "Apply for PAN Card, Track Status, Change, Correction, Reprint, Docs",
+    "official_url": "https://tinpan.proteantech.in/services/pan/pan-index.html",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:55:56Z"
+  },
+  {
+    "source_id": "pan_89f2451aff",
+    "name": "PAN Card  | PAN Card Online | PAN Card Services | PAN Card Apply",
+    "official_url": "https://www.pan.utiitsl.com/PAN/newAA.html",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:39Z"
+  },
+  {
+    "source_id": "pan_c5bdf1b695",
+    "name": "PAN (Income Tax Department, Protean, UTIITSL)",
+    "official_url": "https://tinpan.proteantech.in/downloads/pan/Additional-Documents.pdf",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "pdf",
+    "collection_method": "download",
+    "last_checked_at": "2026-11-01T10:56:49Z"
+  },
+  {
+    "source_id": "pan_c9dce0e792",
+    "name": "TIN",
+    "official_url": "https://tinpan.proteantech.in/services/pan/form-form_95-form-96.html",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "portal",
+    "collection_method": "scrape",
+    "last_checked_at": "2026-11-01T10:56:15Z"
+  },
+  {
+    "source_id": "pan_e6719ead79",
+    "name": "PAN (Income Tax Department, Protean, UTIITSL)",
+    "official_url": "https://tinpan.proteantech.in/downloads/pan/download/Request-for-New-PAN-Card-or-and-Changes-or-Correction-in-PAN-Data-Form.pdf",
+    "government_level": "central",
+    "state": null,
+    "department": "Income Tax Department, Ministry of Finance",
+    "source_type": "pdf",
+    "collection_method": "download",
+    "last_checked_at": "2026-11-01T10:56:49Z"
   }
 ]

@@ -14,13 +14,13 @@ from google.genai import types
 from pydantic import BaseModel, Field
 
 from backend.config import env
-from backend.core.llm import LLMError, call_gemini
+from backend.core.llm import REQUEST_TIMEOUT_S, LLMError, call_gemini
 from backend.knowledge import pick_context
 
 log = logging.getLogger("suraksha.answer")
 
 KEY = "GEMINI_API_KEY_DEMO"  # answers; vision uses GEMINI_API_KEY_BACKUP (separate quotas)
-TIMEOUT_S = 12.0
+TIMEOUT_S = REQUEST_TIMEOUT_S  # GEMINI_TIMEOUT_SECONDS
 LANG_NAME = {"hi": "Hindi (Devanagari script)", "en": "simple Indian English", "gu": "Gujarati (Gujarati script)"}
 
 SYSTEM = """You are Suraksha, a voice assistant sitting next to someone who is filling a Gujarat government form

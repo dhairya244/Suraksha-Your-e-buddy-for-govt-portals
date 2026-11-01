@@ -20,14 +20,14 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 from backend.config import env
-from backend.core.llm import LLMError, call_gemini
+from backend.core.llm import REQUEST_TIMEOUT_S, LLMError, call_gemini
 from backend.knowledge import schemes as all_schemes
 from backend.knowledge import services
 
 log = logging.getLogger("suraksha.schemes")
 
 KEY = "GEMINI_API_KEY_DEMO"
-TIMEOUT_S = 12.0
+TIMEOUT_S = REQUEST_TIMEOUT_S  # GEMINI_TIMEOUT_SECONDS
 PAGE_SIZE = 2
 MAX_QUESTIONS = 2
 SLOT_ORDER = ["occupation", "student", "gender", "category", "age", "income", "state"]

@@ -13,12 +13,12 @@ from google.genai import types
 from pydantic import BaseModel, Field
 
 from backend.config import env
-from backend.core.llm import LLMError, call_gemini
+from backend.core.llm import REQUEST_TIMEOUT_S, LLMError, call_gemini
 
 log = logging.getLogger("suraksha.vision")
 
-VISION_KEY = "GEMINI_API_KEY_DEMO"
-VISION_TIMEOUT_S = 12.0
+VISION_KEY = "GEMINI_API_KEY_BACKUP"  # vision; answers use GEMINI_API_KEY_DEMO (separate quotas)
+VISION_TIMEOUT_S = REQUEST_TIMEOUT_S  # GEMINI_TIMEOUT_SECONDS (API minimum is 10 s)
 
 
 class FieldKind(str, Enum):

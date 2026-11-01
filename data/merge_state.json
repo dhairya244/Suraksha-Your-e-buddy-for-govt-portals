@@ -40,7 +40,10 @@
     "gj_application_to_get_certificate_for_death_unnatural": "f0b575f2c736",
     "central_epan_instant": "6345542c22c3",
     "central_pan_correction": "25aaa379ecd7",
-    "central_pan_new": "06e364103787"
+    "central_pan_new": "06e364103787",
+    "central_driving_licence": "bf21a9e8fbc5",
+    "central_startup_india": "bf21a9e8fbc5",
+    "central_itr_filing": "bf21a9e8fbc5"
   },
   "schemes": {
     "darygbocwwb": "87cf80232215",

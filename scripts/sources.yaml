@@ -206,6 +206,22 @@ portal_ids:
 merge:
   exclude_service_ids: [central_challan_correction_request, central_procedure_to_request_fvu]
 
+# merge.py: directory-only services (not fetched, no facts, no service_details file) so a "not covered"
+# answer can still give the official link. department/category/mode left unknown on purpose.
+directory:
+  - service_id: central_driving_licence
+    name: Driving Licence
+    aliases: [driving licence, driving license, learner licence, learning licence, DL, ड्राइविंग लाइसेंस, लर्निंग लाइसेंस, ડ્રાઇવિંગ લાઇસન્સ]
+    official_url: https://sarathi.parivahan.gov.in
+  - service_id: central_startup_india
+    name: Startup India
+    aliases: [startup india, startup registration, स्टार्टअप इंडिया, સ્ટાર્ટઅપ ઇન્ડિયા]
+    official_url: https://www.startupindia.gov.in
+  - service_id: central_itr_filing
+    name: Income Tax Return Filing
+    aliases: [ITR, ITR filing, income tax return, file income tax return, आयकर रिटर्न, इनकम टैक्स रिटर्न, ITR भरना, આવકવેરા રિટર્ન]
+    official_url: https://www.incometax.gov.in
+
 # merge.py: common Hindi / English / romanised names users say. Search aliases only, never facts.
 aliases:
   gj_income_certificate: [income certificate, aay praman patra, aay praman, आय प्रमाण पत्र, आय प्रमाणपत्र, aavak no dakhlo, aavak praman patra, આવકનો દાખલો]

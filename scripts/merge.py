@@ -203,6 +203,16 @@ def main() -> None:
             if psid not in cur["source_ids"]:
                 cur["source_ids"].append(psid)
 
+    # directory-only entries from sources.yaml: name + aliases + official link, no facts, no details file
+    for e in cfg.get("directory") or []:
+        if e["service_id"] in services:
+            continue
+        services[e["service_id"]] = Service(
+            service_id=e["service_id"], name=e["name"], alternate_names=list(dict.fromkeys(e.get("aliases", []))),
+            department=UNKNOWN, government_level=e.get("government_level", "central"), state=e.get("state"),
+            category=UNKNOWN, application_mode="unknown", official_url=e["official_url"],
+        ).model_dump(mode="json")
+
     # search aliases from sources.yaml (names only, no facts)
     for sid_, names in (cfg.get("aliases") or {}).items():
         if sid_ in services:
@@ -233,7 +243,7 @@ def main() -> None:
     new_state = {"services": {}, "schemes": {}}
     log = []
     for sid_, s in services.items():
-        fp = fingerprint(details[sid_])
+        fp = fingerprint(details.get(sid_, {}))
         prev = prev_services.get(sid_)
         unchanged = state["services"].get(sid_) == fp
         if prev and unchanged and prev["verification_status"] != "pending":

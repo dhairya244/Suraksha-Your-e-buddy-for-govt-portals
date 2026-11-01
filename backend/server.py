@@ -358,7 +358,7 @@ class Session:
         """Auto mode: answers AND later field instructions follow the language of the latest question."""
         if self.lang_mode != "auto" or not detected or detected not in LANG_CODE or detected == self.lang:
             return
-        if detected == "en" and len(text.split()) < 2:  # "ok", "next", "yes" don't switch the language
+        if len(text.split()) < 2:  # one-word replies ("ok", "next", "haan") never switch the language
             return
         self.lang = detected
         await self.send("lang", value=self.lang, mode=self.lang_mode)

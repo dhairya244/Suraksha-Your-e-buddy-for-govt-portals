@@ -16,6 +16,7 @@ class Route(str, Enum):
     yes = "yes"
     no = "no"
     scheme = "scheme"
+    need = "need"  # stated need for a covered service → task goal (decided in server via backend/task.py)
     answer = "answer"  # page / service / general → screen-aware answer call
 
 

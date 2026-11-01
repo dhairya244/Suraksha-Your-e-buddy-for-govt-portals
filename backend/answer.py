@@ -16,6 +16,7 @@ from pydantic import BaseModel, Field
 from backend.config import env
 from backend.core.llm import REQUEST_TIMEOUT_S, LLMError, call_gemini
 from backend.knowledge import pick_context
+from backend.task import ALL_STEPS_RE, SCREEN_RE
 
 log = logging.getLogger("suraksha.answer")
 
@@ -42,15 +43,29 @@ FACTS:
 - Never ask for or repeat Aadhaar numbers, OTPs, passwords or bank details. Never offer to fill or submit for them.
 - ITR/tax: process guidance only, never tax advice.
 
-FOLLOW-UPS: short questions with "iske / iska / uske / us ke liye / aur koi / aur / more / its" refer to the TOPIC OF THE
-PREVIOUS ANSWER in the conversation (e.g. after a PAN answer, "iske liye documents?" = documents for PAN), not to the
-form on screen — unless they explicitly say "is form / is page / yahan".
+GOAL + ONE STEP: `task.goal` is the service the user is working on and `task.current_step` the ONE next action on this
+screen. For "how do I apply / what now" give only that one step (and at most one short sentence of what comes after).
+Never list all the steps unless all_steps_requested is true. Do not explain Digital Gujarat registration or login
+unless the user asks about registration/login/account.
+
+NOT COVERED: if the user wants a service that is not in the context JSON (e.g. driving licence, Startup India), say in
+ONE short sentence that Suraksha cannot guide that service here and that they should use that service's own official
+website. Nothing else (no question back). Do not invent links, fees or steps for it. Set about_goal=false.
+
+FOLLOW-UPS: short questions like "kyun? / aur? / aur koi? / iske documents? / iske liye … / kahan milega? / kaise?" refer to
+`task.last_answer_topic` (the previous answer), NOT to the screen — e.g. after a documents answer, "iske liye kahan se
+milega?" = where to get THOSE documents. Only when mentions_screen is true ("yahan / is page / is form") answer about the screen.
+For "where do I get it" name only documents/offices that appear in the context; if the context does not say, say so in one
+sentence (e.g. "the official form doesn't say which office") instead of guessing.
+
+Never add a "back to the form / चलिए, वापस …" sentence yourself — the app adds it.
 
 QUESTION KINDS (set `kind`):
 - page_question → answer from the screenshot + session state (what to fill/click here, in order).
 - service_question → answer from the context JSON with sources.
 - general / off-topic (weather, jokes, other topics) → one short polite sentence that you can only help with this
-  form and government services, then offer to continue with the current field. No facts, empty sources.
+  form and government services. No facts, empty sources. Do not offer to continue / ask "shall we continue?" —
+  when the user has a goal the app itself adds the line that brings them back to it.
 
 STYLE: spoken aloud — plain everyday words, at most 3 short sentences (a list of up to 6 documents is fine),
 no markdown, no URLs in `say`. Reply in {lang_name}; English names of portal buttons/labels are fine.
@@ -63,6 +78,8 @@ class Answer(BaseModel):
     kind: Literal["page_question", "service_question", "general"] = Field(
         description="page_question: about what is on screen; service_question: documents/fees/steps/eligibility/timeline; general: anything else")
     say: str = Field(description="What to speak to the user")
+    topic: str = Field(description="Short English label of what this answer is about, e.g. 'Income Certificate documents', 'driving licence (not covered)'")
+    about_goal: bool = Field(description="True if the answer is about the user's current goal service / this screen; false for side topics")
     sources: list[str] = Field(description="source_url values from the context that support the facts in `say`")
     confident: bool
 
@@ -78,6 +95,7 @@ class ScreenContext:
     fields_remaining: list[str] = field(default_factory=list)
     ask_back: dict = field(default_factory=dict)  # e.g. {"has_digital_gujarat_account": true}
     service_id: str = "gj_income_certificate"
+    task: dict = field(default_factory=dict)  # goal, current_step, last_answer_topic (backend/task.py)
 
     def as_json(self) -> dict:
         return {k: v for k, v in self.__dict__.items() if v not in (None, [], {})}
@@ -85,13 +103,15 @@ class ScreenContext:
 
 def answer_sync(question: str, lang: str, screen: ScreenContext, jpeg: bytes | None, turns: list[dict] | None = None) -> Answer:
     history = " ".join(t["text"] for t in (turns or [])[-4:])  # follow-ups name topics from earlier turns
-    ctx = pick_context(f"{history} {question}", screen.service_id)
+    ctx = pick_context(f"{history} {screen.task.get('last_answer_topic', '')} {question}", screen.service_id)
+    flags = {"all_steps_requested": bool(ALL_STEPS_RE.search(question)), "mentions_screen": bool(SCREEN_RE.search(question))}
     convo = "\n".join(f"{t['role']}: {t['text']}" for t in (turns or []))
     text = (
         f"Conversation so far (oldest first; resolve follow-ups like 'aur koi?', 'iske documents?' against it):\n{convo or '(none)'}\n\n"
         f"Session state: {json.dumps(screen.as_json(), ensure_ascii=False)}\n"
         f"Screenshot attached: {'yes' if jpeg else 'no (screen not captured right now)'}\n"
         f"Context JSON (official data):\n{json.dumps(ctx, ensure_ascii=False, separators=(',', ':'))}\n\n"
+        f"Flags: {json.dumps(flags)}\n"
         f"User asked: \"{question}\""
     )
     parts: list = [types.Part.from_bytes(data=jpeg, mime_type="image/jpeg")] if jpeg else []
@@ -102,7 +122,8 @@ def answer_sync(question: str, lang: str, screen: ScreenContext, jpeg: bytes | N
         system_instruction=SYSTEM.format(lang_name=LANG_NAME.get(lang, LANG_NAME["hi"])),
     )
     a: Answer = res.parsed
-    log.info("answer model=%s confident=%s sources=%d image=%s page=%s", res.model, a.confident, len(a.sources), bool(jpeg), screen.page_type)
+    log.info("answer model=%s kind=%s about_goal=%s confident=%s sources=%d image=%s page=%s",
+             res.model, a.kind, a.about_goal, a.confident, len(a.sources), bool(jpeg), screen.page_type)
     return a
 
 

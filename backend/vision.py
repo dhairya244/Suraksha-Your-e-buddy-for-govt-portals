@@ -76,7 +76,7 @@ class VisionResult(BaseModel):
     is_form: bool = Field(description="True if a fillable web form is visible in a browser")
     page_title: str = Field(description="Heading of the form/page, '' if none")
     fields: list[SeenField] = Field(description="Visible input controls in reading order (top→bottom, left→right)")
-    actions: list[Action] = Field(description="Visible primary buttons/links of the page content: login, register / new registration, submit, save, next, apply, pay. Max 8.")
+    actions: list[Action] = Field(description="Visible clickable things of the page content: buttons/links (login, new registration, apply online, submit, save, next, pay) and service cards/rows/links in a services list. Max 15.")
     errors: list[ErrorText] = Field(description="Visible red validation/error messages")
 
 
@@ -97,7 +97,9 @@ PROMPT = """You are looking at a screenshot of a browser showing a government we
 - focused: only a caret or focus ring; mouse hover is NOT focus.
 - Ignore browser chrome (address bar, tabs, bookmarks), site navigation menus and site-wide search boxes.
 - Ignore any floating assistant window.
-{own_ui}{hint}"""
+4. actions: buttons and links of the page content (Login, New Registration, Apply Online, Submit, Save, Next, Pay) and, on a
+   services list, the service cards/rows/links — text exactly as shown, box tightly around the clickable element.
+{own_ui}{goal}{hint}"""
 
 OWN_UI = "- Ignore any orange highlight outline, its dark caption label, and the dark 'Suraksha' pill window — they are our own UI, not part of the page.\n"
 
@@ -108,9 +110,12 @@ def _hint(label_hints: list[str] | None) -> str:
     return "Labels expected on this form (may be partial): " + "; ".join(label_hints[:60])
 
 
-def detect_sync(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visible: bool = False) -> VisionResult:
+def detect_sync(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visible: bool = False, goal: str | None = None) -> VisionResult:
+    goal_line = (f"- The user wants the service \"{goal}\": if its card/row/link or an 'Apply Online' button is visible, it MUST be in actions.\n"
+                 if goal else "")
     res = call_gemini(
-        [types.Part.from_bytes(data=jpeg, mime_type="image/jpeg"), PROMPT.format(hint=_hint(label_hints), own_ui=OWN_UI if own_ui_visible else "")],
+        [types.Part.from_bytes(data=jpeg, mime_type="image/jpeg"),
+         PROMPT.format(hint=_hint(label_hints), own_ui=OWN_UI if own_ui_visible else "", goal=goal_line)],
         model=env("GEMINI_VISION_MODEL"),
         key=VISION_KEY,
         schema=VisionResult,
@@ -127,9 +132,9 @@ def detect_sync(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visibl
     return out
 
 
-async def detect(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visible: bool = False) -> VisionResult | None:
+async def detect(jpeg: bytes, label_hints: list[str] | None = None, own_ui_visible: bool = False, goal: str | None = None) -> VisionResult | None:
     try:
-        return await asyncio.to_thread(detect_sync, jpeg, label_hints, own_ui_visible)
+        return await asyncio.to_thread(detect_sync, jpeg, label_hints, own_ui_visible, goal)
     except (LLMError, ValueError) as e:
         log.warning("vision failed: %s", e)
         return None

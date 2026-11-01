@@ -33,6 +33,7 @@ from backend.knowledge import form_field
 from backend.router import Route, route
 from backend.schemes import SchemeDialog
 from backend.schemes import step as scheme_step
+from backend.task import ALL_STEPS_RE, SUBMIT_RE, Step, Task, find_service, is_need
 from backend.tracker import Tracker
 from backend.voice import stt, tts
 
@@ -76,6 +77,16 @@ T = {
         "login_first": "यह सेवा इस्तेमाल करने के लिए पहले Digital Gujarat पर लॉगिन कीजिए।",
         "payment": "यह पेमेंट पेज है। भुगतान का तरीका चुनिए — Pay बटन आप खुद दबाइए।",
         "ack": "आवेदन जमा हो गया लगता है। आवेदन नंबर लिख लीजिए या रसीद डाउनलोड कर लीजिए।",
+        "goal_set": "ठीक है, {name} बनाते हैं।",
+        "goal_same": "हम {name} पर ही काम कर रहे हैं।",
+        "switch_q": "{old} छोड़कर {new} शुरू करें?",
+        "switch_yes": "ठीक है, अब {name}।",
+        "switch_no": "ठीक है, {name} जारी रखते हैं।",
+        "back": "चलिए, वापस {name} पर — {step}।",
+        "nav": "{step}।",
+        "goto_list": "इसके लिए Sugam सेवाओं की सूची खोलिए और \"{name}\" चुनिए।",
+        "ask_goal": "आपको कौन सी सेवा चाहिए? माइक बटन दबाकर बताइए, जैसे \"आय प्रमाण पत्र बनाना है\"।",
+        "submit": "सारे खाने भर गए। एक बार सब जाँच लीजिए, फिर \"{label}\" आप खुद दबाइए।",
     },
     "en": {
         "watching": "Okay, I'm watching the screen. Please open the form page.",
@@ -101,6 +112,16 @@ T = {
         "login_first": "Please log in to Digital Gujarat first to use this service.",
         "payment": "This is the payment page. Choose a payment method — you press Pay yourself.",
         "ack": "Your application looks submitted. Note down the application number or download the receipt.",
+        "goal_set": "Okay, let's get your {name}.",
+        "goal_same": "We're already working on the {name}.",
+        "switch_q": "Leave the {old} and start the {new} instead?",
+        "switch_yes": "Okay, now the {name}.",
+        "switch_no": "Okay, continuing with the {name}.",
+        "back": "Back to the {name} — {step}.",
+        "nav": "Please {step}.",
+        "goto_list": "For this, open the Sugam services list and choose \"{name}\".",
+        "ask_goal": "Which service do you need? Hold the mic button and tell me, e.g. \"I want an income certificate\".",
+        "submit": "All fields are filled. Check everything once, then press \"{label}\" yourself.",
     },
 }
 
@@ -112,6 +133,14 @@ _JOIN_RE = re.compile(rf"(?<=[{_INDIC}])(?=[A-Za-z])|(?<=[A-Za-z])(?=[{_INDIC}])
 def space_scripts(text: str) -> str:
     """'केApplicant' → 'के Applicant': a space wherever an Indic run touches a Latin/digit run."""
     return _JOIN_RE.sub(" ", text)
+
+
+_BACK_RE = re.compile(r"[^।.!?]*(चलिए,? वापस|back to the)[^।.!?]*[।.!?]?\s*", re.I)
+
+
+def strip_back(text: str) -> str:
+    """Drop a 'back to the goal' sentence the model wrote itself (the app appends its own)."""
+    return _BACK_RE.sub("", text).strip() or text
 
 
 def wav_seconds(wav: bytes) -> float:
@@ -207,6 +236,7 @@ class Session:
         self.has_account: bool | None = None  # answer to "Do you have a Digital Gujarat account?"
         self.pending_choice: str | None = None
         self.once: set[str] = set()  # one-time announcements already made (keyed by page)
+        self.task = Task()  # goal + current step (persists across Start/Stop; cleared by Reset)
 
     async def send(self, type_: str, **data) -> None:
         if self.closed:
@@ -259,6 +289,7 @@ class Session:
                 self.spawn(self.say(field_text(self.lang, t.seen)))
             return
         self.force = True  # fresh look; a held-back instruction is spoken only if that field is still on screen
+        self.spawn(self.send("frame.request", reason="resume"))
         self.maybe_run_vision()
 
     # ---- client messages
@@ -285,6 +316,7 @@ class Session:
             self.reset()
             self.turns.clear()
             self.scheme = SchemeDialog()
+            self.task = Task()
             self.has_account = None
             self.lang = msg.get("lang") or "hi"
             await self.send("capture", mode="off")
@@ -355,7 +387,7 @@ class Session:
         return ScreenContext(
             page_type=r.page_type.value if r else None, page_title=(r.page_title or None) if r else None,
             logged_in=r.logged_in if r else None, current_field=cur, fields_done=done, fields_remaining=rest,
-            ask_back=ask_back,
+            ask_back=ask_back, service_id=self.task.goal or "gj_income_certificate", task=self.task.describe(),
         )
 
     async def handle_question(self, text: str, lang: str) -> None:
@@ -368,16 +400,20 @@ class Session:
             await self._handle_question(text, lang)
         finally:
             self.answering = False
-            # answers set their own quiet window from the audio length; control/yes-no want the next instruction now
-            if self.quiet_until > time.monotonic():
-                self.end_quiet_at(self.quiet_until)
+            # answers set their own quiet window from the audio length; control/yes-no resume now — both via a fresh frame
+            self.end_quiet_at(max(self.quiet_until, time.monotonic()))
 
     async def _handle_question(self, text: str, lang: str) -> None:
-        r = route(text, pending_yes_no=self.pending_choice == "has_account", scheme_active=self.scheme.active)
+        r = route(text, pending_yes_no=self.pending_choice is not None, scheme_active=self.scheme.active)
+        if r == Route.answer and is_need(text):
+            r = Route.need if (svc := find_service(text)) else Route.answer
         log.info("route=%s", r.value)
         self.remember("user", text)
         if r in (Route.yes, Route.no):
-            await self.on_choice("has_account", r.value)
+            await self.on_choice(self.pending_choice, r.value)
+            return
+        if r == Route.need:
+            await self.on_need(*svc)
             return
         if r == Route.next:
             await self.handle({"type": "next"})
@@ -413,13 +449,70 @@ class Session:
             await self.say(phrase(self.lang, "answer_fail"))
             await self.send("state", value="guiding_field" if self.tracker.current() else ("watching" if self.active else "idle"))
             return
-        await self.say(a.say, answer=True)
-        self.remember("assistant", a.say)
+        self.task.last_topic = a.topic or None
+        said = strip_back(a.say)
+        text = said
+        if self.task.goal and not a.about_goal and (back := self.back_line()):  # side question → pop back to the goal
+            text = f"{said} {back}"
+        await self.say(text, answer=True)
+        self.remember("assistant", said)  # without the back line, so the model never learns to copy it
         if a.sources:
             await self.send("sources", urls=a.sources[:3])
         await self.send("state", value="guiding_field" if self.tracker.current() else ("watching" if self.active else "idle"))
 
+    def back_line(self) -> str:
+        step = self.task.step_text(self.lang)
+        return phrase(self.lang, "back", name=self.task.goal_name, step=step) if step else ""
+
+    async def on_need(self, sid: str, name: str) -> None:
+        """User stated a need for a covered service: set the goal, or confirm a switch (never switch silently)."""
+        if not self.task.goal:
+            self.task.set_goal(sid, name)
+            await self.say(phrase(self.lang, "goal_set", name=name))
+            self.remember("assistant", phrase(self.lang, "goal_set", name=name))
+            self.once = {k for k in self.once if not k.startswith("nav:")}  # speak the first step on this screen
+            self.force = True
+            return
+        if sid == self.task.goal or (self.task.same_family(sid) and "caste" not in sid):
+            line = phrase(self.lang, "goal_same", name=self.task.goal_name)
+            if (step := self.task.step_text(self.lang)):
+                line = f"{line} {phrase(self.lang, 'nav', step=step)}"
+            await self.say(line)
+            self.remember("assistant", line)
+            return
+        self.task.pending_switch = (sid, name)
+        self.pending_choice = "switch_goal"
+        q = phrase(self.lang, "switch_q", old=self.task.goal_name, new=name)
+        await self.send("choice", id="switch_goal", question=q,
+                        options=[{"id": "yes", "label": phrase(self.lang, "yes")}, {"id": "no", "label": phrase(self.lang, "no")}])
+        await self.say(q)
+        self.remember("assistant", q)
+
     async def on_choice(self, cid: str | None, value: str | None) -> None:
+        if cid == "switch_goal" and value in ("yes", "no") and self.task.pending_switch:
+            sid, name = self.task.pending_switch
+            self.pending_choice = None
+            self.task.pending_switch = None
+            await self.send("choice.clear")
+            if value == "yes":
+                self.task.set_goal(sid, name)
+                self.tracker = Tracker()  # the old form's progress no longer applies
+                self.once = {k for k in self.once if not k.startswith(("nav:", "submit:"))}
+                on_form = self.last_vision is not None and self.last_vision.page_type == PageType.application_form
+                line = phrase(self.lang, "switch_yes", name=name)
+                if on_form:  # this is the old service's form: the new one starts from the services list
+                    line = f"{line} {phrase(self.lang, 'goto_list', name=name)}"
+                    await self.send("clear")
+                await self.say(line)
+            else:
+                line = phrase(self.lang, "switch_no", name=self.task.goal_name)
+                if (back := self.task.step_text(self.lang)):
+                    line = f"{line} {phrase(self.lang, 'nav', step=back)}"
+                await self.say(line)
+            self.remember("assistant", line)
+            self.force = True
+            self.maybe_run_vision()
+            return
         if cid != "has_account" or value not in ("yes", "no"):
             return
         self.pending_choice = None
@@ -452,7 +545,22 @@ class Session:
         """Page-type behaviour before the field loop. Returns True if it handled this frame."""
         pt = r.page_type
         page = f"{pt.value}|{(r.page_title or '').strip().lower()}"
+        if pt != PageType.login and self.pending_choice == "has_account":  # the question belonged to the login page
+            self.pending_choice = None
+            await self.send("choice.clear")
+        nav = self.task.nav_step(r)  # card → Apply Online on non-form pages: highlight, say once, wait for the screen to change
+        if nav:
+            self.task.step = nav
+            if nav.box:
+                await self.send("highlight", frame_id=frame_id, bbox=nav.box, label=nav.label)
+            else:
+                await self.send("clear")
+            await self.send("state", value="guiding_step")
+            await self.say_once(f"nav:{page}:{nav.kind}:{nav.label.strip().lower()}",
+                                phrase(self.lang, "nav", step=self.task.step_text(self.lang)))
+            return True
         if pt == PageType.login:
+            self.task.step = Step("login")
             if self.has_account is None:
                 await self.send("clear")
                 if self.pending_choice != "has_account":
@@ -474,6 +582,10 @@ class Session:
                     await self.say_once("register_find:" + page, phrase(self.lang, "register_find"))
                 return True
             return False  # has account → guide the login fields
+        if pt == PageType.service_list and not self.task.goal:
+            await self.send("clear")
+            await self.say_once("ask_goal", phrase(self.lang, "ask_goal"))
+            return True
         if not r.logged_in and (pt == PageType.service_list or (pt == PageType.application_form and self.find_action(r, LOGIN_BTN_RE))):
             btn = self.find_action(r, LOGIN_BTN_RE)
             if btn:
@@ -531,6 +643,8 @@ class Session:
             return
         if self.vision_task and not self.vision_task.done():
             return  # run_vision re-checks when it finishes
+        if self.quiet():
+            return  # answer mode: highlights + field speech frozen; _quiet_over resumes with a fresh frame
         if self.frame_seq <= self.analyzed_seq and not self.force:
             return
         since = time.monotonic() - self.last_vision_t
@@ -553,8 +667,11 @@ class Session:
                 self.maybe_run_vision()
 
     async def _run_vision(self, jpeg: bytes, seq: int, frame_id: int | None) -> None:
-        result = await detect(jpeg, own_ui_visible=self.own_ui_visible)
+        result = await detect(jpeg, own_ui_visible=self.own_ui_visible, goal=self.task.goal_name or None)
         if not self.active:
+            return
+        if self.quiet():  # a question started while this frame was being read: drop, re-read after the answer
+            self.force = True
             return
         if result is None:
             await self.send("state", value="vision_retry")
@@ -591,6 +708,13 @@ class Session:
                 return
 
         if d.target is None:
+            btn = next((a for a in r.actions if SUBMIT_RE.search(a.text)), None)
+            if btn and (d.all_done or self.task.step.kind == "submit"):  # pre-submit: point at the button, user presses it
+                self.task.step = Step("submit", btn.text, btn.box_2d)
+                await self.send("highlight", frame_id=frame_id, bbox=btn.box_2d, label=btn.text)
+                if not self.quiet():
+                    await self.say_once(f"submit:{r.page_title}:{btn.text}", phrase(self.lang, "submit", label=btn.text))
+                return
             await self.send("clear")
             if d.all_done:
                 if self.quiet():
@@ -600,6 +724,7 @@ class Session:
             return
 
         t = d.target
+        self.task.step = Step("field", t.seen.label, t.bbox)
         if t.bbox:
             await self.send("highlight", frame_id=frame_id, bbox=t.bbox, label=t.seen.label)  # position may shift
         else:

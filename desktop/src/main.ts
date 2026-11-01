@@ -70,7 +70,7 @@ async function measureOverlay() {
 
 function createPill() {
   const d = screen.getPrimaryDisplay();
-  const w = 380, h = 200;
+  const w = 380, h = 236;
   pill = new BrowserWindow({
     x: d.workArea.x + d.workArea.width - w - 24, y: d.workArea.y + 24, width: w, height: h,
     frame: false, resizable: false, alwaysOnTop: true, skipTaskbar: false, transparent: true, hasShadow: true,
@@ -249,6 +249,26 @@ ipcMain.on("ask", (_e, { audio_b64, lang }) => wsSend({ type: "ask", audio_b64, 
 ipcMain.on("lang", (_e, { lang }) => wsSend({ type: "lang", lang }));
 ipcMain.on("open-link", (_e, { url }) => { if (/^https:\/\//.test(url)) shell.openExternal(url); });
 ipcMain.on("quit", () => app.quit());
+
+// Debug: magenta boxes at the 4 display corners + centre (+ the browser capture rect) for 10 s.
+// If the drawn boxes don't sit exactly in the screen corners, the overlay origin is off.
+let calibTimer: NodeJS.Timeout | null = null;
+ipcMain.on("calibrate", async () => {
+  await measureOverlay();
+  await trackBrowser();
+  const { width: W, height: H } = screen.getPrimaryDisplay().bounds;
+  const S = 90;
+  const rects: Rect[] = [
+    { x: 0, y: 0, width: S, height: S }, { x: W - S, y: 0, width: S, height: S },
+    { x: 0, y: H - S, width: S, height: S }, { x: W - S, y: H - S, width: S, height: S },
+    { x: W / 2 - 60, y: H / 2 - 30, width: 120, height: 60 },
+  ];
+  if (browser) rects.push(captureRect());
+  toOverlay("calib", { rects });
+  toPill("status", { text: `overlay origin ${overlayOrigin.x},${overlayOrigin.y} · browser ${browser ? browser.name : "none"}` });
+  if (calibTimer) clearTimeout(calibTimer);
+  calibTimer = setTimeout(() => toOverlay("calib", { rects: [] }), 10000);
+});
 
 app.whenReady().then(() => {
   session.defaultSession.setPermissionRequestHandler((_wc, perm, cb) => cb(perm === "media"));

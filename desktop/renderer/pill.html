@@ -20,6 +20,8 @@
   button.link { background: #059669; display: none; }
   #status { font-size: 11px; color: #9ca3af; margin: 4px 0; }
   #caption { min-height: 36px; max-height: 54px; overflow: hidden; font-size: 13px; line-height: 1.35; margin: 6px 0; }
+  .row.small { margin-top: 6px; } .row.small button { padding: 3px 8px; font-size: 11px; }
+  .tog { -webkit-app-region: no-drag; font-size: 11px; color: #d1d5db; display: flex; align-items: center; gap: 4px; cursor: pointer; }
   #x { background: transparent; color: #9ca3af; padding: 2px 6px; }
 </style>
 </head>
@@ -38,6 +40,10 @@
     <button id="mic" class="mic">🎤 Hold to ask</button>
     <button id="stop">Stop</button>
     <button id="link" class="link">Open official link</button>
+  </div>
+  <div class="row small">
+    <button id="calib">Calibrate</button>
+    <label class="tog" title="Let macOS screenshots / screen recording / screen share include Suraksha"><input type="checkbox" id="rec"> Show in recordings</label>
   </div>
   <div id="status">connecting…</div>
 </div>

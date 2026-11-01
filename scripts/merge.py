@@ -96,14 +96,24 @@ def main() -> None:
     used_pages: dict[str, tuple[str, dict]] = {}  # page_source_id → (source id, checked doc)
     order = list(sources)  # sources.yaml order = trust/priority order
 
+    # catalog pages (extract_catalog.py) go first so official names win; their per-service
+    # pages (<listing url>#<slug(name)>) map onto the catalog ids
+    page_ids: dict[str, str] = {}
+    for cat in EXTRACTED.glob("*/checked/zz_catalog.json"):
+        c = json.loads(cat.read_text())
+        page_ids.update({f"{c['url']}#{slug(r['service']['name'])}": r["service"]["service_id"] for r in c["services"]})
+
     for sid in order:
-        for path in sorted((EXTRACTED / sid / "checked").glob("*.json")):
+        for path in sorted((EXTRACTED / sid / "checked").glob("*.json"), key=lambda p: (p.name != "zz_catalog.json", p.name)):
             doc = json.loads(path.read_text())
             psid = doc["page_source_id"]
             for rec in doc["services"]:
                 s, d = rec["service"], rec["details"]
                 # catalog records arrive with stable ids already; LLM ones carry tmp_ ids
-                sid_stable = s["service_id"] if not s["service_id"].startswith("tmp_") else service_id_for(s, rules)
+                if not s["service_id"].startswith("tmp_"):
+                    sid_stable = s["service_id"]
+                else:
+                    sid_stable = page_ids.get(doc["url"]) or service_id_for(s, rules)
                 s["service_id"] = d["service_id"] = sid_stable
                 if sid_stable not in services:
                     services[sid_stable], details[sid_stable] = s, d
@@ -112,8 +122,9 @@ def main() -> None:
                     cur["alternate_names"] = list(dict.fromkeys(
                         cur["alternate_names"] + [n for n in [s["name"], *s["alternate_names"]] if norm(n) != norm(cur["name"])]))
                     cur["source_ids"] = list(dict.fromkeys(cur["source_ids"] + s["source_ids"]))
-                    if cur["application_mode"] == "unknown":
-                        cur["application_mode"] = s["application_mode"]
+                    for k in ("application_mode", "department"):
+                        if cur[k] == UNKNOWN:
+                            cur[k] = s[k]
                     details[sid_stable] = merge_details(details[sid_stable], d)
                 used_pages[psid] = (sid, doc)
             for p in doc["portals"]:

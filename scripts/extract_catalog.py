@@ -17,7 +17,7 @@ from pipeline import EXTRACTED, get_source, load_config, now_iso, read_jsonl, sl
 from shared.schemas import UNKNOWN, Fact, Service, ServiceDetails
 
 LISTING_URL = "https://www.digitalgujarat.gov.in/Services/SugamDGAbhiyanServices.aspx"
-OUT_NAME = "zz_catalog.json"  # sorts after the LLM-extracted pages, so their richer records win in merge
+OUT_NAME = "zz_catalog.json"  # merge.py reads it first: official names win, page details fill in
 DEPT_RE = re.compile(r"(Directorate,?\s+(?:Scheduled|Developing) Caste Welfare|District Social Welfare Officer)")
 
 

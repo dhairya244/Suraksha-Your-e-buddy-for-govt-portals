@@ -22,7 +22,7 @@
 
 ---
 
-## 2. Data scope (Firecrawl budget: 13k credits, plan ≤1,000)
+## 2. Data scope (Firecrawl budget: ≤1,000)
 
 | Item | Source | Depth |
 |---|---|---|
